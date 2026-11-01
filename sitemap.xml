@@ -1,9 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="//www.google.com/sitemaps/sitemap.xsl"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://927520fyx.github.io/ios/</loc>
-    <lastmod>2026-10-31</lastmod>
+    <loc>https://927520fyx.github.io/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://927520fyx.github.io/dopamine.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>
