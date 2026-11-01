@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dopamine Jailbreak - Official Download, iOS Compatibility & Guide</title>
+    <meta name="description" content="Download Dopamine Jailbreak for iOS 15.0 - 26.0.1. The ultimate rootless, semi-untethered jailbreak for A8-A17 / M1-M2 devices with Sileo & Zebra support.">
+    <meta name="keywords" content="Dopamine jailbreak, Dopamine ipa download, iOS 17 jailbreak, rootless jailbreak, Sileo, Zebra">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            500: '#8b5cf6',
+                            600: '#7c3aed',
+                        }
+                    },
+                    animation: {
+                        'float-slow': 'float 8s ease-in-out infinite',
+                        'float-delayed': 'float 10s ease-in-out 3s infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px) scale(1)' },
+                            '50%': { transform: 'translateY(-20px) scale(1.05)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom CSS Animations & Spotlight Effects -->
+    <style>
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, transform;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* Spotlight Card Glow Effect */
+        .spotlight-card {
+            position: relative;
+            overflow: hidden;
+        }
+        .spotlight-card::before {
+            content: '';
+            position: absolute;
+            top: var(--y, 0);
+            left: var(--x, 0);
+            transform: translate(-50%, -50%);
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.15), transparent 70%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+            z-index: 1;
+        }
+        .spotlight-card:hover::before {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-purple-500 selection:text-white overflow-x-hidden">
+
+    <!-- Reading Progress Bar -->
+    <div id="progress-bar" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-purple-500 via-indigo-500 to-pink-500 z-50 transition-all duration-100 w-0"></div>
+
+    <!-- Ambient Floating Background Blobs -->
+    <div class="fixed top-1/4 left-10 w-96 h-96 bg-purple-600/10 rounded-full blur-[120px] pointer-events-none animate-float-slow z-0"></div>
+    <div class="fixed bottom-1/3 right-10 w-[30rem] h-[30rem] bg-indigo-600/10 rounded-full blur-[140px] pointer-events-none animate-float-delayed z-0"></div>
+
+    <!-- Header / Navbar -->
+    <header class="border-b border-slate-800/80 sticky top-0 bg-slate-950/80 backdrop-blur-2xl z-40 transition-all">
+        <div class="max-w-6xl mx-auto px-4 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center space-x-3 group">
+                <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-purple-600 to-indigo-500 flex items-center justify-center font-bold text-white shadow-lg shadow-purple-500/30 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">❤️</div>
+                <span class="font-bold text-xl tracking-wide bg-gradient-to-r from-white via-slate-200 to-slate-400 bg-clip-text text-transparent">Dopamine</span>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-400">
+                <a href="#features" class="hover:text-purple-400 transition-colors duration-200 hover:-translate-y-0.5">Features</a>
+                <a href="#compatibility" class="hover:text-purple-400 transition-colors duration-200 hover:-translate-y-0.5">Compatibility</a>
+                <a href="#guide" class="hover:text-purple-400 transition-colors duration-200 hover:-translate-y-0.5">Installation</a>
+                <a href="#faq" class="hover:text-purple-400 transition-colors duration-200 hover:-translate-y-0.5">FAQ</a>
+            </nav>
+
+            <!-- Action Button & Mobile Toggle -->
+            <div class="flex items-center space-x-3">
+                <!-- 【新增】跳转回 TrollStore 首页的按钮 -->
+                <a href="index.html" class="bg-slate-900 hover:bg-slate-800 active:scale-95 text-slate-300 border border-slate-800 px-4 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 flex items-center space-x-2">
+                    <span>🏠 TrollStore</span>
+                </a>
+
+                <a href="https://github.com/opa334/Dopamine/releases" target="_blank" rel="nofollow" class="bg-purple-600 hover:bg-purple-500 active:scale-95 text-white px-4.5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 shadow-lg shadow-purple-600/30 flex items-center space-x-2 hover:shadow-purple-500/50 hover:-translate-y-0.5">
+                    <span>Download .ipa</span>
+                </a>
+                
+                <!-- Mobile Menu Button -->
+                <button id="menu-btn" aria-label="Toggle Menu" class="md:hidden p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-white active:scale-95 transition-all focus:outline-none">
+                    <svg id="menu-icon" class="w-6 h-6 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="md:hidden max-h-0 overflow-hidden bg-slate-950/95 border-b border-slate-800/0 backdrop-blur-2xl transition-all duration-300 ease-in-out">
+            <div class="px-4 py-4 space-y-2">
+                <a href="#features" class="mobile-link block py-2.5 px-3 rounded-xl text-slate-300 hover:bg-slate-900 hover:text-purple-400 transition">Features</a>
+                <a href="#compatibility" class="mobile-link block py-2.5 px-3 rounded-xl text-slate-300 hover:bg-slate-900 hover:text-purple-400 transition">Compatibility</a>
+                <a href="#guide" class="mobile-link block py-2.5 px-3 rounded-xl text-slate-300 hover:bg-slate-900 hover:text-purple-400 transition">Installation</a>
+                <a href="#faq" class="mobile-link block py-2.5 px-3 rounded-xl text-slate-300 hover:bg-slate-900 hover:text-purple-400 transition">FAQ</a>
+                <!-- 手机端也加上返回 TrollStore 的入口 -->
+                <a href="index.html" class="mobile-link block py-2.5 px-3 rounded-xl text-blue-400 bg-blue-500/10 hover:bg-blue-500/20 transition">🏠 Go to TrollStore</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="py-24 md:py-36 px-4 text-center relative z-10">
+        <div class="max-w-4xl mx-auto reveal">
+            <span class="inline-flex items-center space-x-2 bg-purple-500/10 text-purple-400 border border-purple-500/20 px-4 py-2 rounded-full text-xs font-semibold mb-6 shadow-inner hover:bg-purple-500/20 transition-all cursor-pointer">
+                <span class="w-2.5 h-2.5 rounded-full bg-purple-400 animate-ping"></span>
+                <span>Latest Release • iOS 15.0 - 26.0.1 Support</span>
+            </span>
+            <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight mb-6 leading-[1.1]">
+                The Ultimate <span class="bg-gradient-to-r from-purple-400 via-indigo-400 to-pink-400 bg-clip-text text-transparent">Rootless Jailbreak</span>
+            </h1>
+            <p class="text-base sm:text-xl text-slate-400 mb-10 max-w-2xl mx-auto leading-relaxed">
+                Fast, modern, and secure semi-untethered jailbreak for arm64 and arm64e devices. Pre-packaged with Sileo and Zebra package managers.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4 max-w-md mx-auto sm:max-w-none">
+                <a href="https://github.com/opa334/Dopamine/releases" target="_blank" rel="nofollow" class="bg-purple-600 hover:bg-purple-500 active:scale-95 text-white font-semibold px-8 py-4 rounded-2xl transition-all duration-200 flex items-center justify-center space-x-3 shadow-xl shadow-purple-600/30 hover:-translate-y-1 hover:shadow-purple-500/50">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                    <span>Download Official .ipa</span>
+                </a>
+                <a href="#guide" class="bg-slate-900/80 hover:bg-slate-800 active:scale-95 text-slate-300 border border-slate-800/80 font-semibold px-8 py-4 rounded-2xl transition-all duration-200 flex items-center justify-center shadow-lg hover:-translate-y-1 hover:border-slate-700">
+                    Read Setup Guide
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Grid -->
+    <section id="features" class="py-24 px-4 bg-slate-900/20 border-y border-slate-800/60 backdrop-blur-sm relative z-10">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+                <h2 class="text-3xl sm:text-4xl font-extrabold mb-4 tracking-tight">Why Choose Dopamine?</h2>
+                <p class="text-slate-400 text-base">Engineered for peak performance, stability, and uncompromised security.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="reveal spotlight-card bg-slate-900/60 border border-slate-800/80 p-8 rounded-3xl hover:border-purple-500/50 hover:bg-slate-900/90 hover:-translate-y-2 transition-all duration-300 shadow-xl group">
+                    <div class="w-14 h-14 rounded-2xl bg-purple-500/10 text-purple-400 flex items-center justify-center font-bold mb-6 text-2xl group-hover:scale-110 group-hover:bg-purple-500/20 group-hover:rotate-6 transition-all duration-300">🛡️</div>
+                    <h3 class="text-xl font-bold mb-3 text-white">Rootless Architecture</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Does not touch system partition, ensuring higher security, effortless reboots, and clean uninstalls.</p>
+                </div>
+                <div class="reveal spotlight-card bg-slate-900/60 border border-slate-800/80 p-8 rounded-3xl hover:border-indigo-500/50 hover:bg-slate-900/90 hover:-translate-y-2 transition-all duration-300 shadow-xl group" style="transition-delay: 100ms;">
+                    <div class="w-14 h-14 rounded-2xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center font-bold mb-6 text-2xl group-hover:scale-110 group-hover:bg-indigo-500/20 group-hover:rotate-6 transition-all duration-300">📦</div>
+                    <h3 class="text-xl font-bold mb-3 text-white">Sileo & Zebra</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Comes equipped with modern, lightning-fast package managers built natively for rootless tweaks.</p>
+                </div>
+                <div class="reveal spotlight-card bg-slate-900/60 border border-slate-800/80 p-8 rounded-3xl hover:border-pink-500/50 hover:bg-slate-900/90 hover:-translate-y-2 transition-all duration-300 shadow-xl group" style="transition-delay: 200ms;">
+                    <div class="w-14 h-14 rounded-2xl bg-pink-500/10 text-pink-400 flex items-center justify-center font-bold mb-6 text-2xl group-hover:scale-110 group-hover:bg-pink-500/20 group-hover:rotate-6 transition-all duration-300">⚡</div>
+                    <h3 class="text-xl font-bold mb-3 text-white">Semi-Untethered</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Easily re-enable the jailbreak directly on your device using TrollStore or side-loading apps.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Compatibility Section with Interactive Switcher -->
+    <section id="compatibility" class="py-24 px-4 relative z-10">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-3xl sm:text-4xl font-extrabold mb-4 tracking-tight">Device & Version Compatibility</h2>
+                <p class="text-slate-400 text-base">Click any architecture card below to instantly copy its supported version specs.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Card 1 -->
+                <div onclick="copyToClipboard('iOS 15.0 - 17.3.1', 'A14 - A17 / M1 - M2')" class="reveal spotlight-card bg-gradient-to-br from-slate-900 via-slate-900/50 to-slate-950 border border-slate-800 rounded-3xl p-8 shadow-2xl relative overflow-hidden hover:border-purple-500/60 hover:-translate-y-1.5 transition-all duration-300 cursor-pointer group">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="font-bold text-2xl text-purple-400 group-hover:scale-105 transition-transform origin-left">A14 - A17 / M1 - M2</h3>
+                        <span class="bg-purple-500/10 text-purple-400 text-xs px-3 py-1.5 rounded-lg font-mono font-semibold border border-purple-500/20">arm64e</span>
+                    </div>
+                    <p class="text-slate-300 text-sm mb-3 font-medium flex items-center justify-between">
+                        <span>Supported iOS Versions:</span>
+                        <span class="text-xs text-purple-400 opacity-0 group-hover:opacity-100 transition-opacity">📋 Click to copy</span>
+                    </p>
+                    <div class="bg-slate-950/90 border border-slate-800/80 p-4 rounded-2xl font-mono text-purple-300 text-sm shadow-inner group-hover:border-purple-500/40 transition-colors">
+                        iOS 15.0 - 17.3.1
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div onclick="copyToClipboard('iOS 15.0 - 18.7.1 & 26.0 - 26.0.1', 'A8 - A13 Devices')" class="reveal spotlight-card bg-gradient-to-br from-slate-900 via-slate-900/50 to-slate-950 border border-slate-800 rounded-3xl p-8 shadow-2xl relative overflow-hidden hover:border-indigo-500/60 hover:-translate-y-1.5 transition-all duration-300 cursor-pointer group" style="transition-delay: 150ms;">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="font-bold text-2xl text-indigo-400 group-hover:scale-105 transition-transform origin-left">A8 - A13 Devices</h3>
+                        <span class="bg-indigo-500/10 text-indigo-400 text-xs px-3 py-1.5 rounded-lg font-mono font-semibold border border-indigo-500/20">arm64 / arm64e</span>
+                    </div>
+                    <p class="text-slate-300 text-sm mb-3 font-medium flex items-center justify-between">
+                        <span>Supported iOS Versions:</span>
+                        <span class="text-xs text-indigo-400 opacity-0 group-hover:opacity-100 transition-opacity">📋 Click to copy</span>
+                    </p>
+                    <div class="bg-slate-950/90 border border-slate-800/80 p-4 rounded-2xl font-mono text-indigo-300 text-sm leading-relaxed shadow-inner group-hover:border-indigo-500/40 transition-colors">
+                        iOS 15.0 - 18.7.1 & 26.0 - 26.0.1
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Installation Guide Section -->
+    <section id="guide" class="py-24 px-4 bg-slate-900/20 border-t border-slate-800/60 relative z-10">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-3xl sm:text-4xl font-extrabold mb-4 tracking-tight">Step-by-Step Installation Guide</h2>
+                <p class="text-slate-400 text-base">Get Dopamine up and running safely on your iPhone or iPad.</p>
+            </div>
+
+            <div class="space-y-6">
+                <div class="reveal spotlight-card bg-slate-900/60 border border-slate-800/80 p-6 sm:p-8 rounded-3xl flex items-start space-x-5 shadow-xl hover:border-slate-700 hover:-translate-y-1 transition-all duration-300">
+                    <div class="w-10 h-10 rounded-2xl bg-purple-600 text-white flex items-center justify-center font-bold text-base shrink-0 shadow-md shadow-purple-600/30">1</div>
+                    <div>
+                        <h3 class="font-bold text-xl mb-2 text-white">Download the .ipa File</h3>
+                        <p class="text-slate-400 text-sm sm:text-base leading-relaxed">Head to the official GitHub releases page and download the latest version of <code class="text-purple-300 bg-slate-950 px-2 py-1 rounded-md border border-slate-800">Dopamine.ipa</code>.</p>
+                    </div>
+                </div>
+                <div class="reveal spotlight-card bg-slate-900/60 border border-slate-800/80 p-6 sm:p-8 rounded-3xl flex items-start space-x-5 shadow-xl hover:border-slate-700 hover:-translate-y-1 transition-all duration-300" style="transition-delay: 100ms;">
+                    <div class="w-10 h-10 rounded-2xl bg-purple-600 text-white flex items-center justify-center font-bold text-base shrink-0 shadow-md shadow-purple-600/30">2</div>
+                    <div>
+                        <h3 class="font-bold text-xl mb-2 text-white">Install via TrollStore (Recommended)</h3>
+                        <p class="text-slate-400 text-sm sm:text-base leading-relaxed">Open the downloaded .ipa file directly inside TrollStore on your device for permanent installation without revocation issues.</p>
+                    </div>
+                </div>
+                <div class="reveal spotlight-card bg-slate-900/60 border border-slate-800/80 p-6 sm:p-8 rounded-3xl flex items-start space-x-5 shadow-xl hover:border-slate-700 hover:-translate-y-1 transition-all duration-300" style="transition-delay: 200ms;">
+                    <div class="w-10 h-10 rounded-2xl bg-purple-600 text-white flex items-center justify-center font-bold text-base shrink-0 shadow-md shadow-purple-600/30">3</div>
+                    <div>
+                        <h3 class="font-bold text-xl mb-2 text-white">Run the Exploit & Jailbreak</h3>
+                        <p class="text-slate-400 text-sm sm:text-base leading-relaxed">Launch Dopamine from your home screen, tap "Jailbreak", choose your package manager (Sileo/Zebra), and let the app configure your system.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-24 px-4 relative z-10">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-3xl sm:text-4xl font-extrabold mb-4 tracking-tight">Frequently Asked Questions</h2>
+                <p class="text-slate-400 text-base">Everything you need to know about Dopamine Jailbreak.</p>
+            </div>
+
+            <div class="space-y-4">
+                <!-- Accordion Item 1 -->
+                <div class="reveal spotlight-card bg-slate-900/80 border border-slate-800 rounded-3xl shadow-xl overflow-hidden transition-all duration-300">
+                    <button class="faq-toggle w-full p-6 sm:p-8 text-left flex items-center justify-between focus:outline-none cursor-pointer group">
+                        <span class="font-bold text-lg text-purple-300 group-hover:text-purple-200 transition-colors">Is Dopamine open source?</span>
+                        <svg class="w-5 h-5 text-slate-400 transition-transform duration-300 shrink-0 transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 px-6 sm:px-8">
+                        <p class="text-slate-400 text-sm sm:text-base leading-relaxed pb-6">Yes, Dopamine is completely open source. You can inspect its source code and contribute via GitHub.</p>
+                    </div>
+                </div>
+
+                <!-- Accordion Item 2 -->
+                <div class="reveal spotlight-card bg-slate-900/80 border border-slate-800 rounded-3xl shadow-xl overflow-hidden transition-all duration-300" style="transition-delay: 100ms;">
+                    <button class="faq-toggle w-full p-6 sm:p-8 text-left flex items-center justify-between focus:outline-none cursor-pointer group">
+                        <span class="font-bold text-lg text-purple-300 group-hover:text-purple-200 transition-colors">Will my tweaks work out of the box?</span>
+                        <svg class="w-5 h-5 text-slate-400 transition-transform duration-300 shrink-0 transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 px-6 sm:px-8">
+                        <p class="text-slate-400 text-sm sm:text-base leading-relaxed pb-6">Because Dopamine is a rootless jailbreak, tweaks must be updated and compiled specifically for rootless environments before installation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-4 border-t border-slate-800/80 text-center text-slate-500 text-xs relative z-10">
+        <div class="max-w-4xl mx-auto space-y-4">
+            <p class="leading-relaxed">Disclaimer: This is an independent resource and tutorial site. All credits for the Dopamine jailbreak and ElleKit belong to opa334, évelyne, and the core development team.</p>
+            <p>&copy; 2026 Dopamine Hub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Floating Button -->
+    <button id="back-to-top" aria-label="Back to Top" class="fixed bottom-6 right-6 w-12 h-12 rounded-2xl bg-purple-600 text-white shadow-lg shadow-purple-600/40 flex items-center justify-center opacity-0 pointer-events-none hover:bg-purple-500 hover:scale-110 active:scale-95 transition-all duration-300 z-50">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/></svg>
+    </button>
+
+    <!-- Toast Notification Element -->
+    <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 bg-slate-900 border border-purple-500/50 text-white px-6 py-3 rounded-2xl shadow-2xl shadow-purple-900/50 opacity-0 pointer-events-none transition-all duration-300 z-50 flex items-center space-x-3 text-sm font-medium">
+        <span class="w-2.5 h-2.5 rounded-full bg-purple-400 animate-pulse"></span>
+        <span id="toast-msg">Copied successfully!</span>
+    </div>
+
+    <!-- Advanced Interactive JavaScript -->
+    <script>
+        // 1. Reading Progress Bar & Back to Top Logic
+        const progressBar = document.getElementById('progress-bar');
+        const backToTopBtn = document.getElementById('back-to-top');
+
+        window.addEventListener('scroll', () => {
+            const totalScroll = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const currentScroll = window.scrollY;
+            const progress = (currentScroll / totalScroll) * 100;
+            progressBar.style.width = progress + '%';
+
+            if (currentScroll > 400) {
+                backToTopBtn.style.opacity = '1';
+                backToTopBtn.style.pointerEvents = 'auto';
+            } else {
+                backToTopBtn.style.opacity = '0';
+                backToTopBtn.style.pointerEvents = 'none';
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // 2. Spotlight Mouse Glow Effect for Cards
+        const spotlightCards = document.querySelectorAll('.spotlight-card');
+        spotlightCards.forEach(card => {
+            card.addEventListener('mousemove', e => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--x', `${x}px`);
+                card.style.setProperty('--y', `${y}px`);
+            });
+        });
+
+        // 3. Mobile Menu Toggle with Smooth Transition
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+        let isMenuOpen = false;
+
+        function toggleMenu() {
+            isMenuOpen = !isMenuOpen;
+            if (isMenuOpen) {
+                mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+                mobileMenu.style.borderBottomColor = 'rgba(30, 41, 59, 0.8)';
+                menuIcon.style.transform = 'rotate(90deg)';
+            } else {
+                mobileMenu.style.maxHeight = '0px';
+                mobileMenu.style.borderBottomColor = 'rgba(30, 41, 59, 0)';
+                menuIcon.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        menuBtn.addEventListener('click', toggleMenu);
+        mobileLinks.forEach(link => link.addEventListener('click', () => { if (isMenuOpen) toggleMenu(); }));
+
+        // 4. FAQ Accordion Logic
+        const faqToggles = document.querySelectorAll('.faq-toggle');
+        faqToggles.forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                const content = toggle.nextElementSibling;
+                const icon = toggle.querySelector('svg');
+                if (content.style.maxHeight && content.style.maxHeight !== '0px') {
+                    content.style.maxHeight = '0px';
+                    icon.style.transform = 'rotate(0deg)';
+                } else {
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                    icon.style.transform = 'rotate(180deg)';
+                }
+            });
+        });
+
+        // 5. Scroll Reveal Animation Observer
+        const revealElements = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+        revealElements.forEach(el => observer.observe(el));
+
+        // 6. Toast Notification & Copy Function
+        function copyToClipboard(text, device) {
+            navigator.clipboard.writeText(text);
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toast-msg');
+            toastMsg.innerText = `Copied ${device} support: ${text}`;
+            toast.style.opacity = '1';
+            toast.style.transform = 'translate(-50%, -10px)';
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                toast.style.transform = 'translate(-50%, 0)';
+            }, 2500);
+        }
+    </script>
+</body>
+</html>
