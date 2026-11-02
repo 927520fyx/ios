@@ -1,9 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://927520fyx.github.io/ios/</loc>
-  </url>
-  <url>
-    <loc>https://927520fyx.github.io/ios/dopamine.html</loc>
-  </url>
+    <!-- 1. 主页 -->
+    <url>
+        <loc>https://yourdomain.com/</loc>
+        <lastmod>2026-11-02</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <!-- 2. 常见问题解答页面 -->
+    <url>
+        <loc>https://yourdomain.com/faq.html</loc>
+        <lastmod>2026-11-02</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <!-- 3. Dopamine 越狱页面 -->
+    <url>
+        <loc>https://yourdomain.com/dopamine.html</loc>
+        <lastmod>2026-11-02</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
 </urlset>
