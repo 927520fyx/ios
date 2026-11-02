@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrollStore Frequently Asked Questions (iOS FAQ)</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ios: {
+                            bg: '#F2F2F7',
+                            card: '#FFFFFF',
+                            blue: '#007AFF',
+                            gray: '#8E8E93',
+                            lightGray: '#E5E5EA',
+                            separator: '#C6C6C8',
+                            darkText: '#000000',
+                            subText: '#3C3C4399'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['-apple-system', 'BlinkMacSystemFont', "SF Pro Text", "SF Pro Icons", "Helvetica Neue", 'Helvetica', 'Arial', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #F2F2F7;
+            color: #000000;
+            -webkit-font-smoothing: antialiased;
+        }
+        /* iOS Grouped Table View Styling */
+        .ios-card {
+            background: #FFFFFF;
+            border-radius: 14px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+        /* Smooth transition for accordion */
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+            opacity: 0;
+        }
+        .accordion-content.open {
+            max-height: 500px;
+            opacity: 1;
+        }
+        .chevron {
+            transition: transform 0.3s ease;
+        }
+        .chevron.open {
+            transform: rotate(90deg);
+        }
+    </style>
+    <!-- Structured Data for SEO (FAQPage JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can I install TrollStore without jailbreak?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, TrollStore can be installed on supported iOS versions without a jailbreak by exploiting core trust vulnerabilities (like CoreTrust bugs discovered by opa334)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How to install TrollStore on iOS 17 / iOS 18?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Currently, direct CoreTrust installation methods are limited to specific vulnerable iOS versions (typically iOS 15.0 - 16.6.1 or certain 17.0 versions depending on device exploits). Always check current iOS compatibility tables before attempting."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is TrollStore and what does it do?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "TrollStore is a permanent IPA sideloading application for iOS that exploits a CoreTrust bug, allowing you to install apps with full system privileges without revoking or expiration issues."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why is TrollStore not working or can't open?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "If TrollStore crashes or won't open, ensure you have refreshed your persistence helper via the installed jailbreak helper app, or check if your iOS version has any known signature verification blocks."
+          }
+        }
+      ]
+    }
+    </script>
+</head>
+<body class="min-h-screen pb-12 font-sans">
+
+    <!-- Sticky iOS Navigation Bar -->
+    <header class="sticky top-0 z-50 backdrop-blur-xl bg-white/80 border-b border-gray-200/60">
+        <div class="max-w-2xl mx-auto px-4 py-3 flex flex-col gap-3">
+            <div class="flex items-center justify-between">
+                <div>
+                    <span class="text-xs font-semibold text-ios-blue uppercase tracking-wider">Apple Support Style</span>
+                    <h1 class="text-xl font-bold tracking-tight text-gray-900">TrollStore FAQ Guide</h1>
+                </div>
+                
+                <!-- Navigation to Home and Zone Badge -->
+                <div class="flex items-center gap-2">
+                    <a href="index.html" class="bg-gray-100 hover:bg-gray-200 text-gray-800 text-xs font-medium px-3 py-1 rounded-full transition-all flex items-center space-x-1 shadow-xs border border-gray-200">
+                        <span>🏠 Home</span>
+                    </a>
+                    <div class="bg-ios-blue/10 text-ios-blue text-xs font-medium px-2.5 py-1 rounded-full">
+                        iOS 15 - 18 Zone
+                    </div>
+                </div>
+            </div>
+            <!-- Search Bar (iOS Spotlight Style) -->
+            <div class="relative">
+                <span class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-gray-400">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                </span>
+                <input type="text" id="searchInput" placeholder="Search questions (e.g., jailbreak, iOS 18, error...)" 
+                    class="w-full pl-10 pr-4 py-2 bg-gray-100 dark:bg-gray-200/70 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-ios-blue transition-all">
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="max-w-2xl mx-auto px-4 mt-6 space-y-6">
+
+        <!-- Category 1: Installation & Jailbreak -->
+        <section class="faq-category">
+            <h2 class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2 px-1">Installation & Jailbreak</h2>
+            <div class="ios-card divide-y divide-gray-100 overflow-hidden">
+                <!-- Item 1 -->
+                <div class="faq-item">
+                    <button onclick="toggleAccordion(this)" class="w-full px-4 py-3.5 text-left flex items-center justify-between hover:bg-gray-50/80 transition-colors">
+                        <span class="text-sm font-medium text-gray-900 pr-2">Can I install TrollStore without jailbreak?</span>
+                        <svg class="chevron w-4 h-4 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+                    </button>
+                    <div class="accordion-content px-4 pb-4 text-sm text-gray-600 leading-relaxed">
+                        <p><strong>Yes.</strong> TrollStore exploits an iOS CoreTrust vulnerability[cite: 4], allowing users to permanently sign and install IPA applications without needing a jailbreak. It is not a traditional jailbreak and does not modify the system kernel.</p>
+                    </div>
+                </div>
+                <!-- Item 2 -->
+                <div class="faq-item">
+                    <button onclick="toggleAccordion(this)" class="w-full px-4 py-3.5 text-left flex items-center justify-between hover:bg-gray-50/80 transition-colors">
+                        <span class="text-sm font-medium text-gray-900 pr-2">How to install TrollStore on iOS 17 / iOS 18?</span>
+                        <svg class="chevron w-4 h-4 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+                    </button>
+                    <div class="accordion-content px-4 pb-4 text-sm text-gray-600 leading-relaxed">
+                        <p>Currently, the installation path heavily depends on your specific iOS version. iOS 15.0 through 16.6.1 and certain specific versions support direct installation. For iOS 17/18, stay tuned for updates from developer opa334[cite: 4], and avoid unofficial or fake installation tools found online.</p>
+                    </div>
+                </div>
+                <!-- Item 3 -->
+                <div class="faq-item">
+                    <button onclick="toggleAccordion(this)" class="w-full px-4 py-3.5 text-left flex items-center justify-between hover:bg-gray-50/80 transition-colors">
+                        <span class="text-sm font-medium text-gray-900 pr-2">How to install TrollStore without PC?</span>
+                        <svg class="chevron w-4 h-4 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+                    </button>
+                    <div class="accordion-content px-4 pb-4 text-sm text-gray-600 leading-relaxed">
+                        <p>On supported system versions, you can perform a PC-free installation directly via Safari by tapping official verified online installation links. However, if no exploit webpage is available, a desktop assistant tool (such as Sideloadly or TrollInstaller) is typically required for initial deployment.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Category 2: Compatibility & What Is -->
+        <section class="faq-category">
+            <h2 class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2 px-1">Compatibility & What Is</h2>
+            <div class="ios-card divide-y divide-gray-100 overflow-hidden">
+                <!-- Item 4 -->
+                <div class="faq-item">
+                    <button onclick="toggleAccordion(this)" class="w-full px-4 py-3.5 text-left flex items-center justify-between hover:bg-gray-50/80 transition-colors">
+                        <span class="text-sm font-medium text-gray-900 pr-2">What is TrollStore and what does it do?</span>
+                        <svg class="chevron w-4 h-4 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+                    </button>
+                    <div class="accordion-content px-4 pb-4 text-sm text-gray-600 leading-relaxed">
+                        <p>TrollStore is a persistent application installer for iOS[cite: 4]. It allows users to permanently install any IPA application without Apple's official 7-day expiration limit, and apps will not crash due to revoked signatures.</p>
+                    </div>
+                </div>
+                <!-- Item 5 -->
+                <div class="faq-item">
+                    <button onclick="toggleAccordion(this)" class="w-full px-4 py-3.5 text-left flex items-center justify-between hover:bg-gray-50/80 transition-colors">
+                        <span class="text-sm font-medium text-gray-900 pr-2">Will TrollStore support iOS 18?</span>
+                        <svg class="chevron w-4 h-4 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+                    </button>
+                    <div class="accordion-content px-4 pb-4 text-sm text-gray-600 leading-relaxed">
+                        <p>As of now, Apple has patched the underlying CoreTrust vulnerability in iOS 17 and later systems. Unless a new similar core trust vulnerability is discovered in the future, official TrollStore cannot run directly on iOS 18.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Category 3: Troubleshooting -->
+        <section class="faq-category">
+            <h2 class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2 px-1">Troubleshooting</h2>
+            <div class="ios-card divide-y divide-gray-100 overflow-hidden">
+                <!-- Item 6 -->
+                <div class="faq-item">
+                    <button onclick="toggleAccordion(this)" class="w-full px-4 py-3.5 text-left flex items-center justify-between hover:bg-gray-50/80 transition-colors">
+                        <span class="text-sm font-medium text-gray-900 pr-2">Why is TrollStore not working or crashing?</span>
+                        <svg class="chevron w-4 h-4 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+                    </button>
+                    <div class="accordion-content px-4 pb-4 text-sm text-gray-600 leading-relaxed">
+                        <p>Common reasons include: Persistence Helper not correctly bound to a system app, system verification blocks, or corrupted installation packages. It is recommended to open TrollStore settings and reinstall the persistence helper (such as the Tips app).</p>
+                    </div>
+                </div>
+                <!-- Item 7 -->
+                <div class="faq-item">
+                    <button onclick="toggleAccordion(this)" class="w-full px-4 py-3.5 text-left flex items-center justify-between hover:bg-gray-50/80 transition-colors">
+                        <span class="text-sm font-medium text-gray-900 pr-2">Can't open TrollStore / App exits immediately</span>
+                        <svg class="chevron w-4 h-4 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+                    </button>
+                    <div class="accordion-content px-4 pb-4 text-sm text-gray-600 leading-relaxed">
+                        <p>If the icon turns grey or crashes immediately upon opening, it means the CoreTrust signature cache has expired. You need to reapply the fix through the bound helper app, or check your device's Developer Mode / provisioning profile status.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEO Value & Best Practices Card -->
+        <section class="bg-blue-50/70 border border-blue-100 rounded-2xl p-4 text-xs text-blue-900 space-y-2">
+            <div class="flex items-center gap-2 font-semibold text-ios-blue text-sm">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                SEO Architecture & Indexing Value
+            </div>
+            <p>This page features built-in standard <strong>FAQPage Structured Data (JSON-LD)</strong>[cite: 4], significantly increasing the probability of displaying rich snippets (FAQ dropdowns) in Google search results. Combined with long-tail search term matrices extracted via Answer Socrates, it precisely targets high-traffic TOFU (Top of Funnel) search queries.</p>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="max-w-2xl mx-auto px-4 mt-8 text-center text-xs text-gray-400">
+        <p>&copy; 2026 TrollStore FAQ Guide. Designed with Apple Human Interface Guidelines.</p>
+    </footer>
+
+    <!-- Interactive JavaScript -->
+    <script>
+        // Accordion Toggle Function
+        function toggleAccordion(button) {
+            const content = button.nextElementSibling;
+            const chevron = button.querySelector('.chevron');
+            
+            // Toggle current
+            const isOpen = content.classList.contains('open');
+            
+            // Optional: Close all other accordions for clean UX
+            document.querySelectorAll('.accordion-content').forEach(el => el.classList.remove('open'));
+            document.querySelectorAll('.chevron').forEach(el => el.classList.remove('open'));
+
+            if (!isOpen) {
+                content.classList.add('open');
+                chevron.classList.add('open');
+            }
+        }
+
+        // Real-time Search Filtering
+        const searchInput = document.getElementById('searchInput');
+        searchInput.addEventListener('input', function(e) {
+            const term = e.target.value.toLowerCase().trim();
+            const faqItems = document.querySelectorAll('.faq-item');
+            const categories = document.querySelectorAll('.faq-category');
+
+            faqItems.forEach(item => {
+                const text = item.textContent.toLowerCase();
+                if (text.includes(term)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+
+            // Hide category headers if all children are hidden
+            categories.forEach(cat => {
+                const visibleItems = cat.querySelectorAll('.faq-item[style*="display: block"], .faq-item:not([style*="display: none"])');
+                if (visibleItems.length === 0 && term !== '') {
+                    cat.style.display = 'none';
+                } else {
+                    cat.style.display = 'block';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
