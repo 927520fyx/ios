@@ -2,11 +2,57 @@
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- 优化1：移除 viewport 缩放限制，修复无障碍（Accessibility）审计扣分 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TrollStore - Permanent iOS Sideloading & No Jailbreak Solution</title>
     <meta name="description" content="TrollStore is a permanent iOS sideloading utility exploiting CoreTrust vulnerabilities. Install apps without expiration or revocation. iOS 14.0 - 17.0 supported.">
     <meta name="keywords" content="TrollStore, trollstore download, trollstore ipa, ios sideloading, coretrust vulnerability, trollstore ios 17, permanent sign">
     
+    <!-- 优化2：添加 Canonical 规范链接，防止重复内容惩罚 -->
+    <link rel="canonical" href="https://927520fyx.github.io/ios/">
+    
+    <!-- 优化3：添加 FAQ Schema 结构化数据，助力谷歌搜索结果展示折叠问答面板 -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is TrollStore and how does it work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "TrollStore is a permanent sideloading utility created by @opa334. It exploits a CoreTrust code-signature verification bug in iOS, allowing apps to be installed with a permanent system-level signature that never expires."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is TrollStore compatible with iOS 18 or newer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Apple completely patched the underlying CoreTrust vulnerability in iOS 17.1 and subsequent versions (including iOS 18). TrollStore is strictly limited to iOS 14.0 - 17.0."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I fix TrollStore error 175 or 180?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "These installation errors usually occur due to residual profiles, pending OTA updates, or improper helper bindings. Go to Settings > General > VPN & Device Management, clear any stuck profiles, reboot your device, and try again."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does TrollStore require a jailbreak?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No, TrollStore is a jailbreak-free installation method. While some installation helpers use temporary entry points, TrollStore itself runs on stock iOS via the CoreTrust exploit."
+          }
+        }
+      ]
+    }
+    </script>
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Inter Font -->
@@ -97,7 +143,7 @@
                 <a href="#testimonials" class="px-3 py-1.5 rounded-full text-xs font-medium text-zinc-600 hover:text-zinc-900 hover:bg-zinc-200/60 transition-all active:scale-95 whitespace-nowrap">Reviews</a>
                 <a href="#faq" class="px-3 py-1.5 rounded-full text-xs font-medium text-zinc-600 hover:text-zinc-900 hover:bg-zinc-200/60 transition-all active:scale-95 whitespace-nowrap">FAQ</a>
                 
-                <!-- 【新增】跳转到独立的 faq.html 网页的导航按钮 -->
+                <!-- 跳转到独立的 faq.html 网页的导航按钮 -->
                 <a href="faq.html" class="px-3 py-1.5 rounded-full text-xs font-semibold text-blue-600 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 transition-all active:scale-95 whitespace-nowrap border border-blue-200/60 shadow-xs flex items-center space-x-1">
                     <span>📖 FAQ Guide</span>
                 </a>
@@ -132,7 +178,8 @@
                 TrollStore: Sideload iOS Apps <span class="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Permanently</span>
             </h1>
 
-            <p class="text-sm sm:text-lg md:text-xl text-zinc-500 max-w-2xl mx-auto leading-relaxed">
+            <!-- 优化4：将说明文字颜色由 text-zinc-500 调整为 text-zinc-600，彻底解决无障碍对比度扣分 -->
+            <p class="text-sm sm:text-lg md:text-xl text-zinc-600 max-w-2xl mx-auto leading-relaxed">
                 The revolutionary CoreTrust-based utility that lets you install any IPA on your iPhone or iPad without expiration, revocation, or a jailbreak.
             </p>
 
@@ -150,19 +197,19 @@
             <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl mx-auto pt-12 border-t border-zinc-200/60 mt-12">
                 <div class="glass-card p-4 rounded-2xl text-center">
                     <div class="text-2xl font-bold text-zinc-900">100%</div>
-                    <div class="text-xs text-zinc-500 mt-0.5">Permanent Signing</div>
+                    <div class="text-xs text-zinc-600 mt-0.5">Permanent Signing</div>
                 </div>
                 <div class="glass-card p-4 rounded-2xl text-center">
                     <div class="text-2xl font-bold text-zinc-900">0 Days</div>
-                    <div class="text-xs text-zinc-500 mt-0.5">No 7-Day Expiry</div>
+                    <div class="text-xs text-zinc-600 mt-0.5">No 7-Day Expiry</div>
                 </div>
                 <div class="glass-card p-4 rounded-2xl text-center">
                     <div class="text-2xl font-bold text-zinc-900">No PC</div>
-                    <div class="text-xs text-zinc-500 mt-0.5">Direct Install Options</div>
+                    <div class="text-xs text-zinc-600 mt-0.5">Direct Install Options</div>
                 </div>
                 <div class="glass-card p-4 rounded-2xl text-center">
                     <div class="text-2xl font-bold text-zinc-900">iOS 14-17</div>
-                    <div class="text-xs text-zinc-500 mt-0.5">Broad Compatibility</div>
+                    <div class="text-xs text-zinc-600 mt-0.5">Broad Compatibility</div>
                 </div>
             </div>
         </div>
@@ -176,44 +223,44 @@
             <div class="text-center space-y-3">
                 <h2 class="text-xs font-bold uppercase tracking-widest text-blue-600">Powerful Capabilities</h2>
                 <h3 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-zinc-900">Why TrollStore is a Game Changer</h3>
-                <p class="text-zinc-500 text-sm sm:text-base max-w-xl mx-auto">Engineered to bypass traditional Apple sideloading limitations with system-level integration.</p>
+                <p class="text-zinc-600 text-sm sm:text-base max-w-xl mx-auto">Engineered to bypass traditional Apple sideloading limitations with system-level integration.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div class="glass-card p-6 sm:p-8 rounded-3xl apple-card-hover space-y-4">
                     <div class="w-12 h-12 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center text-xl font-bold shadow-inner">🔓</div>
                     <h4 class="text-lg font-bold text-zinc-900">Permanent App Signing</h4>
-                    <p class="text-sm text-zinc-600 leading-relaxed">Say goodbye to 7-day certificate expiration. Installed apps remain active indefinitely without needing a PC.</p>
+                    <p class="text-sm text-zinc-700 leading-relaxed">Say goodbye to 7-day certificate expiration. Installed apps remain active indefinitely without needing a PC.</p>
                 </div>
 
                 <div class="glass-card p-6 sm:p-8 rounded-3xl apple-card-hover space-y-4">
                     <div class="w-12 h-12 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center text-xl font-bold shadow-inner">⚡</div>
                     <h4 class="text-lg font-bold text-zinc-900">No Jailbreak Required</h4>
-                    <p class="text-sm text-zinc-600 leading-relaxed">Operates entirely without full system jailbreaking by leveraging the CoreTrust vulnerability securely.</p>
+                    <p class="text-sm text-zinc-700 leading-relaxed">Operates entirely without full system jailbreaking by leveraging the CoreTrust vulnerability securely.</p>
                 </div>
 
                 <div class="glass-card p-6 sm:p-8 rounded-3xl apple-card-hover space-y-4">
                     <div class="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-xl font-bold shadow-inner">📱</div>
                     <h4 class="text-lg font-bold text-zinc-900">iOS 14.0 - 17.0 Support</h4>
-                    <p class="text-sm text-zinc-600 leading-relaxed">Supports a wide range of devices and system versions, including A9-A16 and M-series chips up to iOS 17.0.</p>
+                    <p class="text-sm text-zinc-700 leading-relaxed">Supports a wide range of devices and system versions, including A9-A16 and M-series chips up to iOS 17.0.</p>
                 </div>
 
                 <div class="glass-card p-6 sm:p-8 rounded-3xl apple-card-hover space-y-4">
                     <div class="w-12 h-12 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center text-xl font-bold shadow-inner">📦</div>
                     <h4 class="text-lg font-bold text-zinc-900">Install Any IPA File</h4>
-                    <p class="text-sm text-zinc-600 leading-relaxed">Easily import and install custom IPAs directly from Safari, file manager, or third-party repositories.</p>
+                    <p class="text-sm text-zinc-700 leading-relaxed">Easily import and install custom IPAs directly from Safari, file manager, or third-party repositories.</p>
                 </div>
 
                 <div class="glass-card p-6 sm:p-8 rounded-3xl apple-card-hover space-y-4">
                     <div class="w-12 h-12 rounded-2xl bg-rose-50 text-rose-600 flex items-center justify-center text-xl font-bold shadow-inner">🛡️</div>
                     <h4 class="text-lg font-bold text-zinc-900">Bypass Sandbox Rules</h4>
-                    <p class="text-sm text-zinc-600 leading-relaxed">Enjoy root-level permissions for specific system tools like Filza file manager and advanced tweaks.</p>
+                    <p class="text-sm text-zinc-700 leading-relaxed">Enjoy root-level permissions for specific system tools like Filza file manager and advanced tweaks.</p>
                 </div>
 
                 <div class="glass-card p-6 sm:p-8 rounded-3xl apple-card-hover space-y-4">
                     <div class="w-12 h-12 rounded-2xl bg-purple-50 text-purple-600 flex items-center justify-center text-xl font-bold shadow-inner">🚫</div>
                     <h4 class="text-lg font-bold text-zinc-900">Ad-Free & Modded Apps</h4>
-                    <p class="text-sm text-zinc-600 leading-relaxed">Run modified client versions, hacked games, and ad-free utilities smoothly without sudden app revocation.</p>
+                    <p class="text-sm text-zinc-700 leading-relaxed">Run modified client versions, hacked games, and ad-free utilities smoothly without sudden app revocation.</p>
                 </div>
             </div>
         </section>
@@ -223,17 +270,17 @@
             <div class="text-center space-y-3">
                 <h2 class="text-xs font-bold uppercase tracking-widest text-blue-600">Head-to-Head Comparison</h2>
                 <h3 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-zinc-900">Standard iOS vs. TrollStore</h3>
-                <p class="text-zinc-500 text-sm sm:text-base max-w-xl mx-auto">See why millions of Apple enthusiasts prefer TrollStore over standard sideloading methods.</p>
+                <p class="text-zinc-600 text-sm sm:text-base max-w-xl mx-auto">See why millions of Apple enthusiasts prefer TrollStore over standard sideloading methods.</p>
             </div>
 
             <div class="glass-card rounded-3xl overflow-hidden shadow-sm border border-zinc-200">
                 <div class="overflow-x-auto">
                     <table class="w-full text-left border-collapse min-w-[550px]">
                         <thead>
-                            <tr class="bg-zinc-100/80 border-b border-zinc-200 text-xs font-bold uppercase tracking-wider text-zinc-600">
+                            <tr class="bg-zinc-100/80 border-b border-zinc-200 text-xs font-bold uppercase tracking-wider text-zinc-700">
                                 <th class="p-4 sm:p-6">Feature / Metric</th>
-                                <th class="p-4 sm:p-6 text-zinc-500">Standard App Store</th>
-                                <th class="p-4 sm:p-6 text-zinc-500">AltStore / ESIGN</th>
+                                <th class="p-4 sm:p-6 text-zinc-600">Standard App Store</th>
+                                <th class="p-4 sm:p-6 text-zinc-600">AltStore / ESIGN</th>
                                 <th class="p-4 sm:p-6 text-blue-600 bg-blue-50/50">TrollStore ⚡</th>
                             </tr>
                         </thead>
@@ -279,14 +326,14 @@
             <div class="text-center space-y-3">
                 <h2 class="text-xs font-bold uppercase tracking-widest text-blue-600">Step-by-Step Guide</h2>
                 <h3 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-zinc-900">How to Install TrollStore</h3>
-                <p class="text-zinc-500 text-sm sm:text-base max-w-xl mx-auto">Follow this simple 3-step deployment guide tailored for your device and iOS version.</p>
+                <p class="text-zinc-600 text-sm sm:text-base max-w-xl mx-auto">Follow this simple 3-step deployment guide tailored for your device and iOS version.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div class="glass-card p-6 sm:p-8 rounded-3xl apple-card-hover space-y-4 relative">
                     <div class="w-10 h-10 rounded-2xl bg-blue-600 text-white flex items-center justify-center font-bold text-sm shadow-md">1</div>
                     <h4 class="text-lg font-bold text-zinc-900">Check Compatibility</h4>
-                    <p class="text-sm text-zinc-600 leading-relaxed">
+                    <p class="text-sm text-zinc-700 leading-relaxed">
                         Verify your device is running a compatible iOS version (iOS 14.0 - 17.0). Ensure no blocking OTA updates are present.
                     </p>
                 </div>
@@ -294,7 +341,7 @@
                 <div class="glass-card p-6 sm:p-8 rounded-3xl apple-card-hover space-y-4 relative">
                     <div class="w-10 h-10 rounded-2xl bg-blue-600 text-white flex items-center justify-center font-bold text-sm shadow-md">2</div>
                     <h4 class="text-lg font-bold text-zinc-900">Launch Helper / IPA</h4>
-                    <p class="text-sm text-zinc-600 leading-relaxed">
+                    <p class="text-sm text-zinc-700 leading-relaxed">
                         Use a compatible helper tool (such as TrollInstallerX or Dopamine) or direct Safari installation link to trigger the exploit.
                     </p>
                 </div>
@@ -302,7 +349,7 @@
                 <div class="glass-card p-6 sm:p-8 rounded-3xl apple-card-hover space-y-4 relative">
                     <div class="w-10 h-10 rounded-2xl bg-blue-600 text-white flex items-center justify-center font-bold text-sm shadow-md">3</div>
                     <h4 class="text-lg font-bold text-zinc-900">Enjoy Permanent Apps</h4>
-                    <p class="text-sm text-zinc-600 leading-relaxed">
+                    <p class="text-sm text-zinc-700 leading-relaxed">
                         Open TrollStore, install your favorite IPAs with a single tap, and assign the persistence helper to a system app like Tips.
                     </p>
                 </div>
@@ -313,7 +360,7 @@
                 <div class="space-y-3 relative z-10 text-center sm:text-left">
                     <span class="text-xs uppercase tracking-widest bg-blue-500/30 text-blue-200 px-3 py-1 rounded-full font-semibold">Official Release</span>
                     <h4 class="text-2xl sm:text-3xl font-bold tracking-tight">Ready to Deploy TrollStore?</h4>
-                    <p class="text-zinc-400 text-sm max-w-md">Download the latest stable .ipa directly from the official GitHub repository or check the FAQ for troubleshooting.</p>
+                    <p class="text-zinc-300 text-sm max-w-md">Download the latest stable .ipa directly from the official GitHub repository or check the FAQ for troubleshooting.</p>
                 </div>
                 <div class="flex flex-wrap items-center justify-center gap-3 relative z-10 shrink-0">
                     <a href="https://github.com/opa334/TrollStore/releases" target="_blank" class="px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-sm font-semibold shadow-lg transition-all active:scale-95">
@@ -331,7 +378,7 @@
             <div class="text-center space-y-3">
                 <h2 class="text-xs font-bold uppercase tracking-widest text-blue-600">Balanced Analysis</h2>
                 <h3 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-zinc-900">Pros & Cons of TrollStore</h3>
-                <p class="text-zinc-500 text-sm sm:text-base max-w-xl mx-auto">An honest evaluation of advantages and limitations before you install.</p>
+                <p class="text-zinc-600 text-sm sm:text-base max-w-xl mx-auto">An honest evaluation of advantages and limitations before you install.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -340,7 +387,7 @@
                         <div class="w-10 h-10 rounded-2xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-lg">✓</div>
                         <h4 class="text-lg font-bold text-zinc-900">Advantages (Pros)</h4>
                     </div>
-                    <ul class="space-y-3 text-sm text-zinc-600">
+                    <ul class="space-y-3 text-sm text-zinc-700">
                         <li class="flex items-start space-x-2">
                             <span class="text-emerald-600 font-bold">✓</span>
                             <span><strong>Permanent installation:</strong> Apps never expire or require weekly resigns.</span>
@@ -365,7 +412,7 @@
                         <div class="w-10 h-10 rounded-2xl bg-rose-100 text-rose-700 flex items-center justify-center font-bold text-lg">✕</div>
                         <h4 class="text-lg font-bold text-zinc-900">Limitations (Cons)</h4>
                     </div>
-                    <ul class="space-y-3 text-sm text-zinc-600">
+                    <ul class="space-y-3 text-sm text-zinc-700">
                         <li class="flex items-start space-x-2">
                             <span class="text-rose-600 font-bold">✕</span>
                             <span><strong>Strict version dependency:</strong> Completely impossible on iOS 17.1 and newer due to Apple patches.</span>
@@ -388,48 +435,48 @@
             <div class="text-center space-y-3">
                 <h2 class="text-xs font-bold uppercase tracking-widest text-blue-600">Community Feedback</h2>
                 <h3 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-zinc-900">Loved by iOS Enthusiasts</h3>
-                <p class="text-zinc-500 text-sm sm:text-base max-w-xl mx-auto">Hear what power users and developers say about their TrollStore experience.</p>
+                <p class="text-zinc-600 text-sm sm:text-base max-w-xl mx-auto">Hear what power users and developers say about their TrollStore experience.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div class="glass-card p-6 sm:p-8 rounded-3xl apple-card-hover space-y-4 flex flex-col justify-between">
                     <div class="space-y-3">
-                        <div class="flex text-amber-400 text-sm">★★★★★</div>
-                        <p class="text-sm text-zinc-600 leading-relaxed">"TrollStore completely changed how I use my iPhone. No more refreshing AltStore every 7 days. Absolute masterpiece!"</p>
+                        <div class="flex text-amber-500 text-sm">★★★★★</div>
+                        <p class="text-sm text-zinc-700 leading-relaxed">"TrollStore completely changed how I use my iPhone. No more refreshing AltStore every 7 days. Absolute masterpiece!"</p>
                     </div>
                     <div class="flex items-center space-x-3 pt-4 border-t border-zinc-100">
                         <div class="w-9 h-9 rounded-full bg-blue-100 text-blue-700 font-bold flex items-center justify-center text-xs">JD</div>
                         <div>
                             <div class="text-xs font-bold text-zinc-900">Jason Davis</div>
-                            <div class="text-[10px] text-zinc-400">iOS Power User</div>
+                            <div class="text-[10px] text-zinc-500">iOS Power User</div>
                         </div>
                     </div>
                 </div>
 
                 <div class="glass-card p-6 sm:p-8 rounded-3xl apple-card-hover space-y-4 flex flex-col justify-between">
                     <div class="space-y-3">
-                        <div class="flex text-amber-400 text-sm">★★★★★</div>
-                        <p class="text-sm text-zinc-600 leading-relaxed">"Being able to install Filza with root privileges without full jailbreaking is incredible. The installation guide was super clear."</p>
+                        <div class="flex text-amber-500 text-sm">★★★★★</div>
+                        <p class="text-sm text-zinc-700 leading-relaxed">"Being able to install Filza with root privileges without full jailbreaking is incredible. The installation guide was super clear."</p>
                     </div>
                     <div class="flex items-center space-x-3 pt-4 border-t border-zinc-100">
                         <div class="w-9 h-9 rounded-full bg-indigo-100 text-indigo-700 font-bold flex items-center justify-center text-xs">SK</div>
                         <div>
                             <div class="text-xs font-bold text-zinc-900">Sarah Klein</div>
-                            <div class="text-[10px] text-zinc-400">App Developer</div>
+                            <div class="text-[10px] text-zinc-500">App Developer</div>
                         </div>
                     </div>
                 </div>
 
                 <div class="glass-card p-6 sm:p-8 rounded-3xl apple-card-hover space-y-4 flex flex-col justify-between">
                     <div class="space-y-3">
-                        <div class="flex text-amber-400 text-sm">★★★★★</div>
-                        <p class="text-sm text-zinc-600 leading-relaxed">"Zero revokes, zero hassle. If you're lucky enough to be on iOS 17.0 or below, getting TrollStore is a total no-brainer."</p>
+                        <div class="flex text-amber-500 text-sm">★★★★★</div>
+                        <p class="text-sm text-zinc-700 leading-relaxed">"Zero revokes, zero hassle. If you're lucky enough to be on iOS 17.0 or below, getting TrollStore is a total no-brainer."</p>
                     </div>
                     <div class="flex items-center space-x-3 pt-4 border-t border-zinc-100">
                         <div class="w-9 h-9 rounded-full bg-emerald-100 text-emerald-700 font-bold flex items-center justify-center text-xs">ML</div>
                         <div>
                             <div class="text-xs font-bold text-zinc-900">Michael Lin</div>
-                            <div class="text-[10px] text-zinc-400">Tech Blogger</div>
+                            <div class="text-[10px] text-zinc-500">Tech Blogger</div>
                         </div>
                     </div>
                 </div>
@@ -441,16 +488,16 @@
             <div class="text-center space-y-3">
                 <h2 class="text-xs font-bold uppercase tracking-widest text-blue-600">Got Questions?</h2>
                 <h3 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-zinc-900">Frequently Asked Questions</h3>
-                <p class="text-zinc-500 text-sm sm:text-base max-w-xl mx-auto">Everything you need to know about compatibility, safety, and troubleshooting.</p>
+                <p class="text-zinc-600 text-sm sm:text-base max-w-xl mx-auto">Everything you need to know about compatibility, safety, and troubleshooting.</p>
             </div>
 
             <div class="space-y-3 max-w-3xl mx-auto">
                 <div class="glass-card rounded-2xl overflow-hidden transition-all duration-300 border border-zinc-200/80">
                     <button onclick="toggleFaq(1)" class="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 cursor-pointer select-none group">
                         <span class="text-sm sm:text-base font-bold text-zinc-900 group-hover:text-blue-600 transition-colors">What is TrollStore and how does it work?</span>
-                        <div id="faq-icon-1" class="w-7 h-7 rounded-full bg-zinc-100 flex items-center justify-center text-zinc-500 group-hover:bg-blue-50 group-hover:text-blue-600 transition-all shrink-0">↓</div>
+                        <div id="faq-icon-1" class="w-7 h-7 rounded-full bg-zinc-100 flex items-center justify-center text-zinc-600 group-hover:bg-blue-50 group-hover:text-blue-600 transition-all shrink-0">↓</div>
                     </button>
-                    <div id="faq-content-1" class="hidden px-5 sm:px-6 pb-6 text-sm text-zinc-600 leading-relaxed border-t border-zinc-100 pt-4">
+                    <div id="faq-content-1" class="hidden px-5 sm:px-6 pb-6 text-sm text-zinc-700 leading-relaxed border-t border-zinc-100 pt-4">
                         TrollStore is a permanent sideloading utility created by @opa334. It exploits a CoreTrust code-signature verification bug in iOS, allowing apps to be installed with a permanent system-level signature that never expires.
                     </div>
                 </div>
@@ -458,9 +505,9 @@
                 <div class="glass-card rounded-2xl overflow-hidden transition-all duration-300 border border-zinc-200/80">
                     <button onclick="toggleFaq(2)" class="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 cursor-pointer select-none group">
                         <span class="text-sm sm:text-base font-bold text-zinc-900 group-hover:text-blue-600 transition-colors">Is TrollStore compatible with iOS 18 or newer?</span>
-                        <div id="faq-icon-2" class="w-7 h-7 rounded-full bg-zinc-100 flex items-center justify-center text-zinc-500 group-hover:bg-blue-50 group-hover:text-blue-600 transition-all shrink-0">↓</div>
+                        <div id="faq-icon-2" class="w-7 h-7 rounded-full bg-zinc-100 flex items-center justify-center text-zinc-600 group-hover:bg-blue-50 group-hover:text-blue-600 transition-all shrink-0">↓</div>
                     </button>
-                    <div id="faq-content-2" class="hidden px-5 sm:px-6 pb-6 text-sm text-zinc-600 leading-relaxed border-t border-zinc-100 pt-4">
+                    <div id="faq-content-2" class="hidden px-5 sm:px-6 pb-6 text-sm text-zinc-700 leading-relaxed border-t border-zinc-100 pt-4">
                         No. Apple completely patched the underlying CoreTrust vulnerability in iOS 17.1 and subsequent versions (including iOS 18). TrollStore is strictly limited to iOS 14.0 - 17.0.
                     </div>
                 </div>
@@ -468,9 +515,9 @@
                 <div class="glass-card rounded-2xl overflow-hidden transition-all duration-300 border border-zinc-200/80">
                     <button onclick="toggleFaq(3)" class="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 cursor-pointer select-none group">
                         <span class="text-sm sm:text-base font-bold text-zinc-900 group-hover:text-blue-600 transition-colors">How do I fix TrollStore error 175 or 180?</span>
-                        <div id="faq-icon-3" class="w-7 h-7 rounded-full bg-zinc-100 flex items-center justify-center text-zinc-500 group-hover:bg-blue-50 group-hover:text-blue-600 transition-all shrink-0">↓</div>
+                        <div id="faq-icon-3" class="w-7 h-7 rounded-full bg-zinc-100 flex items-center justify-center text-zinc-600 group-hover:bg-blue-50 group-hover:text-blue-600 transition-all shrink-0">↓</div>
                     </button>
-                    <div id="faq-content-3" class="hidden px-5 sm:px-6 pb-6 text-sm text-zinc-600 leading-relaxed border-t border-zinc-100 pt-4">
+                    <div id="faq-content-3" class="hidden px-5 sm:px-6 pb-6 text-sm text-zinc-700 leading-relaxed border-t border-zinc-100 pt-4">
                         These installation errors usually occur due to residual profiles, pending OTA updates, or improper helper bindings. Go to Settings > General > VPN & Device Management, clear any stuck profiles, reboot your device, and try again.
                     </div>
                 </div>
@@ -478,9 +525,9 @@
                 <div class="glass-card rounded-2xl overflow-hidden transition-all duration-300 border border-zinc-200/80">
                     <button onclick="toggleFaq(4)" class="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 cursor-pointer select-none group">
                         <span class="text-sm sm:text-base font-bold text-zinc-900 group-hover:text-blue-600 transition-colors">Does TrollStore require a jailbreak?</span>
-                        <div id="faq-icon-4" class="w-7 h-7 rounded-full bg-zinc-100 flex items-center justify-center text-zinc-500 group-hover:bg-blue-50 group-hover:text-blue-600 transition-all shrink-0">↓</div>
+                        <div id="faq-icon-4" class="w-7 h-7 rounded-full bg-zinc-100 flex items-center justify-center text-zinc-600 group-hover:bg-blue-50 group-hover:text-blue-600 transition-all shrink-0">↓</div>
                     </button>
-                    <div id="faq-content-4" class="hidden px-5 sm:px-6 pb-6 text-sm text-zinc-600 leading-relaxed border-t border-zinc-100 pt-4">
+                    <div id="faq-content-4" class="hidden px-5 sm:px-6 pb-6 text-sm text-zinc-700 leading-relaxed border-t border-zinc-100 pt-4">
                         No, TrollStore is a jailbreak-free installation method. While some installation helpers use temporary entry points, TrollStore itself runs on stock iOS via the CoreTrust exploit.
                     </div>
                 </div>
@@ -494,7 +541,7 @@
         <div class="glass-card rounded-3xl p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-sm">
             <div class="text-center sm:text-left space-y-1">
                 <div class="text-sm font-bold text-zinc-900">TrollStore Community & Guide</div>
-                <p class="text-xs text-zinc-500">Empowering iOS users with permanent sideloading freedom.</p>
+                <p class="text-xs text-zinc-600">Empowering iOS users with permanent sideloading freedom.</p>
             </div>
             <div class="flex items-center space-x-3 w-full sm:w-auto justify-center">
                 <a href="https://github.com/opa334/TrollStore" target="_blank" class="px-4 py-2 rounded-full text-xs font-medium bg-zinc-100 text-zinc-700 hover:bg-black hover:text-white transition-all active:scale-95">
@@ -505,7 +552,7 @@
                 </button>
             </div>
         </div>
-        <div class="text-center text-xs text-zinc-400 mt-6">
+        <div class="text-center text-xs text-zinc-500 mt-6">
             &copy; 2026 TrollStore Guide. Not affiliated with Apple Inc. All rights reserved.
         </div>
     </footer>
