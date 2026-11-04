@@ -54,10 +54,18 @@
     }
     </script>
 
+    <!-- 性能优化：预连接字体域名，加速连接建立 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Inter Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- 性能优化：异步加载 Google Fonts，消除渲染阻塞 -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    </noscript>
     
     <script>
         tailwind.config = {
@@ -92,6 +100,8 @@
             background-color: #fbfbfd;
             color: #1d1d1f;
             -webkit-font-smoothing: antialiased;
+            /* 优化：启用字体内置光学调整，降低加载前后的布局偏移 (CLS) */
+            font-optical-sizing: auto;
         }
         .glass-nav {
             backdrop-filter: blur(20px);
