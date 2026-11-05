@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TrollStore Frequently Asked Questions (iOS FAQ & Troubleshooting)</title>
-    <meta name="description" content="Explore comprehensive TrollStore FAQ. Find answers about iOS 15-18 compatibility, jailbreak-free sideloading, error fixes, safety, and rootless security risks.">
+    <meta name="description" content="Explore comprehensive TrollStore FAQ. Find answers about iOS compatibility, installation tutorials, error fixes, safety, and TrollStore vs AltStore comparisons.">
     <link rel="canonical" href="https://927520fyx.github.io/ios/faq.html">
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -65,7 +65,7 @@
             opacity: 0;
         }
         .accordion-content.open {
-            max-height: 600px;
+            max-height: 800px;
             opacity: 1;
         }
         .chevron {
@@ -75,7 +75,7 @@
             transform: rotate(90deg);
         }
     </style>
-    <!-- Structured Data for SEO (FAQPage JSON-LD) 深度集成关键词与长尾搜索意图 -->
+    <!-- Structured Data for SEO (FAQPage JSON-LD) 深度集成数据矩阵 -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -99,18 +99,18 @@
         },
         {
           "@type": "Question",
-          "name": "Is TrollStore rootless?",
+          "name": "What is TrollStore and what does it do?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. TrollStore works great on modern iOS versions. It uses a core trust bug to install apps safely and cleanly."
+            "text": "TrollStore is an app installer for iOS. It lets you keep apps forever. They will never expire or crash after 7 days."
           }
         },
         {
           "@type": "Question",
-          "name": "How to install TrollStore on iOS 17 / iOS 18?",
+          "name": "What iOS does TrollStore support?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "It depends on your iOS version. iOS 15.0 to 16.6.1 and some early iOS 17 versions work. Apple patched the bug in iOS 17.1 and iOS 18. So, it does not work natively on newer versions."
+            "text": "It supports iOS 14.0 up to iOS 17.0. It does not work on iOS 17.1, iOS 17.5, iOS 18, or any newer updates."
           }
         },
         {
@@ -123,15 +123,7 @@
         },
         {
           "@type": "Question",
-          "name": "What is TrollStore and what does it do?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "TrollStore is an app installer for iOS. It lets you keep apps forever. They will never expire or crash after 7 days."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Is TrollStore safe and is it a virus?",
+          "name": "Is TrollStore safe?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Yes, TrollStore is safe and open-source. But downloading bad apps from unknown sites can risk your privacy. Always get apps from trusted places."
@@ -143,6 +135,22 @@
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "If it crashes or won't open, your helper app may not be linked correctly. Open TrollStore settings and refresh your persistence helper right away."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How to fix TrollStore install failed or error code?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "If you get an error code during installation, clear stuck profiles in Settings > General > VPN & Device Management, reboot your phone, and try again."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "TrollStore vs AltStore: What is the difference?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "AltStore requires you to refresh apps every 7 days using a computer. TrollStore gives you permanent app signing with zero expiration and no weekly PC sync."
           }
         }
       ]
@@ -166,7 +174,7 @@
                         <span>🏠 Home</span>
                     </a>
                     <div class="bg-ios-blue/10 text-ios-blue text-xs font-medium px-2.5 py-1 rounded-full">
-                        iOS 15 - 18 Zone
+                        iOS 14 - 17 Zone
                     </div>
                 </div>
             </div>
@@ -175,7 +183,7 @@
                 <span class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-gray-400">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
                 </span>
-                <input type="text" id="searchInput" placeholder="Search questions (e.g., jailbreak, iOS 18, error, safe, rootless...)" 
+                <input type="text" id="searchInput" placeholder="Search questions (e.g., jailbreak, iOS 18, error, safe, AltStore...)" 
                     class="w-full pl-10 pr-4 py-2 bg-gray-100 dark:bg-gray-200/70 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-ios-blue transition-all">
             </div>
         </div>
@@ -211,16 +219,6 @@
                 <!-- Item 3 -->
                 <div class="faq-item">
                     <button onclick="toggleAccordion(this)" class="w-full px-4 py-3.5 text-left flex items-center justify-between hover:bg-gray-50/80 transition-colors">
-                        <span class="text-sm font-medium text-gray-900 pr-2">How to install TrollStore on iOS 17 / iOS 18?</span>
-                        <svg class="chevron w-4 h-4 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
-                    </button>
-                    <div class="accordion-content px-4 pb-4 text-sm text-gray-600 leading-relaxed">
-                        <p>It depends on your iOS version. iOS 15.0 to 16.6.1 and some early iOS 17 versions work. Apple patched the bug in iOS 17.1 and iOS 18[cite: 4]. So, it does not work natively on newer versions.</p>
-                    </div>
-                </div>
-                <!-- Item 4 -->
-                <div class="faq-item">
-                    <button onclick="toggleAccordion(this)" class="w-full px-4 py-3.5 text-left flex items-center justify-between hover:bg-gray-50/80 transition-colors">
                         <span class="text-sm font-medium text-gray-900 pr-2">How to install TrollStore without PC?</span>
                         <svg class="chevron w-4 h-4 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
                     </button>
@@ -235,7 +233,7 @@
         <section class="faq-category">
             <h2 class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2 px-1">Compatibility & What Is</h2>
             <div class="ios-card divide-y divide-gray-100 overflow-hidden">
-                <!-- Item 5 -->
+                <!-- Item 4 -->
                 <div class="faq-item">
                     <button onclick="toggleAccordion(this)" class="w-full px-4 py-3.5 text-left flex items-center justify-between hover:bg-gray-50/80 transition-colors">
                         <span class="text-sm font-medium text-gray-900 pr-2">What is TrollStore and what does it do?</span>
@@ -245,24 +243,24 @@
                         <p>TrollStore is an app installer for iOS[cite: 4]. It lets you keep apps forever. They will never expire or crash after 7 days.</p>
                     </div>
                 </div>
-                <!-- Item 6 -->
+                <!-- Item 5 -->
                 <div class="faq-item">
                     <button onclick="toggleAccordion(this)" class="w-full px-4 py-3.5 text-left flex items-center justify-between hover:bg-gray-50/80 transition-colors">
-                        <span class="text-sm font-medium text-gray-900 pr-2">Is TrollStore rootless?</span>
-                        <svg class="chevron w-4 h-4 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
-                    </button>
-                    <div class="accordion-content px-4 pb-4 text-sm text-gray-600 leading-relaxed">
-                        <p>Yes. TrollStore works great on modern iOS versions. It uses a core trust bug to install apps safely and cleanly.</p>
-                    </div>
-                </div>
-                <!-- Item 7 -->
-                <div class="faq-item">
-                    <button onclick="toggleAccordion(this)" class="w-full px-4 py-3.5 text-left flex items-center justify-between hover:bg-gray-50/80 transition-colors">
-                        <span class="text-sm font-medium text-gray-900 pr-2">What iOS does TrollStore support? (Version Matrix)</span>
+                        <span class="text-sm font-medium text-gray-900 pr-2">What iOS does TrollStore support?</span>
                         <svg class="chevron w-4 h-4 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
                     </button>
                     <div class="accordion-content px-4 pb-4 text-sm text-gray-600 leading-relaxed">
                         <p>It supports iOS 14.0 up to iOS 17.0. It does not work on iOS 17.1, iOS 17.5, iOS 18, or any newer updates.</p>
+                    </div>
+                </div>
+                <!-- Item 6 (New from CSV: TrollStore vs AltStore) -->
+                <div class="faq-item">
+                    <button onclick="toggleAccordion(this)" class="w-full px-4 py-3.5 text-left flex items-center justify-between hover:bg-gray-50/80 transition-colors">
+                        <span class="text-sm font-medium text-gray-900 pr-2">TrollStore vs AltStore: What is the difference?</span>
+                        <svg class="chevron w-4 h-4 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+                    </button>
+                    <div class="accordion-content px-4 pb-4 text-sm text-gray-600 leading-relaxed">
+                        <p>AltStore requires you to refresh apps every 7 days using a computer. TrollStore gives you permanent app signing with zero expiration and no weekly PC sync.</p>
                     </div>
                 </div>
             </div>
@@ -272,17 +270,17 @@
         <section class="faq-category">
             <h2 class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2 px-1">Troubleshooting & Safety</h2>
             <div class="ios-card divide-y divide-gray-100 overflow-hidden">
-                <!-- Item 8 -->
+                <!-- Item 7 -->
                 <div class="faq-item">
                     <button onclick="toggleAccordion(this)" class="w-full px-4 py-3.5 text-left flex items-center justify-between hover:bg-gray-50/80 transition-colors">
-                        <span class="text-sm font-medium text-gray-900 pr-2">Is TrollStore safe? (Are there risks with unverified apps?)</span>
+                        <span class="text-sm font-medium text-gray-900 pr-2">Is TrollStore safe?</span>
                         <svg class="chevron w-4 h-4 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
                     </button>
                     <div class="accordion-content px-4 pb-4 text-sm text-gray-600 leading-relaxed">
                         <p>Yes, TrollStore is safe and open-source. But downloading bad apps from unknown sites can risk your privacy. Always get apps from trusted places.</p>
                     </div>
                 </div>
-                <!-- Item 9 -->
+                <!-- Item 8 -->
                 <div class="faq-item">
                     <button onclick="toggleAccordion(this)" class="w-full px-4 py-3.5 text-left flex items-center justify-between hover:bg-gray-50/80 transition-colors">
                         <span class="text-sm font-medium text-gray-900 pr-2">Why is TrollStore not working or crashing on open?</span>
@@ -290,6 +288,16 @@
                     </button>
                     <div class="accordion-content px-4 pb-4 text-sm text-gray-600 leading-relaxed">
                         <p>If it crashes or won't open, your helper app may not be linked correctly. Open TrollStore settings and refresh your persistence helper right away.</p>
+                    </div>
+                </div>
+                <!-- Item 9 (New from CSV: Fix install failed / error code) -->
+                <div class="faq-item">
+                    <button onclick="toggleAccordion(this)" class="w-full px-4 py-3.5 text-left flex items-center justify-between hover:bg-gray-50/80 transition-colors">
+                        <span class="text-sm font-medium text-gray-900 pr-2">How to fix TrollStore install failed or error code?</span>
+                        <svg class="chevron w-4 h-4 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+                    </button>
+                    <div class="accordion-content px-4 pb-4 text-sm text-gray-600 leading-relaxed">
+                        <p>If you get an error code during installation, clear stuck profiles in Settings > General > VPN & Device Management, reboot your phone, and try again.</p>
                     </div>
                 </div>
             </div>
@@ -301,7 +309,7 @@
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                 SEO Architecture & Indexing Value
             </div>
-            <p>This page features built-in standard <strong>FAQPage Structured Data (JSON-LD)</strong>[cite: 4], significantly increasing the probability of displaying rich snippets (FAQ dropdowns) in Google search results. Combined with long-tail search term matrices extracted via Ahrefs and Answer Socrates, it precisely targets high-traffic TOFU (Top of Funnel) search queries.</p>
+            <p>This page features built-in standard <strong>FAQPage Structured Data (JSON-LD)</strong>[cite: 4], significantly increasing the probability of displaying rich snippets in Google search results. Combined with keyword matrices from Ahrefs, AnswerSocrates, and query fan-out data, it precisely targets high-traffic search queries.</p>
         </section>
 
     </main>
@@ -367,4 +375,5 @@
         });
     </script>
 </body>
+</html>
 </html>
