@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# 指定网站地图位置，加速搜索引擎收录
+Sitemap: https://927520fyx.github.io/ios/sitemap.xml

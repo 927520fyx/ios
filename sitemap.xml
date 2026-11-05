@@ -1,23 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <!-- 1. 主页 -->
+    <!-- 网站首页 (TrollStore 主引导页) -->
     <url>
-        <loc>https://yourdomain.com/</loc>
-        <lastmod>2026-11-02</lastmod>
-        <changefreq>daily</changefreq>
+        <loc>https://927520fyx.github.io/ios/</loc>
+        <lastmod>2026-03-05</lastmod>
+        <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
-    <!-- 2. 常见问题解答页面 -->
+    
+    <!-- FAQ 帮助与故障排查页 -->
     <url>
-        <loc>https://yourdomain.com/faq.html</loc>
-        <lastmod>2026-11-02</lastmod>
+        <loc>https://927520fyx.github.io/ios/faq.html</loc>
+        <lastmod>2026-03-05</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
-    <!-- 3. Dopamine 越狱页面 -->
+    
+    <!-- Dopamine 越狱专题下载页 -->
     <url>
-        <loc>https://yourdomain.com/dopamine.html</loc>
-        <lastmod>2026-11-02</lastmod>
+        <loc>https://927520fyx.github.io/ios/dopamine.html</loc>
+        <lastmod>2026-03-05</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
