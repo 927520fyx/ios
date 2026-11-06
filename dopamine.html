@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dopamine Jailbreak Guide</title> <!-- 优化：缩短标题字数 -->
-    <meta name="description" content="Complete guide to Dopamine Jailbreak supporting iOS 15.0 - 26.0.1. GitHub IPA download, Sileo, and Roothide setup."> <!-- 优化：精简元描述字数 -->
+    <title>Dopamine Jailbreak Guide</title>
+    <meta name="description" content="Complete guide to Dopamine Jailbreak supporting iOS 15.0 - 26.0.1. GitHub IPA download, Sileo, and Roothide setup.">
     <meta name="keywords" content="dopamine jailbreak, dopamine jailbreak ipa, dopamine jailbreak ios 16, dopamine jailbreak ios 18, dopamine jailbreak github, dopamine jailbreak ios, dopamine jailbreak ios 17, dopamine jailbreak direct install, dopamine jailbreak app, dopamine jailbreak ios 15, how to install dopamine jailbreak, how to use dopamine jailbreak, hide dopamine jailbreak, dopamine ios jailbreak, dopamine 2 jailbreak, dopamine app jailbreak, dopamine 3.0 jailbreak, dopamine 3 jailbreak, dopamine iphone jailbreak, dopamine 2.0 jailbreak, dopamine roothide ipa jailbreak, dopamine hide jailbreak, dopamine jailbreak without pc, Sileo, TrollStore">
     
     <!-- Tailwind CSS CDN -->
@@ -154,14 +154,12 @@
                     <span class="truncate max-w-[280px] sm:max-w-none">Official GitHub Release • Get Dopamine IPA & Direct Install</span>
                 </span>
                 
-                <!-- 优化1：添加发布日期与最后更新日期（解决日期缺失问题） -->
                 <div class="text-xs text-slate-400 mb-4 flex items-center justify-center space-x-4">
                     <span>Published Date: <time datetime="2026-01-01">January 1, 2026</time></span>
                     <span>•</span>
                     <span>Last Updated: <time datetime="2026-11-06">November 6, 2026</time></span>
                 </div>
 
-                <!-- 优化2：添加内容标签 Tags（解决未检测到内容标签问题） -->
                 <div class="flex flex-wrap justify-center gap-2 mb-6">
                     <span class="bg-slate-900 border border-slate-800 text-purple-300 px-2.5 py-1 rounded-md text-xs">#Jailbreak</span>
                     <span class="bg-slate-900 border border-slate-800 text-indigo-300 px-2.5 py-1 rounded-md text-xs">#DopamineIPA</span>
@@ -187,7 +185,7 @@
             </div>
         </section>
 
-        <!-- 优化3：添加目录 (TOC) 组件（解决未检测到目录问题） -->
+        <!-- Table of Contents (TOC) Component -->
         <section class="py-8 px-4 max-w-4xl mx-auto relative z-10">
             <div class="bg-slate-900/60 border border-slate-800 p-6 rounded-2xl shadow-lg">
                 <h3 class="text-lg font-bold text-purple-300 mb-3 flex items-center space-x-2">
@@ -207,17 +205,17 @@
         <section id="overview" class="py-16 sm:py-24 px-4 bg-slate-950 relative z-10 border-t border-slate-800/50">
             <div class="max-w-5xl mx-auto">
                 <div class="text-center max-w-2xl mx-auto mb-12 reveal">
-                    <h2 class="text-2xl sm:text-4xl font-extrabold mb-3 tracking-tight">What is Dopamine and Why Use It?</h2>
-                    <p class="text-slate-400 text-sm sm:text-base">Learn how to get the Dopamine IPA from GitHub, run it without a PC, and use it on new iOS versions.</p>
+                    <h2 class="text-2xl sm:text-4xl font-extrabold mb-3 tracking-tight">What is Dopamine and How Does It Work?</h2>
+                    <p class="text-slate-400 text-sm sm:text-base">Learn how to get the Dopamine IPA from GitHub, run it without a PC, and understand its technical mechanism.</p>
                 </div>
                 
-                <!-- 优化4：添加带列表的项目（解决未检测到列表或表格问题，同时增加图片/多媒体与外部内链） -->
                 <div class="reveal bg-slate-900/60 border border-slate-800/80 p-6 sm:p-8 rounded-3xl mb-8 shadow-xl">
-                    <h3 class="text-lg font-bold text-white mb-4">Quick Summary Highlights:</h3>
+                    <h3 class="text-lg font-bold text-white mb-4">Quick Summary Highlights & Technical Operation:</h3>
                     <ul class="list-disc list-inside space-y-2 text-sm text-slate-300 leading-relaxed">
                         <li>Official <a href="https://github.com/opa334/Dopamine" target="_blank" class="text-purple-400 underline">GitHub repository</a> provides clean and secure jailbreak packages.</li>
                         <li>Compatible with modern <a href="https://en.wikipedia.org/wiki/IOS" target="_blank" class="text-purple-400 underline">iOS systems</a> using safe rootless architectures.</li>
                         <li>Bundles Sileo package manager for handling extensions smoothly.</li>
+                        <li><strong>How Dopamine works technically:</strong> Dopamine leverages advanced kernel exploits to bypass sandbox restrictions, dynamically patches AMFI (Apple Mobile File Integrity) and code signing checks, mounts and initializes the rootless bootstrap inside <code class="text-purple-300 bg-slate-950 px-1 rounded">/var/jb</code>, and injects tweaks securely without altering core system partition files.</li>
                     </ul>
                 </div>
 
@@ -315,7 +313,7 @@
         <section id="guide" class="py-16 sm:py-24 px-4 bg-slate-900/20 border-t border-slate-800/60 relative z-10">
             <div class="max-w-4xl mx-auto">
                 <div class="text-center mb-12 reveal">
-                    <h2 class="text-2xl sm:text-4xl font-extrabold mb-3 tracking-tight">How to Install and Use Dopamine Without a PC</h2>
+                    <h2 class="text-2xl sm:text-4xl font-extrabold mb-3 tracking-tight">How to Install and Set Up TrollStore and Dopamine Without a PC</h2>
                     <p class="text-slate-400 text-sm sm:text-base">Simple steps to download the IPA from GitHub, set up TrollStore, and run Dopamine.</p>
                 </div>
 
@@ -323,8 +321,11 @@
                     <div class="reveal spotlight-card bg-slate-900/60 border border-slate-800/80 p-5 sm:p-8 rounded-3xl flex items-start space-x-4 sm:space-x-5 shadow-xl">
                         <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-2xl bg-indigo-600 text-white flex items-center justify-center font-bold text-sm sm:text-base shrink-0 shadow-md">0</div>
                         <div>
-                            <h3 class="font-bold text-lg sm:text-xl mb-1.5 text-white">Step 0: Install TrollStore First</h3>
-                            <p class="text-slate-400 text-xs sm:text-base leading-relaxed">Make sure TrollStore is working on your phone. It uses a special bug to keep your apps installed without needing to sign them again.</p>
+                            <h3 class="font-bold text-lg sm:text-xl mb-1.5 text-white">Step 0: Detailed TrollStore Setup & Configuration</h3>
+                            <p class="text-slate-400 text-xs sm:text-base leading-relaxed">
+                                Ensure TrollStore is properly installed and configured on your device. 
+                                <strong>Setup Instructions:</strong> TrollStore utilizes a CoreTrust bug to install and sign apps permanently without expiration. To set it up, install the TrollStore persistence helper (often via a supported installer or helper app like Misaka or TrollHelper), select a system app (such as the Tips app) to bind the persistence helper, and launch TrollStore from your home screen to ensure root helper installation is completed successfully.
+                            </p>
                         </div>
                     </div>
                     <div class="reveal spotlight-card bg-slate-900/60 border border-slate-800/80 p-5 sm:p-8 rounded-3xl flex items-start space-x-4 sm:space-x-5 shadow-xl" style="transition-delay: 50ms;">
@@ -357,12 +358,23 @@
             <div class="max-w-4xl mx-auto">
                 <div class="text-center mb-12 reveal">
                     <h2 class="text-2xl sm:text-4xl font-extrabold mb-3 tracking-tight">Frequently Asked Questions (FAQ)</h2>
-                    <p class="text-slate-400 text-sm sm:text-base">Get answers about safety, GitHub downloads, hiding jailbreaks, and how it works.</p>
+                    <p class="text-slate-400 text-sm sm:text-base">Get answers about safety, GitHub downloads, hiding jailbreaks, support, and how it works.</p>
                 </div>
 
                 <div class="space-y-4">
-                    <!-- FAQ 1 -->
+                    <!-- FAQ Support (New for Coverage) -->
                     <div class="reveal spotlight-card bg-slate-900/80 border border-slate-800 rounded-3xl shadow-xl overflow-hidden">
+                        <button class="faq-toggle w-full p-5 sm:p-8 text-left flex items-center justify-between focus:outline-none cursor-pointer group">
+                            <span class="font-bold text-base sm:text-lg text-purple-300 group-hover:text-purple-200 transition-colors">How to get support and help for Dopamine?</span>
+                            <svg class="w-5 h-5 text-slate-400 transition-transform duration-300 shrink-0 transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </button>
+                        <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 px-5 sm:px-8">
+                            <p class="text-slate-400 text-xs sm:text-base leading-relaxed pb-6">If you need technical support, assistance, or want to report bugs regarding Dopamine, you can visit the official <a href="https://github.com/opa334/Dopamine/issues" target="_blank" class="text-purple-400 underline">Dopamine GitHub Issues page</a>, or participate in community discussions on Reddit (<code class="text-purple-300 bg-slate-950 px-1 rounded">r/jailbreak</code>) and official Discord jailbreak servers where developers (such as opa334 and évelyne) and community experts offer troubleshooting help.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 1 -->
+                    <div class="reveal spotlight-card bg-slate-900/80 border border-slate-800 rounded-3xl shadow-xl overflow-hidden" style="transition-delay: 25ms;">
                         <button class="faq-toggle w-full p-5 sm:p-8 text-left flex items-center justify-between focus:outline-none cursor-pointer group">
                             <span class="font-bold text-base sm:text-lg text-purple-300 group-hover:text-purple-200 transition-colors">Is Dopamine safe, real, and where is the GitHub link?</span>
                             <svg class="w-5 h-5 text-slate-400 transition-transform duration-300 shrink-0 transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
