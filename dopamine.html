@@ -2,7 +2,7 @@
 <html lang="en" class="dark scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dopamine Jailbreak - Official Download, iOS Compatibility & Guide</title>
     <meta name="description" content="Download Dopamine Jailbreak for iOS 15.0 - 26.0.1. The ultimate rootless, semi-untethered jailbreak for A8-A17 / M1-M2 devices with Sileo & Zebra support.">
     <meta name="keywords" content="Dopamine jailbreak, Dopamine ipa download, iOS 17 jailbreak, rootless jailbreak, Sileo, Zebra">
@@ -89,7 +89,7 @@
     <!-- Reading Progress Bar -->
     <div id="progress-bar" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-purple-500 via-indigo-500 to-pink-500 z-50 transition-all duration-100 w-0"></div>
 
-    <!-- Ambient Floating Background Blobs (严格限制在屏幕内，防止手机横向滚动) -->
+    <!-- Ambient Floating Background Blobs -->
     <div class="fixed top-1/4 left-4 w-72 h-72 bg-purple-600/10 rounded-full blur-[100px] pointer-events-none animate-float-slow z-0 max-w-[80vw]"></div>
     <div class="fixed bottom-1/3 right-4 w-72 h-72 bg-indigo-600/10 rounded-full blur-[100px] pointer-events-none animate-float-delayed z-0 max-w-[80vw]"></div>
 
@@ -112,13 +112,11 @@
 
             <!-- Action Buttons & Mobile Toggle -->
             <div class="flex items-center space-x-2 sm:space-x-3 shrink-0">
-                <!-- TrollStore 跳转按钮：在小屏幕上自动精简文字或调整尺寸，避免拥挤 -->
                 <a href="index.html" class="bg-slate-900 hover:bg-slate-800 active:scale-95 text-slate-300 border border-slate-800 px-2.5 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 flex items-center space-x-1">
                     <span>🏠</span>
                     <span class="hidden xs:inline sm:inline">TrollStore</span>
                 </a>
 
-                <!-- Download 按钮 -->
                 <a href="https://github.com/opa334/Dopamine/releases" target="_blank" rel="nofollow" class="bg-purple-600 hover:bg-purple-500 active:scale-95 text-white px-3 sm:px-4.5 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 shadow-lg shadow-purple-600/30 flex items-center space-x-1.5">
                     <span>Download</span>
                 </a>
@@ -144,168 +142,171 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="py-16 sm:py-28 px-4 text-center relative z-10 w-full max-w-6xl mx-auto">
-        <div class="reveal">
-            <span class="inline-flex items-center space-x-2 bg-purple-500/10 text-purple-400 border border-purple-500/20 px-3.5 py-1.5 rounded-full text-xs font-semibold mb-6 shadow-inner">
-                <span class="w-2 h-2 rounded-full bg-purple-400 animate-ping"></span>
-                <span class="truncate max-w-[280px] sm:max-w-none">Latest Release • iOS 15.0 - 26.0.1 Support</span>
-            </span>
-            <h1 class="text-3xl sm:text-6xl md:text-7xl font-extrabold tracking-tight mb-6 leading-[1.1]">
-                The Ultimate <span class="bg-gradient-to-r from-purple-400 via-indigo-400 to-pink-400 bg-clip-text text-transparent">Rootless Jailbreak</span>
-            </h1>
-            <p class="text-sm sm:text-xl text-slate-400 mb-8 max-w-2xl mx-auto leading-relaxed px-2">
-                Fast, modern, and secure semi-untethered jailbreak for arm64 and arm64e devices. Pre-packaged with Sileo and Zebra package managers.
-            </p>
-            <div class="flex flex-col sm:flex-row justify-center gap-3.5 max-w-md mx-auto sm:max-w-none px-4">
-                <a href="https://github.com/opa334/Dopamine/releases" target="_blank" rel="nofollow" class="bg-purple-600 hover:bg-purple-500 active:scale-95 text-white font-semibold px-6 sm:px-8 py-3.5 rounded-2xl transition-all duration-200 flex items-center justify-center space-x-2 shadow-xl shadow-purple-600/30">
-                    <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-                    <span>Download Official .ipa</span>
-                </a>
-                <a href="#guide" class="bg-slate-900/80 hover:bg-slate-800 active:scale-95 text-slate-300 border border-slate-800/80 font-semibold px-6 sm:px-8 py-3.5 rounded-2xl transition-all duration-200 flex items-center justify-center shadow-lg">
-                    Read Setup Guide
-                </a>
+    <!-- Main Content Wrapper (Landmark) -->
+    <main>
+        <!-- Hero Section -->
+        <section class="py-16 sm:py-28 px-4 text-center relative z-10 w-full max-w-6xl mx-auto">
+            <div class="reveal">
+                <span class="inline-flex items-center space-x-2 bg-purple-500/10 text-purple-400 border border-purple-500/20 px-3.5 py-1.5 rounded-full text-xs font-semibold mb-6 shadow-inner">
+                    <span class="w-2 h-2 rounded-full bg-purple-400 animate-ping"></span>
+                    <span class="truncate max-w-[280px] sm:max-w-none">Latest Release • iOS 15.0 - 26.0.1 Support</span>
+                </span>
+                <h1 class="text-3xl sm:text-6xl md:text-7xl font-extrabold tracking-tight mb-6 leading-[1.1]">
+                    The Ultimate <span class="bg-gradient-to-r from-purple-400 via-indigo-400 to-pink-400 bg-clip-text text-transparent">Rootless Jailbreak</span>
+                </h1>
+                <p class="text-sm sm:text-xl text-slate-400 mb-8 max-w-2xl mx-auto leading-relaxed px-2">
+                    Fast, modern, and secure semi-untethered jailbreak for arm64 and arm64e devices. Pre-packaged with Sileo and Zebra package managers.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-3.5 max-w-md mx-auto sm:max-w-none px-4">
+                    <a href="https://github.com/opa334/Dopamine/releases" target="_blank" rel="nofollow" class="bg-purple-600 hover:bg-purple-500 active:scale-95 text-white font-semibold px-6 sm:px-8 py-3.5 rounded-2xl transition-all duration-200 flex items-center justify-center space-x-2 shadow-xl shadow-purple-600/30">
+                        <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                        <span>Download Official .ipa</span>
+                    </a>
+                    <a href="#guide" class="bg-slate-900/80 hover:bg-slate-800 active:scale-95 text-slate-300 border border-slate-800/80 font-semibold px-6 sm:px-8 py-3.5 rounded-2xl transition-all duration-200 flex items-center justify-center shadow-lg">
+                        Read Setup Guide
+                    </a>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Features Grid -->
-    <section id="features" class="py-16 sm:py-24 px-4 bg-slate-900/20 border-y border-slate-800/60 backdrop-blur-sm relative z-10">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center max-w-2xl mx-auto mb-12 reveal">
-                <h2 class="text-2xl sm:text-4xl font-extrabold mb-3 tracking-tight">Why Choose Dopamine?</h2>
-                <p class="text-slate-400 text-sm sm:text-base">Engineered for peak performance, stability, and uncompromised security.</p>
-            </div>
-            <div class="grid md:grid-cols-3 gap-6">
-                <div class="reveal spotlight-card bg-slate-900/60 border border-slate-800/80 p-6 sm:p-8 rounded-3xl shadow-xl">
-                    <div class="w-12 h-12 rounded-2xl bg-purple-500/10 text-purple-400 flex items-center justify-center font-bold mb-4 text-xl">🛡️</div>
-                    <h3 class="text-lg sm:text-xl font-bold mb-2 text-white">Rootless Architecture</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Does not touch system partition, ensuring higher security, effortless reboots, and clean uninstalls.</p>
+        <!-- Features Grid -->
+        <section id="features" class="py-16 sm:py-24 px-4 bg-slate-900/20 border-y border-slate-800/60 backdrop-blur-sm relative z-10">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center max-w-2xl mx-auto mb-12 reveal">
+                    <h2 class="text-2xl sm:text-4xl font-extrabold mb-3 tracking-tight">Why Choose Dopamine?</h2>
+                    <p class="text-slate-400 text-sm sm:text-base">Engineered for peak performance, stability, and uncompromised security.</p>
                 </div>
-                <div class="reveal spotlight-card bg-slate-900/60 border border-slate-800/80 p-6 sm:p-8 rounded-3xl shadow-xl" style="transition-delay: 100ms;">
-                    <div class="w-12 h-12 rounded-2xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center font-bold mb-4 text-xl">📦</div>
-                    <h3 class="text-lg sm:text-xl font-bold mb-2 text-white">Sileo & Zebra</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Comes equipped with modern, lightning-fast package managers built natively for rootless tweaks.</p>
-                </div>
-                <div class="reveal spotlight-card bg-slate-900/60 border border-slate-800/80 p-6 sm:p-8 rounded-3xl shadow-xl" style="transition-delay: 200ms;">
-                    <div class="w-12 h-12 rounded-2xl bg-pink-500/10 text-pink-400 flex items-center justify-center font-bold mb-4 text-xl">⚡</div>
-                    <h3 class="text-lg sm:text-xl font-bold mb-2 text-white">Semi-Untethered</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Easily re-enable the jailbreak directly on your device using TrollStore or side-loading apps.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Compatibility Section -->
-    <section id="compatibility" class="py-16 sm:py-24 px-4 relative z-10">
-        <div class="max-w-5xl mx-auto">
-            <div class="text-center mb-12 reveal">
-                <h2 class="text-2xl sm:text-4xl font-extrabold mb-3 tracking-tight">Device & Version Compatibility</h2>
-                <p class="text-slate-400 text-sm sm:text-base">Tap any architecture card below to instantly copy its supported version specs.</p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 gap-6">
-                <!-- Card 1 -->
-                <div onclick="copyToClipboard('iOS 15.0 - 17.3.1', 'A14 - A17 / M1 - M2')" class="reveal spotlight-card bg-gradient-to-br from-slate-900 via-slate-900/50 to-slate-950 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl relative overflow-hidden cursor-pointer group">
-                    <div class="flex items-center justify-between mb-4">
-                        <h3 class="font-bold text-xl sm:text-2xl text-purple-400">A14 - A17 / M1 - M2</h3>
-                        <span class="bg-purple-500/10 text-purple-400 text-xs px-2.5 py-1 rounded-lg font-mono font-semibold border border-purple-500/20">arm64e</span>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="reveal spotlight-card bg-slate-900/60 border border-slate-800/80 p-6 sm:p-8 rounded-3xl shadow-xl">
+                        <div class="w-12 h-12 rounded-2xl bg-purple-500/10 text-purple-400 flex items-center justify-center font-bold mb-4 text-xl">🛡️</div>
+                        <h3 class="text-lg sm:text-xl font-bold mb-2 text-white">Rootless Architecture</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">Does not touch system partition, ensuring higher security, effortless reboots, and clean uninstalls.</p>
                     </div>
-                    <p class="text-slate-300 text-xs sm:text-sm mb-2 font-medium flex items-center justify-between">
-                        <span>Supported iOS Versions:</span>
-                        <span class="text-xs text-purple-400 opacity-80 sm:opacity-0 group-hover:opacity-100 transition-opacity">📋 Tap to copy</span>
-                    </p>
-                    <div class="bg-slate-950/90 border border-slate-800/80 p-3.5 rounded-xl font-mono text-purple-300 text-xs sm:text-sm shadow-inner">
-                        iOS 15.0 - 17.3.1
+                    <div class="reveal spotlight-card bg-slate-900/60 border border-slate-800/80 p-6 sm:p-8 rounded-3xl shadow-xl" style="transition-delay: 100ms;">
+                        <div class="w-12 h-12 rounded-2xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center font-bold mb-4 text-xl">📦</div>
+                        <h3 class="text-lg sm:text-xl font-bold mb-2 text-white">Sileo & Zebra</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">Comes equipped with modern, lightning-fast package managers built natively for rootless tweaks.</p>
                     </div>
-                </div>
-
-                <!-- Card 2 -->
-                <div onclick="copyToClipboard('iOS 15.0 - 18.7.1 & 26.0 - 26.0.1', 'A8 - A13 Devices')" class="reveal spotlight-card bg-gradient-to-br from-slate-900 via-slate-900/50 to-slate-950 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl relative overflow-hidden cursor-pointer group" style="transition-delay: 150ms;">
-                    <div class="flex items-center justify-between mb-4">
-                        <h3 class="font-bold text-xl sm:text-2xl text-indigo-400">A8 - A13 Devices</h3>
-                        <span class="bg-indigo-500/10 text-indigo-400 text-xs px-2.5 py-1 rounded-lg font-mono font-semibold border border-indigo-500/20">arm64 / arm64e</span>
-                    </div>
-                    <p class="text-slate-300 text-xs sm:text-sm mb-2 font-medium flex items-center justify-between">
-                        <span>Supported iOS Versions:</span>
-                        <span class="text-xs text-indigo-400 opacity-80 sm:opacity-0 group-hover:opacity-100 transition-opacity">📋 Tap to copy</span>
-                    </p>
-                    <div class="bg-slate-950/90 border border-slate-800/80 p-3.5 rounded-xl font-mono text-indigo-300 text-xs sm:text-sm leading-relaxed shadow-inner">
-                        iOS 15.0 - 18.7.1 & 26.0 - 26.0.1
+                    <div class="reveal spotlight-card bg-slate-900/60 border border-slate-800/80 p-6 sm:p-8 rounded-3xl shadow-xl" style="transition-delay: 200ms;">
+                        <div class="w-12 h-12 rounded-2xl bg-pink-500/10 text-pink-400 flex items-center justify-center font-bold mb-4 text-xl">⚡</div>
+                        <h3 class="text-lg sm:text-xl font-bold mb-2 text-white">Semi-Untethered</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">Easily re-enable the jailbreak directly on your device using TrollStore or side-loading apps.</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Installation Guide Section -->
-    <section id="guide" class="py-16 sm:py-24 px-4 bg-slate-900/20 border-t border-slate-800/60 relative z-10">
-        <div class="max-w-4xl mx-auto">
-            <div class="text-center mb-12 reveal">
-                <h2 class="text-2xl sm:text-4xl font-extrabold mb-3 tracking-tight">Step-by-Step Installation Guide</h2>
-                <p class="text-slate-400 text-sm sm:text-base">Get Dopamine up and running safely on your iPhone or iPad.</p>
-            </div>
-
-            <div class="space-y-4 sm:space-y-6">
-                <div class="reveal spotlight-card bg-slate-900/60 border border-slate-800/80 p-5 sm:p-8 rounded-3xl flex items-start space-x-4 sm:space-x-5 shadow-xl">
-                    <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-2xl bg-purple-600 text-white flex items-center justify-center font-bold text-sm sm:text-base shrink-0 shadow-md shadow-purple-600/30">1</div>
-                    <div>
-                        <h3 class="font-bold text-lg sm:text-xl mb-1.5 text-white">Download the .ipa File</h3>
-                        <p class="text-slate-400 text-xs sm:text-base leading-relaxed">Head to the official GitHub releases page and download the latest version of <code class="text-purple-300 bg-slate-950 px-1.5 py-0.5 rounded-md border border-slate-800">Dopamine.ipa</code>.</p>
-                    </div>
+        <!-- Compatibility Section -->
+        <section id="compatibility" class="py-16 sm:py-24 px-4 relative z-10">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-12 reveal">
+                    <h2 class="text-2xl sm:text-4xl font-extrabold mb-3 tracking-tight">Device & Version Compatibility</h2>
+                    <p class="text-slate-400 text-sm sm:text-base">Tap any architecture card below to instantly copy its supported version specs.</p>
                 </div>
-                <div class="reveal spotlight-card bg-slate-900/60 border border-slate-800/80 p-5 sm:p-8 rounded-3xl flex items-start space-x-4 sm:space-x-5 shadow-xl" style="transition-delay: 100ms;">
-                    <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-2xl bg-purple-600 text-white flex items-center justify-center font-bold text-sm sm:text-base shrink-0 shadow-md shadow-purple-600/30">2</div>
-                    <div>
-                        <h3 class="font-bold text-lg sm:text-xl mb-1.5 text-white">Install via TrollStore (Recommended)</h3>
-                        <p class="text-slate-400 text-xs sm:text-base leading-relaxed">Open the downloaded .ipa file directly inside TrollStore on your device for permanent installation without revocation issues.</p>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- Card 1 -->
+                    <div onclick="copyToClipboard('iOS 15.0 - 17.3.1', 'A14 - A17 / M1 - M2')" class="reveal spotlight-card bg-gradient-to-br from-slate-900 via-slate-900/50 to-slate-950 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl relative overflow-hidden cursor-pointer group">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="font-bold text-xl sm:text-2xl text-purple-400">A14 - A17 / M1 - M2</h3>
+                            <span class="bg-purple-500/10 text-purple-400 text-xs px-2.5 py-1 rounded-lg font-mono font-semibold border border-purple-500/20">arm64e</span>
+                        </div>
+                        <p class="text-slate-300 text-xs sm:text-sm mb-2 font-medium flex items-center justify-between">
+                            <span>Supported iOS Versions:</span>
+                            <span class="text-xs text-purple-400 opacity-80 sm:opacity-0 group-hover:opacity-100 transition-opacity">📋 Tap to copy</span>
+                        </p>
+                        <div class="bg-slate-950/90 border border-slate-800/80 p-3.5 rounded-xl font-mono text-purple-300 text-xs sm:text-sm shadow-inner">
+                            iOS 15.0 - 17.3.1
+                        </div>
                     </div>
-                </div>
-                <div class="reveal spotlight-card bg-slate-900/60 border border-slate-800/80 p-5 sm:p-8 rounded-3xl flex items-start space-x-4 sm:space-x-5 shadow-xl" style="transition-delay: 200ms;">
-                    <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-2xl bg-purple-600 text-white flex items-center justify-center font-bold text-sm sm:text-base shrink-0 shadow-md shadow-purple-600/30">3</div>
-                    <div>
-                        <h3 class="font-bold text-lg sm:text-xl mb-1.5 text-white">Run the Exploit & Jailbreak</h3>
-                        <p class="text-slate-400 text-xs sm:text-base leading-relaxed">Launch Dopamine from your home screen, tap "Jailbreak", choose your package manager (Sileo/Zebra), and let the app configure your system.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- FAQ Section -->
-    <section id="faq" class="py-16 sm:py-24 px-4 relative z-10">
-        <div class="max-w-4xl mx-auto">
-            <div class="text-center mb-12 reveal">
-                <h2 class="text-2xl sm:text-4xl font-extrabold mb-3 tracking-tight">Frequently Asked Questions</h2>
-                <p class="text-slate-400 text-sm sm:text-base">Everything you need to know about Dopamine Jailbreak.</p>
-            </div>
-
-            <div class="space-y-4">
-                <div class="reveal spotlight-card bg-slate-900/80 border border-slate-800 rounded-3xl shadow-xl overflow-hidden">
-                    <button class="faq-toggle w-full p-5 sm:p-8 text-left flex items-center justify-between focus:outline-none cursor-pointer group">
-                        <span class="font-bold text-base sm:text-lg text-purple-300 group-hover:text-purple-200 transition-colors">Is Dopamine open source?</span>
-                        <svg class="w-5 h-5 text-slate-400 transition-transform duration-300 shrink-0 transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                    </button>
-                    <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 px-5 sm:px-8">
-                        <p class="text-slate-400 text-xs sm:text-base leading-relaxed pb-6">Yes, Dopamine is completely open source. You can inspect its source code and contribute via GitHub.</p>
-                    </div>
-                </div>
-
-                <div class="reveal spotlight-card bg-slate-900/80 border border-slate-800 rounded-3xl shadow-xl overflow-hidden" style="transition-delay: 100ms;">
-                    <button class="faq-toggle w-full p-5 sm:p-8 text-left flex items-center justify-between focus:outline-none cursor-pointer group">
-                        <span class="font-bold text-base sm:text-lg text-purple-300 group-hover:text-purple-200 transition-colors">Will my tweaks work out of the box?</span>
-                        <svg class="w-5 h-5 text-slate-400 transition-transform duration-300 shrink-0 transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                    </button>
-                    <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 px-5 sm:px-8">
-                        <p class="text-slate-400 text-xs sm:text-base leading-relaxed pb-6">Because Dopamine is a rootless jailbreak, tweaks must be updated and compiled specifically for rootless environments before installation.</p>
+                    <!-- Card 2 -->
+                    <div onclick="copyToClipboard('iOS 15.0 - 18.7.1 & 26.0 - 26.0.1', 'A8 - A13 Devices')" class="reveal spotlight-card bg-gradient-to-br from-slate-900 via-slate-900/50 to-slate-950 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl relative overflow-hidden cursor-pointer group" style="transition-delay: 150ms;">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="font-bold text-xl sm:text-2xl text-indigo-400">A8 - A13 Devices</h3>
+                            <span class="bg-indigo-500/10 text-indigo-400 text-xs px-2.5 py-1 rounded-lg font-mono font-semibold border border-indigo-500/20">arm64 / arm64e</span>
+                        </div>
+                        <p class="text-slate-300 text-xs sm:text-sm mb-2 font-medium flex items-center justify-between">
+                            <span>Supported iOS Versions:</span>
+                            <span class="text-xs text-indigo-400 opacity-80 sm:opacity-0 group-hover:opacity-100 transition-opacity">📋 Tap to copy</span>
+                        </p>
+                        <div class="bg-slate-950/90 border border-slate-800/80 p-3.5 rounded-xl font-mono text-indigo-300 text-xs sm:text-sm leading-relaxed shadow-inner">
+                            iOS 15.0 - 18.7.1 & 26.0 - 26.0.1
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
-    <footer class="py-10 px-4 border-t border-slate-800/80 text-center text-slate-500 text-xs relative z-10">
+        <!-- Installation Guide Section -->
+        <section id="guide" class="py-16 sm:py-24 px-4 bg-slate-900/20 border-t border-slate-800/60 relative z-10">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-12 reveal">
+                    <h2 class="text-2xl sm:text-4xl font-extrabold mb-3 tracking-tight">Step-by-Step Installation Guide</h2>
+                    <p class="text-slate-400 text-sm sm:text-base">Get Dopamine up and running safely on your iPhone or iPad.</p>
+                </div>
+
+                <div class="space-y-4 sm:space-y-6">
+                    <div class="reveal spotlight-card bg-slate-900/60 border border-slate-800/80 p-5 sm:p-8 rounded-3xl flex items-start space-x-4 sm:space-x-5 shadow-xl">
+                        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-2xl bg-purple-600 text-white flex items-center justify-center font-bold text-sm sm:text-base shrink-0 shadow-md shadow-purple-600/30">1</div>
+                        <div>
+                            <h3 class="font-bold text-lg sm:text-xl mb-1.5 text-white">Download the .ipa File</h3>
+                            <p class="text-slate-400 text-xs sm:text-base leading-relaxed">Head to the official GitHub releases page and download the latest version of <code class="text-purple-300 bg-slate-950 px-1.5 py-0.5 rounded-md border border-slate-800">Dopamine.ipa</code>.</p>
+                        </div>
+                    </div>
+                    <div class="reveal spotlight-card bg-slate-900/60 border border-slate-800/80 p-5 sm:p-8 rounded-3xl flex items-start space-x-4 sm:space-x-5 shadow-xl" style="transition-delay: 100ms;">
+                        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-2xl bg-purple-600 text-white flex items-center justify-center font-bold text-sm sm:text-base shrink-0 shadow-md shadow-purple-600/30">2</div>
+                        <div>
+                            <h3 class="font-bold text-lg sm:text-xl mb-1.5 text-white">Install via TrollStore (Recommended)</h3>
+                            <p class="text-slate-400 text-xs sm:text-base leading-relaxed">Open the downloaded .ipa file directly inside TrollStore on your device for permanent installation without revocation issues.</p>
+                        </div>
+                    </div>
+                    <div class="reveal spotlight-card bg-slate-900/60 border border-slate-800/80 p-5 sm:p-8 rounded-3xl flex items-start space-x-4 sm:space-x-5 shadow-xl" style="transition-delay: 200ms;">
+                        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-2xl bg-purple-600 text-white flex items-center justify-center font-bold text-sm sm:text-base shrink-0 shadow-md shadow-purple-600/30">3</div>
+                        <div>
+                            <h3 class="font-bold text-lg sm:text-xl mb-1.5 text-white">Run the Exploit & Jailbreak</h3>
+                            <p class="text-slate-400 text-xs sm:text-base leading-relaxed">Launch Dopamine from your home screen, tap "Jailbreak", choose your package manager (Sileo/Zebra), and let the app configure your system.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="py-16 sm:py-24 px-4 relative z-10">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-12 reveal">
+                    <h2 class="text-2xl sm:text-4xl font-extrabold mb-3 tracking-tight">Frequently Asked Questions</h2>
+                    <p class="text-slate-400 text-sm sm:text-base">Everything you need to know about Dopamine Jailbreak.</p>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="reveal spotlight-card bg-slate-900/80 border border-slate-800 rounded-3xl shadow-xl overflow-hidden">
+                        <button class="faq-toggle w-full p-5 sm:p-8 text-left flex items-center justify-between focus:outline-none cursor-pointer group">
+                            <span class="font-bold text-base sm:text-lg text-purple-300 group-hover:text-purple-200 transition-colors">Is Dopamine open source?</span>
+                            <svg class="w-5 h-5 text-slate-400 transition-transform duration-300 shrink-0 transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </button>
+                        <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 px-5 sm:px-8">
+                            <p class="text-slate-400 text-xs sm:text-base leading-relaxed pb-6">Yes, Dopamine is completely open source. You can inspect its source code and contribute via GitHub.</p>
+                        </div>
+                    </div>
+
+                    <div class="reveal spotlight-card bg-slate-900/80 border border-slate-800 rounded-3xl shadow-xl overflow-hidden" style="transition-delay: 100ms;">
+                        <button class="faq-toggle w-full p-5 sm:p-8 text-left flex items-center justify-between focus:outline-none cursor-pointer group">
+                            <span class="font-bold text-base sm:text-lg text-purple-300 group-hover:text-purple-200 transition-colors">Will my tweaks work out of the box?</span>
+                            <svg class="w-5 h-5 text-slate-400 transition-transform duration-300 shrink-0 transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </button>
+                        <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 px-5 sm:px-8">
+                            <p class="text-slate-400 text-xs sm:text-base leading-relaxed pb-6">Because Dopamine is a rootless jailbreak, tweaks must be updated and compiled specifically for rootless environments before installation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer (Contrast Fixed to slate-400) -->
+    <footer class="py-10 px-4 border-t border-slate-800/80 text-center text-slate-400 text-xs relative z-10">
         <div class="max-w-4xl mx-auto space-y-3">
             <p class="leading-relaxed px-2">Disclaimer: This is an independent resource and tutorial site. All credits for the Dopamine jailbreak and ElleKit belong to opa334, évelyne, and the core development team.</p>
             <p>&copy; 2026 Dopamine Hub. All rights reserved.</p>
@@ -379,6 +380,13 @@
 
         menuBtn.addEventListener('click', toggleMenu);
         mobileLinks.forEach(link => link.addEventListener('click', () => { if (isMenuOpen) toggleMenu(); }));
+
+        // 窗口尺寸改变时自动收起移动端菜单，防错
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 768 && isMenuOpen) {
+                toggleMenu();
+            }
+        });
 
         const faqToggles = document.querySelectorAll('.faq-toggle');
         faqToggles.forEach(toggle => {
