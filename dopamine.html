@@ -29,6 +29,50 @@
     <meta name="twitter:description" content="Official Dopamine Jailbreak guide. Check iOS 15-26 support, get GitHub IPA, learn TrollStore installation, and safety tips.">
     <meta name="twitter:image" content="https://927520fyx.github.io/ios/assets/og-image.jpg">
 
+    <!-- JSON-LD Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://927520fyx.github.io/ios/#organization",
+          "name": "Dopamine Hub",
+          "url": "https://927520fyx.github.io/ios/",
+          "sameAs": [
+            "https://github.com/opa334/Dopamine"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://927520fyx.github.io/ios/#website",
+          "url": "https://927520fyx.github.io/ios/",
+          "name": "Dopamine Hub",
+          "publisher": {
+            "@id": "https://927520fyx.github.io/ios/#organization"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://927520fyx.github.io/ios/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Dopamine Jailbreak",
+              "item": "https://927520fyx.github.io/ios/dopamine.html"
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -232,7 +276,7 @@
             </div>
         </section>
 
-        <!-- NEW: Technical Architecture & Deep Dive Section (Directly answering items 3, 4, 8, 16 for unique expert value) -->
+        <!-- Technical Architecture & Deep Dive Section -->
         <section id="technical-deep-dive" class="py-16 px-4 bg-slate-900/30 border-y border-slate-800/60 relative z-10">
             <div class="max-w-5xl mx-auto">
                 <div class="text-center max-w-2xl mx-auto mb-12 reveal">
@@ -274,7 +318,7 @@
                                     <th class="pb-3">Traditional Rootful</th>
                                 </tr>
                             </thead>
-                            <thbody class="divide-y divide-slate-800/60">
+                            <tbody class="divide-y divide-slate-800/60">
                                 <tr>
                                     <td class="py-3 font-semibold text-white">System Volume (`/`)</td>
                                     <td class="py-3 text-purple-400">Untouched & Cryptographically Verified</td>
@@ -295,7 +339,7 @@
                                     <td class="py-3 text-purple-400">Easier to mask due to isolated sandbox</td>
                                     <td class="py-3 text-slate-400">Complex due to global system alterations</td>
                                 </tr>
-                            </thbody>
+                            </tbody>
                         </table>
                     </div>
                 </div>
@@ -389,7 +433,7 @@
             </div>
         </section>
 
-        <!-- NEW: Troubleshooting & Log Analysis Section (Adds expert rigor) -->
+        <!-- Troubleshooting & Log Analysis Section -->
         <section id="troubleshooting" class="py-16 px-4 relative z-10">
             <div class="max-w-4xl mx-auto">
                 <div class="text-center mb-12 reveal">
@@ -400,7 +444,7 @@
                 <div class="grid md:grid-cols-2 gap-6">
                     <div class="reveal bg-slate-900/60 border border-slate-800 p-6 rounded-3xl">
                         <h3 class="text-purple-300 font-bold mb-2">🔄 Dealing with Kernel Panics / Reboots</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed">If your device unexpectedly reboots during jailbreak execution, it's usually due to a failed exploit exploit attempt. Clear background tasks, disconnect all cables, disable Wi-Fi/Bluetooth temporarily, and retry.</p>
+                        <p class="text-slate-400 text-sm leading-relaxed">If your device unexpectedly reboots during jailbreak execution, it's usually due to a failed exploit attempt. Clear background tasks, disconnect all cables, disable Wi-Fi/Bluetooth temporarily, and retry.</p>
                     </div>
                     <div class="reveal bg-slate-900/60 border border-slate-800 p-6 rounded-3xl">
                         <h3 class="text-indigo-300 font-bold mb-2">⚠️ Safe Mode & Tweak Conflict Resolution</h3>
