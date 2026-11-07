@@ -7,6 +7,12 @@
     <meta name="description" content="Official Dopamine Jailbreak download guide. Check supported iOS versions (iOS 15.0 - 26.0.1), get the GitHub IPA, and learn how to install Sileo and TrollStore without a PC.">
     <meta name="keywords" content="dopamine jailbreak, dopamine jailbreak download, dopamine jailbreak supported ios versions, dopamine jailbreak ipa, dopamine jailbreak github, dopamine jailbreak ios 18, dopamine jailbreak ios 17, dopamine jailbreak ios 16, dopamine jailbreak without pc, dopamine jailbreak tool, dopamine jailbreak roothide, Sileo, TrollStore">
     
+    <!-- SEO Essential Meta Tags (Added based on audit) -->
+    <link rel="canonical" href="https://927520fyx.github.io/ios/dopamine.html">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Dopamine Hub">
+    <meta name="publisher" content="Dopamine Hub">
+
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -97,33 +103,33 @@
     <header class="border-b border-slate-800/80 sticky top-0 bg-slate-950/90 backdrop-blur-2xl z-40 transition-all w-full">
         <div class="max-w-6xl mx-auto px-3 sm:px-6 h-16 sm:h-20 flex items-center justify-between">
             <!-- Brand Logo -->
-            <a href="#" class="flex items-center space-x-2 group shrink-0">
-                <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl sm:rounded-2xl bg-gradient-to-tr from-purple-600 to-indigo-500 flex items-center justify-center font-bold text-white shadow-lg shadow-purple-500/30 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 text-sm sm:text-base">❤️</div>
+            <a href="#" title="Dopamine Hub Home" class="flex items-center space-x-2 group shrink-0">
+                <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl sm:rounded-2xl bg-gradient-to-tr from-purple-600 to-indigo-500 flex items-center justify-center font-bold text-white shadow-lg shadow-purple-500/30 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 text-sm sm:text-base" role="img" aria-label="Heart Icon">❤️</div>
                 <span class="font-bold text-base sm:text-xl tracking-wide bg-gradient-to-r from-white via-slate-200 to-slate-400 bg-clip-text text-transparent">Dopamine Hub</span>
             </a>
 
             <!-- Desktop Nav -->
             <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-400">
-                <a href="#overview" class="hover:text-purple-400 transition-colors duration-200 hover:-translate-y-0.5">Overview</a>
-                <a href="#features" class="hover:text-purple-400 transition-colors duration-200 hover:-translate-y-0.5">Features</a>
-                <a href="#compatibility" class="hover:text-purple-400 transition-colors duration-200 hover:-translate-y-0.5">Compatibility</a>
-                <a href="#guide" class="hover:text-purple-400 transition-colors duration-200 hover:-translate-y-0.5">Installation</a>
-                <a href="#faq" class="hover:text-purple-400 transition-colors duration-200 hover:-translate-y-0.5">FAQ</a>
+                <a href="#overview" title="Go to Overview section" class="hover:text-purple-400 transition-colors duration-200 hover:-translate-y-0.5">Overview</a>
+                <a href="#features" title="Go to Features section" class="hover:text-purple-400 transition-colors duration-200 hover:-translate-y-0.5">Features</a>
+                <a href="#compatibility" title="Go to Compatibility section" class="hover:text-purple-400 transition-colors duration-200 hover:-translate-y-0.5">Compatibility</a>
+                <a href="#guide" title="Go to Installation Guide section" class="hover:text-purple-400 transition-colors duration-200 hover:-translate-y-0.5">Installation</a>
+                <a href="#faq" title="Go to FAQ section" class="hover:text-purple-400 transition-colors duration-200 hover:-translate-y-0.5">FAQ</a>
             </nav>
 
             <!-- Action Buttons & Mobile Toggle -->
             <div class="flex items-center space-x-2 sm:space-x-3 shrink-0">
-                <a href="index.html" class="bg-slate-900 hover:bg-slate-800 active:scale-95 text-slate-300 border border-slate-800 px-2.5 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 flex items-center space-x-1">
+                <a href="index.html" title="Go to TrollStore Index page" class="bg-slate-900 hover:bg-slate-800 active:scale-95 text-slate-300 border border-slate-800 px-2.5 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 flex items-center space-x-1">
                     <span>🏠</span>
                     <span class="hidden xs:inline sm:inline">TrollStore</span>
                 </a>
 
-                <a href="https://github.com/opa334/Dopamine/releases" target="_blank" rel="nofollow noopener noreferrer" class="bg-purple-600 hover:bg-purple-500 active:scale-95 text-white px-3 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 shadow-lg shadow-purple-600/30 flex items-center space-x-1.5">
+                <a href="https://github.com/opa334/Dopamine/releases" target="_blank" rel="nofollow noopener noreferrer" title="Download Dopamine IPA from GitHub Releases" class="bg-purple-600 hover:bg-purple-500 active:scale-95 text-white px-3 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 shadow-lg shadow-purple-600/30 flex items-center space-x-1.5">
                     <span>Download</span>
                 </a>
                 
                 <!-- Mobile Menu Button -->
-                <button id="menu-btn" aria-label="Toggle Menu" class="md:hidden p-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-white active:scale-95 transition-all focus:outline-none">
+                <button id="menu-btn" aria-label="Toggle Menu" title="Toggle Mobile Menu" class="md:hidden p-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-white active:scale-95 transition-all focus:outline-none">
                     <svg id="menu-icon" class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
                     </svg>
@@ -134,12 +140,12 @@
         <!-- Mobile Dropdown Menu -->
         <div id="mobile-menu" class="md:hidden max-h-0 overflow-hidden bg-slate-950/95 border-b border-slate-800/0 backdrop-blur-2xl transition-all duration-300 ease-in-out">
             <div class="px-4 py-3 space-y-2 text-sm">
-                <a href="#overview" class="mobile-link block py-2 px-3 rounded-xl text-slate-300 hover:bg-slate-900 hover:text-purple-400 transition">Overview</a>
-                <a href="#features" class="mobile-link block py-2 px-3 rounded-xl text-slate-300 hover:bg-slate-900 hover:text-purple-400 transition">Features</a>
-                <a href="#compatibility" class="mobile-link block py-2 px-3 rounded-xl text-slate-300 hover:bg-slate-900 hover:text-purple-400 transition">Compatibility</a>
-                <a href="#guide" class="mobile-link block py-2 px-3 rounded-xl text-slate-300 hover:bg-slate-900 hover:text-purple-400 transition">Installation</a>
-                <a href="#faq" class="mobile-link block py-2 px-3 rounded-xl text-slate-300 hover:bg-slate-900 hover:text-purple-400 transition">FAQ</a>
-                <a href="index.html" class="mobile-link block py-2 px-3 rounded-xl text-blue-400 bg-blue-500/10 hover:bg-blue-500/20 transition">🏠 Go to TrollStore Index</a>
+                <a href="#overview" title="Mobile Overview link" class="mobile-link block py-2 px-3 rounded-xl text-slate-300 hover:bg-slate-900 hover:text-purple-400 transition">Overview</a>
+                <a href="#features" title="Mobile Features link" class="mobile-link block py-2 px-3 rounded-xl text-slate-300 hover:bg-slate-900 hover:text-purple-400 transition">Features</a>
+                <a href="#compatibility" title="Mobile Compatibility link" class="mobile-link block py-2 px-3 rounded-xl text-slate-300 hover:bg-slate-900 hover:text-purple-400 transition">Compatibility</a>
+                <a href="#guide" title="Mobile Installation link" class="mobile-link block py-2 px-3 rounded-xl text-slate-300 hover:bg-slate-900 hover:text-purple-400 transition">Installation</a>
+                <a href="#faq" title="Mobile FAQ link" class="mobile-link block py-2 px-3 rounded-xl text-slate-300 hover:bg-slate-900 hover:text-purple-400 transition">FAQ</a>
+                <a href="index.html" title="Go to TrollStore Index" class="mobile-link block py-2 px-3 rounded-xl text-blue-400 bg-blue-500/10 hover:bg-blue-500/20 transition">🏠 Go to TrollStore Index</a>
             </div>
         </div>
     </header>
@@ -174,11 +180,11 @@
                     Looking for the ultimate jailbreak tool? Download the latest Dopamine IPA from GitHub, check all supported iOS versions (iOS 15 to iOS 26), and install Sileo safely without a PC.
                 </p>
                 <div class="flex flex-col sm:flex-row justify-center gap-3.5 max-w-md mx-auto sm:max-w-none px-4">
-                    <a href="https://github.com/opa334/Dopamine/releases" target="_blank" rel="nofollow noopener noreferrer" class="bg-purple-600 hover:bg-purple-500 active:scale-95 text-white font-semibold px-6 sm:px-8 py-3.5 rounded-2xl transition-all duration-200 flex items-center justify-center space-x-2 shadow-xl shadow-purple-600/30">
+                    <a href="https://github.com/opa334/Dopamine/releases" target="_blank" rel="nofollow noopener noreferrer" title="Download Dopamine IPA from GitHub Releases" class="bg-purple-600 hover:bg-purple-500 active:scale-95 text-white font-semibold px-6 sm:px-8 py-3.5 rounded-2xl transition-all duration-200 flex items-center justify-center space-x-2 shadow-xl shadow-purple-600/30">
                         <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
                         <span>Download Dopamine IPA (GitHub)</span>
                     </a>
-                    <a href="#compatibility" class="bg-slate-900/80 hover:bg-slate-800 active:scale-95 text-slate-300 border border-slate-800/80 font-semibold px-6 sm:px-8 py-3.5 rounded-2xl transition-all duration-200 flex items-center justify-center shadow-lg">
+                    <a href="#compatibility" title="Jump to Supported iOS Versions section" class="bg-slate-900/80 hover:bg-slate-800 active:scale-95 text-slate-300 border border-slate-800/80 font-semibold px-6 sm:px-8 py-3.5 rounded-2xl transition-all duration-200 flex items-center justify-center shadow-lg">
                         Check Supported iOS Versions
                     </a>
                 </div>
@@ -192,11 +198,11 @@
                     <span>📑 Table of Contents</span>
                 </h3>
                 <ul class="grid sm:grid-cols-2 gap-2 text-sm text-slate-300">
-                    <li><a href="#overview" class="hover:text-purple-400 transition">1. What is Dopamine Jailbreak</a></li>
-                    <li><a href="#features" class="hover:text-purple-400 transition">2. Key Features & Sileo Support</a></li>
-                    <li><a href="#compatibility" class="hover:text-purple-400 transition">3. Supported iOS Versions & Devices</a></li>
-                    <li><a href="#guide" class="hover:text-purple-400 transition">4. How to Install Without a PC</a></li>
-                    <li><a href="#faq" class="hover:text-purple-400 transition">5. Frequently Asked Questions (FAQ)</a></li>
+                    <li><a href="#overview" title="Jump to What is Dopamine Jailbreak" class="hover:text-purple-400 transition">1. What is Dopamine Jailbreak</a></li>
+                    <li><a href="#features" title="Jump to Key Features" class="hover:text-purple-400 transition">2. Key Features & Sileo Support</a></li>
+                    <li><a href="#compatibility" title="Jump to Supported iOS Versions" class="hover:text-purple-400 transition">3. Supported iOS Versions & Devices</a></li>
+                    <li><a href="#guide" title="Jump to Installation Guide" class="hover:text-purple-400 transition">4. How to Install Without a PC</a></li>
+                    <li><a href="#faq" title="Jump to FAQ" class="hover:text-purple-400 transition">5. Frequently Asked Questions (FAQ)</a></li>
                 </ul>
             </div>
         </section>
@@ -212,8 +218,8 @@
                 <div class="reveal bg-slate-900/60 border border-slate-800/80 p-6 sm:p-8 rounded-3xl mb-8 shadow-xl">
                     <h3 class="text-lg font-bold text-white mb-4">Quick Summary & Core Mechanics:</h3>
                     <ul class="list-disc list-inside space-y-2 text-sm text-slate-300 leading-relaxed">
-                        <li>Official releases are safely hosted on the <a href="https://github.com/opa334/Dopamine" target="_blank" class="text-purple-400 underline">Dopamine GitHub Repository</a>.</li>
-                        <li>Fully compatible with modern <a href="https://en.wikipedia.org/wiki/IOS" target="_blank" class="text-purple-400 underline">iOS systems</a> using a lightweight rootless architecture.</li>
+                        <li>Official releases are safely hosted on the <a href="https://github.com/opa334/Dopamine" target="_blank" title="Dopamine GitHub Repository" class="text-purple-400 underline">Dopamine GitHub Repository</a>.</li>
+                        <li>Fully compatible with modern <a href="https://en.wikipedia.org/wiki/IOS" target="_blank" title="iOS Wikipedia Page" class="text-purple-400 underline">iOS systems</a> using a lightweight rootless architecture.</li>
                         <li>Bundles Sileo for seamless package and tweak management.</li>
                         <li><strong>How it works:</strong> Dopamine leverages advanced kernel exploits to mount a secure container at <code class="text-purple-300 bg-slate-950 px-1 rounded">/var/jb</code> without modifying system integrity partitions.</li>
                     </ul>
@@ -249,17 +255,17 @@
                 </div>
                 <div class="grid md:grid-cols-3 gap-6">
                     <div class="reveal spotlight-card bg-slate-900/60 border border-slate-800/80 p-6 sm:p-8 rounded-3xl shadow-xl">
-                        <div class="w-12 h-12 rounded-2xl bg-purple-500/10 text-purple-400 flex items-center justify-center font-bold mb-4 text-xl">🛡️</div>
+                        <div class="w-12 h-12 rounded-2xl bg-purple-500/10 text-purple-400 flex items-center justify-center font-bold mb-4 text-xl" role="img" aria-label="Shield Icon">🛡️</div>
                         <h3 class="text-lg sm:text-xl font-bold mb-2 text-white">Rootless Architecture</h3>
                         <p class="text-slate-400 text-sm leading-relaxed">All tweaks and packages reside in <code class="text-purple-300 bg-slate-950 px-1 py-0.5 rounded">/var/jb</code>, leaving system partitions untouched for clean software updates.</p>
                     </div>
                     <div class="reveal spotlight-card bg-slate-900/60 border border-slate-800/80 p-6 sm:p-8 rounded-3xl shadow-xl" style="transition-delay: 100ms;">
-                        <div class="w-12 h-12 rounded-2xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center font-bold mb-4 text-xl">📦</div>
+                        <div class="w-12 h-12 rounded-2xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center font-bold mb-4 text-xl" role="img" aria-label="Package Icon">📦</div>
                         <h3 class="text-lg sm:text-xl font-bold mb-2 text-white">Sileo Integrated</h3>
                         <p class="text-slate-400 text-sm leading-relaxed">Lightning-fast package manager built from the ground up to handle repository management and tweak installation smoothly.</p>
                     </div>
                     <div class="reveal spotlight-card bg-slate-900/60 border border-slate-800/80 p-6 sm:p-8 rounded-3xl shadow-xl" style="transition-delay: 200ms;">
-                        <div class="w-12 h-12 rounded-2xl bg-pink-500/10 text-pink-400 flex items-center justify-center font-bold mb-4 text-xl">⚡</div>
+                        <div class="w-12 h-12 rounded-2xl bg-pink-500/10 text-pink-400 flex items-center justify-center font-bold mb-4 text-xl" role="img" aria-label="Lightning Icon">⚡</div>
                         <h3 class="text-lg sm:text-xl font-bold mb-2 text-white">TrollStore Support</h3>
                         <p class="text-slate-400 text-sm leading-relaxed">Permanent app signing via TrollStore ensures you can re-apply the jailbreak anytime right from your SpringBoard without a computer.</p>
                     </div>
@@ -369,7 +375,7 @@
                             <svg class="w-5 h-5 text-slate-400 transition-transform duration-300 shrink-0 transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                         </button>
                         <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 px-5 sm:px-8">
-                            <p class="text-slate-400 text-xs sm:text-base leading-relaxed pb-6">You can download the genuine <code class="text-purple-300 bg-slate-950 px-1 rounded">dopamine jailbreak ipa</code> directly from the official <a href="https://github.com/opa334/Dopamine/releases" target="_blank" class="text-purple-400 underline">Dopamine GitHub Releases Page</a>. Always avoid third-party modified installers.</p>
+                            <p class="text-slate-400 text-xs sm:text-base leading-relaxed pb-6">You can download the genuine <code class="text-purple-300 bg-slate-950 px-1 rounded">dopamine jailbreak ipa</code> directly from the official <a href="https://github.com/opa334/Dopamine/releases" target="_blank" title="Dopamine GitHub Releases Page" class="text-purple-400 underline">Dopamine GitHub Releases Page</a>. Always avoid third-party modified installers.</p>
                         </div>
                     </div>
 
@@ -424,7 +430,7 @@
                             <svg class="w-5 h-5 text-slate-400 transition-transform duration-300 shrink-0 transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                         </button>
                         <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 px-5 sm:px-8">
-                            <p class="text-slate-400 text-xs sm:text-base leading-relaxed pb-6">For troubleshooting or bug reports, visit the official <a href="https://github.com/opa334/Dopamine/issues" target="_blank" class="text-purple-400 underline">Dopamine GitHub Issues Page</a> or join community discussions on Reddit (<code class="text-purple-300 bg-slate-950 px-1 rounded">r/jailbreak</code>).</p>
+                            <p class="text-slate-400 text-xs sm:text-base leading-relaxed pb-6">For troubleshooting or bug reports, visit the official <a href="https://github.com/opa334/Dopamine/issues" target="_blank" title="Dopamine GitHub Issues Page" class="text-purple-400 underline">Dopamine GitHub Issues Page</a> or join community discussions on Reddit (<code class="text-purple-300 bg-slate-950 px-1 rounded">r/jailbreak</code>).</p>
                         </div>
                     </div>
                 </div>
@@ -441,7 +447,7 @@
     </footer>
 
     <!-- Back to Top Floating Button -->
-    <button id="back-to-top" aria-label="Back to Top" class="fixed bottom-5 right-5 w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-purple-600 text-white shadow-lg shadow-purple-600/40 flex items-center justify-center opacity-0 pointer-events-none hover:bg-purple-500 hover:scale-110 active:scale-95 transition-all duration-300 z-50">
+    <button id="back-to-top" aria-label="Back to Top" title="Back to top" class="fixed bottom-5 right-5 w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-purple-600 text-white shadow-lg shadow-purple-600/40 flex items-center justify-center opacity-0 pointer-events-none hover:bg-purple-500 hover:scale-110 active:scale-95 transition-all duration-300 z-50">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/></svg>
     </button>
 
