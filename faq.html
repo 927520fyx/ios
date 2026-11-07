@@ -93,7 +93,7 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "What is iOS TrollStore and what can it do?",
+          "name": "What is iOS TrollStore?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "iOS TrollStore is a permasigned jailed application that allows you to permanently install and sign any TrollStore IPA file on supported iOS versions without a 7-day expiration limit, without weekly PC re-signing, and with full rootless entitlements."
@@ -101,66 +101,26 @@
         },
         {
           "@type": "Question",
-          "name": "How to download TrollStore from GitHub?",
+          "name": "How does TrollStore work?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "You can download official TrollStore releases, helper files, and IPA downloads directly from the official GitHub repository maintained by developer opa334."
+            "text": "TrollStore works by exploiting the CoreTrust vulnerability (CVE-2023-41991) in iOS. Under the hood, it injects binaries and registers them with full rootless entitlements, tricking the iOSinstalld service and CoreTrust code signature verification into treating any installed app as a system-signed or developer-trusted application, completely bypassing standard sandbox restrictions and expiration limits."
           }
         },
         {
           "@type": "Question",
-          "name": "What are the system and device installation requirements for TrollStore?",
+          "name": "Can I sideload apps without a computer?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "TrollStore installation requires compatible firmware running iOS 14.0 up to iOS 17.0, including iOS 15, iOS 16, and iOS 17.0, depending on device exploit availability."
+            "text": "Yes, once TrollStore is successfully installed on your iOS device, you can completely sideload, install, and update apps directly on your device without ever needing a computer, cable, or weekly certificate refresh."
           }
         },
         {
           "@type": "Question",
-          "name": "Does TrollStore work on iOS 18, iOS 26, or newer versions?",
+          "name": "How to report issues with TrollStore?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "No, TrollStore does not work on iOS 17.1, iOS 18, or newer Apple firmware releases because Apple patched the core CoreTrust bug."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Can I use Filza and AppStore++ with TrollStore?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes! Because TrollStore grants full rootless entitlements and permanent signing, powerful utilities like Filza file manager and AppStore++ work flawlessly without revocation issues."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What should I do after installing TrollStore?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "After installing TrollStore, open the app, install the Persistence Helper to protect against app cache resets, and begin downloading your favorite IPA apps."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Is TrollStore safe or is it a virus?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "TrollStore is 100% safe, open-source software developed by @opa334. It is not a virus, provided you download it exclusively from the official GitHub repository."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Are there alternative options to TrollStore for unsupported iOS versions?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes, if you are on unsupported firmware like iOS 18 or newer, alternative sideloading options include AltStore, SideStore, and Sideloadly, though they require weekly certificate refreshing."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What is the CoreTrust bug?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "The CoreTrust bug (CVE-2023-41991) is a security vulnerability in Apple's Code Signature verification mechanism on iOS. It allows applications signed with certain certificates to be installed and trusted by the system without proper verification. TrollStore exploits this bug to achieve permanent app installation (permasigning) without revokes or expiration."
+            "text": "If you encounter bugs, installation failures, or issues with TrollStore, you can report them and seek technical support by opening an issue on the official GitHub repository maintained by developer opa334, or by consulting the community-driven iOS CFW Guide."
           }
         },
         {
@@ -168,23 +128,39 @@
           "name": "What are the risks of using TrollStore?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "TrollStore is generally safe and open-source when downloaded from official sources. Potential risks or downsides include: inability to receive OTA updates on certain jailbreak/persistence setups, potential system instability if installing unverified modified IPAs, and the fact that it relies strictly on fixed iOS versions (iOS 14.0–17.0)—updating to iOS 17.1 or newer will permanently disable TrollStore functionality."
+            "text": "TrollStore is generally safe and open-source when downloaded from official sources. Potential risks include system instability if installing unverified modified IPAs, and the limitation that it relies strictly on fixed iOS versions (iOS 14.0–17.0)—updating to iOS 17.1 or newer will permanently disable TrollStore."
           }
         },
         {
           "@type": "Question",
-          "name": "How to troubleshoot issues with TrollStore?",
+          "name": "How to download TrollStore IPA?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Common troubleshooting steps include: 1) If apps crash on startup, open TrollStore and use the 'Refresh Icon Cache' option. 2) If the Persistence Helper disappears, re-link or install it via TrollStore settings. 3) Ensure your device is running a compatible firmware version (iOS 14.0 - 17.0)."
+            "text": "You can download official TrollStore releases, helper files, and IPA downloads directly from the official GitHub repository maintained by developer opa334."
           }
         },
         {
           "@type": "Question",
-          "name": "What are the latest updates for TrollStore?",
+          "name": "Is TrollStore safe to use?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Recent updates for TrollStore (developed by opa334) expanded installation vectors up to iOS 17.0, improved rootless entitlement handling, enhanced Persistence Helper reliability, and fixed various installation bugs. For exact release notes and patch details, check the official GitHub repository."
+            "text": "TrollStore is 100% safe, open-source software developed by @opa334. It is not a virus, provided you download it exclusively from the official GitHub repository."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What should I do if apps crash on startup?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "If apps crash on startup, open TrollStore and use the 'Refresh Icon Cache' option to fix app registration and signing issues."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens if I update to iOS 17.1 or newer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "If you update your device to iOS 17.1, iOS 18, or newer versions, Apple has patched the CoreTrust bug, which will permanently break and disable TrollStore functionality."
           }
         }
       ]
@@ -216,7 +192,7 @@
                 <span class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-gray-400">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
                 </span>
-                <input type="text" id="searchInput" placeholder="Search questions (e.g., coretrust, risks, troubleshooting, updates, ipa...)" 
+                <input type="text" id="searchInput" placeholder="Search questions (e.g., how it works, without a computer, report issues...)" 
                     class="w-full pl-10 pr-4 py-2 bg-gray-100 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-ios-blue transition-all">
             </div>
         </div>
@@ -238,9 +214,9 @@
         <nav class="ios-card p-4 text-sm bg-white border border-gray-100" id="toc">
             <p class="font-semibold text-gray-900 mb-2">Table of Contents</p>
             <ul class="list-disc list-inside space-y-1 text-ios-blue">
-                <li><a href="#cat-install" title="Jump to Installation section" class="hover:underline">Capabilities, CoreTrust & Installation</a></li>
-                <li><a href="#cat-compat" title="Jump to Compatibility section" class="hover:underline">iOS Compatibility, Updates & IPA Downloads</a></li>
-                <li><a href="#cat-trouble" title="Jump to Troubleshooting section" class="hover:underline">Risks, Filza, Troubleshooting & Safety</a></li>
+                <li><a href="#cat-install" title="Jump to Installation section" class="hover:underline">Capabilities, Mechanism & Computer-Free Sideloading</a></li>
+                <li><a href="#cat-compat" title="Jump to Compatibility section" class="hover:underline">iOS Compatibility, Downloads & Updates</a></li>
+                <li><a href="#cat-trouble" title="Jump to Troubleshooting section" class="hover:underline">Risks, Troubleshooting & Reporting Issues</a></li>
             </ul>
         </nav>
 
@@ -248,7 +224,7 @@
         <div class="ios-card p-4 flex flex-col gap-3 bg-white border border-gray-100">
             <div class="flex items-center gap-3">
                 <svg class="w-6 h-6 text-ios-blue shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                <p class="text-xs text-gray-700">Looking for safe <strong class="text-gray-900">trollstore ipa download</strong> links, CoreTrust explanation, system requirements, and troubleshooting? Explore official resources via the <a href="https://github.com/opa334/TrollStore" target="_blank" rel="noopener" title="GitHub TrollStore" class="text-ios-blue underline">Official GitHub Repository</a> and check guides on the <a href="https://ios.cfw.guide/" target="_blank" rel="noopener" title="iOS CFW Guide" class="text-ios-blue underline">iOS CFW Guide</a>.</p>
+                <p class="text-xs text-gray-700">Looking for safe <strong class="text-gray-900">trollstore ipa download</strong> links, technical mechanisms, and support? Explore official resources via the <a href="https://github.com/opa334/TrollStore" target="_blank" rel="noopener" title="GitHub TrollStore" class="text-ios-blue underline">Official GitHub Repository</a> and check guides on the <a href="https://ios.cfw.guide/" target="_blank" rel="noopener" title="iOS CFW Guide" class="text-ios-blue underline">iOS CFW Guide</a>.</p>
             </div>
             <img src="https://picsum.photos/600/200" alt="iOS Device Management and IPA Download Guide Banner" title="iOS Device Management and IPA Download Guide" class="w-full h-32 object-cover rounded-xl mt-2">
         </div>
@@ -256,16 +232,16 @@
         <!-- Expanded Intro Paragraph -->
         <section class="ios-card p-4 text-sm text-gray-700 leading-relaxed bg-white border border-gray-100 space-y-2">
             <p>Welcome to our iOS TrollStore community FAQ hub. Developed by @opa334, TrollStore revolutionized app sideloading and permanent installation on Apple iOS devices.</p>
-            <p>This guide covers top user queries, including <strong class="text-gray-900">trollstore ipa download</strong>, CoreTrust vulnerability, iOS 16/18 compatibility, troubleshooting, risks, and installation requirements to help you manage your device securely.</p>
+            <p>This guide covers top user queries, including <strong class="text-gray-900">trollstore ipa download</strong>, technical workings, computer-free sideloading, issue reporting, and compatibility requirements.</p>
         </section>
 
-        <!-- Category 1: Installation, CoreTrust & Capabilities -->
+        <!-- Category 1: Capabilities, Mechanism & Computer-Free Sideloading -->
         <section id="cat-install" class="faq-category">
-            <h2 class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2 px-1">Capabilities, CoreTrust & Installation</h2>
+            <h2 class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2 px-1">Capabilities, Mechanism & Computer-Free Sideloading</h2>
             <ul class="ios-card divide-y divide-gray-100 overflow-hidden list-none p-0 m-0">
                 <li class="faq-item">
                     <button onclick="toggleAccordion(this)" class="w-full px-4 py-3.5 text-left flex items-center justify-between hover:bg-gray-50/80 transition-colors">
-                        <h3 class="text-sm font-medium text-gray-900 pr-2 m-0">What is iOS Trollstore and what can it do?</h3>
+                        <h3 class="text-sm font-medium text-gray-900 pr-2 m-0">What is iOS TrollStore?</h3>
                         <svg class="chevron w-4 h-4 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
                     </button>
                     <div class="accordion-content px-4 pb-4 text-sm text-gray-600 leading-relaxed space-y-2">
@@ -280,89 +256,53 @@
                 </li>
                 <li class="faq-item">
                     <button onclick="toggleAccordion(this)" class="w-full px-4 py-3.5 text-left flex items-center justify-between hover:bg-gray-50/80 transition-colors">
-                        <h3 class="text-sm font-medium text-gray-900 pr-2 m-0">What is the CoreTrust bug?</h3>
+                        <h3 class="text-sm font-medium text-gray-900 pr-2 m-0">How does TrollStore work?</h3>
                         <svg class="chevron w-4 h-4 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
                     </button>
                     <div class="accordion-content px-4 pb-4 text-sm text-gray-600 leading-relaxed">
-                        <p>The CoreTrust bug (CVE-2023-41991) is a security vulnerability in Apple's Code Signature verification mechanism on iOS. It allows applications signed with certain certificates to be installed and trusted by the system without proper verification. TrollStore exploits this bug to achieve permanent app installation (permasigning) without revokes or expiration.</p>
+                        <p>TrollStore works under the hood by exploiting the CoreTrust vulnerability (CVE-2023-41991) in iOS code signature verification. It injects binaries and registers them with full rootless entitlements, tricking the iOSinstalld service and CoreTrust verification mechanism into treating any installed app as a system-signed or developer-trusted application. This completely bypasses standard sandbox restrictions and expiration limits without requiring a persistent jailbreak.</p>
                     </div>
                 </li>
                 <li class="faq-item">
                     <button onclick="toggleAccordion(this)" class="w-full px-4 py-3.5 text-left flex items-center justify-between hover:bg-gray-50/80 transition-colors">
-                        <h3 class="text-sm font-medium text-gray-900 pr-2 m-0">How to download TrollStore from GitHub?</h3>
+                        <h3 class="text-sm font-medium text-gray-900 pr-2 m-0">Can I sideload apps without a computer?</h3>
                         <svg class="chevron w-4 h-4 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
                     </button>
                     <div class="accordion-content px-4 pb-4 text-sm text-gray-600 leading-relaxed">
-                        <p>You can download official TrollStore releases, helper files, and IPA packages directly from developer opa334's official GitHub repository. Always use approved installation methods.</p>
-                    </div>
-                </li>
-                <li class="faq-item">
-                    <button onclick="toggleAccordion(this)" class="w-full px-4 py-3.5 text-left flex items-center justify-between hover:bg-gray-50/80 transition-colors">
-                        <h3 class="text-sm font-medium text-gray-900 pr-2 m-0">What are the system and device installation requirements?</h3>
-                        <svg class="chevron w-4 h-4 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
-                    </button>
-                    <div class="accordion-content px-4 pb-4 text-sm text-gray-600 leading-relaxed">
-                        <p>TrollStore requires a compatible iOS version between iOS 14.0 and iOS 17.0 (including iOS 15, iOS 16, and iOS 17). Your device must not be updated to iOS 17.1 or newer.</p>
-                    </div>
-                </li>
-                <li class="faq-item">
-                    <button onclick="toggleAccordion(this)" class="w-full px-4 py-3.5 text-left flex items-center justify-between hover:bg-gray-50/80 transition-colors">
-                        <h3 class="text-sm font-medium text-gray-900 pr-2 m-0">Do you need a jailbreak to install TrollStore?</h3>
-                        <svg class="chevron w-4 h-4 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
-                    </button>
-                    <div class="accordion-content px-4 pb-4 text-sm text-gray-600 leading-relaxed">
-                        <p>No, a traditional jailbreak is not required. TrollStore runs safely on stock iOS as a rootless app installer using the CoreTrust bug.</p>
+                        <p>Yes! Once TrollStore is successfully installed on your iOS device, you can completely sideload, install, and update apps directly on your device without ever needing a computer, cable, or weekly certificate refresh.</p>
                     </div>
                 </li>
             </ul>
         </section>
 
-        <!-- Category 2: Compatibility, Updates & IPA Downloads -->
+        <!-- Category 2: Compatibility, Downloads & Updates -->
         <section id="cat-compat" class="faq-category">
-            <h2 class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2 px-1">iOS Compatibility, Updates & IPA Downloads</h2>
+            <h2 class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2 px-1">iOS Compatibility, Downloads & Updates</h2>
             <ul class="ios-card divide-y divide-gray-100 overflow-hidden list-none p-0 m-0">
                 <li class="faq-item">
                     <button onclick="toggleAccordion(this)" class="w-full px-4 py-3.5 text-left flex items-center justify-between hover:bg-gray-50/80 transition-colors">
-                        <h3 class="text-sm font-medium text-gray-900 pr-2 m-0">Does TrollStore work on iOS 18 or newer versions?</h3>
+                        <h3 class="text-sm font-medium text-gray-900 pr-2 m-0">How to download TrollStore IPA?</h3>
                         <svg class="chevron w-4 h-4 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
                     </button>
                     <div class="accordion-content px-4 pb-4 text-sm text-gray-600 leading-relaxed">
-                        <p>No, TrollStore does not work on iOS 18 or newer versions. Apple patched the underlying CoreTrust bug starting with iOS 17.1.</p>
+                        <p>You can download official TrollStore releases, helper files, and IPA packages directly from developer @opa334's official GitHub repository.</p>
                     </div>
                 </li>
                 <li class="faq-item">
                     <button onclick="toggleAccordion(this)" class="w-full px-4 py-3.5 text-left flex items-center justify-between hover:bg-gray-50/80 transition-colors">
-                        <h3 class="text-sm font-medium text-gray-900 pr-2 m-0">What are the latest updates for TrollStore?</h3>
+                        <h3 class="text-sm font-medium text-gray-900 pr-2 m-0">What happens if I update to iOS 17.1 or newer?</h3>
                         <svg class="chevron w-4 h-4 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
                     </button>
                     <div class="accordion-content px-4 pb-4 text-sm text-gray-600 leading-relaxed">
-                        <p>Recent updates for TrollStore (developed by @opa334) expanded installation vectors up to iOS 17.0, improved rootless entitlement handling, enhanced Persistence Helper reliability, and fixed various installation bugs. For exact release notes and patch details, check the official GitHub repository.</p>
-                    </div>
-                </li>
-                <li class="faq-item">
-                    <button onclick="toggleAccordion(this)" class="w-full px-4 py-3.5 text-left flex items-center justify-between hover:bg-gray-50/80 transition-colors">
-                        <h3 class="text-sm font-medium text-gray-900 pr-2 m-0">Where can I find TrollStore IPA download and apps?</h3>
-                        <svg class="chevron w-4 h-4 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
-                    </button>
-                    <div class="accordion-content px-4 pb-4 text-sm text-gray-600 leading-relaxed">
-                        <p>You can find official TrollStore IPA download links and compatible apps directly on the official GitHub repository and trusted community sources.</p>
-                    </div>
-                </li>
-                <li class="faq-item">
-                    <button onclick="toggleAccordion(this)" class="w-full px-4 py-3.5 text-left flex items-center justify-between hover:bg-gray-50/80 transition-colors">
-                        <h3 class="text-sm font-medium text-gray-900 pr-2 m-0">Are there alternative options if TrollStore is unsupported?</h3>
-                        <svg class="chevron w-4 h-4 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
-                    </button>
-                    <div class="accordion-content px-4 pb-4 text-sm text-gray-600 leading-relaxed">
-                        <p>Yes. If you are on newer firmware like iOS 18 where TrollStore is unsupported, you can use alternative sideloading tools such as AltStore, SideStore, or Sideloadly. Note that these alternatives require weekly certificate refreshing.</p>
+                        <p>If you update your device to iOS 17.1, iOS 18, or newer versions, Apple has patched the CoreTrust bug, which will permanently break and disable TrollStore functionality.</p>
                     </div>
                 </li>
             </ul>
         </section>
 
-        <!-- Category 3: Risks, Filza, Troubleshooting & Safety -->
+        <!-- Category 3: Risks, Troubleshooting & Reporting Issues -->
         <section id="cat-trouble" class="faq-category">
-            <h2 class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2 px-1">Risks, Filza, Troubleshooting & Safety</h2>
+            <h2 class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2 px-1">Risks, Troubleshooting & Reporting Issues</h2>
             <ul class="ios-card divide-y divide-gray-100 overflow-hidden list-none p-0 m-0">
                 <li class="faq-item">
                     <button onclick="toggleAccordion(this)" class="w-full px-4 py-3.5 text-left flex items-center justify-between hover:bg-gray-50/80 transition-colors">
@@ -370,52 +310,34 @@
                         <svg class="chevron w-4 h-4 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
                     </button>
                     <div class="accordion-content px-4 pb-4 text-sm text-gray-600 leading-relaxed">
-                        <p>TrollStore is generally safe and open-source when downloaded from official sources. Potential risks or downsides include: inability to receive OTA system updates on certain setups, potential system instability if installing unverified modified IPAs, and the fact that it relies strictly on fixed iOS versions (iOS 14.0–17.0)—updating your firmware to iOS 17.1 or newer will permanently disable TrollStore functionality.</p>
+                        <p>TrollStore is generally safe and open-source when downloaded from official sources. Potential risks include system instability if installing unverified modified IPAs, and the limitation that it relies strictly on fixed iOS versions (iOS 14.0–17.0)—updating to iOS 17.1 or newer will permanently disable TrollStore.</p>
                     </div>
                 </li>
                 <li class="faq-item">
                     <button onclick="toggleAccordion(this)" class="w-full px-4 py-3.5 text-left flex items-center justify-between hover:bg-gray-50/80 transition-colors">
-                        <h3 class="text-sm font-medium text-gray-900 pr-2 m-0">How to troubleshoot issues with TrollStore?</h3>
+                        <h3 class="text-sm font-medium text-gray-900 pr-2 m-0">What should I do if apps crash on startup?</h3>
                         <svg class="chevron w-4 h-4 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
                     </button>
                     <div class="accordion-content px-4 pb-4 text-sm text-gray-600 leading-relaxed">
-                        <p>Common troubleshooting steps include: 1) If apps crash on startup, open TrollStore and use the 'Refresh Icon Cache' option. 2) If the Persistence Helper disappears, re-link or install it via TrollStore settings. 3) Ensure your device is running a compatible firmware version (iOS 14.0 - 17.0).</p>
+                        <p>If apps crash on startup, open TrollStore and use the 'Refresh Icon Cache' option to fix app registration and signing issues.</p>
                     </div>
                 </li>
                 <li class="faq-item">
                     <button onclick="toggleAccordion(this)" class="w-full px-4 py-3.5 text-left flex items-center justify-between hover:bg-gray-50/80 transition-colors">
-                        <h3 class="text-sm font-medium text-gray-900 pr-2 m-0">Can I use Filza and AppStore++ with TrollStore?</h3>
+                        <h3 class="text-sm font-medium text-gray-900 pr-2 m-0">How to report issues with TrollStore?</h3>
                         <svg class="chevron w-4 h-4 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
                     </button>
                     <div class="accordion-content px-4 pb-4 text-sm text-gray-600 leading-relaxed">
-                        <p>Yes! With permanent app signing and rootless access, powerful utilities like the Filza file manager and AppStore++ work flawlessly without revocation issues.</p>
+                        <p>If you encounter bugs, installation failures, or issues with TrollStore, you can report them and seek technical support by opening an issue on the official GitHub repository maintained by developer @opa334, or by consulting community guides on the iOS CFW Guide.</p>
                     </div>
                 </li>
                 <li class="faq-item">
                     <button onclick="toggleAccordion(this)" class="w-full px-4 py-3.5 text-left flex items-center justify-between hover:bg-gray-50/80 transition-colors">
-                        <h3 class="text-sm font-medium text-gray-900 pr-2 m-0">What should I do after installing TrollStore?</h3>
-                        <svg class="chevron w-4 h-4 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
-                    </button>
-                    <div class="accordion-content px-4 pb-4 text-sm text-gray-600 leading-relaxed">
-                        <p>After installation, open TrollStore and install the Persistence Helper. This protects your apps against app cache resets. Then, you can start sideloading your favorite IPA files.</p>
-                    </div>
-                </li>
-                <li class="faq-item">
-                    <button onclick="toggleAccordion(this)" class="w-full px-4 py-3.5 text-left flex items-center justify-between hover:bg-gray-50/80 transition-colors">
-                        <h3 class="text-sm font-medium text-gray-900 pr-2 m-0">Is TrollStore safe or is it a virus?</h3>
+                        <h3 class="text-sm font-medium text-gray-900 pr-2 m-0">Is TrollStore safe to use?</h3>
                         <svg class="chevron w-4 h-4 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
                     </button>
                     <div class="accordion-content px-4 pb-4 text-sm text-gray-600 leading-relaxed">
                         <p>TrollStore is 100% safe open-source software and is not a virus. Always download it directly from the official GitHub repository to avoid modified malware copies.</p>
-                    </div>
-                </li>
-                <li class="faq-item">
-                    <button onclick="toggleAccordion(this)" class="w-full px-4 py-3.5 text-left flex items-center justify-between hover:bg-gray-50/80 transition-colors">
-                        <h3 class="text-sm font-medium text-gray-900 pr-2 m-0">How to update apps installed via TrollStore?</h3>
-                        <svg class="chevron w-4 h-4 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
-                    </button>
-                    <div class="accordion-content px-4 pb-4 text-sm text-gray-600 leading-relaxed">
-                        <p>Download the latest IPA file and open it directly inside TrollStore to overwrite the existing app. Your app data will be preserved automatically.</p>
                     </div>
                 </li>
             </ul>
@@ -423,7 +345,7 @@
 
         <!-- No Results Found State (Hidden by default) -->
         <div id="noResults" class="hidden ios-card p-6 text-center text-gray-500 text-sm">
-            <p>No matching questions found. Try searching for "coretrust", "risks", "troubleshooting", "updates", or "ipa download".</p>
+            <p>No matching questions found. Try searching for "how it works", "without a computer", "report issues", or "ipa download".</p>
         </div>
 
         <!-- SEO Value & Best Practices Card -->
@@ -432,7 +354,7 @@
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                 Optimized with Long-Tail Keyword Insights & Search Trends
             </div>
-            <p>This page integrates high-volume search intent queries including <strong>ios trollstore</strong>, <strong>coretrust bug</strong>, <strong>trollstore risks</strong>, <strong>trollstore troubleshooting</strong>, <strong>trollstore updates</strong>, <strong>github trollstore</strong>, and <strong>trollstore ipa download</strong> to maximize organic search traffic.</p>
+            <p>This page integrates high-volume search intent queries including <strong>ios trollstore</strong>, <strong>how trollstore works</strong>, <strong>sideload without computer</strong>, <strong>report trollstore issues</strong>, and <strong>trollstore ipa download</strong> to maximize organic search traffic.</p>
         </section>
 
     </main>
