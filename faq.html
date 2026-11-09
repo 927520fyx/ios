@@ -2,12 +2,6 @@
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-PS9RXPRF"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-</script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TrollStore FAQ: iOS Compatibility, IPA Download & Guide</title>
     <meta name="description" content="Comprehensive iOS TrollStore FAQ. Learn what TrollStore can do, GitHub downloads, iOS 14-17 compatibility, CoreTrust bug, and troubleshooting guide.">
@@ -25,33 +19,16 @@
     <meta name="twitter:title" content="TrollStore FAQ: iOS Compatibility, IPA Download & Guide">
     <meta name="twitter:description" content="Comprehensive iOS TrollStore FAQ guide and IPA download information.">
 
-    <!-- Tailwind CSS CDN - Loaded with preload/async swap to prevent render blocking -->
-    <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        ios: {
-                            bg: '#F2F2F7',
-                            card: '#FFFFFF',
-                            blue: '#007AFF',
-                            gray: '#8E8E93',
-                            lightGray: '#E5E5EA',
-                            separator: '#C6C6C8',
-                            darkText: '#000000',
-                            subText: '#3C3C4399'
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['-apple-system', 'BlinkMacSystemFont', "SF Pro Text", "SF Pro Icons", "Helvetica Neue", 'Helvetica', 'Arial', 'sans-serif']
-                    }
-                }
-            }
-        }
-    </script>
+    <!-- Tailwind CSS Production Stylesheet (Non-blocking) -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
+        .text-ios-blue { color: #007AFF; }
+        .bg-ios-blue { background-color: #007AFF; }
+        .border-ios-blue { border-color: #007AFF; }
+        .hover\:bg-blue-600:hover { background-color: #0056b3; }
+        .focus\:ring-ios-blue:focus { --tw-ring-color: #007AFF; box-shadow: 0 0 0 2px var(--tw-ring-color); }
+        .shadow-xs { box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); }
+
         html, body {
             overflow-x: hidden !important;
             width: 100vw;
@@ -69,6 +46,7 @@
             background-color: #F2F2F7;
             color: #000000;
             -webkit-font-smoothing: antialiased;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Icons", "Helvetica Neue", Helvetica, Arial, sans-serif;
         }
         .ios-card {
             background: #FFFFFF;
@@ -180,6 +158,22 @@
         }
       ]
     }
+    </script>
+    <!-- Optimized Non-Blocking GTM Loader -->
+    <script>
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          var gtmScript = document.createElement('script');
+          gtmScript.async = true;
+          gtmScript.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-PS9RXPRF';
+          document.head.appendChild(gtmScript);
+          
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'GTM-PS9RXPRF');
+        }, 1000);
+      });
     </script>
 </head>
 <body class="min-h-screen pb-12 font-sans">
