@@ -240,7 +240,7 @@
                 <svg class="w-6 h-6 text-ios-blue shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                 <p class="text-xs text-gray-700">Looking for safe <strong class="text-gray-900">trollstore ipa download</strong> links, system requirements, and troubleshooting? Explore official resources via the <a href="https://github.com/opa334/TrollStore" target="_blank" rel="noopener" title="GitHub TrollStore" class="text-ios-blue underline">Official GitHub Repository</a> and check guides on the <a href="https://ios.cfw.guide/" target="_blank" rel="noopener" title="iOS CFW Guide" class="text-ios-blue underline">iOS CFW Guide</a>.</p>
             </div>
-            <img src="https://picsum.photos/600/200" alt="iOS Device Management and IPA Download Guide Banner" title="iOS Device Management and IPA Download Guide" class="w-full h-32 object-cover rounded-xl mt-2">
+            <img src="https://picsum.photos/600/200" width="600" height="200" loading="lazy" alt="iOS Device Management and IPA Download Guide Banner" title="iOS Device Management and IPA Download Guide" class="w-full h-32 object-cover rounded-xl mt-2">
         </div>
 
         <!-- Expanded Intro Paragraph -->
@@ -410,8 +410,17 @@
             }
         }
 
+        // Debounce helper to optimize search performance and avoid main-thread blocking tasks
+        function debounce(func, wait) {
+            let timeout;
+            return function(...args) {
+                clearTimeout(timeout);
+                timeout = setTimeout(() => func.apply(this, args), wait);
+            };
+        }
+
         const searchInput = document.getElementById('searchInput');
-        searchInput.addEventListener('input', function(e) {
+        searchInput.addEventListener('input', debounce(function(e) {
             const term = e.target.value.toLowerCase().trim();
             const faqItems = document.querySelectorAll('.faq-item');
             const categories = document.querySelectorAll('.faq-category');
@@ -443,7 +452,7 @@
             } else {
                 noResults.classList.add('hidden');
             }
-        });
+        }, 150));
     </script>
 </body>
 </html>
