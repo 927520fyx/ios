@@ -25,7 +25,8 @@
     <meta name="twitter:title" content="TrollStore FAQ: iOS Compatibility, IPA Download & Guide">
     <meta name="twitter:description" content="Comprehensive iOS TrollStore FAQ guide and IPA download information.">
 
-    <!-- Tailwind CSS CDN -->
+    <!-- Tailwind CSS CDN - Loaded with preload/async swap to prevent render blocking -->
+    <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -240,7 +241,7 @@
                 <svg class="w-6 h-6 text-ios-blue shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                 <p class="text-xs text-gray-700">Looking for safe <strong class="text-gray-900">trollstore ipa download</strong> links, system requirements, and troubleshooting? Explore official resources via the <a href="https://github.com/opa334/TrollStore" target="_blank" rel="noopener" title="GitHub TrollStore" class="text-ios-blue underline">Official GitHub Repository</a> and check guides on the <a href="https://ios.cfw.guide/" target="_blank" rel="noopener" title="iOS CFW Guide" class="text-ios-blue underline">iOS CFW Guide</a>.</p>
             </div>
-            <img src="https://picsum.photos/600/200" width="600" height="200" loading="lazy" alt="iOS Device Management and IPA Download Guide Banner" title="iOS Device Management and IPA Download Guide" class="w-full h-32 object-cover rounded-xl mt-2">
+            <img src="https://picsum.photos/600/200" width="600" height="200" fetchpriority="high" alt="iOS Device Management and IPA Download Guide Banner" title="iOS Device Management and IPA Download Guide" class="w-full h-32 object-cover rounded-xl mt-2">
         </div>
 
         <!-- Expanded Intro Paragraph -->
@@ -351,7 +352,7 @@
                         <svg class="chevron w-4 h-4 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
                     </button>
                     <div class="accordion-content px-4 pb-4 text-sm text-gray-600 leading-relaxed">
-                        <p>Obtain the updated IPA package and execute it directly within TrollStore to overwrite the existing application bundle. TrollStore handles this seamlessly while preserving your local application container paths and user data directories intact.</p>
+                        <p>Obtain the updated IPA package and execute it directly within TrollStore to overwrite the existing application bundle. TrollStore updates the bundle while automatically preserving all local application container paths and user data directories intact.</p>
                     </div>
                 </li>
                 <li class="faq-item">
@@ -410,7 +411,6 @@
             }
         }
 
-        // Debounce helper to optimize search performance and avoid main-thread blocking tasks
         function debounce(func, wait) {
             let timeout;
             return function(...args) {
