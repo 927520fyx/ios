@@ -116,7 +116,7 @@
     <style>
         html, body {
             overflow-x: hidden !important;
-            width: 100vw;
+            width: 100%;
             max-width: 100%;
             margin: 0;
             padding: 0;
@@ -168,7 +168,7 @@
 
     <!-- Sticky Apple-style Glassmorphism Navbar -->
     <nav class="sticky top-0 z-50 glass-nav border-b border-zinc-200/50 transition-all duration-300 w-full">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
             <a href="#" title="TrollStore Guide Home" class="flex items-center space-x-2.5 group shrink-0">
                 <div class="w-9 h-9 rounded-2xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center text-white font-bold text-lg shadow-md group-hover:scale-105 transition-transform">
                     ❤️
@@ -177,25 +177,25 @@
             </a>
 
             <!-- Capsule Navigation Links -->
-            <div class="flex items-center space-x-1 overflow-x-auto scrollbar-none py-2 px-1 shrink-0 max-w-[55%] sm:max-w-none">
-                <a href="#features" title="Jump to Features Section" class="px-3 py-1.5 rounded-full text-xs font-medium text-zinc-600 hover:text-zinc-900 hover:bg-zinc-200/60 transition-all active:scale-95 whitespace-nowrap">Features</a>
-                <a href="#ecosystem" title="Jump to Ecosystem Apps & Tools" class="px-3 py-1.5 rounded-full text-xs font-medium text-zinc-600 hover:text-zinc-900 hover:bg-zinc-200/60 transition-all active:scale-95 whitespace-nowrap">Apps & Tools</a>
-                <a href="#compatibility" title="Jump to Supported Devices" class="px-3 py-1.5 rounded-full text-xs font-medium text-zinc-600 hover:text-zinc-900 hover:bg-zinc-200/60 transition-all active:scale-95 whitespace-nowrap">Compatibility</a>
-                <a href="#comparison" title="Jump to Comparison Table" class="px-3 py-1.5 rounded-full text-xs font-medium text-zinc-600 hover:text-zinc-900 hover:bg-zinc-200/60 transition-all active:scale-95 whitespace-nowrap">Comparison</a>
-                <a href="#install" title="Jump to Installation Guide" class="px-3 py-1.5 rounded-full text-xs font-medium text-zinc-600 hover:text-zinc-900 hover:bg-zinc-200/60 transition-all active:scale-95 whitespace-nowrap">How to Install</a>
-                <a href="#pros-cons" title="Jump to Pros and Cons Section" class="px-3 py-1.5 rounded-full text-xs font-medium text-zinc-600 hover:text-zinc-900 hover:bg-zinc-200/60 transition-all active:scale-95 whitespace-nowrap">Pros & Cons</a>
-                <a href="#testimonials" title="Jump to User Testimonials" class="px-3 py-1.5 rounded-full text-xs font-medium text-zinc-600 hover:text-zinc-900 hover:bg-zinc-200/60 transition-all active:scale-95 whitespace-nowrap">Reviews</a>
+            <div class="flex items-center space-x-1 overflow-x-auto scrollbar-none py-2 px-2 flex-1 min-w-0 pr-8">
+                <a href="#features" title="Jump to Features Section" class="px-2.5 py-1.5 rounded-full text-xs font-medium text-zinc-600 hover:text-zinc-900 hover:bg-zinc-200/60 transition-all active:scale-95 whitespace-nowrap">Features</a>
+                <a href="#ecosystem" title="Jump to Ecosystem Apps & Tools" class="px-2.5 py-1.5 rounded-full text-xs font-medium text-zinc-600 hover:text-zinc-900 hover:bg-zinc-200/60 transition-all active:scale-95 whitespace-nowrap">Apps & Tools</a>
+                <a href="#compatibility" title="Jump to Supported Devices" class="px-2.5 py-1.5 rounded-full text-xs font-medium text-zinc-600 hover:text-zinc-900 hover:bg-zinc-200/60 transition-all active:scale-95 whitespace-nowrap">Compatibility</a>
+                <a href="#comparison" title="Jump to Comparison Table" class="px-2.5 py-1.5 rounded-full text-xs font-medium text-zinc-600 hover:text-zinc-900 hover:bg-zinc-200/60 transition-all active:scale-95 whitespace-nowrap">Comparison</a>
+                <a href="#install" title="Jump to Installation Guide" class="px-2.5 py-1.5 rounded-full text-xs font-medium text-zinc-600 hover:text-zinc-900 hover:bg-zinc-200/60 transition-all active:scale-95 whitespace-nowrap">How to Install</a>
+                <a href="#pros-cons" title="Jump to Pros and Cons Section" class="px-2.5 py-1.5 rounded-full text-xs font-medium text-zinc-600 hover:text-zinc-900 hover:bg-zinc-200/60 transition-all active:scale-95 whitespace-nowrap">Pros & Cons</a>
+                <a href="#testimonials" title="Jump to User Testimonials" class="px-2.5 py-1.5 rounded-full text-xs font-medium text-zinc-600 hover:text-zinc-900 hover:bg-zinc-200/60 transition-all active:scale-95 whitespace-nowrap">Reviews</a>
                 
-                <a href="faq.html" title="View Frequently Asked Questions" class="px-3 py-1.5 rounded-full text-xs font-semibold text-blue-600 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 transition-all active:scale-95 whitespace-nowrap border border-blue-200/60 shadow-xs flex items-center space-x-1">
+                <a href="faq.html" title="View Frequently Asked Questions" class="px-2.5 py-1.5 rounded-full text-xs font-semibold text-blue-600 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 transition-all active:scale-95 whitespace-nowrap border border-blue-200/60 shadow-xs flex items-center space-x-1">
                     <span>📖 FAQ Guide</span>
                 </a>
 
-                <a href="dopamine.html" title="View Dopamine Jailbreak Guide" class="px-3 py-1.5 rounded-full text-xs font-semibold text-purple-600 bg-purple-50 hover:bg-purple-100 hover:text-purple-700 transition-all active:scale-95 whitespace-nowrap border border-purple-200/60 shadow-xs flex items-center space-x-1">
+                <a href="dopamine.html" title="View Dopamine Jailbreak Guide" class="px-2.5 py-1.5 rounded-full text-xs font-semibold text-purple-600 bg-purple-50 hover:bg-purple-100 hover:text-purple-700 transition-all active:scale-95 whitespace-nowrap border border-purple-200/60 shadow-xs flex items-center space-x-1">
                     <span>⚡ Dopamine Jailbreak</span>
                 </a>
             </div>
 
-            <div class="hidden sm:block shrink-0">
+            <div class="hidden lg:block shrink-0">
                 <a href="#install" title="Get Started with TrollStore" class="px-4 py-2 rounded-full text-xs font-semibold bg-zinc-900 text-white hover:bg-black transition-all active:scale-95 shadow-sm">
                     Get Started
                 </a>
