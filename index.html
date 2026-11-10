@@ -168,16 +168,16 @@
 
     <!-- Sticky Apple-style Glassmorphism Navbar -->
     <nav class="sticky top-0 z-50 glass-nav border-b border-zinc-200/50 transition-all duration-300 w-full">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-2 sm:gap-4">
             <a href="#" title="TrollStore Guide Home" class="flex items-center space-x-2.5 group shrink-0">
                 <div class="w-9 h-9 rounded-2xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center text-white font-bold text-lg shadow-md group-hover:scale-105 transition-transform">
                     ❤️
                 </div>
-                <span class="text-base font-bold tracking-tight text-zinc-900">TrollStore</span>
+                <span class="text-base font-bold tracking-tight text-zinc-900 hidden sm:inline">TrollStore</span>
             </a>
 
             <!-- Capsule Navigation Links -->
-            <div class="flex items-center space-x-1 overflow-x-auto scrollbar-none py-2 px-2 flex-1 min-w-0 pr-8">
+            <div class="flex items-center space-x-1 overflow-x-auto scrollbar-none py-2 px-2 flex-1 min-w-0">
                 <a href="#features" title="Jump to Features Section" class="px-2.5 py-1.5 rounded-full text-xs font-medium text-zinc-600 hover:text-zinc-900 hover:bg-zinc-200/60 transition-all active:scale-95 whitespace-nowrap">Features</a>
                 <a href="#ecosystem" title="Jump to Ecosystem Apps & Tools" class="px-2.5 py-1.5 rounded-full text-xs font-medium text-zinc-600 hover:text-zinc-900 hover:bg-zinc-200/60 transition-all active:scale-95 whitespace-nowrap">Apps & Tools</a>
                 <a href="#compatibility" title="Jump to Supported Devices" class="px-2.5 py-1.5 rounded-full text-xs font-medium text-zinc-600 hover:text-zinc-900 hover:bg-zinc-200/60 transition-all active:scale-95 whitespace-nowrap">Compatibility</a>
@@ -195,8 +195,9 @@
                 </a>
             </div>
 
-            <div class="hidden lg:block shrink-0">
-                <a href="#install" title="Get Started with TrollStore" class="px-4 py-2 rounded-full text-xs font-semibold bg-zinc-900 text-white hover:bg-black transition-all active:scale-95 shadow-sm">
+            <!-- Get Started 按钮（已在全端显示，并适配移动端大小） -->
+            <div class="shrink-0">
+                <a href="#install" title="Get Started with TrollStore" class="px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-[11px] sm:text-xs font-semibold bg-zinc-900 text-white hover:bg-black transition-all active:scale-95 shadow-sm whitespace-nowrap">
                     Get Started
                 </a>
             </div>
@@ -313,7 +314,7 @@
             </div>
         </section>
 
-        <!-- NEW SECTION: Ecosystem Apps, Tools & Plugins (Covering Filza, Misaka, Dopamine, Sileo, JIT, Tweaks, etc.) -->
+        <!-- Ecosystem Apps, Tools & Plugins -->
         <section id="ecosystem" class="space-y-10">
             <div class="text-center space-y-3">
                 <h2 class="text-xs font-bold uppercase tracking-widest text-blue-600">Ecosystem & Extensions</h2>
@@ -348,7 +349,7 @@
             </div>
         </section>
 
-        <!-- NEW SECTION: Compatibility & Supported Devices (Covering iOS 16, iOS 17, iPad support) -->
+        <!-- Compatibility & Supported Devices -->
         <section id="compatibility" class="space-y-10">
             <div class="text-center space-y-3">
                 <h2 class="text-xs font-bold uppercase tracking-widest text-blue-600">Firmware Matrix</h2>
