@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TrollStore Guide & Resource Hub - TrollStore IPA & 2</title>
     <meta name="description" content="Download TrollStore IPA & TrollStore 2 securely for iOS 14-17. Enjoy permasigned apps without PC, no 7-day expiry, and direct installation guides.">
-    <meta name="keywords" content="trollstore, trollstore ipa, ios 16, download, github, direct install, app, trollstore 2, permasigned, filza">
+    <meta name="keywords" content="trollstore, trollstore ipa, ios 16, ios 17, download, github, direct install, app, trollstore 2, permasigned, filza, misaka, dopamine, sileo, altstore, trollstore alternative, trollstore helper, trollstore lite, trollstore x">
     <meta name="author" content="TrollStore Guide">
     
     <meta name="robots" content="index, follow">
@@ -137,7 +137,7 @@
         .glass-nav {
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            background: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.85);
         }
         .glass-card {
             background: rgba(255, 255, 255, 0.85);
@@ -166,9 +166,10 @@
 </head>
 <body class="min-h-screen flex flex-col justify-between selection:bg-blue-500 selection:text-white">
 
-    <!-- Sticky Apple-style Glassmorphism Navbar -->
-    <nav class="sticky top-0 z-50 glass-nav border-b border-zinc-200/50 transition-all duration-300 w-full">
+    <!-- Sticky Apple-style Glassmorphism Navbar (Optimized & Responsive) -->
+    <nav class="sticky top-0 z-50 glass-nav border-b border-zinc-200/50 transition-all duration-300 w-full shadow-xs">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+            <!-- Brand Logo -->
             <a href="#" title="TrollStore Guide Home" class="flex items-center space-x-2.5 group shrink-0">
                 <div class="w-9 h-9 rounded-2xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center text-white font-bold text-lg shadow-md group-hover:scale-105 transition-transform">
                     ❤️
@@ -176,27 +177,56 @@
                 <span class="text-base font-bold tracking-tight text-zinc-900">TrollStore</span>
             </a>
 
-            <!-- Capsule Navigation Links -->
-            <div class="flex items-center space-x-1 overflow-x-auto scrollbar-none py-2 px-1 shrink-0 max-w-[55%] sm:max-w-none">
+            <!-- Desktop & Tablet Navigation Links -->
+            <div class="hidden lg:flex items-center space-x-1 py-2">
                 <a href="#features" title="Jump to Features Section" class="px-3 py-1.5 rounded-full text-xs font-medium text-zinc-600 hover:text-zinc-900 hover:bg-zinc-200/60 transition-all active:scale-95 whitespace-nowrap">Features</a>
+                <a href="#ecosystem" title="Jump to Ecosystem Apps & Tools" class="px-3 py-1.5 rounded-full text-xs font-medium text-zinc-600 hover:text-zinc-900 hover:bg-zinc-200/60 transition-all active:scale-95 whitespace-nowrap">Apps & Tools</a>
+                <a href="#compatibility" title="Jump to Supported Devices" class="px-3 py-1.5 rounded-full text-xs font-medium text-zinc-600 hover:text-zinc-900 hover:bg-zinc-200/60 transition-all active:scale-95 whitespace-nowrap">Compatibility</a>
                 <a href="#comparison" title="Jump to Comparison Table" class="px-3 py-1.5 rounded-full text-xs font-medium text-zinc-600 hover:text-zinc-900 hover:bg-zinc-200/60 transition-all active:scale-95 whitespace-nowrap">Comparison</a>
                 <a href="#install" title="Jump to Installation Guide" class="px-3 py-1.5 rounded-full text-xs font-medium text-zinc-600 hover:text-zinc-900 hover:bg-zinc-200/60 transition-all active:scale-95 whitespace-nowrap">How to Install</a>
                 <a href="#pros-cons" title="Jump to Pros and Cons Section" class="px-3 py-1.5 rounded-full text-xs font-medium text-zinc-600 hover:text-zinc-900 hover:bg-zinc-200/60 transition-all active:scale-95 whitespace-nowrap">Pros & Cons</a>
                 <a href="#testimonials" title="Jump to User Testimonials" class="px-3 py-1.5 rounded-full text-xs font-medium text-zinc-600 hover:text-zinc-900 hover:bg-zinc-200/60 transition-all active:scale-95 whitespace-nowrap">Reviews</a>
                 
                 <a href="faq.html" title="View Frequently Asked Questions" class="px-3 py-1.5 rounded-full text-xs font-semibold text-blue-600 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 transition-all active:scale-95 whitespace-nowrap border border-blue-200/60 shadow-xs flex items-center space-x-1">
-                    <span>📖 FAQ Guide</span>
+                    <span>📖 FAQ</span>
                 </a>
 
                 <a href="dopamine.html" title="View Dopamine Jailbreak Guide" class="px-3 py-1.5 rounded-full text-xs font-semibold text-purple-600 bg-purple-50 hover:bg-purple-100 hover:text-purple-700 transition-all active:scale-95 whitespace-nowrap border border-purple-200/60 shadow-xs flex items-center space-x-1">
-                    <span>⚡ Dopamine Jailbreak</span>
+                    <span>⚡ Dopamine</span>
                 </a>
             </div>
 
-            <div class="hidden sm:block shrink-0">
-                <a href="#install" title="Get Started with TrollStore" class="px-4 py-2 rounded-full text-xs font-semibold bg-zinc-900 text-white hover:bg-black transition-all active:scale-95 shadow-sm">
+            <!-- Right Actions & Mobile Hamburger Trigger -->
+            <div class="flex items-center space-x-2 shrink-0">
+                <a href="#install" title="Get Started with TrollStore" class="hidden sm:inline-flex px-4 py-2 rounded-full text-xs font-semibold bg-zinc-900 text-white hover:bg-black transition-all active:scale-95 shadow-sm">
                     Get Started
                 </a>
+
+                <!-- Mobile Menu Button with Animated Feedback -->
+                <button id="mobile-menu-button" aria-label="Toggle Menu" class="lg:hidden p-2.5 rounded-2xl bg-zinc-100/80 hover:bg-zinc-200 text-zinc-800 transition-all active:scale-95 focus:outline-none border border-zinc-200">
+                    <svg id="menu-icon-open" class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile & Tablet Dropdown Navigation Drawer -->
+        <div id="mobile-menu" class="hidden lg:hidden glass-nav border-t border-zinc-200/60 px-4 py-5 space-y-4 shadow-xl transition-all duration-300 max-h-[85vh] overflow-y-auto">
+            <div class="grid grid-cols-2 gap-2">
+                <a href="#features" class="mobile-link px-3.5 py-2.5 rounded-xl text-xs font-medium text-zinc-700 bg-zinc-100/60 hover:bg-zinc-200 transition-all flex items-center space-x-2"><span>🎯 Features</span></a>
+                <a href="#ecosystem" class="mobile-link px-3.5 py-2.5 rounded-xl text-xs font-medium text-zinc-700 bg-zinc-100/60 hover:bg-zinc-200 transition-all flex items-center space-x-2"><span>📦 Apps & Tools</span></a>
+                <a href="#compatibility" class="mobile-link px-3.5 py-2.5 rounded-xl text-xs font-medium text-zinc-700 bg-zinc-100/60 hover:bg-zinc-200 transition-all flex items-center space-x-2"><span>📱 Compatibility</span></a>
+                <a href="#comparison" class="mobile-link px-3.5 py-2.5 rounded-xl text-xs font-medium text-zinc-700 bg-zinc-100/60 hover:bg-zinc-200 transition-all flex items-center space-x-2"><span>📊 Comparison</span></a>
+                <a href="#install" class="mobile-link px-3.5 py-2.5 rounded-xl text-xs font-medium text-zinc-700 bg-zinc-100/60 hover:bg-zinc-200 transition-all flex items-center space-x-2"><span>⚡ How to Install</span></a>
+                <a href="#pros-cons" class="mobile-link px-3.5 py-2.5 rounded-xl text-xs font-medium text-zinc-700 bg-zinc-100/60 hover:bg-zinc-200 transition-all flex items-center space-x-2"><span>⚖️ Pros & Cons</span></a>
+                <a href="#testimonials" class="mobile-link px-3.5 py-2.5 rounded-xl text-xs font-medium text-zinc-700 bg-zinc-100/60 hover:bg-zinc-200 transition-all flex items-center space-x-2 col-span-2"><span>⭐ Reviews</span></a>
+            </div>
+            
+            <div class="pt-3 border-t border-zinc-200/80 flex flex-col space-y-2.5">
+                <a href="faq.html" class="mobile-link px-4 py-2.5 rounded-xl text-xs font-semibold text-blue-700 bg-blue-50 border border-blue-200/80 flex items-center justify-center space-x-1.5 shadow-xs"><span>📖 FAQ & Troubleshooting Guide</span></a>
+                <a href="dopamine.html" class="mobile-link px-4 py-2.5 rounded-xl text-xs font-semibold text-purple-700 bg-purple-50 border border-purple-200/80 flex items-center justify-center space-x-1.5 shadow-xs"><span>⚡ Dopamine Jailbreak Guide</span></a>
+                <a href="#install" class="mobile-link px-4 py-3 rounded-xl text-xs font-semibold bg-zinc-900 text-white text-center hover:bg-black transition-all shadow-md">Get Started</a>
             </div>
         </div>
     </nav>
@@ -211,7 +241,7 @@
                 <span>TrollStore Guide & Resource Hub • iOS 14.0 - 17.0 Permasigned Sideloading & TrollStore 2</span>
             </div>
 
-            <!-- SEO 优化后的 H1 主标题（控制在70字符以内） -->
+            <!-- SEO 优化后的 H1 主标题 -->
             <h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-zinc-900 leading-[1.1]">
                 TrollStore Guide: <span class="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Download TrollStore IPA & 2</span>
             </h1>
@@ -311,22 +341,89 @@
             </div>
         </section>
 
+        <!-- NEW SECTION: Ecosystem Apps, Tools & Plugins (Covering Filza, Misaka, Dopamine, Sileo, JIT, Tweaks, etc.) -->
+        <section id="ecosystem" class="space-y-10">
+            <div class="text-center space-y-3">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-blue-600">Ecosystem & Extensions</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-zinc-900">Best TrollStore Apps, Tools & Tweaks</h3>
+                <p class="text-zinc-600 text-sm sm:text-base max-w-xl mx-auto">Unlock the full potential of your device with essential root helpers, package managers, and customized mods.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="glass-card p-6 rounded-3xl apple-card-hover space-y-3 border-blue-100">
+                    <div class="text-2xl">📂</div>
+                    <h4 class="text-base font-bold text-zinc-900">Filza File Manager</h4>
+                    <p class="text-xs text-zinc-600 leading-relaxed">Gain root-level system access to inspect directories, edit plists, and manage files without restrictions.</p>
+                </div>
+
+                <div class="glass-card p-6 rounded-3xl apple-card-hover space-y-3 border-purple-100">
+                    <div class="text-2xl">⚡</div>
+                    <h4 class="text-base font-bold text-zinc-900">Dopamine & Sileo</h4>
+                    <p class="text-xs text-zinc-600 leading-relaxed">Integrate smoothly with modern semi-jailbreaks and leverage Sileo for advanced tweak repositories.</p>
+                </div>
+
+                <div class="glass-card p-6 rounded-3xl apple-card-hover space-y-3 border-indigo-100">
+                    <div class="text-2xl">🛠️</div>
+                    <h4 class="text-base font-bold text-zinc-900">Misaka & Tweaks</h4>
+                    <p class="text-xs text-zinc-600 leading-relaxed">Customize themes, enable font changes, and apply system-wide tweaks safely using advanced package managers.</p>
+                </div>
+
+                <div class="glass-card p-6 rounded-3xl apple-card-hover space-y-3 border-amber-100">
+                    <div class="text-2xl">🚀</div>
+                    <h4 class="text-base font-bold text-zinc-900">JIT Enablers & UTM</h4>
+                    <p class="text-xs text-zinc-600 leading-relaxed">Run virtual machines, execute heavy emulators with native JIT compilation, and bypass sandbox CPU limits.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- NEW SECTION: Compatibility & Supported Devices (Covering iOS 16, iOS 17, iPad support) -->
+        <section id="compatibility" class="space-y-10">
+            <div class="text-center space-y-3">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-blue-600">Firmware Matrix</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-zinc-900">Supported Devices & iOS Versions</h3>
+                <p class="text-zinc-600 text-sm sm:text-base max-w-xl mx-auto">Check if your iPhone or iPad model is fully compatible with TrollStore 2 installation binaries.</p>
+            </div>
+
+            <div class="glass-card p-8 sm:p-10 rounded-3xl space-y-6 border border-zinc-200">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                    <div class="p-6 rounded-2xl bg-zinc-50 border border-zinc-200/80 space-y-2">
+                        <span class="text-xs font-bold text-blue-600 uppercase tracking-wider">iOS 14 - iOS 15</span>
+                        <h4 class="text-xl font-extrabold text-zinc-900">Full CoreTrust Support</h4>
+                        <p class="text-xs text-zinc-600">Original CoreTrust exploit execution for all supported 64-bit iOS 14 and 15 devices.</p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-zinc-50 border border-zinc-200/80 space-y-2">
+                        <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider">iOS 16 Support</span>
+                        <h4 class="text-xl font-extrabold text-zinc-900">iPhone & iPad Compatible</h4>
+                        <p class="text-xs text-zinc-600">Seamless installation via persistence helpers and TrollInstallerX utilities.</p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-zinc-50 border border-zinc-200/80 space-y-2">
+                        <span class="text-xs font-bold text-emerald-600 uppercase tracking-wider">iOS 17.0 Limit</span>
+                        <h4 class="text-xl font-extrabold text-zinc-900">Up to iOS 17.0 Max</h4>
+                        <p class="text-xs text-zinc-600">Works perfectly up to iOS 17.0. Not compatible with iOS 17.1 and newer versions.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- 2. Side-by-Side Comparison Table -->
         <section id="comparison" class="space-y-10">
             <div class="text-center space-y-3">
                 <h2 class="text-xs font-bold uppercase tracking-widest text-blue-600">Head-to-Head Comparison</h2>
                 <h3 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-zinc-900">Standard iOS vs. TrollStore 2</h3>
-                <p class="text-zinc-600 text-sm sm:text-base max-w-xl mx-auto">See why millions of Apple enthusiasts prefer TrollStore over standard sideloading methods.</p>
+                <p class="text-zinc-600 text-sm sm:text-base max-w-xl mx-auto">See why millions of Apple enthusiasts prefer TrollStore over standard sideloading methods and alternatives like AltStore or SideStore.</p>
             </div>
 
             <div class="glass-card rounded-3xl overflow-hidden shadow-sm border border-zinc-200">
                 <div class="overflow-x-auto">
-                    <table class="w-full text-left border-collapse min-w-[550px]">
+                    <table class="w-full text-left border-collapse min-w-[650px]">
                         <thead>
                             <tr class="bg-zinc-100/80 border-b border-zinc-200 text-xs font-bold uppercase tracking-wider text-zinc-700">
                                 <th class="p-4 sm:p-6">Feature / Metric</th>
                                 <th class="p-4 sm:p-6 text-zinc-600">Standard App Store</th>
-                                <th class="p-4 sm:p-6 text-zinc-600">AltStore / ESIGN</th>
+                                <th class="p-4 sm:p-6 text-zinc-600">AltStore / SideStore</th>
+                                <th class="p-4 sm:p-6 text-zinc-600">Sideloadly / ESIGN</th>
                                 <th class="p-4 sm:p-6 text-blue-600 bg-blue-50/50">TrollStore 2 ⚡</th>
                             </tr>
                         </thead>
@@ -335,17 +432,20 @@
                                 <td class="p-4 sm:p-6 font-semibold text-zinc-900">Certificate Expiration</td>
                                 <td class="p-4 sm:p-6 text-emerald-600 font-medium">Never (Official)</td>
                                 <td class="p-4 sm:p-6 text-amber-600 font-medium">Every 7 Days</td>
+                                <td class="p-4 sm:p-6 text-amber-600 font-medium">Every 7 Days</td>
                                 <td class="p-4 sm:p-6 font-bold text-blue-600 bg-blue-50/30">Never (Permasigned ♾️)</td>
                             </tr>
                             <tr>
                                 <td class="p-4 sm:p-6 font-semibold text-zinc-900">Requires Computer</td>
                                 <td class="p-4 sm:p-6 text-emerald-600 font-medium">No</td>
                                 <td class="p-4 sm:p-6 text-amber-600 font-medium">Required Weekly</td>
+                                <td class="p-4 sm:p-6 text-amber-600 font-medium">Required for Sign</td>
                                 <td class="p-4 sm:p-6 font-bold text-blue-600 bg-blue-50/30">No (Direct install options)</td>
                             </tr>
                             <tr>
                                 <td class="p-4 sm:p-6 font-semibold text-zinc-900">App Limit</td>
                                 <td class="p-4 sm:p-6">Unlimited</td>
+                                <td class="p-4 sm:p-6 text-amber-600 font-medium">3 Apps Max</td>
                                 <td class="p-4 sm:p-6 text-amber-600 font-medium">3 Apps Max</td>
                                 <td class="p-4 sm:p-6 font-bold text-blue-600 bg-blue-50/30">Unlimited Apps 🚀</td>
                             </tr>
@@ -353,10 +453,12 @@
                                 <td class="p-4 sm:p-6 font-semibold text-zinc-900">Push Notifications</td>
                                 <td class="p-4 sm:p-6 text-emerald-600 font-medium">Supported</td>
                                 <td class="p-4 sm:p-6 text-amber-600 font-medium">Requires Extra Setup</td>
+                                <td class="p-4 sm:p-6 text-amber-600 font-medium">Requires Paid Cert</td>
                                 <td class="p-4 sm:p-6 font-bold text-blue-600 bg-blue-50/30">Fully Supported</td>
                             </tr>
                             <tr>
                                 <td class="p-4 sm:p-6 font-semibold text-zinc-900">Jailbreak Required</td>
+                                <td class="p-4 sm:p-6 text-emerald-600 font-medium">No</td>
                                 <td class="p-4 sm:p-6 text-emerald-600 font-medium">No</td>
                                 <td class="p-4 sm:p-6 text-emerald-600 font-medium">No</td>
                                 <td class="p-4 sm:p-6 font-bold text-blue-600 bg-blue-50/30">No (CoreTrust exploit)</td>
@@ -388,7 +490,7 @@
                     <div class="w-10 h-10 rounded-2xl bg-blue-600 text-white flex items-center justify-center font-bold text-sm shadow-md">2</div>
                     <h4 class="text-lg font-bold text-zinc-900">Execute Direct Installation</h4>
                     <p class="text-sm text-zinc-700 leading-relaxed">
-                        Learn how to perform direct installation methods or use <strong>TrollInstallerX</strong> to finish your setup smoothly.
+                        Learn how to perform direct installation methods or use <strong>TrollInstallerX</strong> and persistence helpers to finish your setup smoothly.
                     </p>
                 </div>
 
@@ -568,6 +670,32 @@
         document.addEventListener('dblclick', function (e) {
             e.preventDefault();
         }, { passive: false });
+
+        // Mobile Menu Toggle & Auto-Close Logic
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIconOpen = document.getElementById('menu-icon-open');
+
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                const isOpen = !mobileMenu.classList.contains('hidden');
+                if (isOpen) {
+                    mobileMenu.classList.add('hidden');
+                    menuIconOpen.style.transform = 'rotate(0deg)';
+                } else {
+                    mobileMenu.classList.remove('hidden');
+                    menuIconOpen.style.transform = 'rotate(90deg)';
+                }
+            });
+
+            // Auto close mobile menu when clicking any nav link inside it
+            document.querySelectorAll('.mobile-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    menuIconOpen.style.transform = 'rotate(0deg)';
+                });
+            });
+        }
 
         function copyContactEmail() {
             const email = 'c18205032735@163.com';
