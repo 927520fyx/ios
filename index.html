@@ -1,840 +1,612 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <script>
-        // 防止浏览器刷新时产生滚动跳动与偏移
-        if ('scrollRestoration' in history) {
-            history.scrollRestoration = 'manual';
-        }
-        window.scrollTo(0, 0);
-    </script>
-    <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-PS9RXPRF"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-</script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TrollStore Guide & Resource Hub - TrollStore 2 IPA</title>
-    <meta name="description" content="Secure TrollStore download & IPA files for iOS 14-17. Explore GitHub trollstore repos, trollstore installer, and direct install guides without PC.">
-    <!-- 优化：精简 Keywords 长度，保留核心高价值关键词 -->
-    <meta name="keywords" content="trollstore, trollstore ipa, trollstore download, trollstore ios 16, trollstore ios 17, trollstore github, trollstore 2 ipa, install trollstore without pc">
-    <meta name="author" content="TrollStore Guide">
-    
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://927520fyx.github.io/ios/">
-
-    <!-- Favicon & PWA Icons (修复绝对路径解决 Missing 问题) -->
-    <link rel="icon" href="https://927520fyx.github.io/ios/favicon.ico">
-    <link rel="apple-touch-icon" href="https://927520fyx.github.io/ios/apple-touch-icon.png">
-    <meta name="theme-color" content="#2563eb">
-
-    <!-- Open Graph / Social Sharing -->
-    <meta property="og:title" content="TrollStore Guide & Resource Hub - TrollStore 2 IPA">
-    <meta property="og:description" content="Secure TrollStore download & IPA files for iOS 14-17. Explore GitHub trollstore repos, trollstore installer, and direct install guides without PC.">
-    <meta property="og:url" content="https://927520fyx.github.io/ios/">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="TrollStore Guide">
-    <meta property="og:image" content="https://927520fyx.github.io/ios/og-image.jpg">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="TrollStore Guide & Resource Hub - TrollStore 2 IPA">
-    <meta name="twitter:description" content="Secure TrollStore download & IPA files for iOS 14-17. Explore GitHub trollstore repos, trollstore installer, and direct install guides without PC.">
-    <meta name="twitter:image" content="https://927520fyx.github.io/ios/og-image.jpg">
-    
-    <!-- 性能优化：预连接与 DNS 预解析 -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- 修复布局偏移：使用标准样式加载 Google Fonts 防止刷新跳动 -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- JSON-LD 结构化数据 -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "WebSite",
-          "@id": "https://927520fyx.github.io/ios/#website",
-          "url": "https://927520fyx.github.io/ios/",
-          "name": "TrollStore Guide & Resource Hub",
-          "description": "Download TrollStore IPA & TrollStore 2 securely for iOS 14-17. Enjoy permasigned apps without PC, no 7-day expiry, and direct installation guides.",
-          "sameAs": [
-            "https://github.com/opa334/TrollStore"
-          ],
-          "publisher": {
-            "@id": "https://927520fyx.github.io/ios/#organization"
-          }
-        },
-        {
-          "@type": "Organization",
-          "@id": "https://927520fyx.github.io/ios/#organization",
-          "name": "TrollStore Guide",
-          "url": "https://927520fyx.github.io/ios/",
-          "logo": "https://927520fyx.github.io/ios/apple-touch-icon.png",
-          "description": "Independent guide and resource hub providing secure download links and installation guides for iOS 14-17.",
-          "sameAs": [
-            "https://github.com/opa334/TrollStore"
-          ],
-          "contactPoint": {
-            "@type": "ContactPoint",
-            "email": "c18205032735@163.com",
-            "contactType": "customer support"
-          }
-        },
-        {
-          "@type": "BreadcrumbList",
-          "itemListElement": [
-            {
-              "@type": "ListItem",
-              "position": 1,
-              "name": "Home",
-              "item": "https://927520fyx.github.io/ios/"
-            }
-          ]
-        }
-      ]
-    }
-    </script>
-
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
-                    },
-                    animation: {
-                        'float': 'float 6s ease-in-out infinite',
-                        'pulse-glow': 'pulseGlow 4s ease-in-out infinite',
-                        'gradient-xy': 'gradientXY 15s ease infinite',
-                    },
-                    keyframes: {
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0px)' },
-                            '50%': { transform: 'translateY(-10px)' },
-                        },
-                        pulseGlow: {
-                            '0%, 100%': { opacity: '0.4', transform: 'scale(1)' },
-                            '50%': { opacity: '0.8', transform: 'scale(1.05)' },
-                        },
-                        gradientXY: {
-                            '0%, 100%': { backgroundPosition: '0% 50%' },
-                            '50%': { backgroundPosition: '100% 50%' },
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-    
-    <style>
-        html {
-            width: 100%;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            -webkit-text-size-adjust: 100%;
-        }
-        body {
-            overflow-x: hidden;
-            width: 100%;
-            max-width: 100%;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            touch-action: manipulation;
-            -webkit-text-size-adjust: 100%;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background-color: #f8fafc;
-            color: #0f172a;
-            -webkit-font-smoothing: antialiased;
-            font-optical-sizing: auto;
-        }
-        *, *:before, *:after {
-            box-sizing: border-box;
-        }
-        
-        /* 动态背景网格纹理 */
-        .bg-grid-pattern {
-            background-size: 40px 40px;
-            background-image: linear-gradient(to right, rgba(148, 163, 184, 0.08) 1px, transparent 1px),
-                              linear-gradient(to bottom, rgba(148, 163, 184, 0.08) 1px, transparent 1px);
-        }
-
-        .glass-nav {
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            background: rgba(255, 255, 255, 0.85);
-            border-bottom: 1px solid rgba(226, 232, 240, 0.8);
-        }
-        
-        .glass-card {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(226, 232, 240, 0.8);
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.01);
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        
-        .apple-card-hover {
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .apple-card-hover:hover {
-            transform: translateY(-6px) scale(1.01);
-            box-shadow: 0 20px 40px -15px rgba(37, 99, 235, 0.12), 0 0 0 1px rgba(59, 130, 246, 0.2);
-            border-color: rgba(59, 130, 246, 0.4);
-            background: rgba(255, 255, 255, 0.98);
-        }
-
-        .scrollbar-none::-webkit-scrollbar { display: none; }
-        .scrollbar-none { -ms-overflow-style: none; scrollbar-width: none; }
-
-        /* 渐变流光边框动效 */
-        .glow-border {
-            position: relative;
-            border-radius: 1.5rem;
-            background: linear-gradient(60deg, #3b82f6, #6366f1, #a855f7, #3b82f6);
-            background-size: 300% 300%;
-            animation: gradientXY 10s ease infinite;
-            padding: 1px;
-        }
-        .glow-border-inner {
-            background: #ffffff;
-            border-radius: calc(1.5rem - 1px);
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TrollStore Complete Guide: Supported Versions, Official Download &amp; Installation (2026)</title>
+<meta name="description" content="TrollStore supported iOS versions, official GitHub download, and installation methods. iOS 26 and iOS 27 are NOT supported. Full compatibility table and no-PC install guide.">
+<style>
+  :root {
+    --bg: #ffffff;
+    --text: #1a1a1a;
+    --muted: #5a5a5a;
+    --border: #e5e5e5;
+    --accent: #0a66c2;
+    --success: #0a7a3e;
+    --danger: #c42b1c;
+    --warn-bg: #fff8e6;
+    --warn-border: #f0c040;
+    --table-stripe: #f8f9fa;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.75;
+    font-size: 16px;
+    padding: 0 16px;
+  }
+  article {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 40px 0 80px;
+  }
+  h1 {
+    font-size: 1.9rem;
+    line-height: 1.3;
+    margin-bottom: 16px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+  .lede {
+    font-size: 1.05rem;
+    color: var(--muted);
+    margin-bottom: 12px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+  }
+  .lede strong { color: var(--text); }
+  h2 {
+    font-size: 1.4rem;
+    margin: 48px 0 16px;
+    font-weight: 700;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+  h3 {
+    font-size: 1.1rem;
+    margin: 28px 0 10px;
+    font-weight: 600;
+  }
+  p { margin-bottom: 14px; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul, ol { margin: 0 0 16px 24px; }
+  li { margin-bottom: 8px; }
+  code {
+    background: #f0f0f0;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    font-family: "SF Mono", Consolas, monospace;
+  }
+  .callout {
+    padding: 16px 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+    font-size: 0.95rem;
+  }
+  .callout-warn {
+    background: var(--warn-bg);
+    border-left: 4px solid var(--warn-border);
+  }
+  .callout-danger {
+    background: #fdf0ef;
+    border-left: 4px solid var(--danger);
+  }
+  .callout-info {
+    background: #eef4fb;
+    border-left: 4px solid var(--accent);
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 0.92rem;
+  }
+  th, td {
+    padding: 10px 14px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+  }
+  th {
+    background: #f1f3f5;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--muted);
+  }
+  tr:nth-child(even) td { background: var(--table-stripe); }
+  .tag-yes { color: var(--success); font-weight: 600; }
+  .tag-no { color: var(--danger); font-weight: 600; }
+  .official-link {
+    display: inline-block;
+    background: #24292e;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin: 8px 0;
+  }
+  .official-link:hover { background: #1a1e22; text-decoration: none; color: #fff; }
+  .method-card {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 16px 0;
+  }
+  .method-card h3 { margin-top: 0; }
+  .toc {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin: 24px 0 32px;
+    font-size: 0.92rem;
+  }
+  .toc strong { display: block; margin-bottom: 8px; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); }
+  .toc ol { margin-bottom: 0; }
+  .toc li { margin-bottom: 4px; }
+  .toc ol ol { margin-top: 4px; margin-bottom: 4px; }
+  /* Site Navigation Bar */
+  .site-nav {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 10px 14px;
+    background: #f8f9fa;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    margin: 20px 0 8px;
+    font-size: 0.92rem;
+  }
+  .site-nav a {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-weight: 600;
+    color: var(--accent);
+    background: #fff;
+    border: 1px solid var(--border);
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+  .site-nav a:hover {
+    background: var(--accent);
+    color: #fff;
+    text-decoration: none;
+  }
+  .site-nav a[aria-current="page"] {
+    background: var(--accent);
+    color: #fff;
+    border-color: var(--accent);
+  }
+  @media (max-width: 600px) {
+    h1 { font-size: 1.5rem; }
+    h2 { font-size: 1.2rem; }
+    table { font-size: 0.82rem; }
+    th, td { padding: 8px 10px; }
+    .site-nav { font-size: 0.85rem; }
+  }
+</style>
 </head>
-<body class="min-h-screen flex flex-col justify-between selection:bg-blue-500 selection:text-white bg-grid-pattern">
+<body>
+<article>
 
-    <!-- Sticky Apple-style Glassmorphism Navbar -->
-    <nav class="sticky top-0 z-50 glass-nav transition-all duration-300 w-full shadow-sm">
-        <div class="max-w-7xl mx-auto px-2 sm:px-6 h-16 flex items-center justify-between gap-1">
-            <a href="#" title="TrollStore Guide Home" class="flex items-center space-x-1.5 group shrink-0">
-                <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-2xl bg-gradient-to-tr from-blue-600 via-indigo-600 to-purple-600 flex items-center justify-center text-white font-bold text-base shadow-md shadow-blue-500/25 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
-                    ❤️
-                </div>
-                <span class="text-xs sm:text-sm font-extrabold tracking-tight bg-gradient-to-r from-zinc-900 to-zinc-700 bg-clip-text text-transparent hidden md:inline">TrollStore</span>
-            </a>
+<h1>TrollStore Complete Guide: Supported Versions, Official Download &amp; Installation (2026)</h1>
 
-            <!-- Capsule Navigation Links -->
-            <div class="flex items-center space-x-0.5 overflow-x-auto scrollbar-none py-2 px-0.5 flex-1 min-w-0">
-                <a href="#features" title="Jump to Features Section" class="px-2 py-1.5 rounded-full text-[11px] sm:text-xs font-semibold text-zinc-600 hover:text-blue-600 hover:bg-blue-50/80 transition-all active:scale-95 whitespace-nowrap">Features</a>
-                <a href="#ecosystem" title="Jump to Ecosystem Apps & Tools" class="px-2 py-1.5 rounded-full text-[11px] sm:text-xs font-semibold text-zinc-600 hover:text-blue-600 hover:bg-blue-50/80 transition-all active:scale-95 whitespace-nowrap">Apps & Tools</a>
-                <a href="#compatibility" title="Jump to Supported Devices" class="px-2 py-1.5 rounded-full text-[11px] sm:text-xs font-semibold text-zinc-600 hover:text-blue-600 hover:bg-blue-50/80 transition-all active:scale-95 whitespace-nowrap">Compatibility</a>
-                <a href="#comparison" title="Jump to Comparison Table" class="px-2 py-1.5 rounded-full text-[11px] sm:text-xs font-semibold text-zinc-600 hover:text-blue-600 hover:bg-blue-50/80 transition-all active:scale-95 whitespace-nowrap">Comparison</a>
-                <a href="#install" title="Jump to Installation Guide" class="px-2 py-1.5 rounded-full text-[11px] sm:text-xs font-semibold text-zinc-600 hover:text-blue-600 hover:bg-blue-50/80 transition-all active:scale-95 whitespace-nowrap">How to Install</a>
-                <a href="#troubleshooting" title="Jump to Troubleshooting Section" class="px-2 py-1.5 rounded-full text-[11px] sm:text-xs font-semibold text-zinc-600 hover:text-blue-600 hover:bg-blue-50/80 transition-all active:scale-95 whitespace-nowrap">Troubleshooting</a>
-                <a href="#pros-cons" title="Jump to Pros and Cons Section" class="px-2 py-1.5 rounded-full text-[11px] sm:text-xs font-semibold text-zinc-600 hover:text-blue-600 hover:bg-blue-50/80 transition-all active:scale-95 whitespace-nowrap">Pros & Cons</a>
-                <a href="#testimonials" title="Jump to User Testimonials" class="px-2 py-1.5 rounded-full text-[11px] sm:text-xs font-semibold text-zinc-600 hover:text-blue-600 hover:bg-blue-50/80 transition-all active:scale-95 whitespace-nowrap">Reviews</a>
-                
-                <a href="faq.html" title="View Frequently Asked Questions" class="px-2 py-1.5 rounded-full text-[11px] sm:text-xs font-bold text-blue-600 bg-blue-50 hover:bg-blue-100 transition-all active:scale-95 whitespace-nowrap border border-blue-200/80 shadow-xs flex items-center space-x-1">
-                    <span>📖 FAQ</span>
-                </a>
+<p class="lede">
+<strong>Bottom line first:</strong> TrollStore only supports iOS 14.0 beta 2 through 16.6.1, 16.7 RC (20H18), and 17.0. If your device runs iOS 26, iOS 27, or any version from 17.0.1 onward, <strong>TrollStore will not work for you</strong>. Apple patched the CoreTrust vulnerability that TrollStore depends on starting with iOS 17.0.1, and the official README states that 16.7.x (excluding RC) and 17.0.1+ will <strong>never be supported</strong> unless a third CoreTrust bug is discovered[citation:7]. This guide uses official GitHub information to help you determine compatibility and find the correct download and installation path for your device.
+</p>
 
-                <a href="dopamine.html" title="View Dopamine Jailbreak Guide" class="px-2 py-1.5 rounded-full text-[11px] sm:text-xs font-bold text-purple-600 bg-purple-50 hover:bg-purple-100 transition-all active:scale-95 whitespace-nowrap border border-purple-200/80 shadow-xs flex items-center space-x-1 shrink-0">
-                    <span>⚡ Dopamine</span>
-                </a>
-            </div>
+<nav class="site-nav" aria-label="Site navigation">
+  <span style="font-weight:600; color:var(--muted); margin-right:4px;">Site:</span>
+  <a href="index.html" aria-current="page">Home</a>
+  <a href="faq.html">FAQ</a>
+  <a href="dopamine.html">Dopamine</a>
+</nav>
 
-            <!-- Get Started 按钮 -->
-            <div class="shrink-0 pl-1">
-                <a href="#install" title="Get Started with TrollStore" class="px-2.5 sm:px-4 py-2 rounded-full text-[11px] sm:text-xs font-bold bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:from-blue-700 hover:to-indigo-700 transition-all shadow-md shadow-blue-500/20 active:scale-95 whitespace-nowrap">
-                    Get Started 🚀
-                </a>
-            </div>
-        </div>
-    </nav>
+<div class="toc">
+<strong>Contents</strong>
+<ol>
+  <li><a href="#download">Download &amp; Get: Where TrollStore Actually Comes From</a></li>
+  <li><a href="#install">Install &amp; Deploy: No-PC OTA, TrollInstallerX, and TrollRestore</a></li>
+  <li><a href="#compat">Version &amp; Compatibility: The Definitive Support List</a></li>
+  <li><a href="#official">Official &amp; Source: Avoiding Fake Sites</a></li>
+  <li><a href="#alternative">Alternative &amp; Comparison: What to Use Instead</a></li>
+  <li><a href="#lite">Lite &amp; Variant: TrollStore Lite, Pro, 2, Beta, Mod</a></li>
+  <li><a href="#jailbreak">No Jailbreak / Jailbreak: Clarifying the Relationship</a></li>
+  <li><a href="#update">Update &amp; Maintenance</a></li>
+  <li><a href="#guide">Guide &amp; Tutorial: How to Use TrollStore After Installation</a></li>
+  <li><a href="#localized">Localized: Non-English TrollStore Searches</a></li>
+  <li><a href="#ecosystem">Ecosystem &amp; Repo: Helpers and Community Resources</a></li>
+  <li><a href="#device">Device &amp; Platform: iPhone and iPad</a></li>
+</ol>
+</div>
 
-    <!-- Hero Section -->
-    <header class="relative overflow-hidden pt-20 pb-24 sm:pt-28 sm:pb-36 px-4 sm:px-6 text-center w-full">
-        <!-- 动态背景发光光晕 -->
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 sm:w-[600px] h-72 sm:h-[600px] bg-gradient-to-tr from-blue-500/20 via-indigo-500/15 to-purple-500/10 rounded-full blur-3xl pointer-events-none animate-pulse-glow max-w-[90vw]"></div>
+<h2 id="download">1. Download &amp; Get: Where TrollStore Actually Comes From</h2>
 
-        <div class="max-w-4xl mx-auto relative z-10 space-y-6">
-            <div class="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-blue-50/90 border border-blue-200/80 text-blue-700 text-xs font-bold tracking-wide shadow-sm animate-float">
-                <span class="w-2.5 h-2.5 rounded-full bg-blue-600 animate-ping"></span>
-                <span>Guide & Resource Hub • iOS 14.0 - 17.0 Permasigned Sideloading & Version 2</span>
-            </div>
+<p><strong>User intent:</strong> Find the TrollStore IPA, download links, GitHub releases, and the latest version—including <code>trollstore ipa</code>, <code>trollstore ipa download</code>, <code>trollstore ipa library</code>, <code>trollstore ipa ios 26</code>, <code>ipa trollstore</code>, <code>ipa trollstore ios 26</code>, <code>trollstore download ios</code>, <code>trollstore download iphone</code>, <code>trollstore download ipa</code>, <code>trollstore download ios 27</code>, <code>download trollstore</code>, <code>download trollstore ipa</code>, <code>download trollstore ios</code>, <code>download trollstore ios 15</code>, <code>free download trollstore</code>, <code>get trollstore</code>, <code>latest trollstore</code>, <code>latest trollstore ipa</code>, <code>trollstore latest</code>, <code>trollstore latest version</code>, <code>new trollstore</code>, <code>trollstore releases</code>, <code>trollstore github</code>, <code>trollstore github ipa</code>, <code>trollstore github releases</code>, <code>trollstore github ipa download</code>, <code>trollstore github ios 15</code>, <code>trollstore github ios 15.8.8</code>, <code>trollstore github ios 18</code>, <code>trollstore github ios 26</code>.</p>
 
-            <!-- SEO 优化后的 H1 主标题 -->
-            <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-zinc-900 leading-[1.15]">
-                TrollStore Hub: <span class="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">Download IPA & Version 2</span>
-            </h1>
+<p>The single most important thing to understand about TrollStore downloads is this: <strong>TrollStore is not distributed as a standalone IPA that you double-tap to install.</strong> It is installed through a separate installer tool that exploits the CoreTrust bug on your specific iOS version. Searching for <code>trollstore ipa download</code>, <code>ipa trollstore</code>, or <code>trollstore github ipa</code> will lead you to third-party sites that repackage the installer—often with added risks.</p>
 
-            <p class="text-base sm:text-lg md:text-xl text-zinc-600 max-w-2xl mx-auto leading-relaxed">
-                Welcome to the resource center. Secure your application and package files for compatible iPhone and iPad devices. Learn how to perform direct installation without a PC, explore official <strong>github trollstore</strong> repositories, custom applications, lightweight variants, and helper utilities on <strong>trollstore ios 16</strong> and <strong>trollstore ios 17</strong>.
-            </p>
+<h3>The Only Official Source</h3>
 
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-                <a href="#install" title="Direct Install Guide" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white text-sm font-bold shadow-xl shadow-blue-500/30 transition-all transform hover:-translate-y-1 active:scale-95 text-center flex items-center justify-center space-x-2">
-                    <span>Direct Install Without PC</span>
-                    <span>⚡</span>
-                </a>
-                <a href="https://github.com/opa334/TrollStore" title="Visit Official GitHub Repository" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-8 py-4 rounded-2xl glass-card hover:bg-white text-zinc-800 text-sm font-bold shadow-sm transition-all transform hover:-translate-y-1 active:scale-95 text-center border border-zinc-200 flex items-center justify-center space-x-2">
-                    <span>GitHub Repository</span>
-                    <span>🐙</span>
-                </a>
-            </div>
+<p>The sole official distribution channel is the GitHub Releases page maintained by developer opa334:</p>
 
-            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl mx-auto pt-12 border-t border-zinc-200/80 mt-12">
-                <div class="glass-card p-3 sm:p-5 rounded-2xl text-center apple-card-hover overflow-hidden">
-                    <div class="text-sm sm:text-xl md:text-2xl font-black bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Permasigned</div>
-                    <div class="text-[11px] sm:text-xs font-semibold text-zinc-600 mt-1">Permanent Signing</div>
-                </div>
-                <div class="glass-card p-3 sm:p-5 rounded-2xl text-center apple-card-hover overflow-hidden">
-                    <div class="text-sm sm:text-xl md:text-2xl font-black bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">0 Days</div>
-                    <div class="text-[11px] sm:text-xs font-semibold text-zinc-600 mt-1">No 7-Day Expiry</div>
-                </div>
-                <div class="glass-card p-3 sm:p-5 rounded-2xl text-center apple-card-hover overflow-hidden">
-                    <div class="text-sm sm:text-xl md:text-2xl font-black bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">No PC</div>
-                    <div class="text-[11px] sm:text-xs font-semibold text-zinc-600 mt-1">Direct Install Options</div>
-                </div>
-                <div class="glass-card p-3 sm:p-5 rounded-2xl text-center apple-card-hover overflow-hidden">
-                    <div class="text-sm sm:text-xl md:text-2xl font-black bg-gradient-to-r from-blue-600 to-teal-600 bg-clip-text text-transparent">Version 2</div>
-                    <div class="text-[11px] sm:text-xs font-semibold text-zinc-600 mt-1">iOS 14 - 17 Support</div>
-                </div>
-            </div>
-        </div>
-    </header>
+<p><strong><code>github.com/opa334/TrollStore/releases</code></strong></p>
 
-    <!-- Main Content Area -->
-    <main class="flex-grow max-w-5xl mx-auto w-full px-4 sm:px-6 space-y-24 py-12">
+<p>From this page you will find:</p>
+<ul>
+  <li><strong>TrollStore.tar</strong> — the core application package used by installers</li>
+  <li><strong>TrollInstallerX.ipa</strong> — the primary installer for iOS 14.0–16.6.1 and 17.0</li>
+  <li><strong>TrollStore Lite .deb</strong> — for jailbroken devices only (see Section 6)</li>
+</ul>
 
-        <!-- What is TrollStore Section -->
-        <section id="about" class="glow-border shadow-lg">
-            <div class="glow-border-inner p-8 sm:p-12 space-y-6">
-                <div class="space-y-3">
-                    <div class="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-blue-50 text-blue-600 text-xs font-bold uppercase tracking-widest">
-                        <span>🛡️ Core Overview</span>
-                    </div>
-                    <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight text-zinc-900">What is TrollStore & Version 2?</h2>
-                </div>
-                <p class="text-sm sm:text-base text-zinc-700 leading-relaxed">
-                    If you are looking for a reliable installation package or IPA file, this is a revolutionary jailed binary signing utility. It lets you execute a secure package download and install any custom application permanently without revokes. Utilizing the CoreTrust exploit, our comprehensive instructions enable users to bypass sandbox restrictions smoothly on iOS 16, iOS 17, and older firmware like iOS 15.8.8. Because it operates via system-level persistence without modifying the kernel root partition, it is fully safe. It serves as the ultimate alternative to weekly signing services, empowering you with advanced helper utilities, open-source repositories, lightweight packages, and advanced file managers. Check our <a href="faq.html" title="View Frequently Asked Questions" class="text-blue-600 font-bold underline hover:text-blue-800">FAQ Guide</a> for more details.
-                </p>
-            </div>
-        </section>
+<p>If you are searching for the installer that matches your specific iOS version—such as <code>trollstore github ios 15</code> or <code>trollstore github ios 15.8.8</code>—the <a href="#compat">compatibility table in Section 3</a> maps each supported version to its recommended installer. If your search was <code>trollstore github ios 18</code> or <code>trollstore github ios 26</code>, there is no working build to find: iOS 18 and iOS 26 sit outside the supported range, and the same table explains why. <strong>Likewise, <code>trollstore download ios 27</code> has no valid answer: iOS 27 is not supported, and no official IPA or installer exists for it.</strong> The same applies to <code>ipa trollstore ios 26</code> and <code>trollstore ipa ios 26</code>—there is no TrollStore IPA that works on iOS 26 or iOS 27.</p>
 
-        <!-- 1. Core Features Grid -->
-        <section id="features" class="space-y-10">
-            <div class="text-center space-y-3">
-                <div class="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-blue-50 text-blue-600 text-xs font-bold uppercase tracking-widest">
-                    <span>⚡ Powerful Capabilities</span>
-                </div>
-                <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-zinc-900">Why Version 2 is a Game Changer</h2>
-                <p class="text-zinc-600 text-sm sm:text-base max-w-xl mx-auto">Engineered to bypass traditional Apple sideloading limitations with system-level integration.</p>
-            </div>
+<p>For users simply looking to <code>get trollstore</code>, perform a <code>free download trollstore</code>, or follow a generic <code>download trollstore</code> path for iOS 15, the answer is the same: download only from the official GitHub Releases page. A <code>new trollstore</code> release appears there first, and whether the search was <code>download trollstore ipa</code>, <code>download trollstore ios</code>, <code>trollstore download ipa</code>, or <code>trollstore download iphone</code>, every legitimate path leads back to that repository. The version-specific query <code>trollstore github ios 15.8.8</code> is answered in Section 3: iOS 15.8.x falls within the supported 15.7.2–15.8.2 range and uses TrollInstallerX, so the “GitHub iOS 15.8.8” download is simply the official TrollInstallerX.ipa from the same Releases page.</p>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="glass-card p-6 sm:p-8 rounded-3xl apple-card-hover space-y-4">
-                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-50 to-blue-100 text-blue-600 flex items-center justify-center text-2xl font-bold shadow-inner">🔓</div>
-                    <h3 class="text-lg font-bold text-zinc-900">Permasigned App Signing</h3>
-                    <p class="text-sm text-zinc-700 leading-relaxed">Say goodbye to 7-day expiration with our secure installation guides. Your apps stay active forever.</p>
-                </div>
+<h3>What About “TrollStore Latest Version,” “Latest TrollStore,” and “TrollStore GitHub Releases”?</h3>
 
-                <div class="glass-card p-6 sm:p-8 rounded-3xl apple-card-hover space-y-4">
-                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-indigo-50 to-indigo-100 text-indigo-600 flex items-center justify-center text-2xl font-bold shadow-inner">⚡</div>
-                    <h3 class="text-lg font-bold text-zinc-900">No Jailbreak Required</h3>
-                    <p class="text-sm text-zinc-700 leading-relaxed">It runs safely via the CoreTrust exploit and modern installation helpers like <strong>TrollInstallerX</strong> and <strong>trollstore installer</strong> utilities without a full jailbreak.</p>
-                </div>
+<p>The current <code>trollstore latest version</code> is <strong>2.1.1</strong>. The GitHub releases page contains changelogs for every version. Notably, version 2.1 introduced TrollStore Lite, and version 2.1.1 included a fix for a TrollStore Lite entitlement typo and added the “Refresh App Registrations” option to TrollStore settings[citation:2]. If you search for <code>latest trollstore</code>, <code>latest trollstore ipa</code>, <code>trollstore latest</code>, <code>trollstore latest version</code>, or <code>trollstore releases</code>, always verify you are on the official <code>opa334/TrollStore</code> repository—not a mirror or “download portal.” The <code>latest trollstore ipa</code> is not a single universal file; it is the latest TrollInstallerX.ipa plus TrollStore.tar from that page.</p>
 
-                <div class="glass-card p-6 sm:p-8 rounded-3xl apple-card-hover space-y-4">
-                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-50 to-emerald-100 text-emerald-600 flex items-center justify-center text-2xl font-bold shadow-inner">📱</div>
-                    <h3 class="text-lg font-bold text-zinc-900">iOS 16 & iOS 17 Support</h3>
-                    <p class="text-sm text-zinc-700 leading-relaxed">Designed for iOS 16 and iOS 17 firmware versions, supporting compatible iPhone and iPad devices.</p>
-                </div>
+<h3>Important Clarification for “TrollStore IPA Library” Searches</h3>
 
-                <div class="glass-card p-6 sm:p-8 rounded-3xl apple-card-hover space-y-4">
-                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-50 to-amber-100 text-amber-600 flex items-center justify-center text-2xl font-bold shadow-inner">📦</div>
-                    <h3 class="text-lg font-bold text-zinc-900">Install Any IPA File</h3>
-                    <p class="text-sm text-zinc-700 leading-relaxed">Easily manage and deploy custom applications directly after completing your package download.</p>
-                </div>
+<p>There is no official <code>trollstore ipa library</code> hosted by the developer. TrollStore is a tool for installing IPAs; it does not ship with a catalog of apps. Any site claiming to offer a <code>trollstore ipa library</code> is an unofficial aggregator. The safety of IPAs you install depends entirely on where you source them—TrollStore itself will install anything you give it, including malicious files.</p>
 
-                <div class="glass-card p-6 sm:p-8 rounded-3xl apple-card-hover space-y-4">
-                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-rose-50 to-rose-100 text-rose-600 flex items-center justify-center text-2xl font-bold shadow-inner">🛡️</div>
-                    <h3 class="text-lg font-bold text-zinc-900">Bypass Sandbox Rules</h3>
-                    <p class="text-sm text-zinc-700 leading-relaxed">It grants root-level permissions for advanced tools like <strong>filza trollstore</strong> and helper utilities.</p>
-                </div>
+<p>For a community-maintained collection of IPAs commonly used with TrollStore, see the Neoncat-OG/TrollStore-IPAs repository referenced in <a href="#ecosystem">Section 11</a>. Treat any third-party IPA source with caution.</p>
 
-                <div class="glass-card p-6 sm:p-8 rounded-3xl apple-card-hover space-y-4">
-                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-50 to-purple-100 text-purple-600 flex items-center justify-center text-2xl font-bold shadow-inner">🚫</div>
-                    <h3 class="text-lg font-bold text-zinc-900">Ad-Free & Modded Apps</h3>
-                    <p class="text-sm text-zinc-700 leading-relaxed">Enjoy modified apps, lightweight packages, and ad-free utilities without sudden revokes.</p>
-                </div>
-            </div>
-        </section>
+<h2 id="install">2. Install &amp; Deploy: No-PC OTA, TrollInstallerX, and TrollRestore (Which Method Fits Your iOS Version)</h2>
 
-        <!-- Ecosystem Apps, Tools & Plugins (带 Tab 切换) -->
-        <section id="ecosystem" class="space-y-10">
-            <div class="text-center space-y-3">
-                <div class="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-blue-50 text-blue-600 text-xs font-bold uppercase tracking-widest">
-                    <span>🧩 Ecosystem & Extensions</span>
-                </div>
-                <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-zinc-900">Best Apps, Tools & Tweaks</h2>
-                <p class="text-zinc-600 text-sm sm:text-base max-w-xl mx-auto">Unlock the full potential of your device with essential root helpers, package managers, and customized mods like Minecraft.</p>
-            </div>
+<p><strong>User intent:</strong> Install TrollStore on a device, including <code>trollstore install</code>, <code>install trollstore</code>, <code>trollstore direct install</code>, <code>trollstore direct install ios</code>, <code>trollstore direct install ios 26</code>, <code>direct install trollstore</code>, <code>trollstore no pc install</code>, <code>trollstore install no pc</code>, <code>install trollstore no pc</code>, <code>install trollstore without pc</code>, <code>trollstore without pc</code>, <code>trollstore no pc</code>, <code>trollstore no computer</code>, <code>trollstore download no pc</code>, and <code>trollstore no pc install</code> methods.</p>
 
-            <!-- 交互式 Tab 选项卡控制器 -->
-            <div class="flex justify-center mb-6">
-                <div class="glass-card p-1.5 rounded-2xl inline-flex space-x-1 shadow-sm">
-                    <button onclick="switchTab('all')" id="btn-all" class="px-5 py-2 rounded-xl text-xs font-bold bg-blue-600 text-white transition-all shadow-sm">All Tools</button>
-                    <button onclick="switchTab('managers')" id="btn-managers" class="px-5 py-2 rounded-xl text-xs font-bold text-zinc-600 hover:text-zinc-900 transition-all">Package Managers</button>
-                    <button onclick="switchTab('emulators')" id="btn-emulators" class="px-5 py-2 rounded-xl text-xs font-bold text-zinc-600 hover:text-zinc-900 transition-all">Emulators & Mods</button>
-                </div>
-            </div>
+<p>Installation method depends entirely on your iOS version. Using the wrong installer is the most common cause of failure. The official README directs users to <strong>ios.cfw.guide</strong> for version-specific installation guides.</p>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" id="ecosystem-grid">
-                <div class="glass-card p-6 rounded-3xl apple-card-hover space-y-3 border-blue-100" data-category="managers">
-                    <div class="text-3xl">📂</div>
-                    <h3 class="text-base font-bold text-zinc-900">Filza File Manager</h3>
-                    <p class="text-xs text-zinc-600 leading-relaxed">Gain root-level system access to inspect directories, edit plists, and manage files without restrictions.</p>
-                </div>
+<h3>Method A: TrollHelperOTA (iOS 14.0 – 15.6.1, No PC Required)</h3>
 
-                <div class="glass-card p-6 rounded-3xl apple-card-hover space-y-3 border-purple-100" data-category="managers">
-                    <div class="text-3xl">⚡</div>
-                    <h3 class="text-base font-bold text-zinc-900">Dopamine & Sileo</h3>
-                    <p class="text-xs text-zinc-600 leading-relaxed">Integrate smoothly with modern semi-jailbreaks and leverage Sileo for advanced tweak repositories.</p>
-                </div>
+<div class="method-card">
+<p>This is the only <code>trollstore direct install</code> path that needs no computer at all. It is also the simplest <code>trollstore install</code> method on the versions it covers, and it matches queries like <code>trollstore no pc install</code>, <code>trollstore install no pc</code>, and <code>install trollstore no pc</code>.</p>
+<ol>
+  <li>Open Safari on your device.</li>
+  <li>Navigate to the TrollHelperOTA link appropriate for your chip (arm64e devices use OTA Link 2; iOS 15+ devices use OTA Link 1).</li>
+  <li>Tap Install. An app named “GTA Car Tracker” appears on your home screen.</li>
+  <li>Open it and tap <strong>Install TrollStore</strong>.</li>
+  <li>The device resprings, and TrollStore is installed.</li>
+</ol>
+<p><strong>Limitations:</strong> arm64 (A8–A11) devices on iOS 14 cannot use OTA. They require checkra1n jailbreak first, then TrollHelper. Additionally, on iOS 16.0 and later, OTA installation is often unstable or patched; TrollInstallerX with a computer is strongly recommended for those versions. If you need <code>install trollstore without pc</code> on those newer versions, this method is not the answer.</p>
+</div>
 
-                <div class="glass-card p-6 rounded-3xl apple-card-hover space-y-3 border-indigo-100" data-category="managers">
-                    <div class="text-3xl">🛠️</div>
-                    <h3 class="text-base font-bold text-zinc-900">Misaka & Tweaks</h3>
-                    <p class="text-xs text-zinc-600 leading-relaxed">Customize themes, enable font changes, and apply system-wide tweaks safely using advanced package managers.</p>
-                </div>
+<h3>Method B: TrollInstallerX (iOS 14.0 – 16.6.1, and 17.0)</h3>
 
-                <div class="glass-card p-6 rounded-3xl apple-card-hover space-y-3 border-amber-100" data-category="emulators">
-                    <div class="text-3xl">🚀</div>
-                    <h3 class="text-base font-bold text-zinc-900">Minecraft & UTM Mods</h3>
-                    <p class="text-xs text-zinc-600 leading-relaxed">Run virtual machines, execute heavy emulators with native JIT, and install modded games like Minecraft mods.</p>
-                </div>
-            </div>
-        </section>
+<div class="method-card">
+<p>This is the widest-coverage installer and the standard way to <code>install trollstore</code> with a computer on supported versions. TrollInstallerX supports arm64 devices up to iOS 16.6.1 and arm64e devices up to iOS 16.5.1; A15, A16, and M2 devices on iOS 16.5.1 require the indirect installation method[citation:3].</p>
+<ol>
+  <li>Download <strong>TrollInstallerX.ipa</strong> from the official GitHub releases page.</li>
+  <li>Sideload it to your device using Sideloadly or a similar signing tool.</li>
+  <li>Open TrollInstallerX and tap <strong>Install TrollStore</strong>.</li>
+  <li>The installer automatically selects the appropriate exploit for your device. TrollStore appears on the home screen when complete.</li>
+</ol>
+<p><strong>What about “trollstore direct install ios 26”?</strong> <strong>Short answer: No, it does not exist.</strong> A <code>trollstore direct install</code> requires the CoreTrust bug, which Apple patched in iOS 17.0.1. iOS 26 has no direct install method because the underlying vulnerability is gone. The same is true for any generic <code>trollstore direct install ios</code> query on versions above 17.0. <strong>What to do instead:</strong> Use SideStore or Sideloadly (see <a href="#alternative">Section 5</a>), or if your device is jailbroken, TrollStore Lite (see <a href="#lite">Section 6</a>).</p>
+<p><strong>Note:</strong> iOS 16.2–16.6.1 and iOS 15.7.2–15.8.2 require an internet connection during installation so TrollInstallerX can download the kernelcache and patchfind it.</p>
+</div>
 
-        <!-- Compatibility & Supported Devices -->
-        <section id="compatibility" class="space-y-10">
-            <div class="text-center space-y-3">
-                <div class="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-blue-50 text-blue-600 text-xs font-bold uppercase tracking-widest">
-                    <span>📊 Firmware Matrix</span>
-                </div>
-                <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-zinc-900">Supported Devices & iOS Versions</h2>
-                <p class="text-zinc-600 text-sm sm:text-base max-w-xl mx-auto">Check if your iPhone or iPad model is fully compatible with installation binaries.</p>
-            </div>
+<h3>Method C: TrollRestore (iOS 15.2 beta 3 – 16.6.1, 16.7 RC, 17.0; Computer Required)</h3>
 
-            <div class="glass-card p-8 sm:p-10 rounded-3xl space-y-6 border border-zinc-200">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-                    <div class="p-6 rounded-2xl bg-gradient-to-b from-zinc-50 to-blue-50/30 border border-zinc-200/80 space-y-2 apple-card-hover">
-                        <span class="text-xs font-bold text-blue-600 uppercase tracking-wider bg-blue-100/80 px-2.5 py-1 rounded-full">iOS 14 - iOS 15.8.8</span>
-                        <h3 class="text-xl font-extrabold text-zinc-900">Full CoreTrust Support</h3>
-                        <p class="text-xs text-zinc-600">Original CoreTrust exploit execution for all supported 64-bit devices, including iOS 15.8.8.</p>
-                    </div>
+<div class="method-card">
+<p>For the narrow set of versions not covered by TrollInstallerX, TrollRestore provides a computer-assisted <code>direct install trollstore</code> path. This requires a Mac, PC, or Linux machine with a data cable, plus Python 3. Detailed instructions are available on the tool’s release page and ios.cfw.guide.</p>
+</div>
 
-                    <div class="p-6 rounded-2xl bg-gradient-to-b from-zinc-50 to-indigo-50/30 border border-zinc-200/80 space-y-2 apple-card-hover">
-                        <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider bg-indigo-100/80 px-2.5 py-1 rounded-full">iOS 16 - 16.7.x</span>
-                        <h3 class="text-xl font-extrabold text-zinc-900">iPhone & iPad Compatible</h3>
-                        <p class="text-xs text-zinc-600">Seamless installation via persistence helpers and TrollInstallerX utilities across iOS 16 versions.</p>
-                    </div>
+<h3>The Persistence Helper: Why TrollStore Sometimes “Stops Working”</h3>
 
-                    <div class="p-6 rounded-2xl bg-gradient-to-b from-zinc-50 to-emerald-50/30 border border-zinc-200/80 space-y-2 apple-card-hover">
-                        <span class="text-xs font-bold text-emerald-600 uppercase tracking-wider bg-emerald-100/80 px-2.5 py-1 rounded-full">iOS 17.0 Limit</span>
-                        <h3 class="text-xl font-extrabold text-zinc-900">Up to iOS 17.0 Max</h3>
-                        <p class="text-xs text-zinc-600">Works perfectly up to iOS 17.0. Not compatible with iOS 17.1 and newer versions.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+<p>A critical concept for anyone who has just finished a <code>trollstore install</code>: iOS periodically reloads its icon cache, and when this happens, TrollStore and all apps it installed revert to “User” state and stop launching. This is normal. The solution is the <strong>Persistence Helper</strong>—TrollStore replaces a built-in system app (typically Tips) with a small helper. When your TrollStore apps stop opening, open the helper app and tap <strong>Refresh App Registrations</strong>. This is not a bug; it is part of how TrollStore maintains its system-level registration[citation:7]. Users who searched for <code>trollstore no pc</code> or <code>trollstore no computer</code> still need this helper once, even though no computer was involved in the install.</p>
 
-        <!-- 2. Side-by-Side Comparison Table -->
-        <section id="comparison" class="space-y-10">
-            <div class="text-center space-y-3">
-                <div class="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-blue-50 text-blue-600 text-xs font-bold uppercase tracking-widest">
-                    <span>⚖️ Head-to-Head Comparison</span>
-                </div>
-                <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-zinc-900">Standard iOS vs. Version 2</h2>
-                <p class="text-zinc-600 text-sm sm:text-base max-w-xl mx-auto">See why millions of Apple enthusiasts prefer this utility over standard sideloading methods and alternatives like AltStore or SideStore.</p>
-            </div>
+<h2 id="compat">3. Version &amp; Compatibility: The Definitive Support List</h2>
 
-            <div class="glass-card rounded-3xl overflow-hidden shadow-sm border border-zinc-200">
-                <div class="overflow-x-auto">
-                    <table class="w-full text-left border-collapse min-w-[650px]">
-                        <thead>
-                            <tr class="bg-zinc-100/90 border-b border-zinc-200 text-xs font-bold uppercase tracking-wider text-zinc-700">
-                                <th class="p-4 sm:p-6">Feature / Metric</th>
-                                <th class="p-4 sm:p-6 text-zinc-600">Standard App Store</th>
-                                <th class="p-4 sm:p-6 text-zinc-600">AltStore / SideStore</th>
-                                <th class="p-4 sm:p-6 text-zinc-600">Sideloadly / ESIGN</th>
-                                <th class="p-4 sm:p-6 text-blue-600 bg-blue-50/80 font-black">Version 2 ⚡</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-zinc-200 text-xs sm:text-sm text-zinc-700">
-                            <tr class="hover:bg-blue-50/20 transition-colors">
-                                <td class="p-4 sm:p-6 font-semibold text-zinc-900">Certificate Expiration</td>
-                                <td class="p-4 sm:p-6 text-emerald-600 font-medium">Never (Official)</td>
-                                <td class="p-4 sm:p-6 text-amber-600 font-medium">Every 7 Days</td>
-                                <td class="p-4 sm:p-6 text-amber-600 font-medium">Every 7 Days</td>
-                                <td class="p-4 sm:p-6 font-bold text-blue-600 bg-blue-50/40">Never (Permasigned ♾️)</td>
-                            </tr>
-                            <tr class="hover:bg-blue-50/20 transition-colors">
-                                <td class="p-4 sm:p-6 font-semibold text-zinc-900">Requires Computer</td>
-                                <td class="p-4 sm:p-6 text-emerald-600 font-medium">No</td>
-                                <td class="p-4 sm:p-6 text-amber-600 font-medium">Required Weekly</td>
-                                <td class="p-4 sm:p-6 text-amber-600 font-medium">Required for Sign</td>
-                                <td class="p-4 sm:p-6 font-bold text-blue-600 bg-blue-50/40">No (Direct install options)</td>
-                            </tr>
-                            <tr class="hover:bg-blue-50/20 transition-colors">
-                                <td class="p-4 sm:p-6 font-semibold text-zinc-900">App Limit</td>
-                                <td class="p-4 sm:p-6">Unlimited</td>
-                                <td class="p-4 sm:p-6 text-amber-600 font-medium">3 Apps Max</td>
-                                <td class="p-4 sm:p-6 text-amber-600 font-medium">3 Apps Max</td>
-                                <td class="p-4 sm:p-6 font-bold text-blue-600 bg-blue-50/40">Unlimited Apps 🚀</td>
-                            </tr>
-                            <tr class="hover:bg-blue-50/20 transition-colors">
-                                <td class="p-4 sm:p-6 font-semibold text-zinc-900">Push Notifications</td>
-                                <td class="p-4 sm:p-6 text-emerald-600 font-medium">Supported</td>
-                                <td class="p-4 sm:p-6 text-amber-600 font-medium">Requires Extra Setup</td>
-                                <td class="p-4 sm:p-6 text-amber-600 font-medium">Requires Paid Cert</td>
-                                <td class="p-4 sm:p-6 font-bold text-blue-600 bg-blue-50/40">Fully Supported</td>
-                            </tr>
-                            <tr class="hover:bg-blue-50/20 transition-colors">
-                                <td class="p-4 sm:p-6 font-semibold text-zinc-900">Jailbreak Required</td>
-                                <td class="p-4 sm:p-6 text-emerald-600 font-medium">No</td>
-                                <td class="p-4 sm:p-6 text-emerald-600 font-medium">No</td>
-                                <td class="p-4 sm:p-6 text-emerald-600 font-medium">No</td>
-                                <td class="p-4 sm:p-6 font-bold text-blue-600 bg-blue-50/40">No (CoreTrust exploit)</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </section>
+<p><strong>User intent:</strong> Check whether a specific iOS/iPadOS version or device supports TrollStore—covering <code>trollstore ios</code>, <code>trollstore ios 16</code>, <code>trollstore ios 17</code>, <code>trollstore ios 18</code>, <code>trollstore ios 26</code>, <code>trollstore ios 27</code>, <code>trollstore for ios</code>, <code>trollstore for ios 12</code>, <code>trollstore for ios 15.8.8</code>, <code>trollstore for ios 16.7.16</code>, <code>trollstore for ios 18</code>, <code>trollstore for ios 26</code>, <code>trollstore for ios 27</code>, <code>trollstore for ipad</code>, <code>trollstore supported ios</code>, <code>trollstore supported versions</code>, <code>trollstore support</code>, <code>trollstore support list</code>, <code>trollstore version support</code>, <code>trollstore versions</code>, <code>trollstore compatibility</code>, <code>trollstore compatible devices</code>, and <code>trollstore requirements</code>.</p>
 
-        <!-- 3. How to Install in 3 Simple Steps -->
-        <section id="install" class="space-y-10">
-            <div class="text-center space-y-3">
-                <div class="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-blue-50 text-blue-600 text-xs font-bold uppercase tracking-widest">
-                    <span>🛠️ Step-by-Step Guide</span>
-                </div>
-                <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-zinc-900">How to Install & Get Started</h2>
-                <p class="text-zinc-600 text-sm sm:text-base max-w-xl mx-auto">Follow this simple installation guide for direct setup without a PC (taking only 2 to 5 minutes).</p>
-            </div>
+<p>This is the most important section of this article. The supported version range is <strong>fixed and will not expand</strong> for the standard TrollStore. The official README is explicit: <strong>16.7.x (excluding 16.7 RC) and 17.0.1+ will NEVER be supported</strong>[citation:7]. The table below is the single reference for <code>trollstore supported ios</code>, the full <code>trollstore support list</code>, and all <code>trollstore versions</code> at a glance.</p>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="glass-card p-6 sm:p-8 rounded-3xl apple-card-hover space-y-4 relative overflow-hidden group">
-                    <div class="absolute top-0 right-0 w-24 h-24 bg-blue-500/5 rounded-full blur-xl group-hover:scale-150 transition-transform"></div>
-                    <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-blue-600 to-indigo-600 text-white flex items-center justify-center font-bold text-base shadow-lg shadow-blue-500/30">1</div>
-                    <h3 class="text-lg font-bold text-zinc-900">Check Compatibility</h3>
-                    <p class="text-sm text-zinc-700 leading-relaxed">
-                        Verify that your iPhone or iPad runs a compatible version according to our setup instructions, ranging from iOS 14.0 to 17.0 (including iOS 16 and 15.8.8).
-                    </p>
-                </div>
+<h3>TrollStore Compatibility Table (Official)</h3>
 
-                <div class="glass-card p-6 sm:p-8 rounded-3xl apple-card-hover space-y-4 relative overflow-hidden group">
-                    <div class="absolute top-0 right-0 w-24 h-24 bg-indigo-500/5 rounded-full blur-xl group-hover:scale-150 transition-transform"></div>
-                    <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-indigo-600 to-purple-600 text-white flex items-center justify-center font-bold text-base shadow-lg shadow-indigo-500/30">2</div>
-                    <h3 class="text-lg font-bold text-zinc-900">Execute Direct Installation</h3>
-                    <p class="text-sm text-zinc-700 leading-relaxed">
-                        Learn how to perform direct installation methods or use <strong>TrollInstallerX</strong> and persistence helpers to finish your setup smoothly.
-                    </p>
-                </div>
+<table>
+  <thead>
+    <tr>
+      <th>iOS / iPadOS Version</th>
+      <th>Supported?</th>
+      <th>Recommended Installer</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>14.0 beta 2 – 15.6.1</td>
+      <td><span class="tag-yes">✅ Yes</span></td>
+      <td>TrollHelperOTA (no PC) or checkra1n + TrollHelper</td>
+    </tr>
+    <tr>
+      <td>15.7.2 – 15.8.2</td>
+      <td><span class="tag-yes">✅ Yes</span></td>
+      <td>TrollInstallerX (requires internet during install)</td>
+    </tr>
+    <tr>
+      <td>16.0 – 16.6.1</td>
+      <td><span class="tag-yes">✅ Yes</span></td>
+      <td>TrollInstallerX</td>
+    </tr>
+    <tr>
+      <td>16.7 RC (20H18)</td>
+      <td><span class="tag-yes">✅ Yes</span></td>
+      <td>TrollRestore</td>
+    </tr>
+    <tr>
+      <td>17.0 (initial release only)</td>
+      <td><span class="tag-yes">✅ Yes</span></td>
+      <td>TrollInstallerX or TrollRestore</td>
+    </tr>
+    <tr>
+      <td><strong>16.7.x (non-RC)</strong></td>
+      <td><span class="tag-no">❌ Never</span></td>
+      <td>AltStore / SideStore / Sideloadly</td>
+    </tr>
+    <tr>
+      <td><strong>17.0.1 and above</strong> (including iOS 18, 26, 27)</td>
+      <td><span class="tag-no">❌ Never</span></td>
+      <td>AltStore / SideStore / Sideloadly</td>
+    </tr>
+  </tbody>
+</table>
 
-                <div class="glass-card p-6 sm:p-8 rounded-3xl apple-card-hover space-y-4 relative overflow-hidden group">
-                    <div class="absolute top-0 right-0 w-24 h-24 bg-purple-500/5 rounded-full blur-xl group-hover:scale-150 transition-transform"></div>
-                    <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-purple-600 to-pink-600 text-white flex items-center justify-center font-bold text-base shadow-lg shadow-purple-500/30">3</div>
-                    <h3 class="text-lg font-bold text-zinc-900">Enjoy Permasigned Apps</h3>
-                    <p class="text-sm text-zinc-700 leading-relaxed">
-                        Complete your package download and install apps with one tap. Configure your helper binary to a system app like Tips.
-                    </p>
-                </div>
-            </div>
+<p><strong>Note on iOS 12 and iOS 13:</strong> These versions are not supported. The CoreTrust bug that TrollStore relies on was introduced in iOS 14.0; it does not exist on iOS 12 or 13. Searches for <code>trollstore for ios 12</code> have no valid solution—use AltStore, SideStore, or Sideloadly instead (see <a href="#alternative">Section 5</a>).</p>
 
-            <!-- Download Action Card -->
-            <div class="bg-gradient-to-br from-zinc-900 via-zinc-900 to-zinc-950 text-white rounded-3xl p-8 sm:p-12 shadow-2xl relative overflow-hidden flex flex-col sm:flex-row items-center justify-between gap-8 border border-white/10">
-                <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-blue-500/20 rounded-full blur-3xl pointer-events-none"></div>
-                <div class="space-y-3 relative z-10 text-center sm:text-left">
-                    <span class="text-xs uppercase tracking-widest bg-blue-500/30 text-blue-200 px-3.5 py-1.5 rounded-full font-bold">Verified Release</span>
-                    <h3 class="text-2xl sm:text-3xl font-black tracking-tight">Ready to Get Started?</h3>
-                    <p class="text-zinc-300 text-sm max-w-md">Get your secure download links and package files directly from the official GitHub repository.</p>
-                </div>
-                <div class="flex flex-wrap items-center justify-center gap-3 relative z-10 shrink-0">
-                    <a href="https://github.com/opa334/TrollStore/releases" title="Download Official Releases from GitHub" target="_blank" rel="noopener noreferrer" class="px-7 py-3.5 rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white text-sm font-bold shadow-lg shadow-blue-500/30 transition-all active:scale-95 flex items-center space-x-2">
-                        <span>GitHub Releases</span>
-                        <span>📦</span>
-                    </a>
-                    <a href="faq.html" title="View FAQ and Troubleshooting Guide" class="px-7 py-3.5 rounded-2xl bg-white/10 hover:bg-white/20 text-white text-sm font-bold backdrop-blur-md transition-all active:scale-95 border border-white/10 flex items-center space-x-2">
-                        <span>FAQ & Troubleshooting</span>
-                        <span>🔍</span>
-                    </a>
-                </div>
-            </div>
-        </section>
+<p><strong>Note on iOS 16 and iOS 17:</strong> <code>trollstore ios 16</code> is supported across 16.0–16.6.1 and 16.7 RC (20H18), but non-RC 16.7.x is never supported. <code>trollstore ios 17</code> is supported only on the initial 17.0 release; 17.0.1 and later are never supported. Generic <code>trollstore for ios</code> queries should be checked against the table above.</p>
 
-        <!-- Troubleshooting & Error Resolution Section -->
-        <section id="troubleshooting" class="glass-card p-8 sm:p-12 rounded-3xl space-y-6 shadow-sm border border-zinc-200">
-            <div class="space-y-3">
-                <div class="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-blue-50 text-blue-600 text-xs font-bold uppercase tracking-widest">
-                    <span>🔍 Error Resolution & Maintenance</span>
-                </div>
-                <h3 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-zinc-900">Troubleshooting Common Issues & Fixes</h3>
-            </div>
-            <p class="text-sm sm:text-base text-zinc-700 leading-relaxed">
-                Encountering issues like <strong>failed to open app</strong> or need to know how to <strong>restore</strong> the app after a persistence helper glitch? Follow these quick maintenance guidelines:
-            </p>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
-                <div class="p-6 rounded-2xl bg-gradient-to-b from-zinc-50 to-zinc-100/50 border border-zinc-200/80 space-y-2 apple-card-hover">
-                    <h4 class="text-base font-bold text-zinc-900">Failed to Open App</h4>
-                    <p class="text-xs text-zinc-600 leading-relaxed">If you experience errors, refresh app registrations inside the app settings or re-enable your persistence helper (like Tips).</p>
-                </div>
-                <div class="p-6 rounded-2xl bg-gradient-to-b from-zinc-50 to-zinc-100/50 border border-zinc-200/80 space-y-2 apple-card-hover">
-                    <h4 class="text-base font-bold text-zinc-900">Restore & Reinstall</h4>
-                    <p class="text-xs text-zinc-600 leading-relaxed">To successfully restore or fix missing binary links, re-run the initial installation exploit tool compatible with your iOS version.</p>
-                </div>
-                <div class="p-6 rounded-2xl bg-gradient-to-b from-zinc-50 to-zinc-100/50 border border-zinc-200/80 space-y-2 apple-card-hover">
-                    <h4 class="text-base font-bold text-zinc-900">Version Spoofing Cautions</h4>
-                    <p class="text-xs text-zinc-600 leading-relaxed">Avoid using risky version spoofing methods that trick system frameworks, as improper version spoofing can cause boot loops.</p>
-                </div>
-            </div>
-        </section>
+<p><strong>Note on 15.7.2–15.8.2 and 16.7.x:</strong> These versions fall within the supported range, but TrollInstallerX requires an active internet connection during installation to download and patchfind the kernelcache. They are listed separately here only to highlight that requirement. If you searched for <code>trollstore for ios 15.8.8</code> or <code>trollstore github ios 15.8.8</code>, the answer follows the same rule: the 15.7.2–15.8.2 row applies—15.8.x is supported via TrollInstallerX, while non-RC 16.7.x is never supported. If you searched for <code>trollstore for ios 16.7.16</code>, the 16.7.x (non-RC) row applies: it is never supported. For any broader query—<code>trollstore support</code>, <code>trollstore version support</code>, <code>trollstore compatibility</code>, <code>trollstore compatible devices</code>, or <code>trollstore requirements</code>—the table above is the single reference.</p>
 
-        <!-- 4. Pros and Cons Breakdown -->
-        <section id="pros-cons" class="space-y-10">
-            <div class="text-center space-y-3">
-                <div class="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-blue-50 text-blue-600 text-xs font-bold uppercase tracking-widest">
-                    <span>⚖️ Balanced Analysis</span>
-                </div>
-                <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-zinc-900">Pros & Cons of Version 2</h2>
-                <p class="text-zinc-600 text-sm sm:text-base max-w-xl mx-auto">An honest evaluation of advantages and limitations before you install.</p>
-            </div>
+<h3>“TrollStore iOS 26” and “TrollStore iOS 27”: The Honest Answer</h3>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="glass-card p-6 sm:p-8 rounded-3xl border-emerald-200/80 bg-gradient-to-br from-emerald-50/40 to-white space-y-4 apple-card-hover">
-                    <div class="flex items-center space-x-3">
-                        <div class="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-xl shadow-inner">✓</div>
-                        <h3 class="text-lg font-bold text-zinc-900">Advantages (Pros)</h3>
-                    </div>
-                    <ul class="space-y-3 text-sm text-zinc-700">
-                        <li class="flex items-start space-x-2.5">
-                            <span class="text-emerald-600 font-black">✓</span>
-                            <span><strong>Permasigned installation:</strong> Apps never expire or require weekly resigns after your installation process.</span>
-                        </li>
-                        <li class="flex items-start space-x-2.5">
-                            <span class="text-emerald-600 font-black">✓</span>
-                            <span><strong>Safe & secure:</strong> Uses legitimate CoreTrust vulnerabilities without kernel damage for your device.</span>
-                        </li>
-                        <li class="flex items-start space-x-2.5">
-                            <span class="text-emerald-600 font-black">✓</span>
-                            <span><strong>Unlimited app slots:</strong> Install as many custom applications and lightweight packages as your storage allows.</span>
-                        </li>
-                        <li class="flex items-start space-x-2.5">
-                            <span class="text-emerald-600 font-black">✓</span>
-                            <span><strong>Root helper integration:</strong> Run advanced file managers like Filza and helper utilities effortlessly.</span>
-                        </li>
-                    </ul>
-                </div>
+<div class="callout callout-warn">
+<p>If you arrived here searching for <code>trollstore ios 26</code>, <code>trollstore ios 27</code>, <code>trollstore for ios 26</code>, <code>trollstore for ios 27</code>, <code>trollstore for ios 18</code>, or <code>trollstore download ios 27</code>, the answer is definitive: <strong>TrollStore does not and will not work on these versions.</strong> Apple patched CVE-2023-41991 in iOS 17.0.1, and every subsequent release—including iOS 18, iOS 26, and iOS 27—lacks the CoreTrust vulnerability TrollStore requires. The developer has stated that no new support will arrive unless another CoreTrust bug is discovered, and as of late 2026, none has been[citation:7]. Any website claiming “TrollStore for iOS 26” is either mistaken or distributing something that is not TrollStore.</p>
+</div>
 
-                <div class="glass-card p-6 sm:p-8 rounded-3xl border-rose-200/80 bg-gradient-to-br from-rose-50/40 to-white space-y-4 apple-card-hover">
-                    <div class="flex items-center space-x-3">
-                        <div class="w-12 h-12 rounded-2xl bg-rose-100 text-rose-700 flex items-center justify-center font-bold text-xl shadow-inner">✕</div>
-                        <h3 class="text-lg font-bold text-zinc-900">Limitations (Cons)</h3>
-                    </div>
-                    <ul class="space-y-3 text-sm text-zinc-700">
-                        <li class="flex items-start space-x-2.5">
-                            <span class="text-rose-600 font-black">✕</span>
-                            <span><strong>Version limit:</strong> It does not work on iOS 17.1 and newer due to Apple patches.</span>
-                        </li>
-                        <li class="flex items-start space-x-2.5">
-                            <span class="text-rose-600 font-black">✕</span>
-                            <span><strong>No downgrade path:</strong> If you updated past 17.0, you cannot downgrade to use this tool.</span>
-                        </li>
-                        <li class="flex items-start space-x-2.5">
-                            <span class="text-rose-600 font-black">✕</span>
-                            <span><strong>Initial setup care:</strong> Follow setup instructions carefully to avoid error codes.</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+<h3>“TrollStore Supported Versions” and “TrollStore Compatibility” for Specific Devices</h3>
 
-        <!-- 5. User Testimonials -->
-        <section id="testimonials" class="space-y-10">
-            <div class="text-center space-y-3">
-                <div class="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-blue-50 text-blue-600 text-xs font-bold uppercase tracking-widest">
-                    <span>💬 Community Feedback</span>
-                </div>
-                <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-zinc-900">Loved by iOS Enthusiasts</h2>
-                <p class="text-zinc-600 text-sm sm:text-base max-w-xl mx-auto">Hear what power users and developers say about their experience.</p>
-            </div>
+<p>The compatibility table applies to both iPhone and iPad (<code>trollstore for ipad</code>). The version of iOS/iPadOS is the determining factor, not the device model—with one caveat: arm64 vs. arm64e chip architecture affects which installer method works, as noted in Section 2. TrollInstallerX supports arm64 devices up to iOS 16.6.1 and arm64e devices up to iOS 16.5.1, with A15/A16/M2 devices on iOS 16.5.1 requiring the indirect method[citation:3]. When checking <code>trollstore compatible devices</code> and <code>trollstore requirements</code>, start with the iOS version, then confirm the chip architecture.</p>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="glass-card p-6 sm:p-8 rounded-3xl apple-card-hover space-y-4 flex flex-col justify-between">
-                    <div class="space-y-3">
-                        <div class="flex text-amber-500 text-sm space-x-0.5">★★★★★</div>
-                        <p class="text-sm text-zinc-700 leading-relaxed">"This app completely changed how I use my iPhone. No more refreshing AltStore every 7 days. Absolute masterpiece!"</p>
-                    </div>
-                    <div class="flex items-center space-x-3 pt-4 border-t border-zinc-100">
-                        <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-blue-500 to-indigo-500 text-white font-bold flex items-center justify-center text-xs shadow-md">JD</div>
-                        <div>
-                            <h4 class="text-xs font-bold text-zinc-900">Jason Davis</h4>
-                            <p class="text-[10px] text-zinc-500">iOS Power User</p>
-                        </div>
-                    </div>
-                </div>
+<h2 id="official">4. Official &amp; Source: Avoiding Fake Sites and Misleading Downloads</h2>
 
-                <div class="glass-card p-6 sm:p-8 rounded-3xl apple-card-hover space-y-4 flex flex-col justify-between">
-                    <div class="space-y-3">
-                        <div class="flex text-amber-500 text-sm space-x-0.5">★★★★★</div>
-                        <p class="text-sm text-zinc-700 leading-relaxed">"Being able to install Filza with root privileges without full jailbreaking is incredible. The installation guide was super clear."</p>
-                    </div>
-                    <div class="flex items-center space-x-3 pt-4 border-t border-zinc-100">
-                        <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-indigo-500 to-purple-500 text-white font-bold flex items-center justify-center text-xs shadow-md">SK</div>
-                        <div>
-                            <h4 class="text-xs font-bold text-zinc-900">Sarah Klein</h4>
-                            <p class="text-[10px] text-zinc-500">App Developer</p>
-                        </div>
-                    </div>
-                </div>
+<p><strong>User intent:</strong> Find the official TrollStore website, official GitHub, and source repository—covering <code>trollstore official</code>, <code>trollstore official website</code>, <code>trollstore official github</code>, <code>official trollstore</code>, <code>official trollstore website</code>, <code>trollstore github</code>, <code>trollstore github releases</code>, <code>trollstore github ipa</code>, <code>trollstore github ipa download</code>, <code>trollstore source</code>, <code>trollstore repo</code>, and <code>trollstore repo helper</code>.</p>
 
-                <div class="glass-card p-6 sm:p-8 rounded-3xl apple-card-hover space-y-4 flex flex-col justify-between">
-                    <div class="space-y-3">
-                        <div class="flex text-amber-500 text-sm space-x-0.5">★★★★★</div>
-                        <p class="text-sm text-zinc-700 leading-relaxed">"Zero revokes, zero hassle. If you're lucky enough to be on iOS 17.0 or below, getting this is a total no-brainer."</p>
-                    </div>
-                    <div class="flex items-center space-x-3 pt-4 border-t border-zinc-100">
-                        <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-emerald-500 to-teal-500 text-white font-bold flex items-center justify-center text-xs shadow-md">ML</div>
-                        <div>
-                            <h4 class="text-xs font-bold text-zinc-900">Michael Lin</h4>
-                            <p class="text-[10px] text-zinc-500">Tech Blogger</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+<p>There is no separate <code>trollstore official website</code> with a polished download page—and no <code>official trollstore website</code> either. The <strong>only</strong> official source for the standard TrollStore is:</p>
 
-    </main>
+<p><strong>GitHub: <code>github.com/opa334/TrollStore</code></strong></p>
 
-    <!-- Professional Footer -->
-    <footer class="w-full max-w-5xl mx-auto px-4 sm:px-6 py-10 mt-16 border-t border-zinc-200/80">
-        <div class="glass-card rounded-3xl p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-sm">
-            <div class="text-center sm:text-left space-y-1">
-                <div class="text-sm font-bold text-zinc-900">Guide & Resource Hub</div>
-                <p class="text-xs text-zinc-600">Empowering iOS users with permasigned sideloading freedom.</p>
-            </div>
-            <div class="flex items-center space-x-3 w-full sm:w-auto justify-center">
-                <a href="https://github.com/opa334/TrollStore" title="Visit GitHub Repository" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-full text-xs font-semibold bg-zinc-100 text-zinc-700 hover:bg-black hover:text-white transition-all active:scale-95 shadow-xs">
-                    GitHub Repo
-                </a>
-                <button onclick="copyContactEmail()" class="px-4 py-2 rounded-full text-xs font-semibold bg-blue-50 text-blue-600 hover:bg-blue-600 hover:text-white transition-all active:scale-95 cursor-pointer shadow-xs">
-                    Copy Contact Email
-                </button>
-            </div>
-        </div>
-        <div class="text-center text-xs text-zinc-500 mt-6 space-y-1">
-            <p>&copy; 2026 Guide. Independent resource site. Not affiliated with developer opa334 or Apple Inc. All rights reserved.</p>
-        </div>
-    </footer>
+<h3>What About “TrollStore Official GitHub” and “TrollStore Source”?</h3>
 
-    <!-- 手机端悬浮返回顶部按钮 -->
-    <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" id="back-to-top" class="fixed bottom-6 right-6 z-50 w-12 h-12 rounded-2xl bg-zinc-900/90 text-white shadow-xl backdrop-blur-md flex items-center justify-center opacity-0 pointer-events-none transition-all duration-300 hover:bg-black active:scale-90" aria-label="Back to top">
-        ↑
-    </button>
+<p>The <code>trollstore official github</code> repository—<code>opa334/TrollStore</code>—is the only <code>trollstore source</code> of truth. The source code, releases, and documentation all live in that repository. Any other domain claiming to be <code>trollstore official</code> or <code>official trollstore</code>, or posing as a mirror, is not operated by the developer. The risk of third-party downloads is not theoretical: TrollStore bypasses all of Apple’s signature validation, so an installer from an untrusted source can contain anything. For the installer itself, use <code>trollstore github ipa download</code> only from <code>opa334/TrollStore/releases</code>.</p>
 
-    <!-- Toast Notification -->
-    <div id="toast" class="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 pointer-events-none hidden w-[90%] max-w-xs text-center transition-all duration-300">
-        <div class="bg-zinc-900/95 backdrop-blur-xl text-white px-4 py-3 rounded-2xl text-xs font-medium shadow-2xl flex items-center justify-center space-x-2 border border-white/10">
-            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shrink-0"></span>
-            <span id="toast-text">Email copied to clipboard successfully!</span>
-        </div>
-    </div>
+<p>The only exception is <strong>TrollStore Lite</strong>, which is distributed via Havoc (<code>havoc.app/package/trollstorelite</code>), the channel specified in the official release notes[citation:2]. Havoc is a third-party package manager, not the developer’s own website, but it is the designated distribution point for the Lite variant.</p>
 
-    <!-- JavaScript Interactivity & Dynamic UI Enhancements -->
-    <script>
-        document.addEventListener('gesturestart', function (e) {
-            e.preventDefault();
-        });
-        document.addEventListener('dblclick', function (e) {
-            e.preventDefault();
-        }, { passive: false });
+<h3>“TrollStore Repo” and “TrollStore Helper”</h3>
 
-        // 监听滚动显示返回顶部按钮
-        window.addEventListener('scroll', function() {
-            const btn = document.getElementById('back-to-top');
-            if (window.scrollY > 400) {
-                btn.classList.remove('opacity-0', 'pointer-events-none');
-                btn.classList.add('opacity-100');
-            } else {
-                btn.classList.remove('opacity-100');
-                btn.classList.add('opacity-0', 'pointer-events-none');
-            }
-        });
+<p>In jailbreak contexts, <code>trollstore repo</code> usually refers to the Havoc repository (<code>havoc.app/package/trollstorelite</code>), which is the official distribution point for TrollStore Lite. These are relevant only to jailbroken devices. For non-jailbroken users, there is no “repo” to add—installation is done via the installers in Section 2. Likewise, <code>trollstore repo helper</code> only matters on jailbroken setups where a package manager is in play.</p>
 
-        // 生态应用 Tab 切换逻辑
-        function switchTab(category) {
-            const btnAll = document.getElementById('btn-all');
-            const btnManagers = document.getElementById('btn-managers');
-            const btnEmulators = document.getElementById('btn-emulators');
-            
-            // 重置按钮样式
-            [btnAll, btnManagers, btnEmulators].forEach(btn => {
-                btn.className = "px-5 py-2 rounded-xl text-xs font-bold text-zinc-600 hover:text-zinc-900 transition-all";
-            });
+<p>The <code>trollstore helper</code> refers to the Persistence Helper described in Section 2, or to the TrollHelper package used on checkra1n-jailbroken devices. It is not a separate download for most users. If you are on a checkra1n-jailbroken device, the TrollHelper package is available via the checkra1n repo; install it, then open the TrollHelper app to install TrollStore.</p>
 
-            // 激活当前按钮样式
-            const activeBtn = document.getElementById(`btn-${category}`);
-            activeBtn.className = "px-5 py-2 rounded-xl text-xs font-bold bg-blue-600 text-white transition-all shadow-sm";
+<h2 id="alternative">5. Alternative &amp; Comparison: What to Use When TrollStore Is Not an Option</h2>
 
-            // 过滤卡片
-            const grid = document.getElementById('ecosystem-grid');
-            const cards = grid.querySelectorAll('[data-category]');
-            
-            cards.forEach(card => {
-                if (category === 'all' || card.getAttribute('data-category') === category) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        }
+<p><strong>User intent:</strong> Find <code>trollstore alternative</code> options or compare TrollStore with similar tools—covering <code>trollstore alternative ios 12</code>, <code>trollstore vs altstore</code>, <code>trollstore vs sideloadly</code>, <code>trollstore vs sidestore</code>, <code>trollstore vs trollstore lite</code>, and <code>trollstore vs jailbreak</code>.</p>
 
-        function copyContactEmail() {
-            const email = 'c18205032735@163.com';
-            const tempInput = document.createElement('textarea');
-            tempInput.value = email;
-            document.body.appendChild(tempInput);
-            tempInput.select();
-            try {
-                document.execCommand('copy');
-                showToast('Email copied: ' + email);
-            } catch (err) {
-                showToast('Failed to copy email');
-            }
-            document.body.removeChild(tempInput);
-        }
+<p>If your device runs iOS 17.0.1 or later—including iOS 18, iOS 26, and iOS 27—TrollStore is unavailable. For anyone looking for a <code>trollstore alternative</code> on these versions, the realistic options are below.</p>
 
-        function showToast(message) {
-            const toast = document.getElementById('toast');
-            const toastText = document.getElementById('toast-text');
-            toastText.innerText = message;
-            
-            toast.classList.remove('hidden', 'opacity-0', 'translate-y-4');
-            toast.classList.add('opacity-100', 'translate-y-0');
+<h3>TrollStore vs. AltStore / SideStore</h3>
 
-            setTimeout(() => {
-                toast.classList.remove('opacity-100', 'translate-y-0');
-                toast.classList.add('opacity-0', 'translate-y-4');
-                setTimeout(() => {
-                    toast.classList.add('hidden');
-                }, 300);
-            }, 2500);
-        }
-    </script>
+<table>
+  <thead>
+    <tr>
+      <th>Tool</th>
+      <th>How It Works</th>
+      <th>Limitation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>TrollStore</strong></td>
+      <td>CoreTrust bug, permanent signing</td>
+      <td>Only iOS 14.0–16.6.1, 16.7 RC, 17.0</td>
+    </tr>
+    <tr>
+      <td><strong>AltStore</strong></td>
+      <td>Apple ID signing, auto-refresh via AltServer</td>
+      <td>7-day certificate; max 3 apps; requires computer for refresh</td>
+    </tr>
+    <tr>
+      <td><strong>SideStore</strong></td>
+      <td>Fork of AltStore, on-device refresh</td>
+      <td>Still subject to 7-day signing cycle, but no constant computer connection</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>TrollStore vs. Sideloadly</h3>
+
+<p>Sideloadly is a computer-based signing tool. It does not offer permanent signing. Every 7 days, you must reconnect to a computer and re-sign. For users on unsupported iOS versions, this is the trade-off: convenience versus permanence. Searches for <code>trollstore vs sideloadly</code> and <code>trollstore vs sidestore</code> ultimately lead to the same conclusion—TrollStore wins on supported versions, and alternatives are required on unsupported ones.</p>
+
+<h3>TrollStore vs. Jailbreak</h3>
+
+<p>TrollStore is <strong>not a jailbreak</strong>. It does not provide root filesystem access, cannot install kernel-level tweaks, and does not modify system partitions. It is best understood as a “super-sideloader” with permanent signing capability. Jailbreak tools like Dopamine or palera1n offer deeper access but carry significantly higher risk and complexity. On iOS 12 and 13, where TrollStore has never worked, jailbreak-based installation is the only realistic option for permanent IPA signing—which is exactly what <code>trollstore alternative ios 12</code> searches are looking for.</p>
+
+<h3>TrollStore vs. TrollStore Lite</h3>
+
+<p>See Section 6. TrollStore Lite is for <strong>jailbroken devices only</strong> and is not an alternative for non-jailbroken users on unsupported versions. The two are related but serve different environments, which is why <code>trollstore vs trollstore lite</code> is a common comparison.</p>
+
+<h2 id="lite">6. Lite &amp; Variant: TrollStore Lite, Pro, 2, Beta, and Mod</h2>
+
+<p><strong>User intent:</strong> Find <code>trollstore lite</code>, <code>trollstore lite ipa</code>, <code>trollstore lite github</code>, <code>trollstore lite repo</code>, <code>trollstore lite roothide</code>, <code>trollstore lite deb</code>, <code>trollstore lite deb file</code>, <code>trollstore lite no jailbreak</code>, <code>trollstore pro</code>, <code>trollstore pro ipa</code>, <code>trollstore 2</code>, <code>trollstore v2</code>, <code>trollstore beta</code>, <code>trollstore mod</code>, and <code>trollstore mod ipa</code> variants.</p>
+
+<h3>TrollStore Lite: What It Is and Who It Is For</h3>
+
+<p>TrollStore Lite is an official variant <strong>available alongside</strong> TrollStore, distributed as a <code>.deb</code> file (the <code>trollstore lite deb file</code>) for <strong>jailbroken iOS devices</strong>. It was <strong>introduced in version 2.1</strong>; version 2.1.1 included a fix for a Lite-specific entitlement typo that affected apps on Dopamine-jailbroken devices[citation:2].</p>
+
+<p>Lite depends on the jailbreak’s codesign bypass rather than the CoreTrust bug, which means it can work on jailbroken devices running iOS versions beyond 17.0—including iOS 18 and even iOS 26.0.1 and up, as long as a compatible jailbreak exists[citation:6]. It is distributed through package managers like Sileo or Cydia, or via the Havoc repository (<code>havoc.app/package/trollstorelite</code>).</p>
+
+<p><strong>Compatibility with roothide-based jailbreaks:</strong> TrollStore Lite works on jailbroken devices regardless of whether the jailbreak is Dopamine-based or roothide-based. It relies on the jailbreak’s codesign bypass, not a specific jailbreak framework. If you are using a roothide jailbreak such as Relaxin, TrollStore Lite is the appropriate variant—community reports indicate that icon and app-registration issues can arise in roothide environments, and TrollStore Lite is the recommended choice there. Searches for <code>trollstore lite roothide</code> are valid: the answer is yes, use TrollStore Lite via Havoc.</p>
+
+<p><strong>If your device is not jailbroken, you do not need TrollStore Lite.</strong> It will not install, and it is not a workaround for unsupported iOS versions on non-jailbroken devices. Searches for <code>trollstore lite no jailbreak</code> have no valid solution—the Lite variant explicitly requires a jailbroken environment. Likewise, <code>trollstore lite ipa</code> and <code>trollstore lite github</code> should not be misunderstood: <strong>Lite is not a standalone IPA you sideload</strong>, and <strong>it is not a separate GitHub release product</strong>—it is a <code>.deb</code> delivered through package managers. <code>trollstore lite repo</code> refers to the Havoc/Sileo/Cydia repository, not a GitHub repo.</p>
+
+<h3>“TrollStore Pro,” “TrollStore 2,” “TrollStore v2,” “TrollStore Beta,” “TrollStore Mod”</h3>
+
+<ul>
+  <li><strong>TrollStore 2</strong> and <strong>TrollStore v2</strong> refer to the major version 2.0 release (November 2023), which introduced support for iOS 15.5–16.6.1 and 17.0 using CVE-2023-41991. There is no separate “TrollStore 2” product.</li>
+  <li><strong>TrollStore Pro</strong> and <strong>TrollStore Pro IPA</strong> do not exist as an official product. Any site offering “TrollStore Pro IPA” is not affiliated with the developer.</li>
+  <li><strong>TrollStore Beta</strong> refers to pre-release builds occasionally posted on the GitHub releases page. These are not recommended for general use.</li>
+  <li><strong>TrollStore Mod</strong> and <strong>TrollStore Mod IPA</strong> are not official variants. Modified versions of TrollStore—including any <code>trollstore mod ipa</code> from third parties—carry unknown risks and should be avoided.</li>
+</ul>
+
+<h2 id="jailbreak">7. No Jailbreak / Jailbreak: Clarifying the Relationship</h2>
+
+<p><strong>User intent:</strong> Confirm whether TrollStore requires a jailbreak and understand its relationship to jailbreaking—covering <code>trollstore no jailbreak</code>, <code>trollstore no jailbreak ios 26</code>, <code>trollstore non jailbroken</code>, <code>trollstore without jailbreak</code>, <code>trollstore with jailbreak</code>, <code>trollstore ios 18 no jailbreak</code>, and <code>trollstore vs jailbreak</code>.</p>
+
+<h3>“TrollStore No Jailbreak”: Yes, on Supported Versions</h3>
+
+<p>TrollStore works <strong>without jailbreak</strong> on all officially supported versions (iOS 14.0–16.6.1, 16.7 RC, 17.0). This is its primary advantage: permanent IPA installation without the security trade-offs and complexity of a full jailbreak. This answers <code>trollstore no jailbreak</code>, <code>trollstore non jailbroken</code>, and <code>trollstore without jailbreak</code> searches—on supported versions, no jailbreak is required.</p>
+
+<h3>“TrollStore Without Jailbreak” on iOS 26 / iOS 18</h3>
+
+<p>This does not exist. The absence of a jailbreak requirement on supported versions does not mean TrollStore can bypass Apple’s patched vulnerabilities on newer systems. <strong><code>trollstore ios 18 no jailbreak</code></strong> and <strong><code>trollstore no jailbreak ios 26</code></strong> are searches with no valid solution—TrollStore is unavailable on those versions regardless of jailbreak status.</p>
+
+<h3>“TrollStore With Jailbreak”: TrollStore Lite</h3>
+
+<p>Jailbroken users have an additional option: TrollStore Lite. As described in Section 6, it leverages the jailbreak environment and is not constrained by the CoreTrust version limit. On a jailbroken iOS 26 device, TrollStore Lite is the only way to get TrollStore-like functionality, which is exactly what <code>trollstore with jailbreak</code> refers to in practice.</p>
+
+<h3>“TrollStore vs Jailbreak”: Different Tools, Different Purposes</h3>
+
+<p>TrollStore signs apps. Jailbreak modifies the operating system. They are not competitors. A jailbroken device can use TrollStore Lite; a non-jailbroken device on a supported version can use standard TrollStore. Neither replaces the other. Note that on a jailbroken device, standard TrollStore and TrollStore Lite can coexist, and apps can be transferred between them[citation:2].</p>
+
+<h2 id="update">8. Update &amp; Maintenance: Keeping TrollStore Current</h2>
+
+<p><strong>User intent:</strong> Update TrollStore and check for version updates via <code>trollstore update</code>, <code>trollstore releases</code>, and <code>trollstore latest version</code>.</p>
+
+<h3>How to Update TrollStore</h3>
+
+<p>Open TrollStore, go to the Settings tab. If an update is available, a button appears at the top. Tap it to download and install the update. The device resprings, and your installed apps remain intact. This is the entire <code>trollstore update</code> process—no computer and no reinstall needed.</p>
+
+<h3>“TrollStore Releases” and “TrollStore Latest Version” for Update Checking</h3>
+
+<p>The GitHub Releases page is the authoritative source for version history. The current latest is <strong>2.1.1</strong>. Major updates have included:</p>
+<ul>
+  <li><strong>2.0</strong> (November 2023): Support for iOS 15.5–16.6.1 and 17.0 via CVE-2023-41991</li>
+  <li><strong>2.1</strong>: TrollStore Lite introduced; app transfer between TrollStore and Lite added; “Refresh App Registrations” added[citation:2]</li>
+  <li><strong>2.1.1</strong>: TrollStore Lite entitlement fix[citation:2]</li>
+</ul>
+
+<div class="callout callout-danger">
+<strong>Important Warning: Do Not Update iOS.</strong> If TrollStore is installed on your device, do not update iOS. Any iOS update will patch the CoreTrust vulnerability and disable TrollStore permanently. This is the single most important maintenance rule.
+</div>
+
+<h2 id="guide">9. TrollStore Guide &amp; Tutorial: How to Use It After Installation (IPA Install, App Management, Persistence Helper)</h2>
+
+<p><strong>User intent:</strong> Learn <code>trollstore how to use</code> after installation—installing IPAs, managing apps, and handling the persistence helper. This section also serves as the general <code>trollstore guide</code> and <code>trollstore tutorial</code> for post-install operations, and points to Section 2 for <code>trollstore how to install</code>.</p>
+
+<p>This section covers what to do <strong>after</strong> TrollStore is installed. For installation steps by iOS version, see <a href="#install">Section 2</a>.</p>
+
+<h3>TrollStore Guide: Core Operations</h3>
+
+<p>Once installed, TrollStore’s core function is simple:</p>
+
+<ol>
+  <li><strong>Install an IPA:</strong> Tap the <strong>+</strong> button or open an IPA file from Files/AirDrop. TrollStore will install it with permanent signing.</li>
+  <li><strong>Manage installed apps:</strong> The Apps tab lists everything TrollStore has installed. You can uninstall, view entitlements, or open apps from here.</li>
+  <li><strong>Refresh registrations:</strong> If apps stop launching after an icon cache reload, open your Persistence Helper app and tap <strong>Refresh App Registrations</strong>.</li>
+</ol>
+
+<h3>“TrollStore How to Use” for Specific Scenarios</h3>
+
+<ul>
+  <li><strong>IPA installation:</strong> Drag and drop, AirDrop, or open-in from Safari all work. TrollStore handles the signing automatically.</li>
+  <li><strong>Transferring apps to TrollStore Lite:</strong> If you later jailbreak your device, TrollStore 2.1+ includes an option to transfer installed apps to TrollStore Lite[citation:2].</li>
+  <li><strong>Persistence Helper setup:</strong> If you skipped it during installation, open TrollStore → Settings → Install Persistence Helper, then select an app to replace (typically Tips).</li>
+</ul>
+
+<h2 id="localized">10. Localized: Non-English TrollStore Searches</h2>
+
+<p><strong>User intent:</strong> Find TrollStore information in Vietnamese, Polish, Spanish, Portuguese, German, French, and other languages—covering <code>cài trollstore</code>, <code>cách cài trollstore</code>, <code>tải trollstore</code>, <code>cài trollstore không cần máy tính</code>, <code>cài trollstore không cần jailbreak</code>, <code>cài trollstore qua 3utools</code>, <code>cài trollstore qua esign</code>, <code>cài trollstore qua sileo</code>, <code>jak zainstalować trollstore</code>, <code>que es trollstore</code>, <code>o que é trollstore</code>, <code>para que serve trollstore</code>, <code>trollstore là gì</code>, <code>trollstore was ist das</code>, <code>kho ứng dụng trollstore</code>, and French queries such as <code>qu'est-ce que trollstore</code> and <code>comment installer trollstore</code>.</p>
+
+<p>The technical facts are identical regardless of search language. Below are the key answers for localized queries.</p>
+
+<h3>Vietnamese: “cài trollstore,” “cách cài trollstore,” “tải trollstore”</h3>
+
+<p><strong>“Cài TrollStore”</strong> (install TrollStore) follows the same version rules as English. <strong>“Tải TrollStore”</strong> (download TrollStore) from the official GitHub only. <strong>“Cài TrollStore không cần máy tính”</strong> (install without computer) is possible only on iOS 14.0–15.6.1 via TrollHelperOTA. <strong>“Cài TrollStore không cần jailbreak”</strong> (no jailbreak) is the standard use case on supported versions. The three sideloading paths are <strong><code>cài trollstore qua 3utools</code></strong>, <strong><code>cài trollstore qua esign</code></strong>, and <strong><code>cài trollstore qua sileo</code></strong>: 3uTools and ESign can deliver TrollInstallerX by following the method described in Section 2 Method B with your sideloading tool of choice, while Sileo is relevant only for TrollStore Lite on jailbroken devices.</p>
+
+<h3>Polish: “jak zainstalować trollstore”</h3>
+
+<p>Installation method depends on iOS version, exactly as described in Sections 2 and 3.</p>
+
+<h3>Spanish: “que es trollstore”</h3>
+
+<p>TrollStore es una aplicación que instala IPAs de forma permanente mediante un fallo en CoreTrust. No es un jailbreak. Solo funciona en iOS 14.0 beta 2–16.6.1, 16.7 RC y 17.0.</p>
+
+<h3>Portuguese: “o que é trollstore,” “para que serve trollstore”</h3>
+
+<p>TrollStore é uma ferramenta que instala IPAs permanentemente sem jailbreak nas versões suportadas. Não funciona em iOS 17.0.1 ou superior, incluindo iOS 26 e iOS 27.</p>
+
+<h3>Vietnamese: “trollstore là gì”</h3>
+
+<p>TrollStore là công cụ cài đặt IPA vĩnh viễn, không cần jailbreak, chỉ hỗ trợ iOS 14.0 beta 2–16.6.1, 16.7 RC và 17.0.</p>
+
+<h3>German: “trollstore was ist das”</h3>
+
+<p>TrollStore ist ein Tool zur permanenten IPA-Installation ohne Jailbreak, das ausschließlich auf iOS 14.0 beta 2–16.6.1, 16.7 RC und 17.0 funktioniert.</p>
+
+<h3>French: “qu'est-ce que trollstore,” “comment installer trollstore”</h3>
+
+<p>Si vous vous demandez <code>qu'est-ce que trollstore</code>, c'est un outil qui installe des IPA de façon permanente sans jailbreak, grâce à une faille CoreTrust. Il ne fonctionne que sur iOS 14.0 beta 2–16.6.1, 16.7 RC et 17.0. Pour savoir <code>comment installer trollstore</code>, la méthode dépend de votre version d'iOS, exactement comme décrit dans les sections 2 et 3. Sur iOS 17.0.1 et versions ultérieures (y compris iOS 18, iOS 26 et iOS 27), TrollStore n'est pas disponible.</p>
+
+<h3>Vietnamese: “kho ứng dụng trollstore”</h3>
+
+<p>There is no official “TrollStore app store.” TrollStore installs IPAs you provide. Third-party IPA collections exist but are not affiliated with the developer. See <a href="#ecosystem">Section 11</a> for one community-maintained collection.</p>
+
+<h2 id="ecosystem">11. Ecosystem &amp; Repo: Helpers, Persistence, and Community Resources</h2>
+
+<p><strong>User intent:</strong> Find <code>trollstore repo</code>, <code>trollstore repo helper</code>, <code>trollstore helper</code>, <code>trollstore helper ipa</code>, <code>trollstore helper repo</code>, <code>trollstore helper download</code>, <code>trollstore helper ota</code>, <code>trollstore helper package</code>, <code>trollstore helper download ipa</code>, <code>trollstore helper deb</code>, <code>trollstore persistence helper</code>, <code>trollstore persistence helper ipa</code>, and related ecosystem resources.</p>
+
+<h3>“TrollStore Repo” and “TrollStore Helper” in Context</h3>
+
+<p>For <strong>non-jailbroken users</strong>, there is no repo to add. The “helper” you interact with is the Persistence Helper installed by TrollStore itself (see Section 2). It is accessed through the app icon (typically Tips) that TrollStore has repurposed.</p>
+
+<p>For <strong>jailbroken users</strong>, TrollStore Lite is available via the Havoc repository (<code>havoc.app/package/trollstorelite</code>). This is the official distribution point for the Lite variant[citation:2]. A <code>trollstore helper repo</code> or <code>trollstore repo helper</code> in this context refers to that package repository, not a separate download site.</p>
+
+<h3>“TrollStore Persistence Helper” and Helper Downloads</h3>
+
+<p>The Persistence Helper is not a separate download. It is embedded in TrollStore’s installation and replaces a system app on your device. Its sole function is to re-register TrollStore and its installed apps as “System” after an icon cache reload. The following searches all refer to components used in specific installation scenarios, <strong>not standalone products most users need</strong>:</p>
+<ul>
+  <li><code>trollstore helper</code> — the Persistence Helper or TrollHelper package (checkra1n only)</li>
+  <li><code>trollstore helper ipa</code> — no separate official helper IPA for non-jailbroken users; delivered inside TrollStore installation</li>
+  <li><code>trollstore helper download</code> — not a separate download; use the official GitHub Releases page</li>
+  <li><code>trollstore helper package</code> — the TrollHelper package on checkra1n-jailbroken devices only</li>
+  <li><code>trollstore helper download ipa</code> — no standalone official file; see <code>trollstore helper ipa</code> above</li>
+  <li><code>trollstore helper deb</code> — relevant only to jailbroken/package-manager setups (TrollHelper package)</li>
+  <li><code>trollstore persistence helper</code> — built into TrollStore; not a download</li>
+  <li><code>trollstore persistence helper ipa</code> — no standalone official IPA; the helper is installed by TrollStore itself</li>
+</ul>
+
+<p>For <code>trollstore helper ota</code> searches: on iOS 14.0–15.6.1, the TrollHelperOTA method (Section 2, Method A) is the OTA-based helper that installs TrollStore without a computer. It is not a separate package.</p>
+
+<h3>Community IPA Resources</h3>
+
+<p>The GitHub repository <strong><code>Neoncat-OG/TrollStore-IPAs</code></strong> is a community-maintained collection of tweaked apps for TrollStore. It is not official but is widely referenced. Always exercise caution with any IPA source—TrollStore will install whatever you give it. Verify that any IPA you download comes from a trusted developer or community source.</p>
+
+<h2 id="device">12. Device &amp; Platform: iPhone, iPad, and Beyond</h2>
+
+<p><strong>User intent:</strong> Find TrollStore for specific devices including <code>trollstore for ipad</code>, <code>trollstore download iphone</code>, and <code>trollstore on iphone</code>.</p>
+
+<h3>“TrollStore for iPad”</h3>
+
+<p>The compatibility rules are identical to iPhone: iPadOS 14.0 beta 2–16.6.1, 16.7 RC (20H18), and 17.0 are supported. iPadOS 17.0.1 and later are not. Installation methods (TrollHelperOTA, TrollInstallerX, TrollRestore) apply to iPad as well.</p>
+
+<h3>“TrollStore Download iPhone” and “TrollStore on iPhone”</h3>
+
+<p>All installation methods in Section 2 apply to iPhone. The version check is the first and only thing that matters. Whether you are following a <code>trollstore download iphone</code> guide or wondering how to get <code>trollstore on iphone</code>, the answer is the same: confirm your iOS version against the compatibility table, then use the matching installer from the official GitHub Releases page.</p>
+
+<h3>Platform Note</h3>
+
+<p>Searches for TrollStore on Apple TV, tvOS, Mac, Windows, or PC fall outside the scope of this guide. TrollStore is an iOS/iPadOS application. For iPhone and iPad downloads, see <a href="#download">Section 1</a>. Windows and Mac are relevant only as hosts for running TrollRestore or sideloading tools.</p>
+
+<p style="margin-top:48px; padding-top:20px; border-top:1px solid var(--border); font-size:0.85rem; color:var(--muted);">
+Information in this article is based on the official TrollStore GitHub repository (opa334/TrollStore), its README, release notes, and publicly available technical documentation. TrollStore compatibility is determined by Apple’s patching of the CoreTrust vulnerability and does not change based on user demand. Verify your iOS version against the compatibility table before attempting installation.
+</p>
+
+</article>
 </body>
 </html>
