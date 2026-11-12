@@ -3,8 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TrollStore Complete Guide: Supported Versions, Official Download &amp; Installation (2026)</title>
-<meta name="description" content="TrollStore supported iOS versions, official GitHub download, and installation methods. iOS 26 and iOS 27 are NOT supported. Full compatibility table and no-PC install guide.">
+<!-- 优化后的 Title：控制在 60 字符以内，保留核心关键词 -->
+<title>TrollStore Guide: Supported Versions &amp; Install (2026)</title>
+<!-- 优化后的 Description：控制在 160 字符以内，包含行动号召(CTA) -->
+<meta name="description" content="TrollStore official GitHub download and install guide. Check iOS 14-17.0 support. Note: iOS 18, 26, and 27 are NOT supported. Get the full compatibility table.">
+<!-- 补全 Canonical 标签，解决 Canonial Missing 问题。请将下面 URL 替换为你实际的正式域名 -->
+<link rel="canonical" href="https://927520fyx.github.io/ios/">
+
 <style>
   :root {
     --bg: #ffffff;
@@ -89,16 +94,22 @@
     background: #eef4fb;
     border-left: 4px solid var(--accent);
   }
+  /* 优化表格在移动端的横向滚动 */
+  .table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 20px 0;
+  }
   table {
     width: 100%;
     border-collapse: collapse;
-    margin: 20px 0;
     font-size: 0.92rem;
   }
   th, td {
     padding: 10px 14px;
     text-align: left;
     border-bottom: 1px solid var(--border);
+    white-space: nowrap; /* 防止表格内容过度挤压变形 */
   }
   th {
     background: #f1f3f5;
@@ -173,6 +184,11 @@
     color: #fff;
     border-color: var(--accent);
   }
+  .site-nav span {
+    font-weight: 600;
+    color: var(--muted);
+    margin-right: 4px;
+  }
   @media (max-width: 600px) {
     h1 { font-size: 1.5rem; }
     h2 { font-size: 1.2rem; }
@@ -181,10 +197,45 @@
     .site-nav { font-size: 0.85rem; }
   }
 </style>
+
+<!-- 添加 FAQ 结构化数据 (JSON-LD)，极大增加在谷歌搜索结果中展示 FAQ 富媒体摘要的几率 -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Does TrollStore support iOS 18, iOS 26, or iOS 27?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. TrollStore only supports iOS 14.0 beta 2 through 16.6.1, 16.7 RC (20H18), and 17.0. Apple patched the CoreTrust vulnerability starting with iOS 17.0.1. Versions from 17.0.1 onward, including iOS 18, 26, and 27, will never be supported unless a new CoreTrust bug is discovered."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where is the official TrollStore download?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The only official distribution channel is the GitHub Releases page maintained by developer opa334 at github.com/opa334/TrollStore/releases. TrollStore is not distributed as a standalone IPA."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I install TrollStore without a PC?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, but only on iOS 14.0 to 15.6.1 using the TrollHelperOTA method. For iOS 16.0 and later, TrollInstallerX with a computer is strongly recommended."
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <article>
 
+<!-- H1 标签保持信息丰富，与 Title 形成互补 -->
 <h1>TrollStore Complete Guide: Supported Versions, Official Download &amp; Installation (2026)</h1>
 
 <p class="lede">
@@ -192,7 +243,7 @@
 </p>
 
 <nav class="site-nav" aria-label="Site navigation">
-  <span style="font-weight:600; color:var(--muted); margin-right:4px;">Site:</span>
+  <span>Site:</span>
   <a href="index.html" aria-current="page">Home</a>
   <a href="faq.html">FAQ</a>
   <a href="dopamine.html">Dopamine</a>
@@ -226,7 +277,7 @@
 
 <p>The sole official distribution channel is the GitHub Releases page maintained by developer opa334:</p>
 
-<p><strong><code>github.com/opa334/TrollStore/releases</code></strong></p>
+<p><strong><a href="https://github.com/opa334/TrollStore/releases" rel="noopener" target="_blank"><code>github.com/opa334/TrollStore/releases</code></a></strong></p>
 
 <p>From this page you will find:</p>
 <ul>
@@ -301,52 +352,55 @@
 
 <h3>TrollStore Compatibility Table (Official)</h3>
 
-<table>
-  <thead>
-    <tr>
-      <th>iOS / iPadOS Version</th>
-      <th>Supported?</th>
-      <th>Recommended Installer</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>14.0 beta 2 – 15.6.1</td>
-      <td><span class="tag-yes">✅ Yes</span></td>
-      <td>TrollHelperOTA (no PC) or checkra1n + TrollHelper</td>
-    </tr>
-    <tr>
-      <td>15.7.2 – 15.8.2</td>
-      <td><span class="tag-yes">✅ Yes</span></td>
-      <td>TrollInstallerX (requires internet during install)</td>
-    </tr>
-    <tr>
-      <td>16.0 – 16.6.1</td>
-      <td><span class="tag-yes">✅ Yes</span></td>
-      <td>TrollInstallerX</td>
-    </tr>
-    <tr>
-      <td>16.7 RC (20H18)</td>
-      <td><span class="tag-yes">✅ Yes</span></td>
-      <td>TrollRestore</td>
-    </tr>
-    <tr>
-      <td>17.0 (initial release only)</td>
-      <td><span class="tag-yes">✅ Yes</span></td>
-      <td>TrollInstallerX or TrollRestore</td>
-    </tr>
-    <tr>
-      <td><strong>16.7.x (non-RC)</strong></td>
-      <td><span class="tag-no">❌ Never</span></td>
-      <td>AltStore / SideStore / Sideloadly</td>
-    </tr>
-    <tr>
-      <td><strong>17.0.1 and above</strong> (including iOS 18, 26, 27)</td>
-      <td><span class="tag-no">❌ Never</span></td>
-      <td>AltStore / SideStore / Sideloadly</td>
-    </tr>
-  </tbody>
-</table>
+<!-- 用 div 包裹表格，解决移动端横向滚动问题 -->
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th>iOS / iPadOS Version</th>
+        <th>Supported?</th>
+        <th>Recommended Installer</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>14.0 beta 2 – 15.6.1</td>
+        <td><span class="tag-yes">✅ Yes</span></td>
+        <td>TrollHelperOTA (no PC) or checkra1n + TrollHelper</td>
+      </tr>
+      <tr>
+        <td>15.7.2 – 15.8.2</td>
+        <td><span class="tag-yes">✅ Yes</span></td>
+        <td>TrollInstallerX (requires internet during install)</td>
+      </tr>
+      <tr>
+        <td>16.0 – 16.6.1</td>
+        <td><span class="tag-yes">✅ Yes</span></td>
+        <td>TrollInstallerX</td>
+      </tr>
+      <tr>
+        <td>16.7 RC (20H18)</td>
+        <td><span class="tag-yes">✅ Yes</span></td>
+        <td>TrollRestore</td>
+      </tr>
+      <tr>
+        <td>17.0 (initial release only)</td>
+        <td><span class="tag-yes">✅ Yes</span></td>
+        <td>TrollInstallerX or TrollRestore</td>
+      </tr>
+      <tr>
+        <td><strong>16.7.x (non-RC)</strong></td>
+        <td><span class="tag-no">❌ Never</span></td>
+        <td>AltStore / SideStore / Sideloadly</td>
+      </tr>
+      <tr>
+        <td><strong>17.0.1 and above</strong> (including iOS 18, 26, 27)</td>
+        <td><span class="tag-no">❌ Never</span></td>
+        <td>AltStore / SideStore / Sideloadly</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 <p><strong>Note on iOS 12 and iOS 13:</strong> These versions are not supported. The CoreTrust bug that TrollStore relies on was introduced in iOS 14.0; it does not exist on iOS 12 or 13. Searches for <code>trollstore for ios 12</code> have no valid solution—use AltStore, SideStore, or Sideloadly instead (see <a href="#alternative">Section 5</a>).</p>
 
@@ -392,32 +446,34 @@
 
 <h3>TrollStore vs. AltStore / SideStore</h3>
 
-<table>
-  <thead>
-    <tr>
-      <th>Tool</th>
-      <th>How It Works</th>
-      <th>Limitation</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>TrollStore</strong></td>
-      <td>CoreTrust bug, permanent signing</td>
-      <td>Only iOS 14.0–16.6.1, 16.7 RC, 17.0</td>
-    </tr>
-    <tr>
-      <td><strong>AltStore</strong></td>
-      <td>Apple ID signing, auto-refresh via AltServer</td>
-      <td>7-day certificate; max 3 apps; requires computer for refresh</td>
-    </tr>
-    <tr>
-      <td><strong>SideStore</strong></td>
-      <td>Fork of AltStore, on-device refresh</td>
-      <td>Still subject to 7-day signing cycle, but no constant computer connection</td>
-    </tr>
-  </tbody>
-</table>
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th>Tool</th>
+        <th>How It Works</th>
+        <th>Limitation</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>TrollStore</strong></td>
+        <td>CoreTrust bug, permanent signing</td>
+        <td>Only iOS 14.0–16.6.1, 16.7 RC, 17.0</td>
+      </tr>
+      <tr>
+        <td><strong>AltStore</strong></td>
+        <td>Apple ID signing, auto-refresh via AltServer</td>
+        <td>7-day certificate; max 3 apps; requires computer for refresh</td>
+      </tr>
+      <tr>
+        <td><strong>SideStore</strong></td>
+        <td>Fork of AltStore, on-device refresh</td>
+        <td>Still subject to 7-day signing cycle, but no constant computer connection</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 <h3>TrollStore vs. Sideloadly</h3>
 
@@ -604,7 +660,8 @@
 <p>Searches for TrollStore on Apple TV, tvOS, Mac, Windows, or PC fall outside the scope of this guide. TrollStore is an iOS/iPadOS application. For iPhone and iPad downloads, see <a href="#download">Section 1</a>. Windows and Mac are relevant only as hosts for running TrollRestore or sideloading tools.</p>
 
 <p style="margin-top:48px; padding-top:20px; border-top:1px solid var(--border); font-size:0.85rem; color:var(--muted);">
-Information in this article is based on the official TrollStore GitHub repository (opa334/TrollStore), its README, release notes, and publicly available technical documentation. TrollStore compatibility is determined by Apple’s patching of the CoreTrust vulnerability and does not change based on user demand. Verify your iOS version against the compatibility table before attempting installation.
+Information in this article is based on the official TrollStore GitHub repository (opa334/TrollStore), its README, release notes, and publicly available technical documentation. TrollStore compatibility is determined by Apple’s patching of the CoreTrust vulnerability and does not change based on user demand. Verify your iOS version against the compatibility table before attempting installation.<br><br>
+<strong>Last updated:</strong> <time datetime="2026-11-12">November 12, 2026</time>
 </p>
 
 </article>
