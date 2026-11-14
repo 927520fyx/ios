@@ -4,33 +4,26 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- 优化后的 Title：53 字符，保留核心关键词 -->
-<title>TrollStore Guide: Supported Versions &amp; Install (2026)</title>
+<title>TrollStore Lite, Pro, 2, v2, Beta &amp; Mod: Variant Guide (2026)</title>
 
-<!-- 修复后的 Description：缩减到 150 字符以内，包含行动号召(CTA)，避免被截断 -->
-<meta name="description" content="TrollStore official GitHub download guide. Check iOS 14-17.0 compatibility. Note: iOS 18, 26, and 27 are NOT supported. Get the full support table.">
+<meta name="description" content="TrollStore Lite, Pro, 2, v2, beta &amp; mod variants explained. Official GitHub download guide. iOS 14-17.0 only. iOS 18, 26, 27 NOT supported. Read now.">
 
-<!-- 补充搜索引擎所需的 Meta 标签 -->
-<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1,max-video-preview:-1">
 <meta name="publisher" content="TrollStore Guide">
-<meta name="keywords" content="trollstore, trollstore download, trollstore ios 17, trollstore ios 18, trollstore compatibility">
+<meta name="keywords" content="trollstore lite, trollstore lite ipa, trollstore lite github, trollstore lite repo, trollstore lite roothide, trollstore lite deb, trollstore lite deb file, trollstore lite no jailbreak, trollstore pro, trollstore pro ipa, trollstore 2, trollstore v2, trollstore beta, trollstore mod, trollstore mod ipa, trollstore update, trollstore releases, trollstore latest version">
 
-<!-- 补全 Canonical 标签 -->
 <link rel="canonical" href="https://927520fyx.github.io/ios/">
 
-<!-- ================= 社交媒体分享标签 (Social Tags) ================= -->
-<!-- Open Graph / Facebook -->
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://927520fyx.github.io/ios/">
-<meta property="og:title" content="TrollStore Guide: Supported Versions &amp; Install (2026)">
-<meta property="og:description" content="TrollStore official GitHub download guide. Check iOS 14-17.0 compatibility. Note: iOS 18, 26, and 27 are NOT supported.">
+<meta property="og:title" content="TrollStore Lite, Pro, 2, v2, Beta &amp; Mod: Variant Guide (2026)">
+<meta property="og:description" content="TrollStore Lite, Pro, 2, v2, beta &amp; mod variants explained. Official GitHub download guide. iOS 14-17.0 only. iOS 18, 26, 27 NOT supported.">
 <meta property="og:image" content="https://927520fyx.github.io/ios/og-image.jpg">
 
-<!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:url" content="https://927520fyx.github.io/ios/">
-<meta property="twitter:title" content="TrollStore Guide: Supported Versions &amp; Install (2026)">
-<meta property="twitter:description" content="TrollStore official GitHub download guide. Check iOS 14-17.0 compatibility. Note: iOS 18, 26, and 27 are NOT supported.">
+<meta property="twitter:title" content="TrollStore Lite, Pro, 2, v2, Beta &amp; Mod: Variant Guide (2026)">
+<meta property="twitter:description" content="TrollStore Lite, Pro, 2, v2, beta &amp; mod variants explained. Official GitHub download guide. iOS 14-17.0 only. iOS 18, 26, 27 NOT supported.">
 <meta property="twitter:image" content="https://927520fyx.github.io/ios/og-image.jpg">
 
 <style>
@@ -87,6 +80,12 @@
     margin: 28px 0 10px;
     font-weight: 600;
   }
+  h4 {
+    font-size: 1rem;
+    margin: 20px 0 8px;
+    font-weight: 600;
+    color: var(--muted);
+  }
   p { margin-bottom: 14px; }
   a { color: var(--accent); text-decoration: none; }
   a:hover { text-decoration: underline; }
@@ -117,7 +116,6 @@
     background: #eef4fb;
     border-left: 4px solid var(--accent);
   }
-  /* 优化表格在移动端的横向滚动 */
   .table-wrap {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
@@ -144,6 +142,7 @@
   tr:nth-child(even) td { background: var(--table-stripe); }
   .tag-yes { color: var(--success); font-weight: 600; }
   .tag-no { color: var(--danger); font-weight: 600; }
+  .tag-warn { color: #b8860b; font-weight: 600; }
   .official-link {
     display: inline-block;
     background: #24292e;
@@ -173,7 +172,6 @@
   .toc ol { margin-bottom: 0; }
   .toc li { margin-bottom: 4px; }
   .toc ol ol { margin-top: 4px; margin-bottom: 4px; }
-  /* Site Navigation Bar */
   .site-nav {
     display: flex;
     gap: 8px;
@@ -211,6 +209,31 @@
     color: var(--muted);
     margin-right: 4px;
   }
+  .keyword-tag {
+    display: inline-block;
+    background: #eef4fb;
+    color: var(--accent);
+    border: 1px solid #cddff5;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin: 2px 2px 2px 0;
+    font-family: "SF Mono", Consolas, monospace;
+  }
+  .keyword-cloud {
+    margin: 16px 0;
+    padding: 16px;
+    background: #fafbfc;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+  }
+  .faq-item {
+    border-bottom: 1px solid var(--border);
+    padding: 16px 0;
+  }
+  .faq-item:last-child { border-bottom: none; }
+  .faq-item h4 { margin-top: 0; color: var(--text); font-size: 1rem; }
   @media (max-width: 600px) {
     h1 { font-size: 1.5rem; }
     h2 { font-size: 1.2rem; }
@@ -220,7 +243,7 @@
   }
 </style>
 
-<!-- FAQ 结构化数据 (JSON-LD) -->
+<!-- FAQ 结构化数据 (JSON-LD) —— 已同步修正 Lite/roothide/iOS 26 口径 -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -228,26 +251,58 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Does TrollStore support iOS 18, iOS 26, or iOS 27?",
+      "name": "What is TrollStore Lite?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. TrollStore only supports iOS 14.0 beta 2 through 16.6.1, 16.7 RC (20H18), and 17.0. Apple patched the CoreTrust vulnerability starting with iOS 17.0.1. Versions from 17.0.1 onward, including iOS 18, 26, and 27, will never be supported unless a new CoreTrust bug is discovered."
+        "text": "TrollStore Lite is an official variant distributed as a .deb file for jailbroken iOS devices. It was introduced in version 2.1 and depends on the jailbreak's codesign bypass rather than the CoreTrust bug. It can work on jailbroken devices running iOS versions beyond 17.0, including iOS 18 and 26, only if a compatible jailbreak exists for that specific version. As of this guide, no public jailbreak is known to support iOS 26 or 27 for this purpose. It is distributed through package managers like Sileo or Cydia via the Havoc repository (havoc.app/package/trollstorelite)."
       }
     },
     {
       "@type": "Question",
-      "name": "Where is the official TrollStore download?",
+      "name": "Where can I download TrollStore Lite IPA or deb?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The only official distribution channel is the GitHub Releases page maintained by developer opa334 at github.com/opa334/TrollStore/releases. TrollStore is not distributed as a standalone IPA."
+        "text": "There is no official TrollStore Lite IPA. TrollStore Lite is distributed as a .deb file through the Havoc repository (havoc.app/package/trollstorelite) for jailbroken devices. It is not a standalone IPA you sideload, and it is not a separate GitHub release product. The 'trollstore lite github' search refers to the main opa334/TrollStore repository, but Lite itself is a .deb delivered through package managers."
       }
     },
     {
       "@type": "Question",
-      "name": "Can I install TrollStore without a PC?",
+      "name": "Does TrollStore Lite work on roothide jailbreaks?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, but only on iOS 14.0 to 15.6.1 using the TrollHelperOTA method. For iOS 16.0 and later, TrollInstallerX with a computer is strongly recommended."
+        "text": "It can work, but results vary. TrollStore Lite relies on the jailbreak's codesign bypass, not a specific jailbreak framework. Community reports indicate that icon and app-registration issues can arise in roothide environments, and some roothide jailbreaks such as Relaxin have required updates to fix TrollStore Lite app launch failures. It is an option for roothide users, not a guaranteed drop-in solution."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is there a TrollStore Pro or TrollStore Mod IPA?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. TrollStore Pro, TrollStore Pro IPA, TrollStore Mod, and TrollStore Mod IPA do not exist as official products. Any site offering a 'Pro IPA' or 'Mod IPA' is not affiliated with the developer. The only official variants are the standard TrollStore (GitHub releases) and TrollStore Lite (.deb for jailbroken devices via Havoc)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between TrollStore 2 and TrollStore v2?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "They are the same thing. TrollStore 2 and TrollStore v2 both refer to the major version 2.0 release (November 2023), which introduced support for iOS 15.5–16.6.1 and 17.0 using CVE-2023-41991. There is no separate '2' or 'v2' product. The current latest version is 2.1.1, available from the official GitHub releases page."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I install TrollStore Lite without jailbreak?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. TrollStore Lite requires a jailbroken device. If your device is not jailbroken, you do not need TrollStore Lite — it will not install. It is not a workaround for unsupported iOS versions on non-jailbroken devices. For non-jailbroken devices, use the standard TrollStore on supported versions (iOS 14.0 beta 2–16.6.1, 16.7 RC, and 17.0)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I update TrollStore and check the latest version?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Open TrollStore, go to the Settings tab. If an update is available, a button appears at the top. Tap it to download and install the update. The device resprings and your installed apps remain intact. You can also check the latest version on the official GitHub Releases page (github.com/opa334/TrollStore/releases). The current latest version is 2.1.1. Never update iOS, as any iOS update will patch the CoreTrust vulnerability and permanently disable TrollStore."
       }
     }
   ]
@@ -257,11 +312,10 @@
 <body>
 <article>
 
-<!-- H1 标签保持信息丰富 -->
 <h1>TrollStore Complete Guide: Supported Versions, Official Download &amp; Installation (2026)</h1>
 
 <p class="lede">
-<strong>Bottom line first:</strong> TrollStore only supports iOS 14.0 beta 2 through 16.6.1, 16.7 RC (20H18), and 17.0. If your device runs iOS 26, iOS 27, or any version from 17.0.1 onward, <strong>this tool will not work for you</strong>. Apple patched the CoreTrust vulnerability that it depends on starting with iOS 17.0.1, and the official README states that 16.7.x (excluding RC) and 17.0.1+ will <strong>never be supported</strong> unless a third CoreTrust bug is discovered. This guide uses official GitHub information to help you determine compatibility and find the correct download and installation path.
+<strong>Bottom line first:</strong> TrollStore only supports iOS 14.0 beta 2 through 16.6.1, 16.7 RC (20H18), and 17.0. If your device runs iOS 26, iOS 27, or any version from 17.0.1 onward, <strong>the standard TrollStore will not work for you</strong>. Apple patched the CoreTrust vulnerability that it depends on starting with iOS 17.0.1, and the official README states that 16.7.x (excluding RC) and 17.0.1+ will <strong>never be supported</strong> unless a third CoreTrust bug is discovered. This guide uses official GitHub information to help you determine compatibility and find the correct download and installation path.
 </p>
 
 <nav class="site-nav" aria-label="Site navigation">
@@ -274,18 +328,19 @@
 <div class="toc">
 <strong>Contents</strong>
 <ol>
+  <!-- 修正：TOC 标题与正文 H2 完全对齐 -->
   <li><a href="#download" title="Download & Get: Where TrollStore Actually Comes From">Download &amp; Get: Where TrollStore Actually Comes From</a></li>
   <li><a href="#install" title="Install & Deploy: How to Install TrollStore (No PC, With PC, and by iOS Version)">Install &amp; Deploy: How to Install TrollStore (No PC, With PC, and by iOS Version)</a></li>
   <li><a href="#compat" title="Version & Compatibility: The Definitive Support List">Version &amp; Compatibility: The Definitive Support List</a></li>
-  <li><a href="#official" title="Official & Source: Avoiding Fake Sites">Official &amp; Source: Avoiding Fake Sites</a></li>
+  <li><a href="#official" title="Official & Source: Official TrollStore Website, GitHub Repo, and Avoiding Fake Sites">Official &amp; Source: Official TrollStore Website, GitHub Repo, and Avoiding Fake Sites</a></li>
   <li><a href="#alternative" title="Alternative & Comparison: What to Use Instead">Alternative &amp; Comparison: What to Use Instead</a></li>
-  <li><a href="#lite" title="Lite & Variant: TrollStore Lite, Pro, 2, Beta, Mod">Lite &amp; Variant: TrollStore Lite, Pro, 2, Beta, Mod</a></li>
-  <li><a href="#jailbreak" title="No Jailbreak / Jailbreak: Clarifying the Relationship">No Jailbreak / Jailbreak: Clarifying the Relationship</a></li>
-  <li><a href="#update" title="Update & Maintenance">Update &amp; Maintenance</a></li>
+  <li><a href="#lite" title="Lite & Variant: TrollStore Lite, Pro, 2, v2, Beta, and Mod (In-Depth)">Lite &amp; Variant: TrollStore Lite, Pro, 2, v2, Beta, and Mod (In-Depth)</a></li>
+  <li><a href="#jailbreak" title="No Jailbreak / Jailbreak: Clarifying the Relationship (Expanded)">No Jailbreak / Jailbreak: Clarifying the Relationship (Expanded)</a></li>
+  <li><a href="#update" title="Update & Maintenance: Keeping TrollStore Current">Update &amp; Maintenance: Keeping TrollStore Current</a></li>
   <li><a href="#guide" title="Guide & Tutorial: How to Use TrollStore After Installation">Guide &amp; Tutorial: How to Use TrollStore After Installation</a></li>
   <li><a href="#localized" title="Localized: Non-English TrollStore Searches">Localized: Non-English TrollStore Searches</a></li>
-  <li><a href="#ecosystem" title="Ecosystem & Repo: Helpers and Community Resources">Ecosystem &amp; Repo: Helpers and Community Resources</a></li>
-  <li><a href="#device" title="Device & Platform: iPhone and iPad">Device &amp; Platform: iPhone and iPad</a></li>
+  <li><a href="#ecosystem" title="Ecosystem & Repo: Helpers, Persistence, and Community Resources">Ecosystem &amp; Repo: Helpers, Persistence, and Community Resources</a></li>
+  <li><a href="#device" title="Device & Platform: iPhone, iPad, and Beyond">Device &amp; Platform: iPhone, iPad, and Beyond</a></li>
 </ol>
 </div>
 
@@ -385,7 +440,8 @@
         <td><span class="tag-yes">No</span></td>
       </tr>
       <tr>
-        <td>iOS 14.0 – 16.6.1, and 17.0</td>
+        <!-- 修正：TrollInstallerX 范围对齐官方口径 -->
+        <td>iOS 14.0 – 16.6.1（arm64e 至 16.5.1），以及 17.0</td>
         <td>Method B: TrollInstallerX</td>
         <td>Yes (sideload the installer)</td>
       </tr>
@@ -454,7 +510,7 @@
 
 <h2 id="compat">3. Version &amp; Compatibility: The Definitive Support List</h2>
 
-<p>This is the most important section of this article. The supported version range is <strong>fixed and will not expand</strong> for the standard TrollStore. The official README is explicit: <strong>16.7.x (excluding 16.7 RC) and 17.0.1+ will NEVER be supported</strong>. The table below is the single reference for all supported versions at a glance.</p>
+<p>This is the most important section of this article, because it answers the question almost every visitor arrives with: <em>can my device and my iOS/iPadOS version run TrollStore?</em> The supported version range is <strong>fixed and will not expand</strong> for the standard TrollStore. The official README is explicit: <strong>16.7.x (excluding 16.7 RC) and 17.0.1+ will NEVER be supported</strong>. The table below is the single reference for all supported versions at a glance.</p>
 
 <h3>Compatibility Table (Official)</h3>
 
@@ -507,167 +563,1161 @@
   </table>
 </div>
 
-<h3>Version-Specific Notes (iOS 12 to 17)</h3>
+<h3>Version-Specific Notes (iOS 6 to iOS 17)</h3>
+
+<p>Below is the full breakdown by iOS version, so you can confirm at a glance whether <strong>TrollStore for iOS</strong> applies to you. The list walks through every version users commonly ask about—from iOS 6 and iOS 7 through iOS 17.</p>
+
 <ul>
-  <li><strong>iOS 12 and iOS 13:</strong> These versions are not supported. The CoreTrust bug that TrollStore relies on was introduced in iOS 14.0; it does not exist on older versions. Use AltStore, SideStore, or Sideloadly instead (see <a href="#alternative" title="Jump to Alternative section">Section 5</a>).</li>
-  <li><strong>iOS 16 and iOS 17:</strong> Version 16 is supported across 16.0–16.6.1 and 16.7 RC (20H18), but non-RC 16.7.x is never supported. Version 17 is supported only on the initial 17.0 release; 17.0.1 and later are never supported.</li>
-  <li><strong>15.7.2–15.8.8 and 16.7.x:</strong> Versions 15.7.2–15.8.8 (including 15.8.8) fall within the supported range, but TrollInstallerX requires an active internet connection during installation to download and patchfind the kernelcache. If you have iOS 15.8.8, the 15.7.2–15.8.8 row applies. If you have iOS 16.7.16, the 16.7.x (non-RC) row applies: it is never supported.</li>
+  <li><strong>iOS 6 and iOS 7 (including 7.1.2):</strong> Not supported. The CoreTrust bug TrollStore relies on was introduced in iOS 14.0; it does not exist on iOS 6, iOS 7, or iOS 7.1.2. There is no <strong>TrollStore for iOS 6</strong> and no <strong>TrollStore for iOS 7</strong> build. Use AltStore, SideStore, or Sideloadly instead (see <a href="#alternative" title="Jump to Alternative section">Section 5</a>).</li>
+  <li><strong>iOS 8 and iOS 8.4.1:</strong> Not supported. Any claim of a <strong>TrollStore iOS 8</strong> or <strong>TrollStore iOS 8.4.1</strong> download is false—the vulnerability simply does not exist on these releases.</li>
+  <li><strong>iOS 9, iOS 9.3.5 and iOS 9.3.6:</strong> Not supported. There is no <strong>TrollStore iOS 9</strong>, <strong>TrollStore iOS 9.3.5</strong>, or <strong>TrollStore iOS 9.3.6</strong> release. Devices stuck on these versions must use a signing service or an older jailbreak-based installer.</li>
+  <li><strong>iOS 10.3.3 and iOS 10.3.4:</strong> Not supported. Searches for <strong>TrollStore iOS 10.3.3</strong> or <strong>TrollStore iOS 10.3.4</strong> will not find a working build, because the CoreTrust exploit does not apply.</li>
+  <li><strong>iOS 12, 12.5.5, 12.5.6, 12.5.7 and 12.5.8:</strong> Not supported. There is no <strong>TrollStore for iOS 12</strong> path—not even on the 12.5.x point releases such as <strong>12.5.5</strong>, <strong>12.5.6</strong>, <strong>12.5.7</strong>, or <strong>12.5.8</strong>. On these versions, jailbreak-based installation (for example, checkra1n on iOS 12) or AltStore/Sideloadly is the only realistic route to permanent signing.</li>
+  <li><strong>iOS 13:</strong> Not supported. <strong>TrollStore iOS 13</strong> does not exist, for the same reason as iOS 12.</li>
+  <li><strong>iOS 14:</strong> Supported. <strong>TrollStore iOS 14</strong> works from iOS 14.0 beta 2 through 14.x, using TrollHelperOTA (no PC) or, on arm64 A8–A11 devices, checkra1n plus the TrollHelper package.</li>
+  <li><strong>iOS 15 (15.7.6, 15.7.9, 15.8.3, 15.8.4, 15.8.5, 15.8.6, 15.8.7 and 15.8.8):</strong> Supported. <strong>TrollStore iOS 15</strong> covers the whole 15.x line. On iOS 15.0–15.6.1 use TrollHelperOTA with no PC; from iOS 15.7.2 onward—including <strong>15.7.6</strong>, <strong>15.7.9</strong>, <strong>15.8.3</strong>, <strong>15.8.4</strong>, <strong>15.8.5</strong>, <strong>15.8.6</strong>, <strong>15.8.7</strong> and <strong>15.8.8</strong>—use TrollInstallerX with an internet connection during install.</li>
+  <li><strong>iOS 16 (16.0.3, 16.7.6, 16.7.7, 16.7.9, 16.7.16 and 16.7.11):</strong> Mixed. <strong>TrollStore iOS 16</strong> is supported across 16.0–16.6.1, including <strong>16.0.3</strong>, and on <strong>16.7 RC (20H18)</strong>. However, non-RC 16.7.x releases such as <strong>16.7.6</strong>, <strong>16.7.7</strong>, <strong>16.7.9</strong>, <strong>16.7.11</strong> and <strong>16.7.16</strong> are never supported. If you are on <strong>TrollStore iOS 16.7.16</strong> or any other non-RC 16.7.x build, the answer is no.</li>
+  <li><strong>iOS 17 (17.0.3):</strong> Only the initial 17.0 release is supported. <strong>TrollStore iOS 17</strong> does not cover <strong>17.0.3</strong> or any later 17.x version; 17.0.1 and above are permanently unsupported.</li>
 </ul>
 
-<h3>The Honest Answer for iOS 18, 26, and 27</h3>
+<h3>Support, Requirements and Compatibility: Direct Answers</h3>
 
-<div class="callout callout-warn">
-<p>For newer systems, the answer is definitive: <strong>TrollStore does not and will not work on these versions.</strong> Apple patched CVE-2023-41991 in iOS 17.0.1, and every subsequent release—including iOS 18, iOS 26, and iOS 27—lacks the CoreTrust vulnerability it requires. The developer has stated that no new support will arrive unless another CoreTrust bug is discovered, and as of late 2026, none has been. Any website claiming otherwise is either mistaken or distributing something that is not the real TrollStore.</p>
-</div>
+<p>If you arrived with a question phrased as <strong>TrollStore supported iOS</strong>, <strong>TrollStore supported versions</strong>, <strong>TrollStore support list</strong>, or <strong>TrollStore version support</strong>, the short answer is: iOS 14.0 beta 2 through 16.6.1, 16.7 RC (20H18), and 17.0. That is the entire <strong>TrollStore support</strong> matrix. The same answer applies to <strong>TrollStore versions</strong>, <strong>TrollStore compatibility</strong>, <strong>TrollStore requirements</strong>, and any query about <strong>TrollStore compatible devices</strong>—the iOS/iPadOS version is the deciding factor, not the model.</p>
+
+<p>For confirmation-style searches, the answer is equally direct. <strong>Does TrollStore support iOS 26?</strong> No. <strong>Does TrollStore support iOS 18?</strong> No. <strong>Does TrollStore support iOS 12?</strong> No. Likewise, <strong>TrollStore iOS support iOS 26</strong> and <strong>TrollStore iOS support iOS 18</strong> both resolve to “not supported,” and <strong>TrollStore iOS compatibility</strong> and <strong>TrollStore iOS requirements</strong> lead back to the same fixed range. If you are checking whether <strong>TrollStore for iOS 18</strong>, <strong>TrollStore for iOS 26</strong>, or <strong>TrollStore for iOS 27</strong> exists, it does not—those versions sit beyond the patched CoreTrust bug.</p>
+
+<h3>“TrollStore on iOS” and “TrollStore for iOS” by Version</h3>
+
+<p>Users phrase the same compatibility question in two common ways: <strong>TrollStore on iOS [version]</strong> and <strong>TrollStore for iOS [version]</strong>. Both mean “will this run on my version?” Here is the direct mapping:</p>
+
+<ul>
+  <li><strong>TrollStore on iOS 26</strong> / <strong>TrollStore on iOS 26.1</strong> — not supported. Neither the 26.0 release nor <strong>26.1</strong> has a working install path.</li>
+  <li><strong>TrollStore on iOS 27</strong> — not supported.</li>
+  <li><strong>TrollStore on iOS 18</strong> — not supported.</li>
+  <li><strong>TrollStore on iOS 17</strong> — supported only on the initial 17.0 release.</li>
+  <li><strong>TrollStore on iOS 15.8.5</strong> / <strong>TrollStore on iOS 15.8.7</strong> — supported, via TrollInstallerX with internet during install.</li>
+  <li><strong>TrollStore on iOS 12</strong> — not supported.</li>
+  <li><strong>TrollStore for iOS 15.8.5</strong> / <strong>TrollStore for iOS 15.8.7</strong> — supported within the 15.7.2–15.8.8 range.</li>
+  <li><strong>TrollStore for iOS 12.5.7</strong> / <strong>TrollStore for iOS 15</strong> — the former is not supported; the latter is supported as described above.</li>
+  <li><strong>TrollStore for iPad</strong> — identical rules: iPadOS 14.0 beta 2–16.6.1, 16.7 RC, and 17.0 are supported; everything later is not.</li>
+</ul>
 
 <h3>Specific Devices: iPhone and iPad</h3>
 
 <p>The compatibility table applies to both iPhone and iPad. The version of iOS/iPadOS is the determining factor, not the device model—with one caveat: arm64 vs. arm64e chip architecture affects which installer method works, as noted in Section 2. When checking compatibility and requirements, start with the iOS version, then confirm the chip architecture.</p>
 
-<h2 id="official">4. Official &amp; Source: Avoiding Fake Sites and Misleading Downloads</h2>
+<p>Device-specific searches resolve the same way: <strong>TrollStore iPhone 5s</strong>, <strong>TrollStore iPhone 6s</strong>, <strong>TrollStore iPhone 6s Plus</strong>, <strong>TrollStore iPhone 7</strong>, <strong>TrollStore iPhone 8</strong>, <strong>TrollStore iPhone 8 Plus</strong>, <strong>TrollStore iPhone X</strong>, <strong>TrollStore iPhone XR</strong> and <strong>TrollStore iPhone SE</strong> are all possible only if the device runs a supported iOS version. The same applies to <strong>TrollStore iPad mini 2</strong>, <strong>TrollStore iPad mini 4</strong>, <strong>TrollStore iPad Pro</strong>, <strong>TrollStore iPad Pro M4</strong> and <strong>TrollStore iPad Air 2</strong>—the hardware is not the blocker; the installed iOS/iPadOS release is. A device capable of running iOS 18, 26 or 27 can only use TrollStore if it has been kept on (or downgraded to) a supported version.</p>
 
-<p>There is no separate official website with a polished download page. The <strong>only</strong> official source for the standard app is:</p>
+<h3>The Honest Answer for iOS 18, 26, and 27</h3>
 
-<p><strong>GitHub: <code>github.com/opa334/TrollStore</code></strong></p>
+<div class="callout callout-warn">
+<p>For newer systems, the answer is definitive for the standard TrollStore: <strong>it does not and will not work on these versions.</strong> Apple patched CVE-2023-41991 in iOS 17.0.1, and every subsequent release—including iOS 18, iOS 26, and iOS 27—lacks the CoreTrust vulnerability it requires. The developer has stated that no new support will arrive unless another CoreTrust bug is discovered, and as of late 2026, none has been. TrollStore Lite may work on these versions <em>only if a compatible jailbreak exists</em>; as of this guide, no public jailbreak is known to support iOS 26 or 27 for that purpose. Any website claiming otherwise is either mistaken or distributing something that is not the real TrollStore.</p>
+</div>
 
-<h3>Recognizing the Official Source</h3>
+<h2 id="official">4. Official &amp; Source: Official TrollStore Website, GitHub Repo, and Avoiding Fake Sites</h2>
 
-<p>The <code>opa334/TrollStore</code> repository is the only source of truth. The source code, releases, and documentation all live in that repository. Any other domain claiming to be official, or posing as a mirror, is not operated by the developer. The risk of third-party downloads is not theoretical: TrollStore bypasses all of Apple’s signature validation, so an installer from an untrusted source can contain anything. For the installer itself, use GitHub only.</p>
+<p>If your goal is to find the <strong>official TrollStore</strong> source—not a repackaged mirror—this section is the short answer. There is no separate polished “official website” with a download button. The <strong>only</strong> official source for the standard app is the developer’s GitHub repository, and that repository is the reference point for every legitimate <strong>official TrollStore GitHub</strong> link you will see referenced elsewhere.</p>
 
-<p>The only exception is <strong>TrollStore Lite</strong>, which is distributed via Havoc (<code>havoc.app/package/trollstorelite</code>), the channel specified in the official release notes. Havoc is a third-party package manager, not the developer’s own website, but it is the designated distribution point for the Lite variant.</p>
+<p><strong>Official GitHub repository: <code>github.com/opa334/TrollStore</code></strong></p>
 
-<h3>Repos and Helpers</h3>
+<p>Every genuine reference to <strong>TrollStore GitHub</strong> content—releases, source code, the README—traces back to that single repository. When people ask for the <strong>official TrollStore website</strong>, what actually exists is this <strong>TrollStore official site</strong> presence on GitHub: a repository page plus its releases page. There is no separate domain operated by the developer.</p>
 
-<p>In jailbreak contexts, "repo" usually refers to the Havoc repository (<code>havoc.app/package/trollstorelite</code>), which is the official distribution point for the Lite variant. These are relevant only to jailbroken devices. For non-jailbroken users, there is no “repo” to add—installation is done via the installers in Section 2.</p>
+<h3>Why “Official TrollStore Website” and “TrollStore Official Site” Are Tricky Searches</h3>
 
-<p>The <code>helper</code> refers to the Persistence Helper described in Section 2, or to the TrollHelper package used on checkra1n-jailbroken devices. It is not a separate download for most users. If you are on a checkra1n-jailbroken device, the TrollHelper package is available via the checkra1n repo; install it, then open the TrollHelper app to install TrollStore.</p>
+<p>Searches for <strong>TrollStore official website</strong>, <strong>official TrollStore website</strong>, <strong>TrollStore official site</strong>, and <strong>TrollStore official</strong> are among the most common entry points—and also the most heavily targeted by fake sites. Because there is no dedicated marketing domain, anyone can register a domain containing the word “official” and present a download button. Those pages are not operated by the developer, no matter how the <strong>official TrollStore</strong> branding is presented.</p>
 
-<h2 id="alternative">5. Alternative &amp; Comparison: What to Use When It Is Not an Option</h2>
+<p>The reliable rule is simple: if a page describes itself as the <strong>official TrollStore website</strong> but does not point to <code>github.com/opa334/TrollStore</code>, treat it as unofficial. The same applies to any page claiming to be the <strong>TrollStore official site</strong> while hosting its own installer binaries. The real <strong>official TrollStore</strong> distribution never depends on a third-party domain.</p>
 
-<p>If your device runs iOS 17.0.1 or later—including iOS 18, iOS 26, and iOS 27—TrollStore is unavailable. For anyone looking for alternatives on these versions, the realistic options are below.</p>
+<div class="callout callout-info">
+<strong>Quick check:</strong> A legitimate page will reference the <strong>official TrollStore GitHub</strong> repository as the source. If it instead offers a “direct download” hosted on its own servers, it is not the <strong>official TrollStore</strong> channel—regardless of how the page titles itself.
+</div>
 
-<h3>vs. AltStore / SideStore</h3>
+<h3>Recognizing the Official TrollStore GitHub Repo</h3>
+
+<p>The <code>opa334/TrollStore</code> <strong>TrollStore GitHub repo</strong> is the only source of truth. It is maintained by developer <strong>opa334</strong>, and every <strong>TrollStore GitHub repo</strong> page under that account carries the authoritative README, license, issue tracker, and release history. The <strong>official TrollStore GitHub</strong> repository is also where the <strong>TrollStore GitHub page</strong> for releases lives—the same <strong>TrollStore GitHub link</strong> shared in Section 1.</p>
+
+<p>When you land on the <strong>TrollStore GitHub page</strong>, confirm three things: the account name is <code>opa334</code>, the repository name is <code>TrollStore</code>, and the releases tab exists. Any <strong>official TrollStore GitHub</strong> reference you encounter elsewhere should resolve to that same <strong>TrollStore GitHub link</strong>. If a page shows a different <strong>TrollStore GitHub com</strong> path—for example, a fork with a similar name—it is not the source of truth, even if it copies the README verbatim.</p>
+
+<p>The <strong>TrollStore GitHub repo</strong> is also where <strong>TrollStore source</strong> code is published. Because the project is open-source, the <strong>TrollStore source</strong> is auditable: anyone can verify what the installer does. That transparency is exactly why the <strong>TrollStore repo</strong> matters for trust—third-party repackages cannot offer the same guarantee. If a download portal claims to host the <strong>TrollStore repo</strong> contents, compare it against the real <strong>TrollStore GitHub</strong> repository before trusting it.</p>
+
+<h3>Confirmed Official Channels</h3>
 
 <div class="table-wrap">
   <table>
     <thead>
       <tr>
-        <th>Tool</th>
-        <th>How It Works</th>
-        <th>Limitation</th>
+        <th>Channel</th>
+        <th>Status</th>
+        <th>Notes</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td><strong>TrollStore</strong></td>
-        <td>CoreTrust bug, permanent signing</td>
-        <td>Only iOS 14.0–16.6.1, 16.7 RC, 17.0</td>
+        <td><code>github.com/opa334/TrollStore</code></td>
+        <td><span class="tag-yes">✅ Official</span></td>
+        <td>The <strong>official TrollStore GitHub</strong> repo; source, README, and release history</td>
       </tr>
       <tr>
-        <td><strong>AltStore</strong></td>
-        <td>Apple ID signing, auto-refresh via AltServer</td>
-        <td>7-day certificate; max 3 apps; requires computer for refresh</td>
+        <td><code>github.com/opa334/TrollStore/releases</code></td>
+        <td><span class="tag-yes">✅ Official</span></td>
+        <td>The <strong>TrollStore GitHub page</strong> for downloads: TrollInstallerX.ipa, TrollStore.tar</td>
       </tr>
       <tr>
-        <td><strong>SideStore</strong></td>
-        <td>Fork of AltStore, on-device refresh</td>
-        <td>Still subject to 7-day signing cycle, but no constant computer connection</td>
+        <td><code>havoc.app/package/trollstorelite</code></td>
+        <td><span class="tag-yes">✅ Official (Lite)</span></td>
+        <td>Designated distribution point for TrollStore Lite on jailbroken devices</td>
+      </tr>
+      <tr>
+        <td>Any domain calling itself the <strong>official TrollStore website</strong></td>
+        <td><span class="tag-no">❌ Unofficial</span></td>
+        <td>Not operated by the developer; verify against the GitHub repo</td>
+      </tr>
+      <tr>
+        <td>Mirrors or “download portals” claiming to be the <strong>TrollStore official site</strong></td>
+        <td><span class="tag-no">❌ Unofficial</span></td>
+        <td>Repackaged binaries carry unknown risk</td>
       </tr>
     </tbody>
   </table>
 </div>
 
-<h3>vs. Sideloadly</h3>
+<h3>Official TrollStore GitHub vs. Fake Mirrors</h3>
 
-<p>Sideloadly is a computer-based signing tool. It does not offer permanent signing. Every 7 days, you must reconnect to a computer and re-sign. For users on unsupported iOS versions, this is the trade-off: convenience versus permanence. The conclusion is simple—TrollStore wins on supported versions, and alternatives are required on unsupported ones.</p>
+<p>The risk of third-party downloads is not theoretical. TrollStore bypasses all of Apple’s signature validation, so an installer from an untrusted source can contain anything. That is why the <strong>official TrollStore GitHub</strong> repository—and only that repository—should be the source for the installer. A mirror may look identical, use the same <strong>TrollStore GitHub link</strong> styling, and even copy the <strong>TrollStore GitHub page</strong> layout, but it is not the <strong>official TrollStore GitHub</strong> unless it is hosted under <code>opa334</code>.</p>
 
-<h3>vs. Jailbreak</h3>
+<p>Practically, this means: search results that promise an <strong>official TrollStore website</strong> download, an <strong>official TrollStore</strong> installer button, or a “verified” <strong>TrollStore official site</strong> should be treated with suspicion until they point back to the <strong>official TrollStore GitHub</strong> repo. Bookmark the <strong>TrollStore GitHub link</strong> from Section 1 instead of re-searching each time—this single habit removes most of the risk of landing on a fake site.</p>
 
-<p>TrollStore is <strong>not a jailbreak</strong>. It does not provide root filesystem access, cannot install kernel-level tweaks, and does not modify system partitions. It is best understood as a “super-sideloader” with permanent signing capability. Jailbreak tools like Dopamine or palera1n offer deeper access but carry significantly higher risk and complexity. On iOS 12 and 13, where TrollStore has never worked, jailbreak-based installation is the only realistic option for permanent IPA signing.</p>
+<h3>“Oficial” and Other Language Variants</h3>
 
-<h3>vs. TrollStore Lite</h3>
+<p>Non-English searches use the same intent. Spanish and Portuguese users often type <strong>oficial</strong> instead of “official,” and mixed queries such as <strong>oficial o official</strong> appear when users are unsure of the spelling. The answer does not change: there is no separate Spanish-language <strong>official TrollStore website</strong>, and the only <strong>official TrollStore</strong> source remains the <strong>official TrollStore GitHub</strong> repository at <code>github.com/opa334/TrollStore</code>. If a localized page claims to be the <strong>TrollStore official site</strong> for a specific language, verify it against the same <strong>TrollStore GitHub repo</strong> before downloading anything.</p>
 
-<p>See Section 6. Lite is for <strong>jailbroken devices only</strong> and is not an alternative for non-jailbroken users on unsupported versions. The two are related but serve different environments.</p>
+<h3>Repos and Helpers (Official Context)</h3>
 
-<h2 id="lite">6. Lite &amp; Variant: TrollStore Lite, Pro, 2, Beta, and Mod</h2>
+<p>In jailbreak contexts, “repo” usually refers to the Havoc repository (<code>havoc.app/package/trollstorelite</code>), which is the official distribution point for the Lite variant. This is the one case where an official component is not hosted on the <strong>TrollStore GitHub repo</strong>. It is relevant only to jailbroken devices. For non-jailbroken users, there is no “repo” to add—installation is done via the installers in Section 2, sourced from the <strong>official TrollStore GitHub</strong> releases page.</p>
 
-<h3>TrollStore Lite: What It Is and Who It Is For</h3>
+<p>The <code>helper</code> refers to the Persistence Helper described in Section 2, or to the TrollHelper package used on checkra1n-jailbroken devices. It is not a separate download for most users. If you are on a checkra1n-jailbroken device, the TrollHelper package is available via the checkra1n repo; install it, then open the TrollHelper app to install TrollStore. None of these helper components change the fact that the core app comes from the <strong>official TrollStore GitHub</strong> repository.</p>
 
-<p>TrollStore Lite is an official variant <strong>available alongside</strong> the main app, distributed as a <code>.deb</code> file for <strong>jailbroken iOS devices</strong>. It was <strong>introduced in version 2.1</strong>; version 2.1.1 included a fix for a Lite-specific entitlement typo that affected apps on Dopamine-jailbroken devices.</p>
+<h3>Verification Checklist Before You Download</h3>
 
-<p>Lite depends on the jailbreak’s codesign bypass rather than the CoreTrust bug, which means it can work on jailbroken devices running iOS versions beyond 17.0—including iOS 18 and even iOS 26.0.1 and up, as long as a compatible jailbreak exists. It is distributed through package managers like Sileo or Cydia, or via the Havoc repository (<code>havoc.app/package/trollstorelite</code>).</p>
+<ol>
+  <li><strong>Check the account:</strong> the URL must be <code>github.com/opa334/TrollStore</code>. This is the <strong>official TrollStore GitHub</strong> account maintained by the developer.</li>
+  <li><strong>Check the releases tab:</strong> the <strong>TrollStore GitHub page</strong> for releases should list TrollInstallerX.ipa and TrollStore.tar with changelogs.</li>
+  <li><strong>Ignore “official website” claims:</strong> any page presenting itself as the <strong>official TrollStore website</strong> or <strong>TrollStore official site</strong> without linking to that repo is unofficial.</li>
+  <li><strong>Verify the source code:</strong> the <strong>TrollStore source</strong> is published in the same <strong>TrollStore repo</strong>, so the build can be audited.</li>
+  <li><strong>Bookmark the link:</strong> save the <strong>TrollStore GitHub link</strong> so future visits skip search results entirely.</li>
+</ol>
 
-<p><strong>Compatibility with roothide-based jailbreaks:</strong> Lite works on jailbroken devices regardless of whether the jailbreak is Dopamine-based or roothide-based. It relies on the jailbreak’s codesign bypass, not a specific jailbreak framework. If you are using a roothide jailbreak such as Relaxin, this Lite variant is the appropriate choice—community reports indicate that icon and app-registration issues can arise in roothide environments, and Lite is the recommended choice there.</p>
+<h2 id="alternative">5. Alternative &amp; Comparison: What to Use When It Is Not an Option</h2>
 
-<p><strong>If your device is not jailbroken, you do not need TrollStore Lite.</strong> It will not install, and it is not a workaround for unsupported iOS versions on non-jailbroken devices. Note that <strong>Lite is not a standalone IPA you sideload</strong>, and <strong>it is not a separate GitHub release product</strong>—it is a <code>.deb</code> delivered through package managers. Any "repo" reference in this context refers to the Havoc/Sileo/Cydia repository, not a GitHub repo.</p>
+<p>If your device runs iOS 17.0.1 or later—including iOS 18, iOS 26, and iOS 27—TrollStore is unavailable. Anyone searching for a <strong>trollstore alternative</strong> on these versions needs a signing tool that does not depend on the patched CoreTrust bug. The comparisons below cover every realistic option: AltStore, SideStore, Sideloadly, ESign, Scarlet, AppSync, AppSync Unified, Sileo, Signulous, TrollInstallerX, LiveContainer, TrollStore Lite, Dopamine, Cydia, and jailbreak itself. The last subsection answers the most specific query of all: whether a <strong>trollstore alternative ios 12</strong> exists.</p>
 
-<h3>“Pro,” “2,” “v2,” “Beta,” “Mod”</h3>
+<h3>TrollStore vs AltStore</h3>
+
+<p>The <strong>trollstore vs altstore</strong> comparison is the most common entry point for users on unsupported versions. AltStore signs apps with your Apple ID and refreshes them through AltServer every 7 days. It caps you at three active apps and requires a computer on your network for each refresh. TrollStore, on supported versions, signs permanently with no account and no refresh.</p>
+
+<p>For the query <strong>trollstore or altstore</strong>, the answer depends entirely on the iOS version. On iOS 14.0–16.6.1, 16.7 RC, or 17.0, TrollStore is the better tool in every respect. On iOS 17.0.1 and later, TrollStore does not exist, so AltStore becomes a valid <strong>trollstore alternative</strong>—less convenient, but functional. Community threads tagged <strong>trollstore vs altstore reddit</strong> consistently reach the same conclusion: TrollStore first where supported, AltStore as the fallback.</p>
+
+<p>If you are explicitly choosing between the two, the query <strong>trollstore or altstore</strong> is really a version check. Confirm your iOS version in <a href="#compat" title="Jump to compatibility section">Section 3</a> first; the comparison only matters if TrollStore is actually available to you.</p>
+
+<h3>TrollStore vs SideStore</h3>
+
+<p>SideStore is an AltStore fork that refreshes apps on-device after an initial setup, removing the constant AltServer dependency. The <strong>trollstore vs sidestore</strong> comparison is therefore similar to the AltStore one, with one practical difference: SideStore is more convenient for long-term use on unsupported versions.</p>
+
+<p>The query <strong>trollstore or sidestore</strong> appears when users want permanence without a computer. On supported versions, TrollStore still wins because it is permanent and needs no refresh at all. On unsupported versions, SideStore is often the best non-jailbreak <strong>trollstore alternative</strong>. When users compare <strong>sidestore vs altstore vs trollstore</strong>, the ranking is consistent: TrollStore first where supported, SideStore second for convenience, AltStore third because of the computer requirement.</p>
+
+<h3>TrollStore vs Sideloadly</h3>
+
+<p>Sideloadly is a computer-based signing tool. It does not offer permanent signing; every 7 days you reconnect to a computer and re-sign. The <strong>trollstore vs sideloadly</strong> comparison is about permanence versus universal compatibility.</p>
+
+<p>For users on unsupported iOS versions, Sideloadly is a reliable fallback. The query <strong>sideloadly vs trollstore</strong> appears when users are deciding between the permanent but version-limited TrollStore and the universally compatible Sideloadly. The answer is simple: if your iOS version supports TrollStore, use TrollStore; if not, Sideloadly is a valid <strong>trollstore alternative</strong>. It is also the tool most guides recommend for sideloading TrollInstallerX.ipa on supported versions, as described in <a href="#install" title="Jump to install section">Section 2</a>.</p>
+
+<h3>TrollStore vs ESign and Scarlet</h3>
+
+<p>ESign and Scarlet are signing tools that work on unsupported versions. ESign uses enterprise certificates, which are frequently revoked; Scarlet offers similar certificate-based signing. The <strong>trollstore vs esign</strong> comparison is not really a comparison on unsupported versions—TrollStore is simply unavailable, so ESign is one of the certificate-based alternatives.</p>
+
+<p>The query <strong>trollstore vs scarlet</strong> follows the same pattern. Scarlet can sign apps where TrollStore cannot, but without permanence and with the usual certificate-revocation risk. For users weighing multiple signing tools, the query <strong>scarlet or trollstore vs esign</strong> reflects a three-way decision: TrollStore where supported, and ESign or Scarlet as certificate-based fallbacks elsewhere. None of them matches TrollStore’s permanence on its supported range.</p>
+
+<h3>TrollStore vs AppSync / AppSync Unified</h3>
+
+<p>AppSync Unified is a jailbreak tweak that allows installing unsigned IPAs on jailbroken devices. The <strong>trollstore vs appsync</strong> comparison only matters for jailbroken users: AppSync requires a jailbreak, TrollStore does not.</p>
+
+<p>For jailbroken devices, the <strong>appsync unified vs trollstore</strong> question comes down to convenience. AppSync integrates with the jailbreak environment and is installed through Cydia or Sileo; TrollStore offers a standalone solution that works without a jailbreak on supported versions. On a jailbroken device both can coexist, though TrollStore Lite is the more modern option (see Section 6). The <strong>trollstore vs appsync unified</strong> distinction is mainly about jailbreak dependency, and the shorter <strong>trollstore vs appsync</strong> query resolves the same way.</p>
+
+<h3>TrollStore vs Sileo</h3>
+
+<p>Sileo is a package manager for jailbroken devices, like Cydia. The <strong>trollstore vs sileo</strong> comparison is not really a comparison—they serve different purposes. Sileo manages jailbreak packages; TrollStore installs IPAs. On a jailbroken device, TrollStore Lite is distributed through Sileo via the Havoc repository. The <strong>trollstore vs sileo</strong> query usually comes from users confusing package managers with signing tools; if you are not jailbroken, Sileo is not relevant to your TrollStore decision at all.</p>
+
+<h3>TrollStore vs Signulous</h3>
+
+<p>Signulous is a paid signing service. The <strong>trollstore vs signulous</strong> comparison highlights the cost difference: TrollStore is free and permanent on supported versions, while Signulous requires a subscription. For users on unsupported versions who need a signing service, Signulous is one of the paid <strong>trollstore alternative</strong> options, though free alternatives like SideStore or Sideloadly are usually preferred. The <strong>trollstore vs signulous</strong> choice is essentially “free but version-limited” versus “paid but universally available.”</p>
+
+<h3>TrollStore vs TrollInstallerX</h3>
+
+<p>TrollInstallerX is not an alternative to TrollStore—it is the installer used to install TrollStore. The <strong>trollstore vs trollinstallerx</strong> query is a misunderstanding: TrollInstallerX is a tool you run once to install TrollStore, after which it can be deleted. It is not a separate signing solution. If you are on a supported version, you use TrollInstallerX to get TrollStore; if you are not, TrollInstallerX cannot help you either. See <a href="#install" title="Jump to install section">Section 2</a> for the installer methods.</p>
+
+<h3>TrollStore vs LiveContainer</h3>
+
+<p>LiveContainer runs apps without installing them, often used on unsupported versions. The <strong>trollstore vs livecontainer</strong> comparison is about installation versus emulation. LiveContainer can launch IPAs without permanent signing, but it is not a true installation method and does not register apps with the system the way TrollStore does. For users seeking a <strong>trollstore alternative</strong> on unsupported versions, LiveContainer is a niche option, but it does not replace TrollStore’s permanent signing on supported versions.</p>
+
+<h3>TrollStore vs Jailbreak, Dopamine, and Cydia</h3>
+
+<p>TrollStore is not a jailbreak. It signs apps but does not provide root filesystem access or kernel-level tweaks. The <strong>trollstore vs jailbreak</strong> comparison is therefore about different purposes: TrollStore replaces the signing function of a jailbreak, not the tweak injection or root access. For permanent IPA installation without the security trade-offs of a jailbreak, TrollStore is superior on supported versions. Community discussions tagged <strong>trollstore vs jailbreak reddit</strong> consistently reach this conclusion.</p>
+
+<p>Dopamine is a jailbreak for iOS 15–16. The <strong>dopamine vs trollstore</strong> comparison is not apples-to-apples: Dopamine is a jailbreak, TrollStore is a signing tool. On a Dopamine-jailbroken device, users can install TrollStore Lite, which leverages the jailbreak’s codesign bypass. The two can coexist—this is the <strong>trollstore and dopamine</strong> setup discussed in forums—but for permanent IPA signing, TrollStore alone is sufficient on supported versions.</p>
+
+<p>Cydia is a package manager for jailbroken devices. The <strong>trollstore vs cydia</strong> comparison is about app installation methods: Cydia requires a jailbreak; TrollStore does not. On supported versions, TrollStore is the simpler path for installing IPAs, and Cydia remains relevant only for tweaks and system packages. On iOS 12 and 13, where TrollStore has never worked, jailbreak-based installation through Cydia-era tools is the only realistic route to permanent signing—which is why the <strong>trollstore vs cydia</strong> question keeps appearing on older devices.</p>
+
+<h3>TrollStore vs TrollStore Lite</h3>
+
+<p>TrollStore Lite is an official variant for jailbroken devices, distributed as a <code>.deb</code> file. The <strong>trollstore vs trollstore lite</strong> comparison is about environment: standard TrollStore works without a jailbreak on supported versions; Lite requires a jailbreak but can work on newer iOS versions—including iOS 18 and 26—<em>only if a compatible jailbreak exists</em>.</p>
+
+<p>The query <strong>trollstore lite vs trollstore</strong> is essentially “which one should I use?” If you are not jailbroken, use the standard TrollStore on supported versions. If you are jailbroken, TrollStore Lite is available and can even transfer apps from the standard version. It is not a <strong>trollstore alternative</strong> for non-jailbroken users on unsupported versions—it will not install. Full details are in <a href="#lite" title="Jump to TrollStore Lite section">Section 6</a>.</p>
+
+<h3>TrollStore vs TrollStore 2 (Version Comparison)</h3>
+
+<p>The queries <strong>trollstore vs trollstore 2</strong> and <strong>trollstore 1 vs 2</strong> refer to version differences, not to competing products. TrollStore 2.0, released in November 2023, introduced support for iOS 15.5–16.6.1 and 17.0 using CVE-2023-41991. Version 1.x covered earlier versions. Both are the same application, just different releases.</p>
+
+<p>For most users the distinction is irrelevant: install the latest version (currently 2.1.1) from the official GitHub. The <strong>trollstore vs trollstore 2</strong> query is often the result of confusing search results where users think there are two separate products. There are not—TrollStore 2 is simply the current major version, and the same applies to <strong>trollstore 1 vs 2</strong>.</p>
+
+<h3>TrollStore Alternative on iOS 12 and Older Versions</h3>
+
+<p>The most specific alternative query is <strong>trollstore alternative ios 12</strong>. The answer is definitive: TrollStore has never worked on iOS 12 and never will, because the CoreTrust vulnerability does not exist on that release. For users on iOS 12, the realistic <strong>trollstore alternative</strong> options are:</p>
 
 <ul>
-  <li><strong>TrollStore 2</strong> and <strong>TrollStore v2</strong> refer to the major version 2.0 release (November 2023), which introduced support for iOS 15.5–16.6.1 and 17.0 using CVE-2023-41991. There is no separate "2" product.</li>
-  <li><strong>TrollStore Pro</strong> and <strong>TrollStore Pro IPA</strong> do not exist as an official product. Any site offering a "Pro IPA" is not affiliated with the developer.</li>
-  <li><strong>Beta</strong> refers to pre-release builds occasionally posted on the GitHub releases page. These are not recommended for general use.</li>
-  <li><strong>Mod</strong> and <strong>Mod IPA</strong> are not official variants. Modified versions from third parties carry unknown risks and should be avoided.</li>
+  <li><strong>AltStore, SideStore, or Sideloadly</strong> — 7-day signing with universal compatibility.</li>
+  <li><strong>Jailbreak-based installation</strong> — on iOS 12, checkra1n is available. Once jailbroken, AppSync Unified or an older signing tweak can be used. TrollStore Lite is not applicable on iOS 12 in the same way; it depends on a compatible jailbreak and package manager.</li>
+  <li><strong>Certificate-based signing services</strong> — such as ESign or Scarlet, though revocation risk is high.</li>
 </ul>
 
-<h2 id="jailbreak">7. No Jailbreak / Jailbreak: Clarifying the Relationship</h2>
+<p>No direct equivalent to TrollStore exists on iOS 12. The closest is a jailbreak-based setup, which carries its own risks and limitations. Searches for a <strong>trollstore alternative ios 12</strong> will find plenty of pages claiming to offer one—none of them can deliver TrollStore’s CoreTrust-based permanence, because the bug simply is not present on iOS 12.</p>
 
-<h3>No Jailbreak on Supported Versions</h3>
+<h3>Summary: Choosing the Right Alternative</h3>
 
-<p>TrollStore works <strong>without jailbreak</strong> on all officially supported versions (iOS 14.0–16.6.1, 16.7 RC, 17.0). This is its primary advantage: permanent IPA installation without the security trade-offs and complexity of a full jailbreak. On supported versions, no jailbreak is required.</p>
+<p>The decision tree is simple. On iOS 14.0–16.6.1, 16.7 RC, or 17.0, use TrollStore; no alternative matches its permanence. On iOS 17.0.1 and later without a jailbreak, choose SideStore for convenience or AltStore/Sideloadly for reliability, and accept the 7-day refresh. On a jailbroken device of any version, use TrollStore Lite. On iOS 12 or older, no TrollStore path exists—use a jailbreak-based signing method or a 7-day signing tool.</p>
 
-<h3>No Jailbreak on iOS 26 / iOS 18</h3>
+<p>Every comparison on this page—<strong>trollstore vs altstore</strong>, <strong>trollstore vs sidestore</strong>, <strong>trollstore vs sideloadly</strong>, <strong>trollstore vs esign</strong>, <strong>trollstore vs scarlet</strong>, <strong>trollstore vs appsync</strong>, <strong>trollstore vs appsync unified</strong>, <strong>trollstore vs sileo</strong>, <strong>trollstore vs signulous</strong>, <strong>trollstore vs trollinstallerx</strong>, <strong>trollstore vs livecontainer</strong>, <strong>trollstore vs trollstore lite</strong>, <strong>trollstore lite vs trollstore</strong>, <strong>trollstore vs trollstore 2</strong>, <strong>trollstore 1 vs 2</strong>, <strong>trollstore or altstore</strong>, <strong>trollstore or sidestore</strong>, <strong>sidestore vs altstore vs trollstore</strong>, <strong>scarlet or trollstore vs esign</strong>, <strong>appsync unified vs trollstore</strong>, <strong>sideloadly vs trollstore</strong>, <strong>trollstore vs jailbreak</strong>, <strong>trollstore vs jailbreak reddit</strong>, <strong>dopamine vs trollstore</strong>, <strong>trollstore vs cydia</strong>, <strong>trollstore alternative</strong>, and <strong>trollstore alternative ios 12</strong>—leads back to the same fixed compatibility range. TrollStore is the best option on its supported versions, and the alternatives listed here are for everything else.</p>
 
-<p>This does not exist. The absence of a jailbreak requirement on supported versions does not mean TrollStore can bypass Apple’s patched vulnerabilities on newer systems. TrollStore is unavailable on those versions regardless of jailbreak status.</p>
+<div class="callout callout-info">
+<strong>Final note:</strong> Always source TrollStore from the official GitHub repository (<code>github.com/opa334/TrollStore/releases</code>). Third-party downloads are not official and may carry risks. The compatibility range is fixed by Apple’s patching—no alternative can bypass it.
+</div>
 
-<h3>With Jailbreak: TrollStore Lite</h3>
+<!-- ============================================================ -->
+<!-- 第六节：Lite & Variant -->
+<!-- ============================================================ -->
+<h2 id="lite">6. Lite &amp; Variant: TrollStore Lite, Pro, 2, v2, Beta, and Mod (In-Depth)</h2>
 
-<p>Jailbroken users have an additional option: TrollStore Lite. As described in Section 6, it leverages the jailbreak environment and is not constrained by the CoreTrust version limit. On a jailbroken iOS 26 device, Lite is the only way to get TrollStore-like functionality.</p>
+<p>This section is the definitive guide to every <strong>TrollStore variant</strong> that users search for. The keyword list is long—<strong>trollstore lite</strong>, <strong>trollstore lite ipa</strong>, <strong>trollstore lite github</strong>, <strong>trollstore lite repo</strong>, <strong>trollstore lite roothide</strong>, <strong>trollstore lite deb</strong>, <strong>trollstore lite deb file</strong>, <strong>trollstore lite no jailbreak</strong>, <strong>trollstore pro</strong>, <strong>trollstore pro ipa</strong>, <strong>trollstore 2</strong>, <strong>trollstore v2</strong>, <strong>trollstore beta</strong>, <strong>trollstore mod</strong>, and <strong>trollstore mod ipa</strong>—but the reality is simple: there are only <strong>two official variants</strong> (standard TrollStore and TrollStore Lite), plus version numbers and pre-release builds. Everything else is either a misunderstanding or an unofficial, risky product. This section breaks down each one.</p>
 
-<h3>vs. Jailbreak: Different Tools, Different Purposes</h3>
+<div class="keyword-cloud">
+<strong>All variant keywords covered in this section:</strong><br>
+<span class="keyword-tag">trollstore lite</span>
+<span class="keyword-tag">trollstore lite ipa</span>
+<span class="keyword-tag">trollstore lite github</span>
+<span class="keyword-tag">trollstore lite repo</span>
+<span class="keyword-tag">trollstore lite roothide</span>
+<span class="keyword-tag">trollstore lite deb</span>
+<span class="keyword-tag">trollstore lite deb file</span>
+<span class="keyword-tag">trollstore lite no jailbreak</span>
+<span class="keyword-tag">trollstore pro</span>
+<span class="keyword-tag">trollstore pro ipa</span>
+<span class="keyword-tag">trollstore 2</span>
+<span class="keyword-tag">trollstore v2</span>
+<span class="keyword-tag">trollstore beta</span>
+<span class="keyword-tag">trollstore mod</span>
+<span class="keyword-tag">trollstore mod ipa</span>
+</div>
 
-<p>TrollStore signs apps. Jailbreak modifies the operating system. They are not competitors. A jailbroken device can use Lite; a non-jailbroken device on a supported version can use the standard version. Neither replaces the other. Note that on a jailbroken device, both can coexist, and apps can be transferred between them.</p>
+<!-- 6.1 TrollStore Lite -->
+<h3>6.1 TrollStore Lite: The Official Variant for Jailbroken Devices</h3>
 
-<h2 id="update">8. Update &amp; Maintenance: Keeping It Current</h2>
+<p><strong>TrollStore Lite</strong> is the only official alternative build of TrollStore. It was <strong>introduced in version 2.1</strong> and is designed exclusively for <strong>jailbroken iOS devices</strong>. Unlike the standard TrollStore, which exploits the CoreTrust bug (CVE-2023-41991) and is therefore limited to iOS 14.0 beta 2 – 16.6.1, 16.7 RC, and 17.0, TrollStore Lite leverages the <strong>jailbreak's codesign bypass</strong>. This means it can function on jailbroken devices running <strong>iOS versions beyond 17.0</strong>—including <strong>iOS 18</strong> and even <strong>iOS 26</strong>—<em>but only if a compatible jailbreak exists for that specific version</em>. As of this guide, no public jailbreak is known to support iOS 26 or 27 for this purpose.</p>
 
-<h3>How to Update</h3>
+<div class="callout callout-info">
+<strong>Key distinction:</strong> Standard TrollStore = no jailbreak required, limited to older iOS versions. TrollStore Lite = jailbreak required, works on newer iOS versions only if a compatible jailbreak is available.
+</div>
 
-<p>Open TrollStore, go to the Settings tab. If an update is available, a button appears at the top. Tap it to download and install the update. The device resprings, and your installed apps remain intact. This is the entire update process—no computer and no reinstall needed.</p>
+<p>Version 2.1.1 of TrollStore included a fix for a Lite-specific entitlement typo that affected apps on Dopamine-jailbroken devices. If you are using TrollStore Lite, ensure you are on the latest version to avoid entitlement-related issues. The Lite variant performs the same core function as the standard TrollStore—installing IPA files with permanent signing—but uses the jailbreak's environment rather than a system vulnerability.</p>
 
-<h3>Version History</h3>
+<!-- 6.2 trollstore lite ipa -->
+<h3>6.2 TrollStore Lite IPA: Does It Exist?</h3>
 
-<p>The GitHub Releases page is the authoritative source for version history. The current latest is <strong>2.1.1</strong>. Major updates have included:</p>
+<p><strong>No—there is no official TrollStore Lite IPA.</strong> The search term <strong>trollstore lite ipa</strong> is a common source of confusion. TrollStore Lite is a <strong>jailbreak package</strong>, delivered as a <code>.deb</code> file, not as an IPA. IPAs are for non-jailbroken sideloading; on a jailbroken device, TrollStore Lite is installed through the package manager (Sileo or Cydia).</p>
+
+<p>Any website offering a direct "TrollStore Lite IPA" download is <strong>not affiliated with developer opa334</strong> and should be avoided. The standard TrollStore itself is also not distributed as a standalone IPA; the installer (TrollInstallerX.ipa) is the file you sideload, and the app is installed by that tool on-device. For Lite, there is no IPA at all—only the <code>.deb</code> package via the Havoc repository.</p>
+
+<div class="callout callout-warn">
+<strong>Beware:</strong> If a site offers a "TrollStore Lite IPA," it is not official. The official Lite distribution is exclusively through the Havoc repository as a <code>.deb</code>.
+</div>
+
+<!-- 6.3 trollstore lite github & repo -->
+<h3>6.3 TrollStore Lite GitHub &amp; Repo: Where to Find It</h3>
+
+<p>The searches <strong>trollstore lite github</strong> and <strong>trollstore lite repo</strong> require clarification:</p>
+
 <ul>
-  <li><strong>2.0</strong> (November 2023): Support for iOS 15.5–16.6.1 and 17.0 via CVE-2023-41991</li>
-  <li><strong>2.1</strong>: TrollStore Lite introduced; app transfer between standard and Lite added; “Refresh App Registrations” added</li>
-  <li><strong>2.1.1</strong>: Lite entitlement fix</li>
+  <li><strong>The main TrollStore GitHub repository</strong> (<code>github.com/opa334/TrollStore</code>) is the source of truth for the TrollStore project, including the standard installer. The Lite variant is part of the same project, introduced in version 2.1.</li>
+  <li><strong>However, TrollStore Lite is not a separate GitHub release product</strong> in the way that TrollInstallerX.ipa is. Lite is a <code>.deb</code> package delivered through package managers. The GitHub releases page primarily hosts the standard installer files (TrollInstallerX.ipa, TrollStore.tar).</li>
+  <li><strong>The "repo" for TrollStore Lite</strong> refers to the <strong>Havoc repository</strong> (<code>havoc.app/package/trollstorelite</code>), which is the official distribution point for the Lite <code>.deb</code>. It is not a GitHub repo in the traditional sense—it is a package repository for Sileo/Cydia.</li>
+</ul>
+
+<p>If you see a GitHub repository claiming to host "TrollStore Lite" as a standalone project, verify it against the official <code>opa334/TrollStore</code> repository. Forks and mirrors are not official. The only legitimate <strong>trollstore lite repo</strong> is the Havoc package repository.</p>
+
+<!-- 6.4 trollstore lite deb / deb file -->
+<h3>6.4 TrollStore Lite deb / deb File: The Official Package Format</h3>
+
+<p>The <strong>trollstore lite deb</strong> and <strong>trollstore lite deb file</strong> are the same thing: the Debian package format used by jailbreak package managers. This is the <strong>only official distribution format</strong> for TrollStore Lite.</p>
+
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th>Search Term</th>
+        <th>What It Refers To</th>
+        <th>Official Source</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>trollstore lite deb</code></td>
+        <td>The <code>.deb</code> package for TrollStore Lite</td>
+        <td>Havoc repo: <code>havoc.app/package/trollstorelite</code></td>
+      </tr>
+      <tr>
+        <td><code>trollstore lite deb file</code></td>
+        <td>The downloadable <code>.deb</code> file itself</td>
+        <td>Same as above — installed via Sileo/Cydia</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p>To install TrollStore Lite, add the Havoc repository to Sileo or Cydia, search for TrollStore Lite, and install it. If you are on a Dopamine or roothide jailbreak, the package manager is already available. Do not attempt to sideload a <code>.deb</code> as an IPA—it will not work.</p>
+
+<!-- 6.5 trollstore lite roothide —— 已修正措辞 -->
+<h3>6.5 TrollStore Lite on roothide Jailbreaks</h3>
+
+<p>The keyword <strong>trollstore lite roothide</strong> addresses a specific and important compatibility question. <strong>roothide</strong> is a newer jailbreak architecture that hides the jailbreak from apps that detect root access. Jailbreaks like <strong>Relaxin</strong> use roothide.</p>
+
+<p><strong>TrollStore Lite can work on roothide-based jailbreaks, but results vary.</strong> It relies on the jailbreak's codesign bypass, not on a specific jailbreak framework. Community reports indicate that in roothide environments, icon and app-registration issues can arise, and some roothide jailbreaks (such as Relaxin) have required specific updates to fix TrollStore Lite app launch failures. It is an option for roothide users, not a guaranteed drop-in solution.</p>
+
+<p>If you are using a roothide jailbreak (e.g., Relaxin) and want permanent IPA installation, TrollStore Lite is worth trying. Install it via the Havoc repository through your package manager, and make sure your jailbreak is on a version known to work with Lite.</p>
+
+<!-- 6.6 trollstore lite no jailbreak -->
+<h3>6.6 TrollStore Lite No Jailbreak: Not Possible</h3>
+
+<p>The keyword <strong>trollstore lite no jailbreak</strong> represents a fundamental misunderstanding. <strong>TrollStore Lite cannot be installed without a jailbreak.</strong> It is, by definition, a jailbreak-dependent package. It has no CoreTrust exploit of its own—it relies entirely on the jailbreak's codesign bypass to function.</p>
+
+<div class="callout callout-danger">
+<strong>Important:</strong> If your device is <strong>not jailbroken</strong>, TrollStore Lite is not for you. It will not install, and it is not a workaround for unsupported iOS versions on non-jailbroken devices. On a non-jailbroken device running iOS 17.0.1 or later (including iOS 18, 26, and 27), there is <strong>no way</strong> to get TrollStore Lite working. The only options on those versions are alternatives like SideStore, AltStore, or Sideloadly.
+</div>
+
+<p>For non-jailbroken users on <strong>supported versions</strong> (iOS 14.0 beta 2 – 16.6.1, 16.7 RC, 17.0), use the <strong>standard TrollStore</strong> installer from the official GitHub releases page. For jailbroken users, TrollStore Lite is available on any iOS version for which the jailbreak provides the needed codesign bypass.</p>
+
+<!-- 6.7 trollstore pro / pro ipa -->
+<h3>6.7 TrollStore Pro &amp; Pro IPA: They Do Not Exist</h3>
+
+<p><strong>TrollStore Pro</strong> and <strong>TrollStore Pro IPA</strong> do not exist as official products. There is no paid tier, no premium version, and no "Pro" edition of TrollStore maintained by developer opa334. TrollStore is free and open-source software.</p>
+
+<p>Any website or search result offering a <strong>TrollStore Pro IPA</strong> download is <strong>not affiliated with the developer</strong>. These pages are typically repackaging the standard TrollStore (or something else entirely) under a misleading name to attract clicks or distribute potentially modified binaries. Because TrollStore bypasses Apple's signature validation, a tampered installer from an untrusted source can contain malicious code with full system access.</p>
+
+<div class="callout callout-warn">
+<strong>Warning:</strong> If a site charges money for "TrollStore Pro" or offers a "Pro IPA" with extra features, it is not official. The only legitimate TrollStore download is from <code>github.com/opa334/TrollStore/releases</code>. TrollStore is free; anyone charging for it is not the developer.
+</div>
+
+<!-- 6.8 trollstore 2 / v2 -->
+<h3>6.8 TrollStore 2 &amp; TrollStore v2: Version 2.x Explained</h3>
+
+<p><strong>TrollStore 2</strong> and <strong>TrollStore v2</strong> refer to the same thing: the <strong>major version 2.0 release</strong> of TrollStore, published in <strong>November 2023</strong>. It is not a separate product or a competing variant—it is simply the next major version of the same application. The "2" and "v2" are interchangeable in search queries.</p>
+
+<p>Version 2.0 was significant because it introduced support for <strong>iOS 15.5 through 16.6.1 and iOS 17.0</strong> using the CVE-2023-41991 CoreTrust vulnerability. Version 1.x had covered earlier iOS versions. Both 1.x and 2.x are the same TrollStore application; the difference is which iOS versions they support and which exploits they use.</p>
+
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th>Version</th>
+        <th>Release</th>
+        <th>Key iOS Support</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>TrollStore 1.x</td>
+        <td>2022</td>
+        <td>iOS 14.0 – 15.x</td>
+        <td>Initial releases; used earlier CoreTrust exploit</td>
+      </tr>
+      <tr>
+        <td><strong>TrollStore 2.0</strong> / <strong>v2</strong></td>
+        <td>November 2023</td>
+        <td>iOS 15.5 – 16.6.1, 17.0</td>
+        <td>Added CVE-2023-41991 support; major version jump</td>
+      </tr>
+      <tr>
+        <td>TrollStore 2.1</td>
+        <td>2024</td>
+        <td>Same as 2.0</td>
+        <td>Introduced TrollStore Lite; app transfer; Refresh App Registrations</td>
+      </tr>
+      <tr>
+        <td><strong>TrollStore 2.1.1</strong> (latest)</td>
+        <td>2024</td>
+        <td>Same as 2.0</td>
+        <td>Fixed Lite entitlement typo</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p>For most users, the distinction is irrelevant: install the <strong>latest version (2.1.1)</strong> from the official GitHub releases page. The search terms <strong>trollstore 2</strong> and <strong>trollstore v2</strong> exist because users see version numbers in release notes and assume there are separate products. There are not—TrollStore 2 is simply the current major version line.</p>
+
+<!-- 6.9 trollstore beta -->
+<h3>6.9 TrollStore Beta: Pre-release Builds</h3>
+
+<p><strong>TrollStore beta</strong> refers to pre-release builds that are occasionally posted on the <strong>GitHub releases page</strong> before a stable version is finalized. These builds may contain new features or fixes that are still being tested. They are not a separate product line—they are simply earlier versions of the same application.</p>
+
+<p>Beta builds are <strong>not recommended for general use</strong>. They may have bugs, incomplete features, or instability. For most users, the latest stable release (currently 2.1.1) is the correct choice. If you are troubleshooting a specific issue and a maintainer has directed you to a beta build, you can find it on the releases page under the "Pre-release" label.</p>
+
+<div class="callout callout-info">
+<strong>Note:</strong> The TrollStore GitHub releases page is the only official source for beta builds. Third-party sites offering "TrollStore Beta" downloads are not official and should be avoided.
+</div>
+
+<p>Unlike TrollStore Lite, which is a distinct variant for jailbroken devices, beta builds are just development snapshots of the standard TrollStore. They do not change the compatibility range or the installation method.</p>
+
+<!-- 6.10 trollstore mod / mod ipa -->
+<h3>6.10 TrollStore Mod &amp; Mod IPA: Unofficial and Risky</h3>
+
+<p><strong>TrollStore Mod</strong> and <strong>TrollStore Mod IPA</strong> are <strong>not official variants</strong>. They are modified versions of TrollStore created by third parties, and they carry significant risks. The official developer (opa334) does not distribute any "Mod" edition.</p>
+
+<p>Modified versions of TrollStore are particularly dangerous because TrollStore operates at a system level, bypassing Apple's security checks. A tampered build could:</p>
+
+<ul>
+  <li>Include malicious code that runs with elevated privileges</li>
+  <li>Exfiltrate personal data from your device</li>
+  <li>Install unwanted apps or profiles without your knowledge</li>
+  <li>Break the persistence helper or system stability</li>
 </ul>
 
 <div class="callout callout-danger">
-<strong>Important Warning: Do Not Update iOS.</strong> If TrollStore is installed on your device, do not update iOS. Any iOS update will patch the CoreTrust vulnerability and disable TrollStore permanently. This is the single most important maintenance rule.
+<strong>Do not use TrollStore Mod or TrollStore Mod IPA.</strong> If you encounter a site offering these, treat it as untrustworthy. The only safe way to install TrollStore is from the official GitHub releases page (<code>github.com/opa334/TrollStore/releases</code>) using the official installer for your iOS version. There is no legitimate "Mod" that adds desirable features—any claimed benefits are not worth the security risk.
 </div>
 
-<h2 id="guide">9. Guide &amp; Tutorial: How to Use TrollStore After Installation</h2>
+<p>If you are looking for additional functionality, check whether a newer official version (like 2.1.1) includes what you need. TrollStore already provides permanent signing, app transfer, and refresh capabilities without modification. There is no feature gap that a "Mod" legitimately fills.</p>
 
-<p>This section covers what to do <strong>after</strong> TrollStore is installed. For installation steps by iOS version, see <a href="#install" title="Jump to Install section">Section 2</a>.</p>
+<!-- 6.11 Summary Table -->
+<h3>6.11 Summary Table: All Variants and Keywords Mapped</h3>
 
-<h3>Core Operations</h3>
+<p>This table maps every keyword from the original list to its actual meaning and official status. Use it as a quick reference to avoid confusion and untrusted downloads.</p>
 
-<p>Once installed, the core function is simple:</p>
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th>Search Keyword</th>
+        <th>Official Status</th>
+        <th>What It Actually Is</th>
+        <th>Where to Get It</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>trollstore lite</code></td>
+        <td><span class="tag-yes">✅ Official</span></td>
+        <td>Variant for jailbroken devices, introduced in v2.1</td>
+        <td>Havoc repo (<code>havoc.app/package/trollstorelite</code>)</td>
+      </tr>
+      <tr>
+        <td><code>trollstore lite ipa</code></td>
+        <td><span class="tag-no">❌ Does not exist</span></td>
+        <td>No official Lite IPA; Lite is a <code>.deb</code> package</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td><code>trollstore lite github</code></td>
+        <td><span class="tag-warn">⚠️ Partially misleading</span></td>
+        <td>The main repo is <code>opa334/TrollStore</code>, but Lite is not a separate GitHub release</td>
+        <td><code>github.com/opa334/TrollStore</code> (source only)</td>
+      </tr>
+      <tr>
+        <td><code>trollstore lite repo</code></td>
+        <td><span class="tag-yes">✅ Official</span></td>
+        <td>The Havoc package repository for Lite</td>
+        <td>Havoc repo</td>
+      </tr>
+      <tr>
+        <!-- 修正：roothide 状态改为“可用但结果不一” -->
+        <td><code>trollstore lite roothide</code></td>
+        <td><span class="tag-warn">⚠️ Varies</span></td>
+        <td>Can work on roothide jailbreaks; some have required updates</td>
+        <td>Havoc repo via Sileo/Cydia</td>
+      </tr>
+      <tr>
+        <td><code>trollstore lite deb</code></td>
+        <td><span class="tag-yes">✅ Official format</span></td>
+        <td>The Debian package for Lite</td>
+        <td>Havoc repo</td>
+      </tr>
+      <tr>
+        <td><code>trollstore lite deb file</code></td>
+        <td><span class="tag-yes">✅ Same as above</span></td>
+        <td>The downloadable <code>.deb</code> file</td>
+        <td>Havoc repo</td>
+      </tr>
+      <tr>
+        <td><code>trollstore lite no jailbreak</code></td>
+        <td><span class="tag-no">❌ Not possible</span></td>
+        <td>Lite requires a jailbreak; it will not install otherwise</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td><code>trollstore pro</code></td>
+        <td><span class="tag-no">❌ Does not exist</span></td>
+        <td>No Pro edition; TrollStore is free and open-source</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td><code>trollstore pro ipa</code></td>
+        <td><span class="tag-no">❌ Does not exist</span></td>
+        <td>No official Pro IPA; any such file is unofficial</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td><code>trollstore 2</code></td>
+        <td><span class="tag-yes">✅ Official version</span></td>
+        <td>Major version 2.x (currently 2.1.1)</td>
+        <td><code>github.com/opa334/TrollStore/releases</code></td>
+      </tr>
+      <tr>
+        <td><code>trollstore v2</code></td>
+        <td><span class="tag-yes">✅ Same as "2"</span></td>
+        <td>Identical to TrollStore 2</td>
+        <td><code>github.com/opa334/TrollStore/releases</code></td>
+      </tr>
+      <tr>
+        <td><code>trollstore beta</code></td>
+        <td><span class="tag-warn">⚠️ Pre-release only</span></td>
+        <td>Development snapshots on GitHub releases</td>
+        <td><code>github.com/opa334/TrollStore/releases</code></td>
+      </tr>
+      <tr>
+        <td><code>trollstore mod</code></td>
+        <td><span class="tag-no">❌ Unofficial/risky</span></td>
+        <td>Third-party modified build; not safe</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td><code>trollstore mod ipa</code></td>
+        <td><span class="tag-no">❌ Unofficial/risky</span></td>
+        <td>Tampered IPA; can contain malware</td>
+        <td>—</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
-<ol>
-  <li><strong>Install an IPA:</strong> Tap the <strong>+</strong> button or open an IPA file from Files/AirDrop. TrollStore will install it with permanent signing.</li>
-  <li><strong>Manage installed apps:</strong> The Apps tab lists everything installed. You can uninstall, view entitlements, or open apps from here.</li>
-  <li><strong>Refresh registrations:</strong> If apps stop launching after an icon cache reload, open your Persistence Helper app and tap <strong>Refresh App Registrations</strong>.</li>
-</ol>
+<!-- 6.12 Variant FAQ —— roothide 与 iOS 26 口径已同步 -->
+<h3>6.12 Variant-Specific FAQ</h3>
 
-<h3>Specific Scenarios</h3>
+<div class="faq-item">
+<h4>Is TrollStore Lite the same as TrollStore?</h4>
+<p>No. They share the same core purpose—permanent IPA signing—but operate differently. Standard TrollStore exploits the CoreTrust bug and works without a jailbreak on iOS 14.0–16.6.1, 16.7 RC, and 17.0. TrollStore Lite requires a jailbreak and uses the jailbreak's codesign bypass, which allows it to work on newer iOS versions (including iOS 18 and 26) <em>only if a compatible jailbreak exists</em>.</p>
+</div>
+
+<div class="faq-item">
+<h4>Can I use TrollStore Lite without jailbreak?</h4>
+<p>No. TrollStore Lite is a jailbreak-dependent package. It will not install on a non-jailbroken device and is not a workaround for unsupported iOS versions.</p>
+</div>
+
+<div class="faq-item">
+<h4>Where do I download TrollStore Lite?</h4>
+<p>From the Havoc repository (<code>havoc.app/package/trollstorelite</code>) via Sileo or Cydia on a jailbroken device. There is no official Lite IPA or GitHub release file.</p>
+</div>
+
+<div class="faq-item">
+<h4>Does TrollStore Lite work on roothide jailbreaks?</h4>
+<p>It can work, but results vary. It is compatible with roothide-based environments in principle, but community reports indicate icon and app-registration issues can arise, and some roothide jailbreaks have required specific updates to fix Lite app launch failures. It is an option, not a guaranteed solution.</p>
+</div>
+
+<div class="faq-item">
+<h4>Is there a TrollStore Pro or Mod?</h4>
+<p>No. TrollStore Pro, Pro IPA, Mod, and Mod IPA do not exist officially. Any site offering them is not affiliated with the developer and may distribute malicious software.</p>
+</div>
+
+<div class="faq-item">
+<h4>What is the difference between TrollStore 2 and TrollStore v2?</h4>
+<p>Nothing—they are the same. Both refer to the major version 2.x line (currently 2.1.1).</p>
+</div>
+
+<div class="faq-item">
+<h4>Should I install a TrollStore beta?</h4>
+<p>Only if you are troubleshooting a specific issue and have been directed to a beta build. For general use, stick to the latest stable release (2.1.1).</p>
+</div>
+
+<!-- 6.13 Final rule -->
+<div class="callout callout-info">
+<strong>Final rule for variants:</strong> For the standard TrollStore, always use the official GitHub releases page: <a href="https://github.com/opa334/TrollStore/releases" rel="noopener" target="_blank"><code>github.com/opa334/TrollStore/releases</code></a>. For TrollStore Lite, use the Havoc repository via Sileo/Cydia. No other source is official. If a variant is not mentioned in this section, it is not an official TrollStore product.
+</div>
+
+<!-- ============================================================ -->
+<!-- 第七节：No Jailbreak / Jailbreak -->
+<!-- ============================================================ -->
+<h2 id="jailbreak">7. No Jailbreak / Jailbreak: Clarifying the Relationship (Expanded)</h2>
+
+<p>This section addresses the seven critical search terms that users type when trying to understand the relationship between TrollStore and jailbreaking. The questions are straightforward: does TrollStore require a jailbreak? Does it work without one? What about on newer iOS versions like iOS 18 or iOS 26? What is the difference between TrollStore and a jailbreak? And crucially, what happens on iOS 18 specifically—with or without a jailbreak? The answers below map directly to each keyword:</p>
+
+<div class="keyword-cloud">
+<strong>Jailbreak-related keywords covered in this section:</strong><br>
+<span class="keyword-tag">trollstore no jailbreak</span>
+<span class="keyword-tag">trollstore no jailbreak ios 26</span>
+<span class="keyword-tag">trollstore non jailbroken</span>
+<span class="keyword-tag">trollstore without jailbreak</span>
+<span class="keyword-tag">trollstore with jailbreak</span>
+<span class="keyword-tag">trollstore ios 18 no jailbreak</span>
+<span class="keyword-tag">trollstore vs jailbreak</span>
+</div>
+
+<h3>7.1 TrollStore No Jailbreak: The Core Use Case</h3>
+
+<p><strong>TrollStore no jailbreak</strong> is the primary selling point of the standard TrollStore. On all officially supported versions—<strong>iOS 14.0 beta 2 through 16.6.1, 16.7 RC (20H18), and 17.0</strong>—TrollStore installs and operates <strong>without any jailbreak</strong>. It uses the CoreTrust vulnerability (CVE-2023-41991 or earlier variants) to achieve permanent IPA signing at the system level, bypassing Apple’s code signing requirements entirely.</p>
+
+<p>This means:</p>
+<ul>
+  <li>No root filesystem access is needed.</li>
+  <li>No kernel patches are applied.</li>
+  <li>No jailbreak app (Cydia, Sileo, Zebra) is required.</li>
+  <li>The device remains in its normal, non-jailbroken state.</li>
+  <li>Apps installed via TrollStore persist across reboots and do not expire after 7 days.</li>
+</ul>
+
+<p>For users on these supported versions, the search query <strong>trollstore no jailbreak</strong> resolves to a definitive "yes, it works perfectly." The installation methods in <a href="#install">Section 2</a>—TrollHelperOTA, TrollInstallerX, and TrollRestore—are all designed for non-jailbroken devices.</p>
+
+<h3>7.2 TrollStore No Jailbreak iOS 26: Not Possible for Standard TrollStore</h3>
+
+<p>The query <strong>trollstore no jailbreak ios 26</strong> has a clear and definitive answer for the standard TrollStore: <strong>No, it does not exist.</strong> iOS 26 (and every version from iOS 17.0.1 onward) lacks the CoreTrust vulnerability that the standard TrollStore depends on. Apple patched CVE-2023-41991 in iOS 17.0.1, and no new CoreTrust bug has been discovered since.</p>
+
+<div class="callout callout-danger">
+<strong>Critical fact:</strong> There is <strong>no jailbreak-free method</strong> to install the standard TrollStore on iOS 26. Any website claiming to offer "TrollStore no jailbreak iOS 26" is either mistaken, distributing a fake tool, or repackaging something that is not TrollStore. The only way to get TrollStore-like functionality on iOS 26 would be through <strong>TrollStore Lite on a jailbroken device</strong> (see Section 7.5)—but as of this guide, no public jailbreak is known to support iOS 26 for that purpose.
+</div>
+
+<p>The same applies to iOS 27 and any future release unless a new CoreTrust vulnerability is discovered and exploited. The developer has confirmed that the current support range is final for the foreseeable future.</p>
+
+<h3>7.3 TrollStore Non Jailbroken: Same as "No Jailbreak"</h3>
+
+<p>The search term <strong>trollstore non jailbroken</strong> is simply an alternative phrasing for "TrollStore without a jailbreak." It means the same thing as <strong>trollstore no jailbreak</strong> and <strong>trollstore without jailbreak</strong>. The answer is identical:</p>
 
 <ul>
-  <li><strong>IPA installation:</strong> Drag and drop, AirDrop, or open-in from Safari all work. TrollStore handles the signing automatically.</li>
-  <li><strong>Transferring apps to TrollStore Lite:</strong> If you later jailbreak your device, version 2.1+ includes an option to transfer installed apps to Lite.</li>
-  <li><strong>Persistence Helper setup:</strong> If you skipped it during installation, open Settings → Install Persistence Helper, then select an app to replace (typically Tips).</li>
+  <li><strong>Supported iOS versions (14.0–16.6.1, 16.7 RC, 17.0):</strong> Yes, TrollStore works on a non-jailbroken device.</li>
+  <li><strong>Unsupported iOS versions (17.0.1+, including iOS 18, 26, 27):</strong> No, the standard TrollStore does not work on a non-jailbroken device.</li>
 </ul>
+
+<p>The term "non jailbroken" is commonly used by users who want to emphasize that their device has never been jailbroken and that they want to keep it that way. For those users, the standard TrollStore on supported versions is exactly the right tool: it provides permanent IPA signing without introducing any jailbreak-related security compromises.</p>
+
+<h3>7.4 TrollStore Without Jailbreak: Confirming the Terminology</h3>
+
+<p><strong>TrollStore without jailbreak</strong> is the third variation of the same query. It confirms that the user wants to install TrollStore but does not want to jailbreak their device. The answer mirrors Sections 7.1 and 7.3:</p>
+
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th>iOS Version</th>
+        <th>TrollStore Without Jailbreak?</th>
+        <th>What to Do</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>14.0 beta 2 – 15.6.1</td>
+        <td><span class="tag-yes">✅ Yes</span></td>
+        <td>Use TrollHelperOTA (no PC) or TrollInstallerX</td>
+      </tr>
+      <tr>
+        <td>15.7.2 – 15.8.8</td>
+        <td><span class="tag-yes">✅ Yes</span></td>
+        <td>Use TrollInstallerX (internet required)</td>
+      </tr>
+      <tr>
+        <td>16.0 – 16.6.1</td>
+        <td><span class="tag-yes">✅ Yes</span></td>
+        <td>Use TrollInstallerX</td>
+      </tr>
+      <tr>
+        <td>16.7 RC (20H18) / 17.0</td>
+        <td><span class="tag-yes">✅ Yes</span></td>
+        <td>Use TrollInstallerX or TrollRestore</td>
+      </tr>
+      <tr>
+        <td>16.7.x (non-RC), iOS 17.0.1+, 18, 26, 27</td>
+        <td><span class="tag-no">❌ No</span></td>
+        <td>Use SideStore, AltStore, or Sideloadly (7-day signing)</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p>If you are on an unsupported version and want to avoid jailbreaking, the alternatives in <a href="#alternative">Section 5</a> are your only options. None of them offer the permanence of TrollStore, but they do work without a jailbreak.</p>
+
+<h3>7.5 TrollStore With Jailbreak: TrollStore Lite and Coexistence</h3>
+
+<p>The query <strong>trollstore with jailbreak</strong> opens up a different set of possibilities. When a device is jailbroken, the user gains access to <strong>TrollStore Lite</strong>, which is the official variant designed specifically for jailbroken environments. As detailed in <a href="#lite">Section 6</a>, TrollStore Lite:</p>
+
+<ul>
+  <li>Is distributed as a <code>.deb</code> package via the <strong>Havoc repository</strong> (<code>havoc.app/package/trollstorelite</code>).</li>
+  <li>Relies on the jailbreak's codesign bypass rather than the CoreTrust bug.</li>
+  <li>Can work on <strong>any iOS version where a compatible jailbreak provides the needed codesign bypass</strong>—in principle including iOS 18 and iOS 26, though public support for iOS 26 is not known as of this guide.</li>
+  <li>Is used in both Dopamine-based and roothide-based environments (e.g., Relaxin), though roothide results vary.</li>
+  <li>Can transfer apps from standard TrollStore to Lite (v2.1+ feature).</li>
+</ul>
+
+<p>On a jailbroken device, both the standard TrollStore (on supported versions) and TrollStore Lite can coexist. The jailbreak itself does not break TrollStore—in fact, it expands its capabilities. The Persistence Helper continues to function, and app registrations can be refreshed as usual.</p>
+
+<div class="callout callout-info">
+<strong>Key point:</strong> "TrollStore with jailbreak" does not mean TrollStore requires a jailbreak on supported versions. It means that <em>if</em> your device is jailbroken, you have an additional option (TrollStore Lite) that can work on newer iOS versions when a compatible jailbreak exists. The standard TrollStore remains the recommended choice on supported versions, jailbroken or not.
+</div>
+
+<h3>7.6 TrollStore iOS 18 No Jailbreak: Definitive Answer</h3>
+
+<p>The query <strong>trollstore ios 18 no jailbreak</strong> is one of the most common search terms, and the answer is unambiguous for the standard TrollStore: <strong>it does not work on iOS 18 without a jailbreak.</strong> The CoreTrust vulnerability was patched in iOS 17.0.1, and iOS 18 inherits that patch. There is no exploit chain, no installer, and no workaround for non-jailbroken iOS 18 devices. TrollStore Lite is not available without a jailbreak either.</p>
+
+<div class="callout callout-danger">
+<strong>iOS 18 no jailbreak:</strong> No standard TrollStore. No TrollStore Lite. No exceptions. The only signing options are SideStore, AltStore, or Sideloadly—all of which require 7-day refreshes and have app limits.
+</div>
+
+<p>If your device is on iOS 18 and you want TrollStore functionality, your only path is to jailbreak the device and install TrollStore Lite—and only if a compatible jailbreak exists for your specific iOS 18 version and device model. If no such jailbreak exists, then no TrollStore solution is available to you at all. This is the honest, definitive answer—and any site claiming otherwise is not trustworthy.</p>
+
+<h3>7.7 TrollStore vs Jailbreak: Different Tools, Different Purposes</h3>
+
+<p>The comparison <strong>trollstore vs jailbreak</strong> is frequently misunderstood. TrollStore and jailbreak are not competing products—they serve entirely different purposes:</p>
+
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th>Aspect</th>
+        <th>TrollStore</th>
+        <th>Jailbreak</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Primary purpose</strong></td>
+        <td>Permanent IPA signing</td>
+        <td>Root filesystem access, tweak injection, system customization</td>
+      </tr>
+      <tr>
+        <td><strong>Jailbreak required?</strong></td>
+        <td><span class="tag-yes">No</span> (on supported versions)</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td><strong>System modification</strong></td>
+        <td>None (uses CoreTrust bypass only)</td>
+        <td>Yes (kernel patches, root access)</td>
+      </tr>
+      <tr>
+        <td><strong>Security trade-offs</strong></td>
+        <td>Minimal (apps are unsigned but system is intact)</td>
+        <td>Significant (reduced security, potential instability)</td>
+      </tr>
+      <tr>
+        <td><strong>iOS version support</strong></td>
+        <td>14.0 beta 2 – 16.6.1, 16.7 RC, 17.0</td>
+        <td>Varies by jailbreak tool</td>
+      </tr>
+      <tr>
+        <td><strong>Persistence</strong></td>
+        <td>Permanent (with Persistence Helper)</td>
+        <td>Varies (semi-tethered, tethered, untethered)</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p>In short: TrollStore replaces the <em>signing</em> function of a jailbreak, but not its <em>customization</em> or <em>root access</em> functions. On supported versions, TrollStore is the safer choice for users who simply want to install IPAs permanently. A jailbreak is for users who need system-level modifications and accept the associated risks. The two can coexist: a jailbroken device can use TrollStore Lite, and a non-jailbroken device on a supported version can use standard TrollStore. Neither replaces the other.</p>
+
+<p>For users comparing <strong>trollstore vs jailbreak</strong> on Reddit and other forums, the consensus is consistent: TrollStore first where supported, jailbreak only if you need tweaks or system modifications. On unsupported versions (iOS 17.0.1+), the standard TrollStore is unavailable without a jailbreak—and if you do jailbreak, TrollStore Lite is the signing solution to try.</p>
+
+<h3>7.8 Summary: Jailbreak Relationship at a Glance</h3>
+
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th>Your Situation</th>
+        <th>Best Option</th>
+        <th>Jailbreak Needed?</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>iOS 14.0–16.6.1, 16.7 RC, or 17.0 — not jailbroken</td>
+        <td>Standard TrollStore</td>
+        <td><span class="tag-yes">No</span></td>
+      </tr>
+      <tr>
+        <td>iOS 14.0–16.6.1, 16.7 RC, or 17.0 — jailbroken</td>
+        <td>Standard TrollStore or TrollStore Lite</td>
+        <td><span class="tag-yes">No</span> (but Lite available)</td>
+      </tr>
+      <tr>
+        <td>iOS 17.0.1–17.x — not jailbroken</td>
+        <td>No TrollStore option (use SideStore/AltStore)</td>
+        <td><span class="tag-no">N/A</span></td>
+      </tr>
+      <tr>
+        <td>iOS 17.0.1–17.x — jailbroken</td>
+        <td>TrollStore Lite (if jailbreak supports it)</td>
+        <td><span class="tag-yes">Yes</span></td>
+      </tr>
+      <tr>
+        <td>iOS 18 or 26 — not jailbroken</td>
+        <td>No TrollStore option (use SideStore/AltStore)</td>
+        <td><span class="tag-no">N/A</span></td>
+      </tr>
+      <tr>
+        <td>iOS 18 or 26 — jailbroken</td>
+        <td>TrollStore Lite only if a compatible jailbreak exists (public iOS 26 support not known as of this guide)</td>
+        <td><span class="tag-warn">Depends</span></td>
+      </tr>
+      <tr>
+        <td>iOS 12 or older</td>
+        <td>No TrollStore option (jailbreak-based signing or SideStore)</td>
+        <td><span class="tag-no">N/A</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="callout callout-info">
+<strong>Final rule for jailbreak queries:</strong> On supported versions, TrollStore works <em>without</em> a jailbreak—that is its primary advantage. On unsupported versions (iOS 17.0.1+, including 18, 26, and 27), the standard TrollStore is unavailable; TrollStore Lite is only an option <em>with</em> a jailbreak, and only if that jailbreak is compatible.
+</div>
+
+<!-- ============================================================ -->
+<!-- 第八节：Update & Maintenance -->
+<!-- ============================================================ -->
+<h2 id="update">8. Update &amp; Maintenance: Keeping TrollStore Current (trollstore update, releases, latest version)</h2>
+
+<p>This section answers the three most common update-related search queries: <strong>trollstore update</strong>, <strong>trollstore releases</strong>, and <strong>trollstore latest version</strong>. Whether you are a new user who just installed TrollStore and wants to stay on the latest build, or a long-time user checking whether a new release is available, the information below covers the entire update and maintenance process. Keeping TrollStore updated is straightforward—but there is one critical rule that overrides everything else: <strong>never update iOS</strong>.</p>
+
+<div class="keyword-cloud">
+<strong>Update-related keywords covered in this section:</strong><br>
+<span class="keyword-tag">trollstore update</span>
+<span class="keyword-tag">trollstore releases</span>
+<span class="keyword-tag">trollstore latest version</span>
+</div>
+
+<h3>8.1 TrollStore Update: How to Update TrollStore Safely</h3>
+
+<p>The <strong>TrollStore update</strong> process is built directly into the app. You do not need a computer, you do not need to re-sideload anything, and your installed apps remain untouched. Here is the complete procedure:</p>
+
+<ol>
+  <li><strong>Open TrollStore</strong> on your device.</li>
+  <li><strong>Go to the Settings tab</strong> (the gear icon at the bottom of the screen).</li>
+  <li><strong>Check for an update button.</strong> If a newer version is available, a button appears at the top of the Settings tab, showing the new version number.</li>
+  <li><strong>Tap the update button.</strong> TrollStore downloads the update package and installs it automatically.</li>
+  <li><strong>The device resprings.</strong> After the respring, TrollStore is running the latest version, and all previously installed apps remain installed and functional.</li>
+</ol>
+
+<p>That is the entire <strong>trollstore update</strong> process. There is no separate updater app, no IPA to re-sideload, and no need to reinstall the Persistence Helper. The in-app updater was designed to make updates as frictionless as possible.</p>
+
+<div class="callout callout-info">
+<strong>Note:</strong> If the update button does not appear, you are already on the latest version. There is no “check for updates” button to press manually—TrollStore checks automatically when you open the Settings tab, provided you have an internet connection.
+</div>
+
+<h3>8.2 TrollStore Releases: The Official GitHub Releases Page</h3>
+
+<p>The authoritative source for all <strong>trollstore releases</strong> is the GitHub Releases page at <a href="https://github.com/opa334/TrollStore/releases" rel="noopener" target="_blank"><code>github.com/opa334/TrollStore/releases</code></a>. This page lists every version ever released, along with changelogs, release notes, and downloadable assets (TrollInstallerX.ipa, TrollStore.tar, and the TrollStore Lite .deb).</p>
+
+<p>When you visit the <strong>trollstore releases</strong> page, here is what you will find:</p>
+
+<ul>
+  <li><strong>The latest release at the top</strong> — currently version 2.1.1, marked as “Latest.”</li>
+  <li><strong>Pre-release builds</strong> — beta versions, marked with a “Pre-release” label, listed above or below the latest stable release depending on whether they are newer.</li>
+  <li><strong>Changelogs for every version</strong> — each release includes a description of what changed, which is useful if you want to know whether an update is worth installing.</li>
+  <li><strong>Downloadable assets</strong> — TrollInstallerX.ipa (the installer for non-jailbroken devices), TrollStore.tar (the core package consumed by the installer), and TrollStore Lite .deb (for jailbroken devices via Havoc).</li>
+</ul>
+
+<p>The <strong>trollstore releases</strong> page is also where you verify the version history. If you are troubleshooting a bug or want to know whether a specific fix has shipped, the changelog on each release will tell you. The releases page is the single source of truth—third-party sites that repackage releases are not official and should not be trusted.</p>
+
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th>Release</th>
+        <th>Date</th>
+        <th>Key Changes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>2.1.1</strong> (latest)</td>
+        <td>2024</td>
+        <td>Fixed a TrollStore Lite entitlement typo that affected apps on Dopamine-jailbroken devices</td>
+      </tr>
+      <tr>
+        <td>2.1</td>
+        <td>2024</td>
+        <td>Introduced TrollStore Lite; added app transfer between standard and Lite; added “Refresh App Registrations” option</td>
+      </tr>
+      <tr>
+        <td>2.0</td>
+        <td>November 2023</td>
+        <td>Major version jump; added support for iOS 15.5–16.6.1 and 17.0 via CVE-2023-41991</td>
+      </tr>
+      <tr>
+        <td>1.x</td>
+        <td>2022</td>
+        <td>Initial releases; supported iOS 14.0–15.x with earlier CoreTrust exploit variants</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h3>8.3 TrollStore Latest Version: What Is the Current Version?</h3>
+
+<p>As of the last update of this guide (November 2026), the <strong>trollstore latest version</strong> is <strong>2.1.1</strong>. This is the version you should be running if you want the most stable and feature-complete build. Here is what you need to know about the current version:</p>
+
+<ul>
+  <li><strong>Version 2.1.1</strong> is a patch release that fixed a TrollStore Lite entitlement typo. If you use TrollStore Lite on a Dopamine-jailbroken device, this update is important.</li>
+  <li><strong>Version 2.1</strong> introduced the Lite variant, app transfer, and the Refresh App Registrations feature. If you are on 2.0 or 1.x, updating to 2.1.1 gets you all of these improvements.</li>
+  <li><strong>There is no version 3.x</strong> and no announced roadmap for one. The developer has stated that the current support range (iOS 14.0–16.6.1, 16.7 RC, 17.0) is final unless a new CoreTrust bug is discovered.</li>
+</ul>
+
+<p>To check the <strong>trollstore latest version</strong> at any time, visit the GitHub Releases page and look at the top entry marked “Latest.” Do not rely on third-party sites or search snippets—they may be outdated or wrong. The releases page is always current.</p>
+
+<div class="callout callout-info">
+<strong>Quick check:</strong> Open TrollStore → Settings tab. The version number is displayed at the bottom of the screen. Compare it against the latest release on GitHub. If yours is older, tap the update button at the top of the Settings tab.
+</div>
+
+<h3>8.4 Why You Must Never Update iOS</h3>
+
+<p>This is the single most important maintenance rule, and it deserves its own subsection. <strong>If TrollStore is installed on your device, do not update iOS.</strong> Any iOS update—no matter how minor it seems—will patch the CoreTrust vulnerability that TrollStore depends on, and TrollStore will stop working permanently. There is no way to restore it without downgrading iOS, which is usually impossible once Apple stops signing the older version.</p>
+
+<div class="callout callout-danger">
+<strong>Critical warning:</strong> Do not update iOS while TrollStore is installed. This includes minor point updates, security patches, and betas. Disable automatic updates in Settings → General → Software Update → Automatic Updates to prevent accidental installation. Once iOS is updated past a supported version, TrollStore is gone for good.
+</div>
+
+<p>This warning applies to both the standard TrollStore and TrollStore Lite. For Lite users, updating iOS may also break the jailbreak, which would remove TrollStore Lite along with it. The safest approach is to stay on your current iOS version until you no longer need TrollStore.</p>
+
+<h3>8.5 Version History and Changelog Overview</h3>
+
+<p>Understanding the version history helps you decide whether an update is worth installing. The table below summarizes the major releases and their key changes. For the complete changelog, visit the <strong>trollstore releases</strong> page on GitHub.</p>
+
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th>Version</th>
+        <th>Release Date</th>
+        <th>Key iOS Support</th>
+        <th>Notable Changes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1.x</td>
+        <td>2022</td>
+        <td>iOS 14.0 – 15.x</td>
+        <td>Initial releases; used earlier CoreTrust exploit variants</td>
+      </tr>
+      <tr>
+        <td><strong>2.0</strong></td>
+        <td>November 2023</td>
+        <td>iOS 15.5 – 16.6.1, 17.0</td>
+        <td>Added CVE-2023-41991 support; major version jump</td>
+      </tr>
+      <tr>
+        <td><strong>2.1</strong></td>
+        <td>2024</td>
+        <td>Same as 2.0</td>
+        <td>Introduced TrollStore Lite; app transfer; Refresh App Registrations</td>
+      </tr>
+      <tr>
+        <td><strong>2.1.1</strong> (latest)</td>
+        <td>2024</td>
+        <td>Same as 2.0</td>
+        <td>Fixed Lite entitlement typo</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p>The version history is linear: 1.x → 2.0 → 2.1 → 2.1.1. There are no parallel branches or alternative version lines. If you see a “TrollStore 2” or “TrollStore v2” reference, it simply means the 2.x series—there is no separate product. The <strong>trollstore latest version</strong> is always the top entry on the releases page.</p>
+
+<h3>8.6 Maintenance Checklist: Keeping TrollStore Healthy</h3>
+
+<p>Beyond updating TrollStore itself, there are a few maintenance tasks that keep your installation healthy. These are not updates—they are routine checks that prevent common issues.</p>
+
+<ul>
+  <li><strong>Never update iOS.</strong> This is the most important rule. Disable automatic updates.</li>
+  <li><strong>Refresh App Registrations when apps stop launching.</strong> If TrollStore or any app it installed stops opening after a reboot or icon cache reload, open your Persistence Helper app and tap “Refresh App Registrations.”</li>
+  <li><strong>Check for TrollStore updates periodically.</strong> Open the Settings tab in TrollStore to see if a new version is available. Updates are safe and do not affect your installed apps.</li>
+  <li><strong>Keep the Persistence Helper installed.</strong> Do not delete the system app (typically Tips) that TrollStore replaced with the helper. Without it, you cannot refresh app registrations.</li>
+  <li><strong>Verify your source.</strong> Only download TrollStore from the official GitHub releases page. If you installed from a third-party site, consider reinstalling from the official source to ensure you are running an untampered build.</li>
+</ul>
+
+<div class="callout callout-info">
+<strong>Summary for update queries:</strong> To update TrollStore, open the app → Settings tab → tap the update button if available. To check the latest version, visit <a href="https://github.com/opa334/TrollStore/releases" rel="noopener" target="_blank"><code>github.com/opa334/TrollStore/releases</code></a>. The current latest version is 2.1.1. Never update iOS while TrollStore is installed. That is the complete <strong>trollstore update</strong> and maintenance picture.
+</div>
+
+<!-- ============================================================ -->
+<!-- 第九节：Guide & Tutorial -->
+<!-- ============================================================ -->
+<h2 id="guide">9. Guide &amp; Tutorial: How to Use TrollStore After Installation</h2>
+
+<p>This section is the practical <strong>trollstore guide</strong> and <strong>trollstore tutorial</strong> for what to do <strong>after</strong> TrollStore is installed. If you are looking for <strong>trollstore how to install</strong> steps by iOS version, see <a href="#install" title="Jump to Install section">Section 2</a>, which covers the full install process (TrollHelperOTA, TrollInstallerX, and TrollRestore). Here we focus on <strong>trollstore how to use</strong> the app day to day: installing IPAs, managing apps, keeping the Persistence Helper working, and troubleshooting common problems. This is the complete <strong>trollstore guide</strong> for post-install usage, and it applies to both iPhone and iPad on supported versions (iOS 14.0 beta 2–16.6.1, 16.7 RC, and 17.0).</p>
+
+<div class="keyword-cloud">
+<strong>Guide-related keywords covered in this section:</strong><br>
+<span class="keyword-tag">trollstore guide</span>
+<span class="keyword-tag">trollstore tutorial</span>
+<span class="keyword-tag">trollstore how to install</span>
+<span class="keyword-tag">trollstore how to use</span>
+</div>
+
+<h3>9.1 TrollStore Guide: What This Section Covers</h3>
+
+<p>Think of this as your <strong>trollstore guide</strong> for the “after install” phase. A <strong>trollstore tutorial</strong> that stops at installation leaves most of the questions unanswered—how do I actually install an IPA? Where do the apps go? Why do apps stop launching after a reboot? What is the Persistence Helper and when do I need it? This section answers those questions in order, so you can treat it as a step-by-step <strong>trollstore tutorial</strong> for daily use.</p>
+
+<p>If you have not installed TrollStore yet, this section will not make sense out of context. Start with <a href="#install" title="Jump to Install section">Section 2</a> for the <strong>trollstore how to install</strong> steps, then come back here for the <strong>trollstore how to use</strong> steps. The two halves together form the complete <strong>trollstore guide</strong>.</p>
+
+<h3>9.2 TrollStore Tutorial: Core Operations Step by Step</h3>
+
+<p>Once installed, the core function is simple. Follow this <strong>trollstore tutorial</strong> in order:</p>
+
+<ol>
+  <li><strong>Install an IPA:</strong> Tap the <strong>+</strong> button in TrollStore, or open an IPA file from Files, AirDrop, or Safari and choose “Open in TrollStore.” TrollStore will install it with permanent signing. No Apple ID, no 7-day refresh, no computer.</li>
+  <li><strong>Manage installed apps:</strong> The Apps tab lists everything installed via TrollStore. You can uninstall, view entitlements, or open apps from here. This is also where you confirm that an app is registered as a “System” app rather than a “User” app.</li>
+  <li><strong>Refresh registrations:</strong> If apps stop launching after a reboot or an icon cache reload, open your Persistence Helper app (typically the replaced Tips app) and tap <strong>Refresh App Registrations</strong>. This is the single most common <strong>trollstore how to use</strong> question, and the answer is always the same: use the helper.</li>
+</ol>
+
+<p>That three-step loop—install, manage, refresh—is the entire day-to-day <strong>trollstore tutorial</strong>. Everything else in this section is detail around those three actions.</p>
+
+<h3>9.3 TrollStore How to Install vs. How to Use: The Key Difference</h3>
+
+<p>Many visitors search for <strong>trollstore how to install</strong> and <strong>trollstore how to use</strong> as if they are the same question. They are not. This subsection clarifies the split so you land on the right instructions:</p>
+
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th>Question</th>
+        <th>What It Means</th>
+        <th>Where to Read</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>trollstore how to install</code></td>
+        <td>How to get TrollStore onto your device: choosing the right installer (TrollHelperOTA, TrollInstallerX, TrollRestore) for your iOS version.</td>
+        <td><a href="#install" title="Jump to Install section">Section 2</a> (install methods) + <a href="#compat" title="Jump to Compatibility section">Section 3</a> (version check)</td>
+      </tr>
+      <tr>
+        <td><code>trollstore how to use</code></td>
+        <td>How to operate TrollStore after it is installed: install IPAs, manage apps, refresh registrations, set up the Persistence Helper.</td>
+        <td>This section (Section 9)</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p>If you are still searching for <strong>trollstore how to install</strong>, do not skip the compatibility check in <a href="#compat" title="Jump to Compatibility section">Section 3</a> first—installing the wrong installer for your iOS version is the most common cause of failure. Once TrollStore is on your home screen, come back here and follow the <strong>trollstore how to use</strong> steps below.</p>
+
+<h3>9.4 TrollStore How to Use: Installing IPAs (All Methods)</h3>
+
+<p>The most common <strong>trollstore how to use</strong> question is “how do I install an IPA?” There are several ways, and all of them end with TrollStore doing the signing:</p>
+
+<ul>
+  <li><strong>From the TrollStore app:</strong> Open TrollStore, tap the <strong>+</strong> button, and select an IPA from the Files app.</li>
+  <li><strong>From Files or AirDrop:</strong> Tap an IPA file, choose Share/Open With, and select TrollStore. The IPA installs immediately.</li>
+  <li><strong>From Safari:</strong> Download an IPA, then open it from the Downloads list and choose “Open in TrollStore.”</li>
+  <li><strong>From a file manager:</strong> Any file manager that supports “Open in” can hand an IPA to TrollStore.</li>
+</ul>
+
+<p>In every case, TrollStore signs the IPA permanently and installs it as a system-registered app. There is no Apple ID prompt, no 7-day expiry, and no computer required. This is the core of <strong>trollstore how to use</strong>—the app is the signing engine, and the IPA is the input.</p>
+
+<div class="callout callout-info">
+<strong>Source matters:</strong> TrollStore will install any IPA you give it, including malicious ones. Only install IPAs from trusted developers or community sources. See <a href="#ecosystem" title="Jump to Ecosystem section">Section 11</a> for a community-maintained collection (Neoncat-OG/TrollStore-IPAs), and treat any third-party source with caution.
+</div>
+
+<h3>9.5 TrollStore Tutorial: Managing Installed Apps</h3>
+
+<p>After installation, the Apps tab is your control center. This part of the <strong>trollstore tutorial</strong> covers what you can do there:</p>
+
+<ul>
+  <li><strong>Uninstall apps:</strong> Swipe or tap to remove an app installed via TrollStore. This removes the app and its registration.</li>
+  <li><strong>View entitlements:</strong> TrollStore shows the entitlements an IPA requested, which is useful for verifying that an app has the permissions it needs.</li>
+  <li><strong>Check app state:</strong> Apps should show as “System” after a successful install. If they show as “User,” they may stop launching after an icon cache reload—this is when you need the Persistence Helper.</li>
+  <li><strong>Transfer to TrollStore Lite:</strong> If you later jailbreak your device, version 2.1+ includes an option to transfer installed apps from standard TrollStore to Lite.</li>
+</ul>
+
+<p>This is the operational core of <strong>trollstore how to use</strong>: the Apps tab is where you verify that installations succeeded and where you clean up apps you no longer need.</p>
+
+<h3>9.6 TrollStore How to Use: The Persistence Helper and Refresh App Registrations</h3>
+
+<p>The single most important <strong>trollstore how to use</strong> habit is knowing when and how to use the Persistence Helper. Here is the full explanation:</p>
+
+<ol>
+  <li><strong>What it is:</strong> During installation, TrollStore replaces a built-in system app (typically Tips) with a small helper. This is not optional for long-term use—it is how TrollStore keeps its apps registered as “System” apps.</li>
+  <li><strong>Why you need it:</strong> iOS periodically reloads its icon cache. When that happens, TrollStore and its apps can revert to “User” state and stop launching. This is normal behavior, not a bug.</li>
+  <li><strong>How to use it:</strong> Open the helper app (the replaced Tips app) and tap <strong>Refresh App Registrations</strong>. The apps return to “System” state and launch normally again.</li>
+  <li><strong>If you skipped it during installation:</strong> Open TrollStore → Settings → <strong>Install Persistence Helper</strong>, then select an app to replace (typically Tips).</li>
+</ol>
+
+<p>If you remember only one thing from this <strong>trollstore guide</strong>, remember this: when apps stop opening, open the helper and refresh registrations. That single action resolves the vast majority of “TrollStore stopped working” reports.</p>
+
+<h3>9.7 TrollStore Guide: Troubleshooting Common Post-Install Issues</h3>
+
+<p>This troubleshooting checklist is part of the <strong>trollstore guide</strong> for real-world use. If something is not working after installation, check these in order:</p>
+
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th>Symptom</th>
+        <th>Likely Cause</th>
+        <th>Fix</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Apps stop launching after reboot</td>
+        <td>Icon cache reload; apps reverted to “User” state</td>
+        <td>Open Persistence Helper → Refresh App Registrations</td>
+      </tr>
+      <tr>
+        <td>IPA will not install</td>
+        <td>Corrupt IPA, unsupported architecture, or bad entitlements</td>
+        <td>Re-download from a trusted source; check the app’s iOS requirement</td>
+      </tr>
+      <tr>
+        <td>TrollStore itself will not open</td>
+        <td>Persistence Helper missing or unregistered</td>
+        <td>Reinstall Persistence Helper from TrollStore Settings (if possible) or re-install TrollStore with the same installer</td>
+      </tr>
+      <tr>
+        <td>“Update” button missing in Settings</td>
+        <td>Already on the latest version, or no internet</td>
+        <td>Check the version number at the bottom of Settings against GitHub Releases</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p>Most post-install problems fall into the first row: the icon cache reload. That is why the Persistence Helper is covered so heavily in this <strong>trollstore tutorial</strong>—it is the fix for the most common issue.</p>
+
+<h3>9.8 TrollStore Tutorial: Video and Text Resources</h3>
+
+<p>Some users prefer a video <strong>trollstore tutorial</strong>; others prefer a text <strong>trollstore guide</strong>. Both are valid. For text, this page (Sections 2 and 9 together) is the complete reference. For video, search for the official installer names (TrollInstallerX, TrollRestore, TrollHelperOTA) rather than generic “TrollStore” queries—generic searches are dominated by unofficial repackages. The official README also points to <strong>ios.cfw.guide</strong> for version-specific walkthroughs, which is a reliable text companion to this <strong>trollstore guide</strong>.</p>
+
+<p>Regardless of format, the same rules apply: install with the correct installer for your iOS version (<strong>trollstore how to install</strong>), then use the Apps tab and Persistence Helper for daily operation (<strong>trollstore how to use</strong>).</p>
+
+<h3>9.9 Guide &amp; Tutorial Summary</h3>
+
+<div class="callout callout-info">
+<strong>Summary for guide and tutorial queries:</strong> This section is the post-install <strong>trollstore guide</strong> and <strong>trollstore tutorial</strong>. For <strong>trollstore how to install</strong>, see <a href="#install" title="Jump to Install section">Section 2</a> and confirm your version in <a href="#compat" title="Jump to Compatibility section">Section 3</a>. For <strong>trollstore how to use</strong>, the three core actions are: install IPAs via the + button or Open In, manage them in the Apps tab, and use the Persistence Helper → Refresh App Registrations when apps stop launching. That is the complete <strong>trollstore tutorial</strong> for daily use.
+</div>
 
 <h2 id="localized">10. Localized: Non-English TrollStore Searches</h2>
 
@@ -734,8 +1784,8 @@
 <p>Searches for Apple TV, tvOS, Mac, Windows, or PC fall outside the scope of this guide. TrollStore is an iOS/iPadOS application. For iPhone and iPad downloads, see <a href="#download" title="Jump to Download section">Section 1</a>. Windows and Mac are relevant only as hosts for running TrollRestore or sideloading tools.</p>
 
 <p style="margin-top:48px; padding-top:20px; border-top:1px solid var(--border); font-size:0.85rem; color:var(--muted);">
-Information in this article is based on the official GitHub repository (opa334/TrollStore), its README, release notes, and publicly available technical documentation. Compatibility is determined by Apple’s patching of the CoreTrust vulnerability and does not change based on user demand. Verify your iOS version against the compatibility table before attempting installation.<br><br>
-<strong>Last updated:</strong> <time datetime="2026-11-12">November 12, 2026</time>
+Information in this article is based on the official GitHub repository (opa334/TrollStore), its README, release notes, and publicly available technical documentation. Compatibility is determined by Apple’s patching of the CoreTrust vulnerability and does not change based on user demand. Verify your iOS version against the compatibility table before attempting installation. TrollStore Lite was introduced in version 2.1; the latest stable version is 2.1.1. TrollStore Lite requires a jailbreak.<br><br>
+<strong>Last updated:</strong> <time datetime="2026-11-14">November 14, 2026</time>
 </p>
 
 </article>
