@@ -3,7 +3,7 @@
     <!-- 网站首页 (TrollStore 主引导页) -->
     <url>
         <loc>https://927520fyx.github.io/ios/</loc>
-        <lastmod>2026-03-05</lastmod>
+        <lastmod>2026-11-14</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
@@ -11,7 +11,7 @@
     <!-- FAQ 帮助与故障排查页 -->
     <url>
         <loc>https://927520fyx.github.io/ios/faq.html</loc>
-        <lastmod>2026-03-05</lastmod>
+        <lastmod>2026-11-14</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -19,7 +19,7 @@
     <!-- Dopamine 越狱专题下载页 -->
     <url>
         <loc>https://927520fyx.github.io/ios/dopamine.html</loc>
-        <lastmod>2026-03-05</lastmod>
+        <lastmod>2026-11-14</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
