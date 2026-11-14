@@ -243,7 +243,39 @@
   }
 </style>
 
-<!-- FAQ 结构化数据 (JSON-LD) —— 已同步修正 Lite/roothide/iOS 26 口径 -->
+<!-- 1. 网站基础信息 (WebSite) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "TrollStore Guide",
+  "url": "https://927520fyx.github.io/ios/"
+}
+</script>
+
+<!-- 2. 面包屑导航 (BreadcrumbList) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://927520fyx.github.io/ios/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "TrollStore Guide",
+      "item": "https://927520fyx.github.io/ios/#guide"
+    }
+  ]
+}
+</script>
+
+<!-- 3. FAQ 结构化数据 (JSON-LD) —— 已补齐 15.7.2-15.8.8 口径 -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -294,7 +326,7 @@
       "name": "Can I install TrollStore Lite without jailbreak?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. TrollStore Lite requires a jailbroken device. If your device is not jailbroken, you do not need TrollStore Lite — it will not install. It is not a workaround for unsupported iOS versions on non-jailbroken devices. For non-jailbroken devices, use the standard TrollStore on supported versions (iOS 14.0 beta 2–16.6.1, 16.7 RC, and 17.0)."
+        "text": "No. TrollStore Lite requires a jailbroken device. If your device is not jailbroken, you do not need TrollStore Lite — it will not install. It is not a workaround for unsupported iOS versions on non-jailbroken devices. For non-jailbroken devices, use the standard TrollStore on supported versions (iOS 14.0 beta 2–16.6.1, including 15.7.2–15.8.8, 16.7 RC, and 17.0)."
       }
     },
     {
@@ -320,7 +352,7 @@
 
 <nav class="site-nav" aria-label="Site navigation">
   <span>Site:</span>
-  <a href="index.html" title="TrollStore Home &amp; Complete Guide" aria-current="page">Home</a>
+  <a href="index.html" title="TrollStore Home &amp; Complete Guide" aria-current="page">Guide</a>
   <a href="faq.html" title="TrollStore Frequently Asked Questions">FAQ</a>
   <a href="dopamine.html" title="Dopamine Jailbreak Guide">Dopamine</a>
 </nav>
@@ -328,7 +360,6 @@
 <div class="toc">
 <strong>Contents</strong>
 <ol>
-  <!-- 修正：TOC 标题与正文 H2 完全对齐 -->
   <li><a href="#download" title="Download & Get: Where TrollStore Actually Comes From">Download &amp; Get: Where TrollStore Actually Comes From</a></li>
   <li><a href="#install" title="Install & Deploy: How to Install TrollStore (No PC, With PC, and by iOS Version)">Install &amp; Deploy: How to Install TrollStore (No PC, With PC, and by iOS Version)</a></li>
   <li><a href="#compat" title="Version & Compatibility: The Definitive Support List">Version &amp; Compatibility: The Definitive Support List</a></li>
@@ -379,15 +410,15 @@
     </thead>
     <tbody>
       <tr>
-        <td>14.0–15.6.1</td>
+        <td>14.0 beta 2 – 15.6.1</td>
         <td>TrollHelperOTA (no PC) or <strong>TrollInstallerX.ipa</strong></td>
       </tr>
       <tr>
-        <td>15.7.2–15.8.8 (incl. 15.8.8)</td>
+        <td>15.7.2 – 15.8.8 (incl. 15.8.8)</td>
         <td><strong>TrollInstallerX.ipa</strong> — internet required during install</td>
       </tr>
       <tr>
-        <td>16.0–16.6.1</td>
+        <td>16.0 – 16.6.1</td>
         <td><strong>TrollInstallerX.ipa</strong></td>
       </tr>
       <tr>
@@ -435,12 +466,11 @@
     </thead>
     <tbody>
       <tr>
-        <td>iOS 14.0 – 15.6.1</td>
+        <td>iOS 14.0 beta 2 – 15.6.1</td>
         <td>Method A: TrollHelperOTA</td>
         <td><span class="tag-yes">No</span></td>
       </tr>
       <tr>
-        <!-- 修正：TrollInstallerX 范围对齐官方口径 -->
         <td>iOS 14.0 – 16.6.1（arm64e 至 16.5.1），以及 17.0</td>
         <td>Method B: TrollInstallerX</td>
         <td>Yes (sideload the installer)</td>
@@ -459,10 +489,10 @@
   </table>
 </div>
 
-<h3>Method A: TrollHelperOTA — Install TrollStore Without a PC (iOS 14.0 – 15.6.1)</h3>
+<h3>Method A: TrollHelperOTA — Install TrollStore Without a PC (iOS 14.0 beta 2 – 15.6.1)</h3>
 
 <div class="method-card">
-<p>This is the only <strong>trollstore no PC install</strong> path that needs no computer at all, and the simplest way to <strong>install TrollStore without a PC</strong> on the versions it covers. It is the method used for <strong>install TrollStore no PC</strong> setups, a <strong>trollstore no PC</strong> download, and any setup with <strong>no computer</strong> or <strong>without computer</strong> on iOS 14.0–15.6.1. It is also the path behind <strong>installing TrollStore TrollHelperOTA</strong>, and it is the only <strong>trollstore OTA install</strong> method that exists—there is no separate OTA package to download.</p>
+<p>This is the only <strong>trollstore no PC install</strong> path that needs no computer at all, and the simplest way to <strong>install TrollStore without a PC</strong> on the versions it covers. It is the method used for <strong>install TrollStore no PC</strong> setups, a <strong>trollstore no PC</strong> download, and any setup with <strong>no computer</strong> or <strong>without computer</strong> on iOS 14.0 beta 2–15.6.1. It is also the path behind <strong>installing TrollStore TrollHelperOTA</strong>, and it is the only <strong>trollstore OTA install</strong> method that exists—there is no separate OTA package to download.</p>
 <ol>
   <li>Open Safari on your device.</li>
   <li>Navigate to the TrollHelperOTA link appropriate for your chip (arm64e devices use OTA Link 2; iOS 15+ devices use OTA Link 1).</li>
@@ -893,7 +923,7 @@
 
 <p>To install TrollStore Lite, add the Havoc repository to Sileo or Cydia, search for TrollStore Lite, and install it. If you are on a Dopamine or roothide jailbreak, the package manager is already available. Do not attempt to sideload a <code>.deb</code> as an IPA—it will not work.</p>
 
-<!-- 6.5 trollstore lite roothide —— 已修正措辞 -->
+<!-- 6.5 trollstore lite roothide -->
 <h3>6.5 TrollStore Lite on roothide Jailbreaks</h3>
 
 <p>The keyword <strong>trollstore lite roothide</strong> addresses a specific and important compatibility question. <strong>roothide</strong> is a newer jailbreak architecture that hides the jailbreak from apps that detect root access. Jailbreaks like <strong>Relaxin</strong> use roothide.</p>
@@ -1046,7 +1076,6 @@
         <td>Havoc repo</td>
       </tr>
       <tr>
-        <!-- 修正：roothide 状态改为“可用但结果不一” -->
         <td><code>trollstore lite roothide</code></td>
         <td><span class="tag-warn">⚠️ Varies</span></td>
         <td>Can work on roothide jailbreaks; some have required updates</td>
@@ -1116,7 +1145,7 @@
   </table>
 </div>
 
-<!-- 6.12 Variant FAQ —— roothide 与 iOS 26 口径已同步 -->
+<!-- 6.12 Variant FAQ -->
 <h3>6.12 Variant-Specific FAQ</h3>
 
 <div class="faq-item">
@@ -1724,24 +1753,24 @@
 <p>The technical facts are identical regardless of search language. Below are the key answers for localized queries.</p>
 
 <h3>Vietnamese Queries</h3>
-<p><strong>“Cài TrollStore”</strong> (install TrollStore) follows the same version rules as English. <strong>“Tải TrollStore”</strong> (download TrollStore) from the official GitHub only. <strong>“Cài TrollStore không cần máy tính”</strong> (install without computer) is possible only on iOS 14.0–15.6.1 via TrollHelperOTA. <strong>“Cài TrollStore không cần jailbreak”</strong> (no jailbreak) is the standard use case on supported versions. The three sideloading paths are <strong><code>cài trollstore qua 3utools</code></strong>, <strong><code>cài trollstore qua esign</code></strong>, and <strong><code>cài trollstore qua sileo</code></strong>: 3uTools and ESign can deliver TrollInstallerX by following the method described in Section 2 Method B, while Sileo is relevant only for TrollStore Lite on jailbroken devices.</p>
-<p><strong>“TrollStore là gì”</strong>: TrollStore là công cụ cài đặt IPA vĩnh viễn, không cần jailbreak, chỉ hỗ trợ iOS 14.0 beta 2–16.6.1, 16.7 RC và 17.0.</p>
-<p><strong>“Kho ứng dụng TrollStore”</strong>: There is no official app store. TrollStore installs IPAs you provide. Third-party IPA collections exist but are not affiliated with the developer. See <a href="#ecosystem" title="Jump to Ecosystem section">Section 11</a> for one community-maintained collection.</p>
+<p lang="vi"><strong>“Cài TrollStore”</strong> (install TrollStore) follows the same version rules as English. <strong>“Tải TrollStore”</strong> (download TrollStore) from the official GitHub only. <strong>“Cài TrollStore không cần máy tính”</strong> (install without computer) is possible only on iOS 14.0–15.6.1 via TrollHelperOTA. <strong>“Cài TrollStore không cần jailbreak”</strong> (no jailbreak) is the standard use case on supported versions. The three sideloading paths are <strong><code>cài trollstore qua 3utools</code></strong>, <strong><code>cài trollstore qua esign</code></strong>, and <strong><code>cài trollstore qua sileo</code></strong>: 3uTools and ESign can deliver TrollInstallerX by following the method described in Section 2 Method B, while Sileo is relevant only for TrollStore Lite on jailbroken devices.</p>
+<p lang="vi"><strong>“TrollStore là gì”</strong>: TrollStore là công cụ cài đặt IPA vĩnh viễn, không cần jailbreak, chỉ hỗ trợ iOS 14.0 beta 2–16.6.1, 16.7 RC và 17.0.</p>
+<p lang="vi"><strong>“Kho ứng dụng TrollStore”</strong>: There is no official app store. TrollStore installs IPAs you provide. Third-party IPA collections exist but are not affiliated with the developer. See <a href="#ecosystem" title="Jump to Ecosystem section">Section 11</a> for one community-maintained collection.</p>
 
 <h3>Polish Queries</h3>
-<p><strong>“Jak zainstalować TrollStore”</strong>: Installation method depends on iOS version, exactly as described in Sections 2 and 3.</p>
+<p lang="pl"><strong>“Jak zainstalować TrollStore”</strong>: Installation method depends on iOS version, exactly as described in Sections 2 and 3.</p>
 
 <h3>Spanish Queries</h3>
-<p><strong>“Que es TrollStore”</strong>: TrollStore es una aplicación que instala IPAs de forma permanente mediante un fallo en CoreTrust. No es un jailbreak. Solo funciona en iOS 14.0 beta 2–16.6.1, 16.7 RC y 17.0.</p>
+<p lang="es"><strong>“Que es TrollStore”</strong>: TrollStore es una aplicación que instala IPAs de forma permanente mediante un fallo en CoreTrust. No es un jailbreak. Solo funciona en iOS 14.0 beta 2–16.6.1, 16.7 RC y 17.0.</p>
 
 <h3>Portuguese Queries</h3>
-<p><strong>“O que é TrollStore” / “Para que serve TrollStore”</strong>: TrollStore é uma ferramenta que instala IPAs permanentemente sem jailbreak nas versões suportadas. Não funciona em iOS 17.0.1 ou superior, incluindo iOS 26 e iOS 27.</p>
+<p lang="pt"><strong>“O que é TrollStore” / “Para que serve TrollStore”</strong>: TrollStore é uma ferramenta que instala IPAs permanentemente sem jailbreak nas versões suportadas. Não funciona em iOS 17.0.1 ou superior, incluindo iOS 26 e iOS 27.</p>
 
 <h3>German Queries</h3>
-<p><strong>“TrollStore was ist das”</strong>: TrollStore ist ein Tool zur permanenten IPA-Installation ohne Jailbreak, das ausschließlich auf iOS 14.0 beta 2–16.6.1, 16.7 RC und 17.0 funktioniert.</p>
+<p lang="de"><strong>“TrollStore was ist das”</strong>: TrollStore ist ein Tool zur permanenten IPA-Installation ohne Jailbreak, das ausschließlich auf iOS 14.0 beta 2–16.6.1, 16.7 RC und 17.0 funktioniert.</p>
 
 <h3>French Queries</h3>
-<p><strong>“Qu'est-ce que TrollStore” / “Comment installer TrollStore”</strong>: Si vous vous demandez ce que c'est, c'est un outil qui installe des IPA de façon permanente sans jailbreak, grâce à une faille CoreTrust. Il ne fonctionne que sur iOS 14.0 beta 2–16.6.1, 16.7 RC et 17.0. Pour savoir comment l'installer, la méthode dépend de votre version d'iOS, exactement comme décrit dans les sections 2 et 3. Sur iOS 17.0.1 et versions ultérieures (y compris iOS 18, iOS 26 et iOS 27), il n'est pas disponible.</p>
+<p lang="fr"><strong>“Qu'est-ce que TrollStore” / “Comment installer TrollStore”</strong>: Si vous vous demandez ce que c'est, c'est un outil qui installe des IPA de façon permanente sans jailbreak, grâce à une faille CoreTrust. Il ne fonctionne que sur iOS 14.0 beta 2–16.6.1, 16.7 RC et 17.0. Pour savoir comment l'installer, la méthode dépend de votre version d'iOS, exactement comme décrit dans les sections 2 et 3. Sur iOS 17.0.1 et versions ultérieures (y compris iOS 18, iOS 26 et iOS 27), il n'est pas disponible.</p>
 
 <h2 id="ecosystem">11. Ecosystem &amp; Repo: Helpers, Persistence, and Community Resources</h2>
 
