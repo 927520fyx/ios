@@ -11,7 +11,8 @@
   gtag('config', 'G-JWF0BPSMBV');
 </script>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- 修复：添加 maximum-scale=1.0, user-scalable=no 防止移动端双击放大和左右滑动 -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 <title>How to Install TrollStore: No PC, With PC &amp; By iOS Version (2026)</title>
 
@@ -72,6 +73,8 @@
     padding: 0 20px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    /* 修复：防止横向溢出 */
+    overflow-x: hidden; 
   }
   article {
     max-width: 800px;
@@ -121,12 +124,13 @@
     word-break: break-word;
   }
 
-  /* iOS 风格导航条 */
+  /* iOS 风格导航条 - 电脑端 */
   .site-nav {
     display: flex;
     gap: 8px;
     flex-wrap: wrap;
     align-items: center;
+    justify-content: center; /* 居中排列，视觉更平衡 */
     padding: 8px;
     background: rgba(255,255,255,0.85);
     backdrop-filter: saturate(180%) blur(20px);
@@ -191,7 +195,7 @@
     border-left: 4px solid var(--info-border);
   }
 
-  /* iOS 风格表格 */
+  /* iOS 风格表格 - 修复手机端宽度溢出 */
   .table-wrap {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
@@ -199,6 +203,8 @@
     border-radius: var(--radius);
     border: 1px solid var(--border);
     background: #fff;
+    width: 100%;
+    max-width: 100%;
   }
   table {
     width: 100%;
@@ -326,6 +332,7 @@
     line-height: 1.7;
   }
 
+  /* 手机端适配 */
   @media (max-width: 600px) {
     body { font-size: 16px; padding: 0 16px; }
     article { padding: 32px 0 64px; }
@@ -337,8 +344,32 @@
     .lede { font-size: 1.02rem; }
     table { font-size: 0.82rem; }
     th, td { padding: 11px 13px; }
-    .site-nav { font-size: 0.82rem; }
-    .site-nav span { display: none; }
+    
+    /* 修复：手机端导航栏重排 */
+    .site-nav {
+      position: relative; /* 手机端取消悬浮，避免遮挡 */
+      top: 0;
+      border-radius: var(--radius-sm);
+      padding: 10px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* 3列网格，排列整齐 */
+      gap: 8px;
+      box-shadow: none;
+    }
+    .site-nav span {
+      display: none; /* 隐藏 "Site" 文字 */
+    }
+    .site-nav a {
+      text-align: center;
+      font-size: 0.85rem;
+      padding: 8px 4px;
+      background: #f5f5f7;
+      border-radius: 8px; /* 改为小圆角，去掉胶囊感 */
+    }
+    .site-nav a[aria-current="page"] {
+      background: var(--accent);
+    }
+    
     .method-card { padding: 16px; }
     .toc-card { padding: 18px 20px; }
     .toc-card li { font-size: 0.95rem; }
