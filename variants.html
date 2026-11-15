@@ -39,7 +39,6 @@
 
 <!-- 强制拦截 iOS Safari 双击和手势缩放 -->
 <script>
-  // 阻止双击放大
   let lastTouchEnd = 0;
   document.addEventListener('touchend', function (event) {
     const now = (new Date()).getTime();
@@ -49,14 +48,12 @@
     lastTouchEnd = now;
   }, false);
 
-  // 阻止双指捏合缩放
   document.addEventListener('touchmove', function (event) {
     if (event.touches.length > 1) {
       event.preventDefault();
     }
   }, { passive: false });
 
-  // 阻止手势缩放 (iOS 13+ 的 gesture 事件)
   document.addEventListener('gesturestart', function (event) {
     event.preventDefault();
   });
@@ -158,7 +155,7 @@
     word-break: break-word;
   }
 
-  /* iOS 风格导航条 —— 与 index.html 写法保持一致，去掉 will-change / align-self，避免抖动 */
+  /* ===== 导航条：完全对齐 index.html ===== */
   .site-nav {
     display: flex;
     gap: 8px;
@@ -255,7 +252,6 @@
     flex-shrink: 0;
   }
 
-  /* iOS 风格提示卡 */
   .callout {
     padding: 18px 22px;
     border-radius: var(--radius-sm);
@@ -276,7 +272,6 @@
     border-left: 4px solid var(--info-border);
   }
 
-  /* iOS 风格表格 */
   .table-wrap {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
@@ -308,7 +303,6 @@
   .tag-yes { color: var(--success); font-weight: 600; white-space: nowrap; }
   .tag-no { color: var(--danger); font-weight: 600; white-space: nowrap; }
 
-  /* FAQ 列表样式 */
   .faq-item {
     border-bottom: 1px solid var(--border);
     padding: 16px 0;
@@ -316,7 +310,6 @@
   .faq-item:last-child { border-bottom: none; }
   .faq-item h4 { margin-top: 0; color: var(--text); font-size: 1.05rem; font-weight: 600; margin-bottom: 8px;}
 
-  /* 语言分组卡片 */
   .lang-block {
     background: var(--card-bg);
     border: 1px solid var(--border);
@@ -337,7 +330,6 @@
   }
   .lang-block p:last-child { margin-bottom: 0; }
 
-  /* 顶部 hero 卡片 */
   .hero {
     background: linear-gradient(180deg, #f5f5f7 0%, #ffffff 100%);
     border: 1px solid var(--border);
@@ -366,7 +358,6 @@
     letter-spacing: -0.01em;
   }
 
-  /* 页脚 */
   .page-footer {
     margin-top: 80px;
     padding-top: 28px;
@@ -376,7 +367,6 @@
     line-height: 1.7;
   }
 
-  /* 只在支持 hover 的设备上启用 hover 效果 */
   @media (hover: hover) and (pointer: fine) {
     a:hover { text-decoration: underline; }
     .site-nav a:hover { background: #f5f5f7; text-decoration: none; }
@@ -396,38 +386,30 @@
     table { font-size: 0.82rem; }
     th, td { padding: 11px 13px; }
 
-    /* 移动端：sticky 元素自身不再承担横向滚动，避免抖动；
-       横向滑动体验改由内层 .site-nav-inner 承担 */
+    /* 移动端导航：照搬 index.html，不再让 sticky 元素自己横向滚动 */
     .site-nav {
       flex-wrap: nowrap;
-      overflow: hidden;
-      border-radius: 16px;
-      padding: 0;
-      gap: 0;
-      justify-content: flex-start;
-      touch-action: pan-x;
-    }
-    .site-nav-inner {
-      display: flex;
-      gap: 4px;
-      align-items: center;
-      width: 100%;
-      padding: 8px 12px;
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
-      scrollbar-width: none;
+      border-radius: 16px;
+      padding: 8px 12px;
+      gap: 4px;
+      justify-content: flex-start;
+      scrollbar-width: none; 
       -ms-overflow-style: none;
+      touch-action: pan-x;
     }
-    .site-nav-inner::-webkit-scrollbar {
+    .site-nav::-webkit-scrollbar { 
+      display: none; 
+    }
+    
+    .site-nav span { 
       display: none;
     }
-    .site-nav span {
-      display: none;
-    }
-    .site-nav a {
+    
+    .site-nav a { 
       padding: 8px 16px;
       font-size: 0.85rem;
-      flex-shrink: 0;
     }
 
     .toc li a { padding: 8px 10px; font-size: 0.9rem; }
@@ -435,7 +417,6 @@
   }
 </style>
 
-<!-- 1. 网站基础信息 (WebSite) -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -445,7 +426,6 @@
 }
 </script>
 
-<!-- 2. 面包屑导航 (BreadcrumbList) -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -477,17 +457,15 @@
 </div>
 
 <nav class="site-nav" aria-label="Site navigation">
-  <div class="site-nav-inner">
-    <span>Site</span>
-    <a href="index.html" title="TrollStore Home &amp; Download">Home</a>
-    <a href="install.html" title="TrollStore Install Guide">Install</a>
-    <a href="variants.html" title="TrollStore Variants" aria-current="page">Variants</a>
-    <a href="alternatives.html" title="TrollStore Alternatives &amp; Jailbreak">Alternatives</a>
-    <a href="update.html" title="TrollStore Update &amp; Usage">Update</a>
-    <a href="official.html" title="TrollStore Official Source &amp; Device Compatibility">Official</a>
-    <a href="faq.html" title="TrollStore FAQ">FAQ</a>
-    <a href="dopamine.html" title="Dopamine Guide">Dopamine</a>
-  </div>
+  <span>Site</span>
+  <a href="index.html" title="TrollStore Home &amp; Download">Home</a>
+  <a href="install.html" title="TrollStore Install Guide">Install</a>
+  <a href="variants.html" title="TrollStore Variants" aria-current="page">Variants</a>
+  <a href="alternatives.html" title="TrollStore Alternatives &amp; Jailbreak">Alternatives</a>
+  <a href="update.html" title="TrollStore Update &amp; Usage">Update</a>
+  <a href="official.html" title="TrollStore Official Source &amp; Device Compatibility">Official</a>
+  <a href="faq.html" title="TrollStore FAQ">FAQ</a>
+  <a href="dopamine.html" title="Dopamine Guide">Dopamine</a>
 </nav>
 
 <div class="toc">
