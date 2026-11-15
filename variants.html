@@ -11,7 +11,7 @@
   gtag('config', 'G-JWF0BPSMBV');
 </script>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>TrollStore Variants 2026: Lite, Pro, 2, v2, Beta &amp; Mod Explained</title>
 
@@ -37,28 +37,6 @@
 <meta name="twitter:description" content="TrollStore variants explained: Lite (jailbreak only), Pro/Mod (fake), v2 (same as 2), and Beta. Plus localized answers for non-English searches.">
 <meta name="twitter:image" content="https://927520fyx.github.io/ios/og-image.jpg">
 
-<!-- 强制拦截 iOS Safari 双击和手势缩放 -->
-<script>
-  let lastTouchEnd = 0;
-  document.addEventListener('touchend', function (event) {
-    const now = (new Date()).getTime();
-    if (now - lastTouchEnd <= 300) {
-      event.preventDefault();
-    }
-    lastTouchEnd = now;
-  }, false);
-
-  document.addEventListener('touchmove', function (event) {
-    if (event.touches.length > 1) {
-      event.preventDefault();
-    }
-  }, { passive: false });
-
-  document.addEventListener('gesturestart', function (event) {
-    event.preventDefault();
-  });
-</script>
-
 <style>
   :root {
     --bg: #ffffff;
@@ -82,10 +60,7 @@
     --radius-sm: 12px;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  
-  html { 
-    -webkit-text-size-adjust: 100%; 
-  }
+  html { -webkit-text-size-adjust: 100%; }
   body {
     font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
     color: var(--text);
@@ -95,18 +70,11 @@
     padding: 0 20px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    position: relative;
   }
-  
-  * {
-    -webkit-tap-highlight-color: transparent;
-  }
-  
   article {
     max-width: 800px;
     margin: 0 auto;
     padding: 56px 0 100px;
-    overflow-x: clip;
   }
   h1 {
     font-size: 2.4rem;
@@ -143,6 +111,7 @@
   }
   p { margin-bottom: 16px; }
   a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
   ul, ol { margin: 0 0 20px 26px; }
   li { margin-bottom: 10px; }
   code {
@@ -155,7 +124,7 @@
     word-break: break-word;
   }
 
-  /* ===== 导航条：完全对齐 index.html ===== */
+  /* iOS 风格导航条 */
   .site-nav {
     display: flex;
     gap: 8px;
@@ -170,13 +139,9 @@
     margin: 0 auto 8px;
     font-size: 0.88rem;
     position: sticky;
-    position: -webkit-sticky;
     top: 12px;
     z-index: 10;
     box-shadow: 0 1px 3px rgba(0,0,0,0.04);
-    will-change: transform;
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
   }
   .site-nav span {
     font-weight: 600;
@@ -194,10 +159,17 @@
     font-weight: 500;
     color: var(--text);
     transition: background 0.2s ease, color 0.2s ease;
-    white-space: nowrap;
+  }
+  .site-nav a:hover {
+    background: #f5f5f7;
+    text-decoration: none;
   }
   .site-nav a[aria-current="page"] {
     background: var(--accent);
+    color: #fff;
+  }
+  .site-nav a[aria-current="page"]:hover {
+    background: var(--accent-hover);
     color: #fff;
   }
 
@@ -240,6 +212,10 @@
     font-weight: 500;
     transition: background 0.15s ease, color 0.15s ease;
   }
+  .toc li a:hover {
+    background: var(--info-bg);
+    text-decoration: none;
+  }
   .toc li a::before {
     content: counter(toc-counter);
     display: inline-flex;
@@ -255,6 +231,7 @@
     flex-shrink: 0;
   }
 
+  /* iOS 风格提示卡 */
   .callout {
     padding: 18px 22px;
     border-radius: var(--radius-sm);
@@ -275,6 +252,7 @@
     border-left: 4px solid var(--info-border);
   }
 
+  /* iOS 风格表格 */
   .table-wrap {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
@@ -306,6 +284,7 @@
   .tag-yes { color: var(--success); font-weight: 600; white-space: nowrap; }
   .tag-no { color: var(--danger); font-weight: 600; white-space: nowrap; }
 
+  /* FAQ 列表样式 */
   .faq-item {
     border-bottom: 1px solid var(--border);
     padding: 16px 0;
@@ -313,6 +292,7 @@
   .faq-item:last-child { border-bottom: none; }
   .faq-item h4 { margin-top: 0; color: var(--text); font-size: 1.05rem; font-weight: 600; margin-bottom: 8px;}
 
+  /* 语言分组卡片 */
   .lang-block {
     background: var(--card-bg);
     border: 1px solid var(--border);
@@ -333,6 +313,7 @@
   }
   .lang-block p:last-child { margin-bottom: 0; }
 
+  /* 顶部 hero 卡片 */
   .hero {
     background: linear-gradient(180deg, #f5f5f7 0%, #ffffff 100%);
     border: 1px solid var(--border);
@@ -361,6 +342,7 @@
     letter-spacing: -0.01em;
   }
 
+  /* 页脚 */
   .page-footer {
     margin-top: 80px;
     padding-top: 28px;
@@ -368,13 +350,6 @@
     font-size: 0.85rem;
     color: var(--muted);
     line-height: 1.7;
-  }
-
-  @media (hover: hover) and (pointer: fine) {
-    a:hover { text-decoration: underline; }
-    .site-nav a:hover { background: #f5f5f7; text-decoration: none; }
-    .site-nav a[aria-current="page"]:hover { background: var(--accent-hover); color: #fff; }
-    .toc li a:hover { background: var(--info-bg); text-decoration: none; }
   }
 
   @media (max-width: 600px) {
@@ -388,38 +363,14 @@
     .lede { font-size: 1.02rem; }
     table { font-size: 0.82rem; }
     th, td { padding: 11px 13px; }
-
-    /* 移动端导航：照搬 index.html，不再让 sticky 元素自己横向滚动 */
-    .site-nav {
-      flex-wrap: nowrap;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      border-radius: 16px;
-      padding: 8px 12px;
-      gap: 4px;
-      justify-content: flex-start;
-      scrollbar-width: none; 
-      -ms-overflow-style: none;
-      touch-action: pan-x;
-    }
-    .site-nav::-webkit-scrollbar { 
-      display: none; 
-    }
-    
-    .site-nav span { 
-      display: none;
-    }
-    
-    .site-nav a { 
-      padding: 8px 16px;
-      font-size: 0.85rem;
-    }
-
+    .site-nav { font-size: 0.82rem; }
+    .site-nav span { display: none; }
     .toc li a { padding: 8px 10px; font-size: 0.9rem; }
     .lang-block { padding: 16px 16px; }
   }
 </style>
 
+<!-- 1. 网站基础信息 (WebSite) -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -429,6 +380,7 @@
 }
 </script>
 
+<!-- 2. 面包屑导航 (BreadcrumbList) -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -463,7 +415,8 @@
   <span>Site</span>
   <a href="index.html" title="TrollStore Home &amp; Download">Home</a>
   <a href="install.html" title="TrollStore Install Guide">Install</a>
-  <a href="variants.html" title="TrollStore Variants" aria-current="page">Variants</a>
+  <!-- 修复：添加 title 属性 -->
+  <a href="#" title="TrollStore Variants" aria-current="page">Variants</a>
   <a href="alternatives.html" title="TrollStore Alternatives &amp; Jailbreak">Alternatives</a>
   <a href="update.html" title="TrollStore Update &amp; Usage">Update</a>
   <a href="official.html" title="TrollStore Official Source &amp; Device Compatibility">Official</a>
@@ -474,7 +427,9 @@
 <div class="toc">
   <strong>Contents</strong>
   <ol>
+    <!-- 修复：添加 title 属性 -->
     <li><a href="#variants" title="Variant Breakdown">1. Variant Breakdown</a></li>
+    <!-- 修复：添加 title 属性 -->
     <li><a href="#localized" title="Localized TrollStore Searches">2. Localized: Non-English TrollStore Searches</a></li>
   </ol>
 </div>
