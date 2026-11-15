@@ -40,6 +40,31 @@
 <meta name="twitter:description" content="Step-by-step TrollStore installation guide. Find the right method for your iOS version: TrollHelperOTA (no PC), TrollInstallerX (with PC), or TrollRestore.">
 <meta name="twitter:image" content="https://927520fyx.github.io/ios/og-image.jpg">
 
+<!-- 强力拦截 iOS Safari 双击缩放和双指手势缩放（iOS 10+ 会忽略 viewport 的 user-scalable=no，必须用 JS） -->
+<script>
+  // 1. 拦截双指捏合缩放 (iOS 10+ Safari)
+  document.addEventListener('gesturestart', function (e) {
+    e.preventDefault();
+  });
+
+  // 2. 拦截双击放大
+  var lastTouchEnd = 0;
+  document.addEventListener('touchend', function (event) {
+    var now = (new Date()).getTime();
+    if (now - lastTouchEnd <= 300) {
+      event.preventDefault(); // 阻止两次点击间隔小于 300ms 时的默认放大行为
+    }
+    lastTouchEnd = now;
+  }, false);
+
+  // 3. 防止双击输入框导致放大
+  document.addEventListener('touchstart', function (event) {
+    if (event.touches.length > 1) {
+      event.preventDefault(); // 拦截多指触摸（捏合）
+    }
+  }, { passive: false });
+</script>
+
 <style>
   :root {
     --bg: #ffffff;
