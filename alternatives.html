@@ -11,7 +11,7 @@
   gtag('config', 'G-JWF0BPSMBV');
 </script>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
 
 <title>TrollStore Alternatives &amp; Jailbreak: SideStore, AltStore &amp; More (2026)</title>
 
@@ -38,6 +38,42 @@
 <meta name="twitter:title" content="TrollStore Alternatives &amp; Jailbreak: SideStore, AltStore &amp; More (2026)">
 <meta name="twitter:description" content="What to use when TrollStore is not an option. Compare SideStore, AltStore, Sideloadly, ESign, Scarlet. Plus the definitive guide to TrollStore vs. jailbreak.">
 <meta name="twitter:image" content="https://927520fyx.github.io/ios/og-image.jpg">
+
+<!-- 强力拦截 iOS Safari 双击缩放和双指手势缩放 -->
+<script>
+  // 1. 拦截双指捏合缩放 (iOS 10+ Safari)
+  document.addEventListener('gesturestart', function (e) {
+    e.preventDefault();
+  });
+
+  // 2. 拦截双击放大
+  var lastTouchEnd = 0;
+  document.addEventListener('touchend', function (event) {
+    var now = (new Date()).getTime();
+    if (now - lastTouchEnd <= 300) {
+      event.preventDefault(); // 阻止两次点击间隔小于 300ms 时的默认放大行为
+    }
+    lastTouchEnd = now;
+  }, false);
+
+  // 3. 防止双击输入框导致放大
+  document.addEventListener('touchstart', function (event) {
+    if (event.touches.length > 1) {
+      event.preventDefault(); // 拦截多指触摸（捏合）
+    }
+  }, { passive: false });
+
+  // 4. 瞬间回到顶部（解决Alternatives按钮跳转问题）
+  document.addEventListener('DOMContentLoaded', function() {
+    var alternativesBtn = document.getElementById('nav-alternatives');
+    if (alternativesBtn) {
+      alternativesBtn.addEventListener('click', function(e) {
+        e.preventDefault(); // 阻止默认的跳转行为
+        window.scrollTo(0, 0); // 瞬间跳到顶部
+      });
+    }
+  });
+</script>
 
 <style>
   :root {
@@ -72,6 +108,8 @@
     padding: 0 20px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    touch-action: manipulation; /* 消除点击延迟 */
+    overflow-x: hidden; /* 阻止由于某些元素溢出导致的横向滚动 */
   }
   article {
     max-width: 800px;
@@ -156,6 +194,7 @@
     font-weight: 500;
     color: var(--text);
     transition: background 0.2s ease, color 0.2s ease;
+    white-space: nowrap; /* 防止文字换行 */
   }
   .site-nav a:hover {
     background: #f5f5f7;
@@ -257,6 +296,7 @@
     border-radius: var(--radius);
     border: 1px solid var(--border);
     background: #fff;
+    touch-action: pan-x pan-y;
   }
   table {
     width: 100%;
@@ -331,8 +371,33 @@
     .lede { font-size: 1.02rem; }
     table { font-size: 0.82rem; }
     th, td { padding: 11px 13px; }
-    .site-nav { font-size: 0.82rem; }
-    .site-nav span { display: none; }
+    
+    /* 移动端导航条：改为可横向滑动的单行模式 */
+    .site-nav {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      border-radius: 16px;
+      padding: 8px 12px;
+      gap: 4px;
+      justify-content: flex-start;
+      scrollbar-width: none; 
+      -ms-overflow-style: none;
+      touch-action: pan-x;
+    }
+    .site-nav::-webkit-scrollbar { 
+      display: none; 
+    }
+    
+    .site-nav span { 
+      display: none;
+    }
+    
+    .site-nav a { 
+      padding: 8px 16px;
+      font-size: 0.85rem;
+    }
+
     .toc li a { padding: 8px 10px; font-size: 0.9rem; }
   }
 </style>
@@ -369,7 +434,7 @@
 }
 </script>
 </head>
-<body>
+<body id="top">
 <article>
 
 <div class="hero">
@@ -383,7 +448,8 @@
   <a href="index.html" title="TrollStore Home &amp; Download">Home</a>
   <a href="install.html" title="TrollStore Install Guide">Install</a>
   <a href="variants.html" title="TrollStore Variants">Variants</a>
-  <a href="#" title="TrollStore Alternatives" aria-current="page">Alternatives</a>
+  <!-- 修复：用 #top 加上 id 配合 JavaScript 解决跳转问题，防止被 SEO 识别为空链接 -->
+  <a href="#top" id="nav-alternatives" title="TrollStore Alternatives" aria-current="page">Alternatives</a>
    <a href="update.html" title="TrollStore Update &amp; Usage">Update</a>
   <a href="official.html" title="TrollStore Official Source &amp; Device Compatibility">Official</a>
   <a href="faq.html" title="TrollStore FAQ">FAQ</a>
@@ -393,8 +459,8 @@
 <div class="toc">
   <strong>Contents</strong>
   <ol>
-    <li><a href="#alternatives">1. Alternative &amp; Comparison</a></li>
-    <li><a href="#jailbreak">2. No Jailbreak / Jailbreak</a></li>
+    <li><a href="#alternatives" title="Alternative &amp; Comparison">1. Alternative &amp; Comparison</a></li>
+    <li><a href="#jailbreak" title="No Jailbreak / Jailbreak">2. No Jailbreak / Jailbreak</a></li>
   </ol>
 </div>
 
