@@ -171,6 +171,7 @@
     font-weight: 500;
     color: var(--text);
     transition: background 0.2s ease, color 0.2s ease;
+    white-space: nowrap; /* 防止文字换行 */
   }
   .site-nav a[aria-current="page"] {
     background: var(--accent);
@@ -371,8 +372,31 @@
     .lede { font-size: 1.02rem; }
     table { font-size: 0.82rem; }
     th, td { padding: 11px 13px; }
-    .site-nav { font-size: 0.82rem; }
-    .site-nav span { display: none; }
+
+    /* 移动端导航条：改为可横向滑动的单行模式 */
+    .site-nav {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      border-radius: 16px;
+      padding: 8px 12px;
+      gap: 4px;
+      justify-content: flex-start;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      touch-action: pan-x;
+    }
+    .site-nav::-webkit-scrollbar {
+      display: none;
+    }
+    .site-nav span {
+      display: none;
+    }
+    .site-nav a {
+      padding: 8px 16px;
+      font-size: 0.85rem;
+    }
+
     .toc li a { padding: 8px 10px; font-size: 0.9rem; }
     .lang-block { padding: 16px 16px; }
   }
@@ -423,7 +447,7 @@
   <span>Site</span>
   <a href="index.html" title="TrollStore Home &amp; Download">Home</a>
   <a href="install.html" title="TrollStore Install Guide">Install</a>
-  <a href="#" title="TrollStore Variants" aria-current="page">Variants</a>
+  <a href="variants.html" title="TrollStore Variants" aria-current="page">Variants</a>
   <a href="alternatives.html" title="TrollStore Alternatives &amp; Jailbreak">Alternatives</a>
   <a href="update.html" title="TrollStore Update &amp; Usage">Update</a>
   <a href="official.html" title="TrollStore Official Source &amp; Device Compatibility">Official</a>
