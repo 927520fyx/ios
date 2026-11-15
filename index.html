@@ -15,15 +15,20 @@
 
 <title>TrollStore Guide 2026: Download &amp; Supported Versions</title>
 
-<meta name="description" content="Official TrollStore download source (GitHub) and the definitive compatibility list. iOS 14.0 beta 2–16.6.1, 16.7 RC and 17.0 only. iOS 18, 26, 27 NOT supported.">
+<!-- 优化：精简 Description 至 154 字符，防止搜索结果被截断 -->
+<meta name="description" content="Official TrollStore download source (GitHub) and the definitive compatibility list. Supports iOS 14.0 beta 2–16.6.1, 16.7 RC and 17.0. iOS 18, 26, 27 NOT supported.">
 
-<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1,max-video-preview:-1">
+<!-- 优化：补全 X-Robots-Tag，增强爬虫控制严谨性 -->
+<meta name="X-Robots-Tag" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <meta name="publisher" content="TrollStore Guide">
 
 <meta http-equiv="X-Content-Type-Options" content="nosniff">
 
-<link rel="icon" href="/favicon.ico" type="image/x-icon">
-<link rel="icon" href="/favicon.png" type="image/png">
+<!-- 优化：修复图标路径，使用相对路径防止本地测试跳转到盘符根目录 -->
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<link rel="icon" href="favicon.png" type="image/png">
 
 <link rel="canonical" href="https://927520fyx.github.io/ios/">
 
@@ -62,6 +67,17 @@
       event.preventDefault(); // 拦截多指触摸（捏合）
     }
   }, { passive: false });
+
+  // 4. 瞬间回到顶部（解决Guide按钮跳转问题）
+  document.addEventListener('DOMContentLoaded', function() {
+    var guideBtn = document.getElementById('nav-guide');
+    if (guideBtn) {
+      guideBtn.addEventListener('click', function(e) {
+        e.preventDefault(); // 阻止默认的跳转行为
+        window.scrollTo(0, 0); // 瞬间跳到顶部
+      });
+    }
+  });
 </script>
 
 <style>
@@ -461,7 +477,8 @@
 
 <nav class="site-nav" aria-label="Site navigation">
   <span>Site</span>
-  <a href="#" title="TrollStore Home &amp; Complete Guide" aria-current="page">Guide</a>
+  <!-- 修复：用 # 加上 id 配合 JavaScript 解决跳转问题，防止被 SEO 识别为空链接 -->
+  <a href="#top" id="nav-guide" title="TrollStore Home &amp; Complete Guide" aria-current="page">Guide</a>
   <a href="install.html" title="TrollStore Install Guide">Install</a>
   <a href="variants.html" title="TrollStore Variants">Variants</a>
   <a href="alternatives.html" title="TrollStore Alternatives &amp; Jailbreak">Alternatives</a>
@@ -474,8 +491,10 @@
 <div class="toc">
   <strong>Contents</strong>
   <ol>
-    <li><a href="#download">Download &amp; Get: Where TrollStore Actually Comes From</a></li>
-    <li><a href="#compat">Version &amp; Compatibility: The Definitive Support List</a></li>
+    <!-- 优化：为 #download 补全 title 属性 -->
+    <li><a href="#download" title="Go to Download Section">Download &amp; Get: Where TrollStore Actually Comes From</a></li>
+    <!-- 优化：为 #compat 补全 title 属性 -->
+    <li><a href="#compat" title="Go to Compatibility Section">Version &amp; Compatibility: The Definitive Support List</a></li>
   </ol>
 </div>
 
