@@ -79,6 +79,11 @@
     overflow-x: hidden;
   }
   
+  /* 修复：禁用 iOS Safari 的点击高亮闪烁 */
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+  
   article {
     max-width: 800px;
     margin: 0 auto;
@@ -119,7 +124,6 @@
   }
   p { margin-bottom: 16px; }
   a { color: var(--accent); text-decoration: none; }
-  a:hover { text-decoration: underline; }
   ul, ol { margin: 0 0 20px 26px; }
   li { margin-bottom: 10px; }
   code {
@@ -168,16 +172,8 @@
     color: var(--text);
     transition: background 0.2s ease, color 0.2s ease;
   }
-  .site-nav a:hover {
-    background: #f5f5f7;
-    text-decoration: none;
-  }
   .site-nav a[aria-current="page"] {
     background: var(--accent);
-    color: #fff;
-  }
-  .site-nav a[aria-current="page"]:hover {
-    background: var(--accent-hover);
     color: #fff;
   }
 
@@ -219,10 +215,6 @@
     color: var(--text);
     font-weight: 500;
     transition: background 0.15s ease, color 0.15s ease;
-  }
-  .toc li a:hover {
-    background: var(--info-bg);
-    text-decoration: none;
   }
   .toc li a::before {
     content: counter(toc-counter);
@@ -358,6 +350,14 @@
     font-size: 0.85rem;
     color: var(--muted);
     line-height: 1.7;
+  }
+
+  /* 修复：只在支持 hover 的设备（电脑鼠标）上启用 hover 效果，防止 iOS 触屏点击时发生抖动/重排 */
+  @media (hover: hover) and (pointer: fine) {
+    a:hover { text-decoration: underline; }
+    .site-nav a:hover { background: #f5f5f7; text-decoration: none; }
+    .site-nav a[aria-current="page"]:hover { background: var(--accent-hover); color: #fff; }
+    .toc li a:hover { background: var(--info-bg); text-decoration: none; }
   }
 
   @media (max-width: 600px) {
