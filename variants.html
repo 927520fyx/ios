@@ -60,7 +60,13 @@
     --radius-sm: 12px;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { -webkit-text-size-adjust: 100%; }
+  
+  /* 修复：防止 iOS Safari 双击缩放和横向滑动 */
+  html { 
+    -webkit-text-size-adjust: 100%; 
+    overflow-x: hidden;
+    touch-action: manipulation;
+  }
   body {
     font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
     color: var(--text);
@@ -70,7 +76,9 @@
     padding: 0 20px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
   }
+  
   article {
     max-width: 800px;
     margin: 0 auto;
@@ -415,7 +423,6 @@
   <span>Site</span>
   <a href="index.html" title="TrollStore Home &amp; Download">Home</a>
   <a href="install.html" title="TrollStore Install Guide">Install</a>
-  <!-- 修复：添加 title 属性 -->
   <a href="#" title="TrollStore Variants" aria-current="page">Variants</a>
   <a href="alternatives.html" title="TrollStore Alternatives &amp; Jailbreak">Alternatives</a>
   <a href="update.html" title="TrollStore Update &amp; Usage">Update</a>
@@ -427,9 +434,7 @@
 <div class="toc">
   <strong>Contents</strong>
   <ol>
-    <!-- 修复：添加 title 属性 -->
     <li><a href="#variants" title="Variant Breakdown">1. Variant Breakdown</a></li>
-    <!-- 修复：添加 title 属性 -->
     <li><a href="#localized" title="Localized TrollStore Searches">2. Localized: Non-English TrollStore Searches</a></li>
   </ol>
 </div>
