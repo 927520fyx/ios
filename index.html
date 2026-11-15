@@ -156,6 +156,7 @@
     font-weight: 500;
     color: var(--text);
     transition: background 0.2s ease, color 0.2s ease;
+    white-space: nowrap; /* 防止文字换行 */
   }
   .site-nav a:hover {
     background: #f5f5f7;
@@ -348,6 +349,9 @@
     line-height: 1.7;
   }
 
+  /* ==========================================
+     移动端适配 (修正导航栏歪的问题)
+     ========================================== */
   @media (max-width: 600px) {
     body { font-size: 16px; padding: 0 16px; }
     article { padding: 32px 0 64px; }
@@ -359,8 +363,33 @@
     .lede { font-size: 1.02rem; }
     table { font-size: 0.82rem; }
     th, td { padding: 11px 13px; }
-    .site-nav { font-size: 0.82rem; }
-    .site-nav span { display: none; }
+    
+    /* 移动端导航条：改为可横向滑动的单行模式 */
+    .site-nav {
+      flex-wrap: nowrap; /* 禁止换行，保持单行 */
+      overflow-x: auto; /* 允许横向滚动 */
+      -webkit-overflow-scrolling: touch;
+      border-radius: 16px; /* 稍微减小圆角，视觉上更规整 */
+      padding: 8px 12px;
+      gap: 4px;
+      justify-content: flex-start;
+      /* 隐藏滚动条，保持干净 */
+      scrollbar-width: none; 
+      -ms-overflow-style: none;
+    }
+    .site-nav::-webkit-scrollbar { 
+      display: none; 
+    }
+    
+    .site-nav span { 
+      display: none; /* 移动端隐藏掉 'SITE' 标签 */
+    }
+    
+    .site-nav a { 
+      padding: 8px 16px;
+      font-size: 0.85rem;
+    }
+
     .toc li a { padding: 8px 10px; font-size: 0.9rem; }
   }
 </style>
