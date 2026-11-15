@@ -61,10 +61,11 @@
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   
-  /* 修复：防止 iOS Safari 双击缩放和横向滑动 */
+  /* 修复：防止 iOS Safari 双击缩放和横向滑动。
+     注意：不要在这里加 overflow-x: hidden，否则 body 会变成滚动容器，
+     导致 .site-nav 的 position: sticky 失效（导航栏不会悬浮）。 */
   html { 
     -webkit-text-size-adjust: 100%; 
-    overflow-x: hidden;
     touch-action: manipulation;
   }
   body {
@@ -76,7 +77,8 @@
     padding: 0 20px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    overflow-x: hidden;
+    /* 用 clip 而不是 hidden：clip 不会创建滚动容器，sticky 可正常生效 */
+    overflow-x: clip;
   }
   
   /* 修复：禁用 iOS Safari 的点击高亮闪烁 */
@@ -493,7 +495,7 @@
 
 <ul>
   <li><strong>The main TrollStore GitHub repository</strong> (<code>github.com/opa334/TrollStore</code>) is the source of truth for the TrollStore project, including the standard installer. The Lite variant is part of the same project, introduced in version 2.1.</li>
-  <li><strong>However, TrollStore Lite is not a separate GitHub release product</strong> in the way that TrollInstallerX.ipa is. Lite is a <code>.deb</code> package delivered through package managers. The GitHub releases page primarily hosts the standard installer files (TrollInstallerX.ipa, TrollStore.tar).</li>
+  <li><strong>However, TrollStore Lite is not a separate GitHub release product</strong> in the way that TrollInstallerX.ipa is. Lite is a <code>.deb</code> package delivered through package managers. The GitHub releases page primarily hosts the standard installer files (TrollInstallerX.ie, TrollStore.tar).</li>
   <li><strong>The "repo" for TrollStore Lite</strong> refers to the <strong>Havoc repository</strong> (<code>havoc.app/package/trollstorelite</code>), which is the official distribution point for the Lite <code>.deb</code>. It is not a GitHub repo in the traditional sense—it is a package repository for Sileo/Cydia.</li>
 </ul>
 
