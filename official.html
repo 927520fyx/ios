@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JWF0BPSMBV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JWF0BPSMBV');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>TrollStore Official Source &amp; Device Compatibility (2026)</title>
+
+<meta name="description" content="Confirm the official TrollStore GitHub source, avoid fake sites, and check compatibility for iPhone, iPad, and other platforms. Official channels, verification checklist, and device guidance.">
+
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1,max-video-preview:-1">
+<meta name="publisher" content="TrollStore Guide">
+
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+<link rel="icon" href="/favicon.png" type="image/png">
+
+<link rel="canonical" href="https://927520fyx.github.io/ios/official.html">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://927520fyx.github.io/ios/official.html">
+<meta property="og:title" content="TrollStore Official Source &amp; Device Compatibility (2026)">
+<meta property="og:description" content="Confirm the official TrollStore GitHub source, avoid fake sites, and check compatibility for iPhone, iPad, and other platforms. Official channels, verification checklist, and device guidance.">
+<meta property="og:image" content="https://927520fyx.github.io/ios/og-image.jpg">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://927520fyx.github.io/ios/official.html">
+<meta name="twitter:title" content="TrollStore Official Source &amp; Device Compatibility (2026)">
+<meta name="twitter:description" content="Confirm the official TrollStore GitHub source, avoid fake sites, and check compatibility for iPhone, iPad, and other platforms. Official channels, verification checklist, and device guidance.">
+<meta name="twitter:image" content="https://927520fyx.github.io/ios/og-image.jpg">
+
+<style>
+  :root {
+    --bg: #ffffff;
+    --text: #1d1d1f;
+    --muted: #6e6e73;
+    --border: #e5e5ea;
+    --border-strong: #d1d1d6;
+    --accent: #0071e3;
+    --accent-hover: #0066cc;
+    --success: #1a7f37;
+    --danger: #d70015;
+    --warn-bg: #fff8e1;
+    --warn-border: #f5b800;
+    --danger-bg: #fff2f0;
+    --danger-border: #d70015;
+    --info-bg: #f2f8ff;
+    --info-border: #0071e3;
+    --table-stripe: #fafafa;
+    --card-bg: #fbfbfd;
+    --radius: 18px;
+    --radius-sm: 12px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.65;
+    font-size: 17px;
+    padding: 0 20px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  article {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 56px 0 100px;
+  }
+  h1 {
+    font-size: 2.4rem;
+    line-height: 1.15;
+    margin-bottom: 20px;
+    font-weight: 700;
+    letter-spacing: -0.035em;
+  }
+  .lede {
+    font-size: 1.15rem;
+    color: var(--muted);
+    margin-bottom: 8px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--border);
+    letter-spacing: -0.01em;
+  }
+  .lede strong { color: var(--text); font-weight: 600; }
+  h2 {
+    font-size: 1.65rem;
+    margin: 64px 0 20px;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+  }
+  h3 {
+    font-size: 1.15rem;
+    margin: 36px 0 12px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  h4 {
+    font-size: 1.02rem;
+    margin: 24px 0 8px;
+    font-weight: 600;
+    color: var(--muted);
+  }
+  p { margin-bottom: 16px; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul, ol { margin: 0 0 20px 26px; }
+  li { margin-bottom: 10px; }
+  code {
+    background: #f5f5f7;
+    padding: 3px 7px;
+    border-radius: 6px;
+    font-size: 0.88em;
+    font-family: "SF Mono", "Menlo", Consolas, monospace;
+    color: #333;
+    word-break: break-word;
+  }
+
+  /* iOS 风格导航条 */
+  .site-nav {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 8px;
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    margin: 0 auto 8px;
+    font-size: 0.88rem;
+    position: sticky;
+    top: 12px;
+    z-index: 10;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .site-nav span {
+    font-weight: 600;
+    color: var(--muted);
+    padding-left: 12px;
+    padding-right: 4px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .site-nav a {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 100px;
+    font-weight: 500;
+    color: var(--text);
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+  .site-nav a:hover {
+    background: #f5f5f7;
+    text-decoration: none;
+  }
+  .site-nav a[aria-current="page"] {
+    background: var(--accent);
+    color: #fff;
+  }
+  .site-nav a[aria-current="page"]:hover {
+    background: var(--accent-hover);
+    color: #fff;
+  }
+
+  /* iOS 风格提示卡 */
+  .callout {
+    padding: 18px 22px;
+    border-radius: var(--radius-sm);
+    margin: 24px 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  .callout-warn {
+    background: var(--warn-bg);
+    border-left: 4px solid var(--warn-border);
+  }
+  .callout-danger {
+    background: var(--danger-bg);
+    border-left: 4px solid var(--danger-border);
+  }
+  .callout-info {
+    background: var(--info-bg);
+    border-left: 4px solid var(--info-border);
+  }
+
+  /* iOS 风格表格 */
+  .table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 24px 0;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    background: #fff;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+  }
+  th, td {
+    padding: 14px 18px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+  }
+  tr:last-child td { border-bottom: none; }
+  th {
+    background: #fbfbfd;
+    font-weight: 600;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--muted);
+  }
+  tr:nth-child(even) td { background: var(--table-stripe); }
+  .tag-yes { color: var(--success); font-weight: 600; white-space: nowrap; }
+  .tag-no { color: var(--danger); font-weight: 600; white-space: nowrap; }
+  .tag-warn { color: #b8860b; font-weight: 600; white-space: nowrap; }
+
+  /* 方法卡片 */
+  .method-card {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 24px;
+    margin: 24px 0;
+    background: var(--card-bg);
+  }
+  .method-card h3 { margin-top: 0; }
+
+  /* 顶部 hero 卡片 */
+  .hero {
+    background: linear-gradient(180deg, #f5f5f7 0%, #ffffff 100%);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 40px 36px;
+    margin-bottom: 8px;
+    text-align: center;
+  }
+  .hero .eyebrow {
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+  .hero h1 {
+    font-size: 2.6rem;
+    margin-bottom: 16px;
+  }
+  .hero p {
+    font-size: 1.1rem;
+    color: var(--muted);
+    max-width: 560px;
+    margin: 0 auto;
+    letter-spacing: -0.01em;
+  }
+
+  /* 目录卡片 */
+  .toc-card {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--card-bg);
+    padding: 24px 28px;
+    margin: 24px 0 40px;
+  }
+  .toc-card .toc-title {
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    margin-bottom: 18px;
+  }
+  .toc-card ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .toc-card li {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 16px;
+    font-size: 1rem;
+  }
+  .toc-card li:last-child { margin-bottom: 0; }
+  .toc-card .toc-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: #fff;
+    font-size: 0.85rem;
+    font-weight: 600;
+    line-height: 1;
+    margin-top: 1px;
+  }
+  .toc-card a {
+    color: var(--text);
+    font-weight: 500;
+    line-height: 1.4;
+  }
+  .toc-card a:hover {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  /* 页脚 */
+  .page-footer {
+    margin-top: 80px;
+    padding-top: 28px;
+    border-top: 1px solid var(--border);
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  @media (max-width: 600px) {
+    body { font-size: 16px; padding: 0 16px; }
+    article { padding: 32px 0 64px; }
+    .hero { padding: 32px 24px; }
+    .hero h1 { font-size: 1.9rem; }
+    h1 { font-size: 1.8rem; }
+    h2 { font-size: 1.35rem; margin-top: 48px; }
+    h3 { font-size: 1.05rem; }
+    .lede { font-size: 1.02rem; }
+    table { font-size: 0.82rem; }
+    th, td { padding: 11px 13px; }
+    .site-nav { font-size: 0.82rem; }
+    .site-nav span { display: none; }
+    .method-card { padding: 16px; }
+    .toc-card { padding: 18px 20px; }
+    .toc-card li { font-size: 0.95rem; }
+  }
+</style>
+
+<!-- 1. 网站基础信息 (WebSite) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "TrollStore Guide",
+  "url": "https://927520fyx.github.io/ios/"
+}
+</script>
+
+<!-- 2. 面包屑导航 (BreadcrumbList) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://927520fyx.github.io/ios/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Official Source &amp; Devices",
+      "item": "https://927520fyx.github.io/ios/official.html"
+    }
+  ]
+}
+</script>
+</head>
+<body id="top">
+<article>
+
+<div class="hero">
+  <div class="eyebrow">TrollStore Guide · 2026</div>
+  <h1>Official Source &amp; Device Compatibility</h1>
+  <p>Verify the only official TrollStore GitHub repository, avoid fake sites, and confirm compatibility across iPhone, iPad, and other platforms before you install.</p>
+</div>
+
+<nav class="site-nav" aria-label="Site navigation">
+  <span>Site</span>
+  <a href="index.html" title="TrollStore Home &amp; Download">Home</a>
+  <a href="install.html" title="TrollStore Install Guide">Install</a>
+  <a href="variants.html" title="TrollStore Variants">Variants</a>
+  <a href="alternatives.html" title="TrollStore Alternatives &amp; Jailbreak">Alternatives</a>
+  <a href="update.html" title="TrollStore Update &amp; Usage">Update</a>
+  <a href="#top" title="TrollStore Official Source &amp; Device Compatibility" aria-current="page">Official</a>
+  <a href="faq.html" title="TrollStore FAQ">FAQ</a>
+  <a href="dopamine.html" title="Dopamine Guide">Dopamine</a>
+</nav>
+
+<p>This page combines two critical topics: the <strong>official TrollStore source</strong> (and how to avoid fake mirrors) and <strong>device compatibility</strong> for iPhone, iPad, and other platforms. There is no separate polished “official website” with a download button—the only official source is the developer’s GitHub repository, and that repository is the reference point for every legitimate <strong>official TrollStore GitHub</strong> link you will see referenced elsewhere.</p>
+
+<!-- 目录卡片 -->
+<div class="toc-card">
+  <div class="toc-title">Contents</div>
+  <ol>
+    <li>
+      <span class="toc-num">1</span>
+      <a href="#official">Official &amp; Source: Official TrollStore Website, GitHub Repo, and Avoiding Fake Sites</a>
+    </li>
+    <li>
+      <span class="toc-num">2</span>
+      <a href="#device">Device &amp; Platform: iPhone, iPad, and Beyond</a>
+    </li>
+  </ol>
+</div>
+
+<!-- ============================================================ -->
+<!-- 模块 1：官方来源与验证 -->
+<!-- ============================================================ -->
+<h2 id="official">1. Official &amp; Source: Official TrollStore Website, GitHub Repo, and Avoiding Fake Sites</h2>
+
+<p>If your goal is to find the <strong>official TrollStore</strong> source—not a repackaged mirror—this section is the short answer. There is no separate polished “official website” with a download button. The <strong>only</strong> official source for the standard app is the developer’s GitHub repository, and that repository is the reference point for every legitimate <strong>official TrollStore GitHub</strong> link you will see referenced elsewhere.</p>
+
+<p><strong>Official GitHub repository: <code>github.com/opa334/TrollStore</code></strong></p>
+
+<p>Every genuine reference to <strong>TrollStore GitHub</strong> content—releases, source code, the README—traces back to that single repository. When people ask for the <strong>official TrollStore website</strong>, what actually exists is this <strong>TrollStore official site</strong> presence on GitHub: a repository page plus its releases page. There is no separate domain operated by the developer.</p>
+
+<h3>Why “Official TrollStore Website” and “TrollStore Official Site” Are Tricky Searches</h3>
+
+<p>Searches for <strong>TrollStore official website</strong>, <strong>official TrollStore website</strong>, <strong>TrollStore official site</strong>, and <strong>TrollStore official</strong> are among the most common entry points—and also the most heavily targeted by fake sites. Because there is no dedicated marketing domain, anyone can register a domain containing the word “official” and present a download button. Those pages are not operated by the developer, no matter how the <strong>official TrollStore</strong> branding is presented.</p>
+
+<p>The reliable rule is simple: if a page describes itself as the <strong>official TrollStore website</strong> but does not point to <code>github.com/opa334/TrollStore</code>, treat it as unofficial. The same applies to any page claiming to be the <strong>TrollStore official site</strong> while hosting its own installer binaries. The real <strong>official TrollStore</strong> distribution never depends on a third-party domain.</p>
+
+<div class="callout callout-info">
+<strong>Quick check:</strong> A legitimate page will reference the <strong>official TrollStore GitHub</strong> repository as the source. If it instead offers a “direct download” hosted on its own servers, it is not the <strong>official TrollStore</strong> channel—regardless of how the page titles itself.
+</div>
+
+<h3>Recognizing the Official TrollStore GitHub Repo</h3>
+
+<p>The <code>opa334/TrollStore</code> <strong>TrollStore GitHub repo</strong> is the only source of truth. It is maintained by developer <strong>opa334</strong>, and every <strong>TrollStore GitHub repo</strong> page under that account carries the authoritative README, license, issue tracker, and release history. The <strong>official TrollStore GitHub</strong> repository is also where the <strong>TrollStore GitHub page</strong> for releases lives—the same <strong>TrollStore GitHub link</strong> shared on the <a href="index.html" title="TrollStore Home &amp; Download">Home Page</a>.</p>
+
+<p>When you land on the <strong>TrollStore GitHub page</strong>, confirm three things: the account name is <code>opa334</code>, the repository name is <code>TrollStore</code>, and the releases tab exists. Any <strong>official TrollStore GitHub</strong> reference you encounter elsewhere should resolve to that same <strong>TrollStore GitHub link</strong>. If a page shows a different <strong>TrollStore GitHub com</strong> path—for example, a fork with a similar name—it is not the source of truth, even if it copies the README verbatim.</p>
+
+<p>The <strong>TrollStore GitHub repo</strong> is also where <strong>TrollStore source</strong> code is published. Because the project is open-source, the <strong>TrollStore source</strong> is auditable: anyone can verify what the installer does. That transparency is exactly why the <strong>TrollStore repo</strong> matters for trust—third-party repackages cannot offer the same guarantee. If a download portal claims to host the <strong>TrollStore repo</strong> contents, compare it against the real <strong>TrollStore GitHub</strong> repository before trusting it.</p>
+
+<h3>Confirmed Official Channels</h3>
+
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th>Channel</th>
+        <th>Status</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>github.com/opa334/TrollStore</code></td>
+        <td><span class="tag-yes">✅ Official</span></td>
+        <td>The <strong>official TrollStore GitHub</strong> repo; source, README, and release history</td>
+      </tr>
+      <tr>
+        <td><code>github.com/opa334/TrollStore/releases</code></td>
+        <td><span class="tag-yes">✅ Official</span></td>
+        <td>The <strong>TrollStore GitHub page</strong> for downloads: TrollInstallerX.ipa, TrollStore.tar</td>
+      </tr>
+      <tr>
+        <td><code>havoc.app/package/trollstorelite</code></td>
+        <td><span class="tag-yes">✅ Official (Lite)</span></td>
+        <td>Designated distribution point for TrollStore Lite on jailbroken devices</td>
+      </tr>
+      <tr>
+        <td>Any domain calling itself the <strong>official TrollStore website</strong></td>
+        <td><span class="tag-no">❌ Unofficial</span></td>
+        <td>Not operated by the developer; verify against the GitHub repo</td>
+      </tr>
+      <tr>
+        <td>Mirrors or “download portals” claiming to be the <strong>TrollStore official site</strong></td>
+        <td><span class="tag-no">❌ Unofficial</span></td>
+        <td>Repackaged binaries carry unknown risk</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h3>Official TrollStore GitHub vs. Fake Mirrors</h3>
+
+<p>The risk of third-party downloads is not theoretical. TrollStore bypasses all of Apple’s signature validation, so an installer from an untrusted source can contain anything. That is why the <strong>official TrollStore GitHub</strong> repository—and only that repository—should be the source for the installer. A mirror may look identical, use the same <strong>TrollStore GitHub link</strong> styling, and even copy the <strong>TrollStore GitHub page</strong> layout, but it is not the <strong>official TrollStore GitHub</strong> unless it is hosted under <code>opa334</code>.</p>
+
+<p>Practically, this means: search results that promise an <strong>official TrollStore website</strong> download, an <strong>official TrollStore</strong> installer button, or a “verified” <strong>TrollStore official site</strong> should be treated with suspicion until they point back to the <strong>official TrollStore GitHub</strong> repo. Bookmark the <strong>TrollStore GitHub link</strong> from the <a href="index.html" title="TrollStore Home &amp; Download">Home Page</a> instead of re-searching each time—this single habit removes most of the risk of landing on a fake site.</p>
+
+<h3>“Oficial” and Other Language Variants</h3>
+
+<p>Non-English searches use the same intent. Spanish and Portuguese users often type <strong>oficial</strong> instead of “official,” and mixed queries such as <strong>oficial o official</strong> appear when users are unsure of the spelling. The answer does not change: there is no separate Spanish-language <strong>official TrollStore website</strong>, and the only <strong>official TrollStore</strong> source remains the <strong>official TrollStore GitHub</strong> repository at <code>github.com/opa334/TrollStore</code>. If a localized page claims to be the <strong>TrollStore official site</strong> for a specific language, verify it against the same <strong>TrollStore GitHub repo</strong> before downloading anything.</p>
+
+<h3>Repos and Helpers (Official Context)</h3>
+
+<p>In jailbreak contexts, “repo” usually refers to the Havoc repository (<code>havoc.app/package/trollstorelite</code>), which is the official distribution point for the Lite variant. This is the one case where an official component is not hosted on the <strong>TrollStore GitHub repo</strong>. It is relevant only to jailbroken devices. For non-jailbroken users, there is no “repo” to add—installation is done via the installers in the <a href="install.html" title="TrollStore Install Guide">Install Guide</a>, sourced from the <strong>official TrollStore GitHub</strong> releases page.</p>
+
+<p>The <code>helper</code> refers to the Persistence Helper described in the <a href="install.html" title="TrollStore Install Guide">Install Guide</a>, or to the TrollHelper package used on checkra1n-jailbroken devices. It is not a separate download for most users. If you are on a checkra1n-jailbroken device, the TrollHelper package is available via the checkra1n repo; install it, then open the TrollHelper app to install TrollStore. None of these helper components change the fact that the core app comes from the <strong>official TrollStore GitHub</strong> repository.</p>
+
+<h3>Verification Checklist Before You Download</h3>
+
+<ol>
+  <li><strong>Check the account:</strong> the URL must be <code>github.com/opa334/TrollStore</code>. This is the <strong>official TrollStore GitHub</strong> account maintained by the developer.</li>
+  <li><strong>Check the releases tab:</strong> the <strong>TrollStore GitHub page</strong> for releases should list TrollInstallerX.ipa and TrollStore.tar with changelogs.</li>
+  <li><strong>Ignore “official website” claims:</strong> any page presenting itself as the <strong>official TrollStore website</strong> or <strong>TrollStore official site</strong> without linking to that repo is unofficial.</li>
+  <li><strong>Verify the source code:</strong> the <strong>TrollStore source</strong> is published in the same <strong>TrollStore repo</strong>, so the build can be audited.</li>
+  <li><strong>Bookmark the link:</strong> save the <strong>TrollStore GitHub link</strong> so future visits skip search results entirely.</li>
+</ol>
+
+<!-- ============================================================ -->
+<!-- 模块 2：设备与平台 -->
+<!-- ============================================================ -->
+<h2 id="device">2. Device &amp; Platform: iPhone, iPad, and Beyond</h2>
+
+<p>TrollStore is an iOS/iPadOS application—not a macOS, Windows, Android, or tvOS tool. That single fact resolves most device-related searches before compatibility even comes into play. If you are looking for <strong>TrollStore on iPhone</strong> or <strong>TrollStore for iPad</strong>, the installed iOS/iPadOS version is the deciding factor, not the device model. This section walks through iPhone and iPad compatibility device by device, then explains why <strong>TrollStore Mac</strong>, <strong>TrollStore Windows</strong>, <strong>TrollStore Android</strong>, <strong>TrollStore Apple TV</strong>, and <strong>TrollStore tvOS</strong> fall outside the scope of the project.</p>
+
+<h3>iPhone Compatibility: Every Model Resolves the Same Way</h3>
+
+<p>All installation methods in the <a href="install.html" title="TrollStore Install Guide">Install Guide</a> apply to iPhone. The version check is the first and only thing that matters. Whether you are following an iPhone-specific guide or wondering <strong>how to install TrollStore on iPhone</strong>, the answer is the same: confirm your iOS version against the compatibility table, then use the matching installer from the official GitHub Releases page.</p>
+
+<p>Device-specific searches resolve identically. <strong>TrollStore iPhone 4s</strong>, <strong>TrollStore iPhone 5s</strong>, <strong>TrollStore iPhone 6s</strong>, <strong>TrollStore iPhone 6s Plus</strong>, <strong>TrollStore iPhone 7</strong>, <strong>TrollStore iPhone 7 Plus</strong>, <strong>TrollStore iPhone 8</strong>, <strong>TrollStore iPhone 8 Plus</strong>, <strong>TrollStore iPhone X</strong>, <strong>TrollStore iPhone XR</strong>, and <strong>TrollStore iPhone SE</strong> are all possible only if the device runs a supported iOS version. The hardware is never the blocker—the installed iOS release is. A jailbroken <strong>iPhone 7 TrollStore</strong> setup, for example, is not a separate product; it is the same TrollStore running on a device that happens to be jailbroken and on a supported firmware.</p>
+
+<p>This is also why <strong>jailbreak iPhone 7 TrollStore</strong> and <strong>TrollStore iPhone 6s</strong> queries lead to the same compatibility table: the question is always “what iOS version is installed,” not “which model is this.” If your device is on an unsupported version, no model-specific trick will change that—see the <a href="alternatives.html" title="TrollStore Alternatives">Alternatives page</a> for non-jailbreak signing options.</p>
+
+<h3>iPad Compatibility: Same Rules, Same Table</h3>
+
+<p>The compatibility rules are identical to iPhone: iPadOS 14.0 beta 2–16.6.1, 16.7 RC (20H18), and 17.0 are supported. iPadOS 17.0.1 and later are not. Installation methods (TrollHelperOTA, TrollInstallerX, TrollRestore) apply to iPad as well.</p>
+
+<p>Device-specific iPad searches follow the same logic. <strong>TrollStore iPad mini 2</strong>, <strong>TrollStore iPad mini 4</strong>, <strong>TrollStore iPad mini 6</strong>, <strong>TrollStore iPad 6</strong>, <strong>TrollStore iPad 9</strong>, <strong>TrollStore iPad Pro</strong>, <strong>TrollStore iPad Pro M4</strong>, and <strong>TrollStore iPad Air 2</strong> are all possible only when the installed iPadOS version is supported. <strong>TrollStore for iPad</strong> is not a separate build; it is the same app, and the same <a href="install.html" title="TrollStore Install Guide">Install Guide</a> applies. Queries like <strong>iPad mini 4 TrollStore</strong> or <strong>iPad mini 6 TrollStore</strong> are answered by checking the iPadOS version, not by hunting for a model-specific download.</p>
+
+<p><strong>Quick reference table (supplemental, for convenience):</strong> the iPadOS compatibility table below is provided as a quick lookup and matches the official support range described in the paragraph above.</p>
+
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th>iPadOS Version</th>
+        <th>Supported?</th>
+        <th>Recommended Installer</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>14.0 beta 2 – 15.6.1</td>
+        <td><span class="tag-yes">✅ Yes</span></td>
+        <td>TrollHelperOTA (no PC) or TrollInstallerX</td>
+      </tr>
+      <tr>
+        <td>15.7.2 – 15.8.8</td>
+        <td><span class="tag-yes">✅ Yes</span></td>
+        <td>TrollInstallerX (internet required)</td>
+      </tr>
+      <tr>
+        <td>16.0 – 16.6.1</td>
+        <td><span class="tag-yes">✅ Yes</span></td>
+        <td>TrollInstallerX</td>
+      </tr>
+      <tr>
+        <td>16.7 RC (20H18)</td>
+        <td><span class="tag-yes">✅ Yes</span></td>
+        <td>TrollRestore</td>
+      </tr>
+      <tr>
+        <td>17.0 (initial release only)</td>
+        <td><span class="tag-yes">✅ Yes</span></td>
+        <td>TrollInstallerX or TrollRestore</td>
+      </tr>
+      <tr>
+        <td>16.7.x (non-RC), 17.0.1 and above</td>
+        <td><span class="tag-no">❌ Never</span></td>
+        <td>AltStore / SideStore / Sideloadly</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h3>Mac and Windows: Hosts, Not Targets</h3>
+
+<p>Searches for <strong>TrollStore Mac</strong>, <strong>TrollStore macOS</strong>, <strong>TrollStore Mac download</strong>, <strong>TrollStore PC</strong>, <strong>TrollStore PC download</strong>, <strong>TrollStore Windows</strong>, <strong>TrollStore Windows download</strong>, and <strong>TrollStore Windows 11</strong> describe a category error: there is no macOS or Windows build of TrollStore. TrollStore is an iOS/iPadOS application. Mac and Windows are relevant only as hosts for running TrollRestore or sideloading tools—the desktop side of the workflow, not the app itself.</p>
+
+<p>If you are on <strong>TrollStore Windows 11</strong> looking for a native installer, the correct path is to use the desktop tool to push the installer to a supported iPhone or iPad, then complete installation on the device. The <a href="index.html" title="TrollStore Home &amp; Download">Home Page Download section</a> covers the device-side downloads; the desktop tooling is a means to that end, not a separate <strong>TrollStore for Windows</strong> product.</p>
+
+<h3>Android, Apple TV, tvOS, and “32-bit” Queries</h3>
+
+<p><strong>TrollStore Android</strong> does not exist. TrollStore relies on Apple’s CoreTrust vulnerability and Apple’s code-signing model; it cannot run on Android, and there is no <strong>TrollStore APK</strong> equivalent that performs the same function. Similarly, <strong>TrollStore Apple TV</strong>, <strong>Apple TV TrollStore</strong>, <strong>TrollStore Apple TV 4K</strong>, <strong>Apple TV 4K TrollStore</strong>, and <strong>TrollStore tvOS</strong> are outside the project’s scope: TrollStore targets iOS and iPadOS, not tvOS. <strong>TrollStore 32 bit</strong> is likewise a mismatch—TrollStore targets 64-bit iOS/iPadOS devices within the supported version range.</p>
+
+<p>The practical takeaway is the same for every one of these queries: if the platform is not iPhone or iPad, TrollStore is not the tool. The <a href="alternatives.html" title="TrollStore Alternatives">Alternatives page</a> covers non-jailbreak signing options for cases where TrollStore does not apply.</p>
+
+<div class="callout callout-warn">
+<strong>Device rule of thumb:</strong> A device capable of running iOS 18, 26 or 27 can only use TrollStore if it has been kept on (or downgraded to) a supported version. If you are already on an unsupported version, no device model will change that—see the <a href="alternatives.html" title="TrollStore Alternatives">Alternatives page</a> for non-jailbreak signing options.
+</div>
+
+<div class="page-footer">
+<p>Information in this article is based on the official GitHub repository (opa334/TrollStore), its README, release notes, and publicly available technical documentation. Compatibility is determined by Apple’s patching of the CoreTrust vulnerability and does not change based on user demand. Verify your iOS version against the compatibility table on the home page before attempting installation.</p>
+<p style="margin-top:12px;"><strong>Last updated:</strong> <time datetime="2026-11-15">November 15, 2026</time></p>
+</div>
+
+</article>
+</body>
+</html>
