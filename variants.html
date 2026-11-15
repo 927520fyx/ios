@@ -86,7 +86,6 @@
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   
-  /* 修复：不要在 html / body 上使用 overflow-x: hidden，否则会破坏 position: sticky 的滚动上下文 */
   html { 
     -webkit-text-size-adjust: 100%; 
   }
@@ -110,7 +109,6 @@
     max-width: 800px;
     margin: 0 auto;
     padding: 56px 0 100px;
-    /* 修复：把防横向溢出放到 article 上，不影响 sticky 的视口吸附 */
     overflow-x: clip;
   }
   h1 {
@@ -160,7 +158,7 @@
     word-break: break-word;
   }
 
-  /* iOS 风格导航条 */
+  /* iOS 风格导航条 —— 与 index.html 写法保持一致，去掉 will-change / align-self，避免抖动 */
   .site-nav {
     display: flex;
     gap: 8px;
@@ -179,8 +177,6 @@
     top: 12px;
     z-index: 10;
     box-shadow: 0 1px 3px rgba(0,0,0,0.04);
-    align-self: flex-start;
-    will-change: transform;
   }
   .site-nav span {
     font-weight: 600;
@@ -400,19 +396,29 @@
     table { font-size: 0.82rem; }
     th, td { padding: 11px 13px; }
 
+    /* 移动端：sticky 元素自身不再承担横向滚动，避免抖动；
+       横向滑动体验改由内层 .site-nav-inner 承担 */
     .site-nav {
       flex-wrap: nowrap;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
+      overflow: hidden;
       border-radius: 16px;
-      padding: 8px 12px;
-      gap: 4px;
+      padding: 0;
+      gap: 0;
       justify-content: flex-start;
-      scrollbar-width: none;
-      -ms-overflow-style: none;
       touch-action: pan-x;
     }
-    .site-nav::-webkit-scrollbar {
+    .site-nav-inner {
+      display: flex;
+      gap: 4px;
+      align-items: center;
+      width: 100%;
+      padding: 8px 12px;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    .site-nav-inner::-webkit-scrollbar {
       display: none;
     }
     .site-nav span {
@@ -421,6 +427,7 @@
     .site-nav a {
       padding: 8px 16px;
       font-size: 0.85rem;
+      flex-shrink: 0;
     }
 
     .toc li a { padding: 8px 10px; font-size: 0.9rem; }
@@ -470,15 +477,17 @@
 </div>
 
 <nav class="site-nav" aria-label="Site navigation">
-  <span>Site</span>
-  <a href="index.html" title="TrollStore Home &amp; Download">Home</a>
-  <a href="install.html" title="TrollStore Install Guide">Install</a>
-  <a href="variants.html" title="TrollStore Variants" aria-current="page">Variants</a>
-  <a href="alternatives.html" title="TrollStore Alternatives &amp; Jailbreak">Alternatives</a>
-  <a href="update.html" title="TrollStore Update &amp; Usage">Update</a>
-  <a href="official.html" title="TrollStore Official Source &amp; Device Compatibility">Official</a>
-  <a href="faq.html" title="TrollStore FAQ">FAQ</a>
-  <a href="dopamine.html" title="Dopamine Guide">Dopamine</a>
+  <div class="site-nav-inner">
+    <span>Site</span>
+    <a href="index.html" title="TrollStore Home &amp; Download">Home</a>
+    <a href="install.html" title="TrollStore Install Guide">Install</a>
+    <a href="variants.html" title="TrollStore Variants" aria-current="page">Variants</a>
+    <a href="alternatives.html" title="TrollStore Alternatives &amp; Jailbreak">Alternatives</a>
+    <a href="update.html" title="TrollStore Update &amp; Usage">Update</a>
+    <a href="official.html" title="TrollStore Official Source &amp; Device Compatibility">Official</a>
+    <a href="faq.html" title="TrollStore FAQ">FAQ</a>
+    <a href="dopamine.html" title="Dopamine Guide">Dopamine</a>
+  </div>
 </nav>
 
 <div class="toc">
