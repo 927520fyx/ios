@@ -11,7 +11,7 @@
   gtag('config', 'G-JWF0BPSMBV');
 </script>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 <title>TrollStore Variants 2026: Lite, Pro, 2, v2, Beta &amp; Mod Explained</title>
 
@@ -61,12 +61,11 @@
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   
-  /* 修复：防止 iOS Safari 双击缩放和横向滑动。
-     注意：不要在这里加 overflow-x: hidden，否则 body 会变成滚动容器，
-     导致 .site-nav 的 position: sticky 失效（导航栏不会悬浮）。 */
+  /* 修复双击缩放和横向滑动 */
   html { 
     -webkit-text-size-adjust: 100%; 
-    touch-action: manipulation;
+    touch-action: pan-x pan-y;
+    overflow-x: hidden;
   }
   body {
     font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
@@ -77,11 +76,10 @@
     padding: 0 20px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    /* 用 clip 而不是 hidden：clip 不会创建滚动容器，sticky 可正常生效 */
-    overflow-x: clip;
+    overflow-x: hidden;
+    position: relative;
   }
   
-  /* 修复：禁用 iOS Safari 的点击高亮闪烁 */
   * {
     -webkit-tap-highlight-color: transparent;
   }
@@ -173,7 +171,7 @@
     font-weight: 500;
     color: var(--text);
     transition: background 0.2s ease, color 0.2s ease;
-    white-space: nowrap; /* 防止文字换行 */
+    white-space: nowrap;
   }
   .site-nav a[aria-current="page"] {
     background: var(--accent);
@@ -355,7 +353,7 @@
     line-height: 1.7;
   }
 
-  /* 修复：只在支持 hover 的设备（电脑鼠标）上启用 hover 效果，防止 iOS 触屏点击时发生抖动/重排 */
+  /* 只在支持 hover 的设备上启用 hover 效果 */
   @media (hover: hover) and (pointer: fine) {
     a:hover { text-decoration: underline; }
     .site-nav a:hover { background: #f5f5f7; text-decoration: none; }
@@ -375,7 +373,6 @@
     table { font-size: 0.82rem; }
     th, td { padding: 11px 13px; }
 
-    /* 移动端导航条：改为可横向滑动的单行模式 */
     .site-nav {
       flex-wrap: nowrap;
       overflow-x: auto;
@@ -495,7 +492,7 @@
 
 <ul>
   <li><strong>The main TrollStore GitHub repository</strong> (<code>github.com/opa334/TrollStore</code>) is the source of truth for the TrollStore project, including the standard installer. The Lite variant is part of the same project, introduced in version 2.1.</li>
-  <li><strong>However, TrollStore Lite is not a separate GitHub release product</strong> in the way that TrollInstallerX.ipa is. Lite is a <code>.deb</code> package delivered through package managers. The GitHub releases page primarily hosts the standard installer files (TrollInstallerX.ie, TrollStore.tar).</li>
+  <li><strong>However, TrollStore Lite is not a separate GitHub release product</strong> in the way that TrollInstallerX.ipa is. Lite is a <code>.deb</code> package delivered through package managers. The GitHub releases page primarily hosts the standard installer files (TrollInstallerX.ipa, TrollStore.tar).</li>
   <li><strong>The "repo" for TrollStore Lite</strong> refers to the <strong>Havoc repository</strong> (<code>havoc.app/package/trollstorelite</code>), which is the official distribution point for the Lite <code>.deb</code>. It is not a GitHub repo in the traditional sense—it is a package repository for Sileo/Cydia.</li>
 </ul>
 
