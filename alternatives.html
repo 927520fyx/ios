@@ -472,11 +472,11 @@
 
 <h3>AltStore</h3>
 
-<p>The comparison with AltStore is the most common entry point for users on unsupported releases. AltStore signs apps with your Apple ID and refreshes them through AltServer every 7 days. It caps you at three active apps and requires a computer on your network for each refresh. TrollStore, on supported builds, signs permanently with no account and no refresh.</p>
+<p>The comparison with AltStore is the most common entry point for users on unsupported releases. AltStore signs apps with your Apple ID and refreshes them through AltServer every 7 days. It caps you at three active apps and requires a computer on your network for each refresh. The standard utility, on supported builds, signs permanently with no account and no refresh.</p>
 
 <p>When making a choice, the answer depends entirely on the system version. On 14.0–16.6.1, 16.7 RC, or 17.0, TrollStore is the better tool in every respect. On 17.0.1 and later, TrollStore does not exist, so AltStore becomes a valid alternative—less convenient, but functional. Community threads consistently reach the same conclusion: TrollStore first where supported, AltStore as the fallback.</p>
 
-<p>If you are explicitly choosing between the two, it is really a system check. Confirm your system version on our <a href="index.html" title="Home Compatibility">Home Page</a> first; the comparison only matters if TrollStore is actually available to you.</p>
+<p>If you are explicitly choosing between the two, it is really a system check. Confirm your system version on our <a href="index.html" title="Home Compatibility">Home Page</a> first; the comparison only matters if the app is actually available to you.</p>
 
 <h3>SideStore</h3>
 
@@ -488,7 +488,7 @@
 
 <p>Sideloadly is a computer-based signing tool. It does not offer permanent signing; every 7 days you reconnect to a computer and re-sign. This is purely about permanence versus universal compatibility.</p>
 
-<p>For users on unsupported releases, Sideloadly is a reliable fallback. Users compare these two when deciding between the permanent but version-limited TrollStore and the universally compatible Sideloadly. The answer is simple: if your system supports TrollStore, use it; if not, Sideloadly is a valid alternative. It is also the tool most guides recommend for sideloading TrollInstallerX.ipa on supported builds, as described in the <a href="install.html" title="Install Guide">install guide</a>.</p>
+<p>For users on unsupported releases, Sideloadly is a reliable fallback. Users compare these two when deciding between the permanent but version-limited TrollStore and the universally compatible Sideloadly. The answer is simple: if your system supports the app, use it; if not, Sideloadly is a valid alternative. It is also the tool most guides recommend for sideloading TrollInstallerX.ipa on supported builds, as described in the <a href="install.html" title="Install Guide">install guide</a>.</p>
 
 <h3>ESign and Scarlet</h3>
 
@@ -512,7 +512,7 @@
 
 <h3>TrollInstallerX</h3>
 
-<p>TrollInstallerX is not an alternative—it is the installer used to get TrollStore. This query is a misunderstanding: TrollInstallerX is a tool you run once to install TrollStore, after which it can be deleted. It is not a separate signing solution. If you are on a supported build, you use TrollInstallerX to get TrollStore; if you are not, TrollInstallerX cannot help you either. See the <a href="install.html" title="Install Guide">install guide</a> for the installer methods.</p>
+<p>TrollInstallerX is not an alternative—it is the installer used to get TrollStore. This query is a misunderstanding: TrollInstallerX is a tool you run once to install the app, after which it can be deleted. It is not a separate signing solution. If you are on a supported build, you use TrollInstallerX to get the tool; if you are not, TrollInstallerX cannot help you either. See the <a href="install.html" title="Install Guide">install guide</a> for the installer methods.</p>
 
 <h3>LiveContainer</h3>
 
@@ -520,11 +520,11 @@
 
 <h3>Jailbreak, Dopamine, and Cydia</h3>
 
-<p>TrollStore is not a jailbreak. It signs apps but does not provide root filesystem access or kernel-level tweaks. This comparison is therefore about different purposes: it replaces the signing function of a jailbreak, not the tweak injection or root access. For permanent IPA installation without the security trade-offs, TrollStore is superior on supported builds. Community discussions consistently reach this conclusion.</p>
+<p>TrollStore is not a jailbreak. It signs apps but does not provide root filesystem access or kernel-level tweaks. This comparison is therefore about different purposes: it replaces the signing function of a jailbreak, not the tweak injection or root access. For permanent IPA installation without the security trade-offs, the utility is superior on supported builds. Community discussions consistently reach this conclusion.</p>
 
 <p>Dopamine is a tool for 15–16. This comparison is not apples-to-apples: Dopamine provides root access, while TrollStore is a signing tool. On a Dopamine-modified device, users can install TrollStore Lite, which leverages the bypass. The two can coexist—this is the setup discussed in forums—but for permanent IPA signing, the standard version alone is sufficient on supported builds.</p>
 
-<p>Cydia is a package manager for modified devices. This comparison is about app installation methods: Cydia requires system modifications; TrollStore does not. On supported builds, TrollStore is the simpler path for installing IPAs, and Cydia remains relevant only for tweaks and system packages. On 12 and 13, where TrollStore has never worked, Cydia-era tools are the only realistic route to permanent signing—which is why this question keeps appearing on older devices.</p>
+<p>Cydia is a package manager for modified devices. This comparison is about app installation methods: Cydia requires system modifications; TrollStore does not. On supported builds, TrollStore is the simpler path for installing IPAs, and Cydia remains relevant only for tweaks and system packages. On 12 and 13, where the app has never worked, Cydia-era tools are the only realistic route to permanent signing—which is why this question keeps appearing on older devices.</p>
 
 <h3>TrollStore Lite</h3>
 
@@ -647,7 +647,7 @@
 
 <h3>2.5 With Jailbreak: TrollStore Lite and Coexistence</h3>
 
-<p>This query opens up a different set of possibilities. When a device is modified, the user gains access to <strong>TrollStore Lite</strong>, which is the official variant designed specifically for custom environments. As detailed on the <a href="variants.html" title="Variants Guide">Variants page</a>, TrollStore Lite:</p>
+<p>This query opens up a different set of possibilities. When a device is modified, the user gains access to <strong>TrollStore Lite</strong>, which is the official variant designed specifically for custom environments. As detailed on the <a href="variants.html" title="Variants Guide">Variants page</a>, the Lite edition:</p>
 
 <ul>
   <li>Is distributed as a <code>.deb</code> package via the <strong>Havoc repository</strong> (<code>havoc.app/package/trollstorelite</code>).</li>
@@ -657,21 +657,21 @@
   <li>Can transfer apps from the standard version to Lite (v2.1+ feature).</li>
 </ul>
 
-<p>On a modified device, both the standard version (on supported releases) and Lite can coexist. The system modifications themselves do not break TrollStore—in fact, they expand its capabilities. The Persistence Helper continues to function, and app registrations can be refreshed as usual.</p>
+<p>On a modified device, both the standard version (on supported releases) and Lite can coexist. The system modifications themselves do not break the app—in fact, they expand its capabilities. The Persistence Helper continues to function, and app registrations can be refreshed as usual.</p>
 
 <div class="callout callout-info">
-<strong>Key point:</strong> "With jailbreak" does not mean the standard version requires modifications. It means that <em>if</em> your device is already modified, you have an additional option (TrollStore Lite) that can work on newer releases when a compatible environment exists. The standard version remains the recommended choice on supported builds, modified or not.
+<strong>Key point:</strong> "With jailbreak" does not mean the standard version requires modifications. It means that <em>if</em> your device is already modified, you have an additional option (the Lite edition) that can work on newer releases when a compatible environment exists. The standard version remains the recommended choice on supported builds, modified or not.
 </div>
 
 <h3>2.6 iOS 18 Definitive Answer</h3>
 
-<p>The query regarding 18 is one of the most common search terms, and the answer is unambiguous for the standard version: <strong>it does not work on 18 without system modifications.</strong> The CoreTrust vulnerability was patched in 17.0.1, and 18 inherits that patch. There is no exploit chain, no installer, and no workaround for stock 18 devices. TrollStore Lite is not available on stock devices either.</p>
+<p>The query regarding 18 is one of the most common search terms, and the answer is unambiguous for the standard version: <strong>it does not work on 18 without system modifications.</strong> The CoreTrust vulnerability was patched in 17.0.1, and 18 inherits that patch. There is no exploit chain, no installer, and no workaround for stock 18 devices. The Lite edition is not available on stock devices either.</p>
 
 <div class="callout callout-danger">
-<strong>18 stock devices:</strong> No standard version. No TrollStore Lite. No exceptions. The only signing options are SideStore, AltStore, or Sideloadly—all of which require 7-day refreshes and have app limits.
+<strong>18 stock devices:</strong> No standard version. No Lite edition. No exceptions. The only signing options are SideStore, AltStore, or Sideloadly—all of which require 7-day refreshes and have app limits.
 </div>
 
-<p>If your device is on 18 and you want similar functionality, your only path is to modify the device and install TrollStore Lite—and only if a compatible method exists for your specific system release and device model. If no such option exists, then no solution is available to you at all. This is the honest, definitive answer—and any site claiming otherwise is not trustworthy.</p>
+<p>If your device is on 18 and you want similar functionality, your only path is to modify the device and install the Lite edition—and only if a compatible method exists for your specific system release and device model. If no such option exists, then no solution is available to you at all. This is the honest, definitive answer—and any site claiming otherwise is not trustworthy.</p>
 
 <h3>2.7 Comparison: Different Tools, Different Purposes</h3>
 
@@ -682,7 +682,7 @@
     <thead>
       <tr>
         <th>Aspect</th>
-        <th>TrollStore</th>
+        <th>Standard App</th>
         <th>Jailbreak / Root Access</th>
       </tr>
     </thead>
@@ -721,9 +721,9 @@
   </table>
 </div>
 
-<p>In short: TrollStore replaces the <em>signing</em> function of a modified system, but not its <em>customization</em> or <em>root access</em> functions. On supported builds, it is the safer choice for users who simply want to install IPAs permanently. Modifying the system is for users who need deep-level changes and accept the associated risks. The two can coexist: a modified device can use TrollStore Lite, and a stock device on a supported release can use the standard tool. Neither replaces the other.</p>
+<p>In short: TrollStore replaces the <em>signing</em> function of a modified system, but not its <em>customization</em> or <em>root access</em> functions. On supported builds, it is the safer choice for users who simply want to install IPAs permanently. Modifying the system is for users who need deep-level changes and accept the associated risks. The two can coexist: a modified device can use the Lite edition, and a stock device on a supported release can use the standard tool. Neither replaces the other.</p>
 
-<p>For users comparing the two on Reddit and other forums, the consensus is consistent: TrollStore first where supported, system modifications only if you need tweaks or deep changes. On unsupported releases (17.0.1+), the standard tool is unavailable without modifications—and if you do modify your device, TrollStore Lite is the signing solution to try.</p>
+<p>For users comparing the two on Reddit and other forums, the consensus is consistent: TrollStore first where supported, system modifications only if you need tweaks or deep changes. On unsupported releases (17.0.1+), the standard tool is unavailable without modifications—and if you do modify your device, the Lite edition is the signing solution to try.</p>
 
 <h3>2.8 Summary: Relationship at a Glance</h3>
 
@@ -739,12 +739,12 @@
     <tbody>
       <tr>
         <td>14.0–16.6.1, 16.7 RC, or 17.0 — stock</td>
-        <td>Standard TrollStore</td>
+        <td>Standard Version</td>
         <td><span class="tag-yes">No</span></td>
       </tr>
       <tr>
         <td>14.0–16.6.1, 16.7 RC, or 17.0 — modified</td>
-        <td>Standard TrollStore or TrollStore Lite</td>
+        <td>Standard Version or Lite</td>
         <td><span class="tag-yes">No</span> (but Lite available)</td>
       </tr>
       <tr>
@@ -754,7 +754,7 @@
       </tr>
       <tr>
         <td>17.0.1–17.x — modified</td>
-        <td>TrollStore Lite (if environment supports it)</td>
+        <td>Lite edition (if environment supports it)</td>
         <td><span class="tag-yes">Yes</span></td>
       </tr>
       <tr>
@@ -764,7 +764,7 @@
       </tr>
       <tr>
         <td>18 or 26 — modified</td>
-        <td>TrollStore Lite only if a compatible environment exists (public 26 support not known as of this guide)</td>
+        <td>Lite edition only if a compatible environment exists (public 26 support not known as of this guide)</td>
         <td><span class="tag-warn">Depends</span></td>
       </tr>
       <tr>
@@ -777,7 +777,7 @@
 </div>
 
 <div class="callout callout-info">
-<strong>Final rule:</strong> On supported builds, TrollStore works <em>without</em> modifications—that is its primary advantage. On unsupported releases (17.0.1+, including 18, 26, and 27), the standard tool is unavailable; TrollStore Lite is only an option <em>with</em> modifications, and only if that environment is compatible.
+<strong>Final rule:</strong> On supported builds, the standard app works <em>without</em> modifications—that is its primary advantage. On unsupported releases (17.0.1+, including 18, 26, and 27), the standard tool is unavailable; the Lite edition is only an option <em>with</em> modifications, and only if that environment is compatible.
 </div>
 
 <div class="page-footer">
