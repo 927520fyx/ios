@@ -445,7 +445,7 @@
 <div class="hero">
   <div class="eyebrow">TrollStore Guide · 2026</div>
   <h1>Download TrollStore &amp; Check Supported Versions</h1>
-  <p>The official GitHub source, the definitive compatibility list, and the clear answers for iOS 18, 26, and 27.</p>
+  <p>The official GitHub source, the definitive compatibility list, and the clear answers for 18, 26, and 27.</p>
 </div>
 
 <nav class="site-nav" aria-label="Site navigation">
@@ -476,7 +476,7 @@
 
 <h3>Official Download Source (GitHub)</h3>
 
-<p>To <strong>download the app for iOS</strong>, go to the only official distribution channel—the GitHub Releases page maintained by developer opa334. The tool is free and open-source; any site charging money for a "download" is not official.</p>
+<p>To <strong>download the app for mobile</strong>, go to the only official distribution channel—the GitHub Releases page maintained by developer opa334. The tool is free and open-source; any site charging money for a "download" is not official.</p>
 
 <p>Use the link below for the official <strong>download</strong>:</p>
 
@@ -484,12 +484,12 @@
 
 <p>From this page you will find:</p>
 <ul>
-  <li><strong>TrollInstallerX.ipa</strong> — the primary installer for iOS 14.0–16.6.1 and 17.0. <em>This is the file most users need.</em></li>
+  <li><strong>TrollInstallerX.ipa</strong> — the primary installer for 14.0–16.6.1 and 17.0. <em>This is the file most users need.</em></li>
   <li><strong>TrollStore.tar</strong> — the core application package consumed automatically by the installer; you do not download or open it manually.</li>
   <li><strong>TrollStore Lite .deb</strong> — for jailbroken devices only.</li>
 </ul>
 
-<p>If you are searching for the installer that matches your specific system (for example, iOS 15 or 15.8.8), the <a href="#compat" title="Jump to compatibility table in Section 2">compatibility table in Section 2</a> maps each supported release to its recommended installer. If your search was for iOS 18, 26, or 27, there is no working build to find: these systems sit outside the safe range, and the same table explains why.</p>
+<p>If you are searching for the installer that matches your specific system (for example, 15 or 15.8.8), the <a href="#compat" title="Jump to compatibility table in Section 2">compatibility table in Section 2</a> maps each supported release to its recommended installer. If your search was for 18, 26, or 27, there is no working build to find: these systems sit outside the safe range, and the same table explains why.</p>
 
 <h3>Download by System Release</h3>
 
@@ -519,14 +519,14 @@
         <td><strong>TrollInstallerX.ipa</strong> or TrollRestore</td>
       </tr>
       <tr>
-        <td>16.7.x (non-RC), iOS 18, 26, 27</td>
+        <td>16.7.x (non-RC), 18, 26, 27</td>
         <td><span class="tag-no">No working download</span></td>
       </tr>
     </tbody>
   </table>
 </div>
 
-<p>This applies to both <strong>iPhone and iPad</strong> — the download is the same; only the installer method differs by system release. For the full support matrix (including why iOS 18, 26, and 27 will never work), see <a href="#compat" title="Jump to compatibility section">Section 2</a>.</p>
+<p>This applies to both <strong>iPhone and iPad</strong> — the download is the same; only the installer method differs by system release. For the full support matrix (including why 18, 26, and 27 will never work), see <a href="#compat" title="Jump to compatibility section">Section 2</a>.</p>
 
 <h3>Latest Build &amp; GitHub Releases</h3>
 
@@ -590,7 +590,7 @@
         <td>AltStore / SideStore / Sideloadly</td>
       </tr>
       <tr>
-        <td><strong>17.0.1 and above</strong> (including iOS 18, 26, 27)</td>
+        <td><strong>17.0.1 and above</strong> (including 18, 26, 27)</td>
         <td><span class="tag-no">❌ Never</span></td>
         <td>AltStore / SideStore / Sideloadly</td>
       </tr>
@@ -598,32 +598,32 @@
   </table>
 </div>
 
-<h3>Release-Specific Notes (iOS 6 to iOS 17)</h3>
+<h3>Release-Specific Notes</h3>
 
-<p>Below is the full breakdown by system release, so you can confirm at a glance whether this utility applies to you. The list walks through the major builds users commonly ask about—from early legacy systems through iOS 17.</p>
+<p>Below is the full breakdown by system release, so you can confirm at a glance whether this utility applies to you. The list walks through the major builds users commonly ask about—from early legacy systems through 17.</p>
 
 <ul>
-  <li><strong>iOS 6 and 7 (including 7.1.2):</strong> Not compatible. The CoreTrust bug it relies on was introduced in iOS 14.0; it does not exist on these older builds. Use AltStore, SideStore, or Sideloadly instead.</li>
-  <li><strong>iOS 8 and 8.4.1:</strong> Not compatible. Any claim of a working download for these systems is false—the vulnerability simply does not exist.</li>
-  <li><strong>iOS 9, 9.3.5 and 9.3.6:</strong> Not compatible. Devices stuck on these builds must use a signing service or an older jailbreak-based installer.</li>
-  <li><strong>iOS 10.3.3 and 10.3.4:</strong> Not compatible. Searches for these systems will not find a working build, because the CoreTrust exploit does not apply.</li>
-  <li><strong>iOS 12 (incl. 12.5.x):</strong> Not compatible. On these releases, jailbreak-based installation (for example, checkra1n) or AltStore/Sideloadly is the only realistic route to permanent signing.</li>
-  <li><strong>iOS 13:</strong> Not compatible, for the same reason as iOS 12.</li>
-  <li><strong>iOS 14:</strong> Compatible. It works from 14.0 beta 2 through 14.x, using TrollHelperOTA (no PC) or, on arm64 A8–A11 devices, checkra1n plus the TrollHelper package.</li>
-  <li><strong>iOS 15 (15.7.2 – 15.8.8):</strong> Compatible. On 15.0–15.6.1 use TrollHelperOTA with no PC; from 15.7.2 onward—including point releases up to 15.8.8—use TrollInstallerX with an internet connection during install.</li>
-  <li><strong>iOS 16:</strong> Mixed. It runs across 16.0–16.6.1 and on 16.7 RC (20H18). However, non-RC 16.7.x releases (such as 16.7.6 through 16.7.16) are never compatible.</li>
-  <li><strong>iOS 17:</strong> Only the initial 17.0 release is compatible. It does not cover 17.0.3 or any later 17.x build; 17.0.1 and above are permanently unsupported.</li>
+  <li><strong>6 and 7 (including 7.1.2):</strong> Not compatible. The CoreTrust bug it relies on was introduced in 14.0; it does not exist on these older builds. Use AltStore, SideStore, or Sideloadly instead.</li>
+  <li><strong>8 and 8.4.1:</strong> Not compatible. Any claim of a working download for these systems is false—the vulnerability simply does not exist.</li>
+  <li><strong>9, 9.3.5 and 9.3.6:</strong> Not compatible. Devices stuck on these builds must use a signing service or an older jailbreak-based installer.</li>
+  <li><strong>10.3.3 and 10.3.4:</strong> Not compatible. Searches for these systems will not find a working build, because the CoreTrust exploit does not apply.</li>
+  <li><strong>12 (incl. 12.5.x):</strong> Not compatible. On these releases, jailbreak-based installation (for example, checkra1n) or AltStore/Sideloadly is the only realistic route to permanent signing.</li>
+  <li><strong>13:</strong> Not compatible, for the same reason as 12.</li>
+  <li><strong>14:</strong> Compatible. It works from 14.0 beta 2 through 14.x, using TrollHelperOTA (no PC) or, on arm64 A8–A11 devices, checkra1n plus the TrollHelper package.</li>
+  <li><strong>15 (15.7.2 – 15.8.8):</strong> Compatible. On 15.0–15.6.1 use TrollHelperOTA with no PC; from 15.7.2 onward—including point releases up to 15.8.8—use TrollInstallerX with an internet connection during install.</li>
+  <li><strong>16:</strong> Mixed. It runs across 16.0–16.6.1 and on 16.7 RC (20H18). However, non-RC 16.7.x releases (such as 16.7.6 through 16.7.16) are never compatible.</li>
+  <li><strong>17:</strong> Only the initial 17.0 release is compatible. It does not cover 17.0.3 or any later 17.x build; 17.0.1 and above are permanently unsupported.</li>
 </ul>
 
 <h3>Support, Requirements and Compatibility: Direct Answers</h3>
 
-<p>If you arrived with a question phrased as <strong>supported versions</strong>, <strong>support list</strong>, or <strong>version support</strong>, the short answer is: iOS 14.0 beta 2 through 16.6.1, 16.7 RC (20H18), and 17.0. That is the entire support matrix. The same answer applies to requirements and any query about compatible devices—the OS release is the deciding factor, not the model.</p>
+<p>If you arrived with a question phrased as <strong>supported versions</strong>, <strong>support list</strong>, or <strong>version support</strong>, the short answer is: 14.0 beta 2 through 16.6.1, 16.7 RC (20H18), and 17.0. That is the entire support matrix. The same answer applies to requirements and any query about compatible devices—the OS release is the deciding factor, not the model.</p>
 
-<p>For confirmation-style searches, the answer is equally direct. Does it run on iOS 26? No. Does it work on 18? No. Does it support iOS 12? No. Likewise, queries about newer or older system compatibility lead back to the same fixed range. If you are checking whether a build for iOS 18, 26, or 27 exists, it does not—those systems sit beyond the patched CoreTrust bug.</p>
+<p>For confirmation-style searches, the answer is equally direct. Does it run on 26? No. Does it work on 18? No. Does it support 12? No. Likewise, queries about newer or older system compatibility lead back to the same fixed range. If you are checking whether a build for 18, 26, or 27 exists, it does not—those systems sit beyond the patched CoreTrust bug.</p>
 
-<h3>"On iOS" and "For iOS" by Release</h3>
+<h3>"On" and "For" by Release</h3>
 
-<p>Users phrase the same compatibility question in two common ways: "TrollStore on iOS [release]" and "TrollStore for iOS [release]". Both mean “will this run on my system?” Here is the direct mapping:</p>
+<p>Users phrase the same compatibility question in two common ways: "TrollStore on [release]" and "TrollStore for [release]". Both mean “will this run on my system?” Here is the direct mapping:</p>
 
 <ul>
   <li><strong>26 / 26.1</strong> — not compatible. Neither the 26.0 release nor 26.1 has a working install path.</li>
@@ -639,12 +639,12 @@
 
 <p>The compatibility table applies to both iPhone and iPad. The OS release is the determining factor, not the device model—with one caveat: arm64 vs. arm64e chip architecture affects which installer method works. When checking compatibility and requirements, start with the system release, then confirm the chip architecture.</p>
 
-<p>Device-specific searches resolve the same way: iPhone 5s, iPhone 6s, iPhone 6s Plus, iPhone 7, iPhone 8, iPhone 8 Plus, iPhone X, iPhone XR, and iPhone SE are all possible only if the device runs a compatible system. The same applies to iPad mini 2, iPad mini 4, iPad Pro, iPad Pro M4, and iPad Air 2—the hardware is not the blocker; the installed software release is. A device capable of running iOS 18, 26, or 27 can only use the tool if it has been kept on (or downgraded to) a compatible build.</p>
+<p>Device-specific searches resolve the same way: iPhone 5s, iPhone 6s, iPhone 6s Plus, iPhone 7, iPhone 8, iPhone 8 Plus, iPhone X, iPhone XR, and iPhone SE are all possible only if the device runs a compatible system. The same applies to iPad mini 2, iPad mini 4, iPad Pro, iPad Pro M4, and iPad Air 2—the hardware is not the blocker; the installed software release is. A device capable of running 18, 26, or 27 can only use the tool if it has been kept on (or downgraded to) a compatible build.</p>
 
-<h3>The Honest Answer for iOS 18, 26, and 27</h3>
+<h3>The Honest Answer for 18, 26, and 27</h3>
 
 <div class="callout callout-warn">
-<p>For newer systems, the answer is definitive for the standard app: <strong>it does not and will not work on these releases.</strong> Apple patched CVE-2023-41991 in iOS 17.0.1, and every subsequent release—including iOS 18, 26, and 27—lacks the CoreTrust vulnerability it requires. The developer has stated that no new support will arrive unless another CoreTrust bug is discovered, and as of late 2026, none has been. TrollStore Lite may work on these systems <em>only if a compatible jailbreak exists</em>; as of this guide, no public jailbreak is known to support iOS 26 or 27 for that purpose. Any website claiming otherwise is either mistaken or distributing something that is not the real application.</p>
+<p>For newer systems, the answer is definitive for the standard app: <strong>it does not and will not work on these releases.</strong> Apple patched CVE-2023-41991 in 17.0.1, and every subsequent release—including 18, 26, and 27—lacks the CoreTrust vulnerability it requires. The developer has stated that no new support will arrive unless another CoreTrust bug is discovered, and as of late 2026, none has been. TrollStore Lite may work on these systems <em>only if a compatible jailbreak exists</em>; as of this guide, no public jailbreak is known to support 26 or 27 for that purpose. Any website claiming otherwise is either mistaken or distributing something that is not the real application.</p>
 </div>
 
 <div class="page-footer">
