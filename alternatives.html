@@ -41,37 +41,32 @@
 <meta name="twitter:description" content="What to use when TrollStore is unavailable. Compare SideStore, AltStore, Sideloadly, ESign, Scarlet, and TrollStore vs. jailbreak.">
 <meta name="twitter:image" content="https://927520fyx.github.io/ios/og-image.jpg">
 
-<!-- 强力拦截 iOS Safari 双击缩放和双指手势缩放 -->
 <script>
-  // 1. 拦截双指捏合缩放 (iOS 10+ Safari)
   document.addEventListener('gesturestart', function (e) {
     e.preventDefault();
   });
 
-  // 2. 拦截双击放大
   var lastTouchEnd = 0;
   document.addEventListener('touchend', function (event) {
     var now = (new Date()).getTime();
     if (now - lastTouchEnd <= 300) {
-      event.preventDefault(); // 阻止两次点击间隔小于 300ms 时的默认放大行为
+      event.preventDefault();
     }
     lastTouchEnd = now;
   }, false);
 
-  // 3. 防止双击输入框导致放大
   document.addEventListener('touchstart', function (event) {
     if (event.touches.length > 1) {
-      event.preventDefault(); // 拦截多指触摸（捏合）
+      event.preventDefault();
     }
   }, { passive: false });
 
-  // 4. 瞬间回到顶部（解决Alternatives按钮跳转问题）
   document.addEventListener('DOMContentLoaded', function() {
     var alternativesBtn = document.getElementById('nav-alternatives');
     if (alternativesBtn) {
       alternativesBtn.addEventListener('click', function(e) {
-        e.preventDefault(); // 阻止默认的跳转行为
-        window.scrollTo(0, 0); // 瞬间跳到顶部
+        e.preventDefault();
+        window.scrollTo(0, 0);
       });
     }
   });
@@ -110,8 +105,8 @@
     padding: 0 20px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    touch-action: manipulation; /* 消除点击延迟 */
-    overflow-x: hidden; /* 阻止由于某些元素溢出导致的横向滚动 */
+    touch-action: manipulation;
+    overflow-x: hidden;
   }
   article {
     max-width: 800px;
@@ -125,26 +120,19 @@
     font-weight: 700;
     letter-spacing: -0.035em;
   }
-  .lede {
-    font-size: 1.15rem;
-    color: var(--muted);
-    margin-bottom: 8px;
-    padding-bottom: 32px;
-    border-bottom: 1px solid var(--border);
-    letter-spacing: -0.01em;
-  }
-  .lede strong { color: var(--text); font-weight: 600; }
   h2 {
     font-size: 1.65rem;
     margin: 64px 0 20px;
     font-weight: 700;
     letter-spacing: -0.025em;
+    scroll-margin-top: 100px;
   }
   h3 {
     font-size: 1.15rem;
     margin: 36px 0 12px;
     font-weight: 600;
     letter-spacing: -0.01em;
+    scroll-margin-top: 100px;
   }
   p { margin-bottom: 16px; }
   a { color: var(--accent); text-decoration: none; }
@@ -161,13 +149,12 @@
     word-break: break-word;
   }
 
-  /* iOS 风格导航条 */
   .site-nav {
     display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
+    gap: 6px;
+    flex-wrap: nowrap;
     align-items: center;
-    padding: 8px;
+    padding: 8px 12px;
     background: rgba(255,255,255,0.85);
     backdrop-filter: saturate(180%) blur(20px);
     -webkit-backdrop-filter: saturate(180%) blur(20px);
@@ -179,24 +166,34 @@
     top: 12px;
     z-index: 10;
     box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    touch-action: pan-x;
+  }
+  .site-nav::-webkit-scrollbar {
+    display: none;
   }
   .site-nav span {
     font-weight: 600;
     color: var(--muted);
-    padding-left: 12px;
+    padding-left: 8px;
     padding-right: 4px;
     font-size: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
+    flex-shrink: 0;
   }
   .site-nav a {
     display: inline-block;
-    padding: 6px 14px;
+    padding: 6px 12px;
     border-radius: 100px;
     font-weight: 500;
     color: var(--text);
     transition: background 0.2s ease, color 0.2s ease;
-    white-space: nowrap; /* 防止文字换行 */
+    white-space: nowrap;
+    flex-shrink: 0;
   }
   .site-nav a:hover {
     background: #f5f5f7;
@@ -211,7 +208,6 @@
     color: #fff;
   }
 
-  /* iOS 风格目录 */
   .toc {
     background: #fbfbfd;
     border: 1px solid var(--border);
@@ -269,7 +265,6 @@
     flex-shrink: 0;
   }
 
-  /* iOS 风格提示卡 */
   .callout {
     padding: 18px 22px;
     border-radius: var(--radius-sm);
@@ -290,7 +285,6 @@
     border-left: 4px solid var(--info-border);
   }
 
-  /* iOS 风格表格 */
   .table-wrap {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
@@ -322,8 +316,8 @@
   tr:nth-child(even) td { background: var(--table-stripe); }
   .tag-yes { color: var(--success); font-weight: 600; white-space: nowrap; }
   .tag-no { color: var(--danger); font-weight: 600; white-space: nowrap; }
+  .tag-warn { color: #b8860b; font-weight: 600; white-space: nowrap; }
 
-  /* 顶部 hero 卡片 */
   .hero {
     background: linear-gradient(180deg, #f5f5f7 0%, #ffffff 100%);
     border: 1px solid var(--border);
@@ -352,7 +346,6 @@
     letter-spacing: -0.01em;
   }
 
-  /* 页脚 */
   .page-footer {
     margin-top: 80px;
     padding-top: 28px;
@@ -370,41 +363,16 @@
     h1 { font-size: 1.8rem; }
     h2 { font-size: 1.35rem; margin-top: 48px; }
     h3 { font-size: 1.05rem; }
-    .lede { font-size: 1.02rem; }
     table { font-size: 0.82rem; }
     th, td { padding: 11px 13px; }
-    
-    /* 移动端导航条：改为可横向滑动的单行模式 */
-    .site-nav {
-      flex-wrap: nowrap;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      border-radius: 16px;
-      padding: 8px 12px;
-      gap: 4px;
-      justify-content: flex-start;
-      scrollbar-width: none; 
-      -ms-overflow-style: none;
-      touch-action: pan-x;
-    }
-    .site-nav::-webkit-scrollbar { 
-      display: none; 
-    }
-    
-    .site-nav span { 
-      display: none;
-    }
-    
-    .site-nav a { 
-      padding: 8px 16px;
-      font-size: 0.85rem;
-    }
+
+    .site-nav span { display: none; }
+    .site-nav a { padding: 6px 14px; font-size: 0.85rem; }
 
     .toc li a { padding: 8px 10px; font-size: 0.9rem; }
   }
 </style>
 
-<!-- 1. 网站基础信息 (WebSite) -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -414,7 +382,6 @@
 }
 </script>
 
-<!-- 2. 面包屑导航 (BreadcrumbList) -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -447,15 +414,15 @@
 
 <nav class="site-nav" aria-label="Site navigation">
   <span>Site</span>
-  <a href="index.html" title="TrollStore Home &amp; Download">Home</a>
+  <a href="index.html" title="TrollStore Guide">Guide</a>
   <a href="install.html" title="TrollStore Install Guide">Install</a>
   <a href="variants.html" title="TrollStore Variants">Variants</a>
-  <!-- 修复：用 #top 加上 id 配合 JavaScript 解决跳转问题，防止被 SEO 识别为空链接 -->
-  <a href="#top" id="nav-alternatives" title="TrollStore Alternatives" aria-current="page">Alternatives</a>
-   <a href="update.html" title="TrollStore Update &amp; Usage">Update</a>
+  <a href="#top" id="nav-alternatives" title="TrollStore Alternatives &amp; Jailbreak" aria-current="page">Alternatives</a>
+  <a href="update.html" title="TrollStore Update &amp; Usage">Update</a>
   <a href="official.html" title="TrollStore Official Source &amp; Device Compatibility">Official</a>
+  <a href="apps.html" title="TrollStore Apps &amp; IPAs List">Apps</a>
   <a href="faq.html" title="TrollStore FAQ">FAQ</a>
-  <a href="dopamine.html" title="Dopamine Guide">Dopamine</a>
+  <a href="dopamine.html" title="Dopamine Jailbreak Guide">Dopamine</a>
 </nav>
 
 <div class="toc">
@@ -468,93 +435,73 @@
 
 <h2 id="alternatives">1. Alternative &amp; Comparison: What to Use When It Is Not an Option</h2>
 
-<p>If your device runs 17.0.1 or later—including 18, 26, and 27—TrollStore is unavailable. Anyone searching for a <strong>trollstore alternative</strong> on these releases needs a signing tool that does not depend on the patched CoreTrust bug. The comparisons below cover every realistic option: AltStore, SideStore, Sideloadly, ESign, Scarlet, AppSync, AppSync Unified, Sileo, Signulous, TrollInstallerX, LiveContainer, TrollStore Lite, Dopamine, Cydia, and jailbreak itself. The last subsection answers the most specific query of all: whether a <strong>trollstore alternative ios 12</strong> exists. If you are specifically interested in jailbreak solutions like Dopamine for unsupported releases, refer to our <a href="dopamine.html" title="Dopamine Jailbreak Guide">Dopamine Jailbreak Guide</a>.</p>
+<p>If your device runs 17.0.1 or later—including 18, 26, and 27—TrollStore is unavailable. Anyone searching for a <strong>trollstore alternative</strong> on these releases needs a signing tool that does not depend on the patched CoreTrust bug. The comparisons below cover the realistic options. If you are interested in jailbreak solutions like Dopamine, see our <a href="dopamine.html" title="Dopamine Jailbreak Guide">Dopamine Jailbreak Guide</a>.</p>
 
 <h3>AltStore</h3>
 
-<p>The comparison with AltStore is the most common entry point for users on unsupported releases. AltStore signs apps with your Apple ID and refreshes them through AltServer every 7 days. It caps you at three active apps and requires a computer on your network for each refresh. The standard utility, on supported builds, signs permanently with no account and no refresh.</p>
+<p>AltStore signs apps with your Apple ID and refreshes them through AltServer every 7 days. It caps you at three active apps and requires a computer on your network for each refresh. TrollStore, on supported builds, signs permanently with no account and no refresh.</p>
 
-<p>When making a choice, the answer depends entirely on the system version. On 14.0–16.6.1, 16.7 RC, or 17.0, TrollStore is the better tool in every respect. On 17.0.1 and later, TrollStore does not exist, so AltStore becomes a valid alternative—less convenient, but functional. Community threads consistently reach the same conclusion: TrollStore first where supported, AltStore as the fallback.</p>
-
-<p>If you are explicitly choosing between the two, it is really a system check. Confirm your system version on our <a href="index.html" title="Home Compatibility">Home Page</a> first; the comparison only matters if the app is actually available to you.</p>
+<p>On 14.0–16.6.1, 16.7 RC, or 17.0, TrollStore is the better tool in every respect. On 17.0.1 and later, TrollStore does not exist, so AltStore becomes a valid alternative—less convenient, but functional. Confirm your system version on our <a href="index.html" title="TrollStore Guide">Home Page</a> first.</p>
 
 <h3>SideStore</h3>
 
-<p>SideStore is an AltStore fork that refreshes apps on-device after an initial setup, removing the constant AltServer dependency. The comparison is therefore similar to the AltStore one, with one practical difference: SideStore is more convenient for long-term use on unsupported releases.</p>
-
-<p>Users often ask about this choice when they want permanence without a computer. On supported builds, TrollStore still wins because it is permanent and needs no refresh at all. On unsupported releases, SideStore is often the best non-jailbreak alternative. When comparing all three (SideStore, AltStore, and TrollStore), the ranking is consistent: TrollStore first where supported, SideStore second for convenience, AltStore third because of the computer requirement.</p>
+<p>SideStore is an AltStore fork that refreshes apps on-device after an initial setup, removing the constant AltServer dependency. On unsupported releases it is often the most convenient non-jailbreak alternative. On supported builds, TrollStore still wins because it is permanent and needs no refresh at all.</p>
 
 <h3>Sideloadly</h3>
 
-<p>Sideloadly is a computer-based signing tool. It does not offer permanent signing; every 7 days you reconnect to a computer and re-sign. This is purely about permanence versus universal compatibility.</p>
-
-<p>For users on unsupported releases, Sideloadly is a reliable fallback. Users compare these two when deciding between the permanent but version-limited TrollStore and the universally compatible Sideloadly. The answer is simple: if your system supports the app, use it; if not, Sideloadly is a valid alternative. It is also the tool most guides recommend for sideloading TrollInstallerX.ipa on supported builds, as described in the <a href="install.html" title="Install Guide">install guide</a>.</p>
+<p>Sideloadly is a computer-based signing tool. It does not offer permanent signing; every 7 days you reconnect to a computer and re-sign. It is universally compatible across iOS versions, which makes it a reliable fallback. It is also the tool most guides recommend for sideloading TrollInstallerX.ipa on supported builds, as described in the <a href="install.html" title="Install Guide">install guide</a>.</p>
 
 <h3>ESign and Scarlet</h3>
 
-<p>ESign and Scarlet are signing tools that work on unsupported releases. ESign uses enterprise certificates, which are frequently revoked; Scarlet offers similar certificate-based signing. This is not really a comparison on unsupported releases—TrollStore is simply unavailable, so ESign is one of the certificate-based alternatives.</p>
-
-<p>Scarlet follows the same pattern. It can sign apps where TrollStore cannot, but without permanence and with the usual certificate-revocation risk. For users weighing multiple signing tools, this reflects a three-way decision: TrollStore where supported, and ESign or Scarlet as certificate-based fallbacks elsewhere. None of them matches TrollStore’s permanence on its supported range.</p>
+<p>ESign and Scarlet are certificate-based signing tools that work on unsupported releases. ESign uses enterprise certificates, which are frequently revoked; Scarlet offers similar certificate-based signing. Neither matches TrollStore’s permanence on its supported range, and both carry certificate-revocation risk.</p>
 
 <h3>AppSync / AppSync Unified</h3>
 
-<p>AppSync Unified is a tweak that allows installing unsigned IPAs on modified devices. This comparison only matters for users with root access: AppSync requires system-level modifications, whereas TrollStore does not.</p>
-
-<p>For modified devices, the question comes down to convenience. AppSync integrates with the custom environment and is installed through Cydia or Sileo; TrollStore offers a standalone solution that works without any of this on supported builds. On a modified device both can coexist, though TrollStore Lite is the more modern option. The distinction is mainly about dependency, and the shorter query resolves the same way.</p>
+<p>AppSync Unified is a tweak that allows installing unsigned IPAs on modified devices. It requires system-level modifications, whereas TrollStore does not. On a modified device both can coexist, though TrollStore Lite is the more modern option.</p>
 
 <h3>Sileo</h3>
 
-<p>Sileo is a package manager for modified devices, like Cydia. This comparison is not really a comparison—they serve different purposes. Sileo manages packages; TrollStore installs IPAs. On a modified device, TrollStore Lite is distributed through Sileo via the Havoc repository. This query usually comes from users confusing package managers with signing tools; if your device is not modified, Sileo is not relevant to your decision at all.</p>
+<p>Sileo is a package manager for modified devices, like Cydia. It manages packages; TrollStore installs IPAs. On a modified device, TrollStore Lite is distributed through Sileo via the Havoc repository. If your device is not modified, Sileo is not relevant to your decision.</p>
 
 <h3>Signulous</h3>
 
-<p>Signulous is a paid signing service. This comparison highlights the cost difference: TrollStore is free and permanent on supported builds, while Signulous requires a subscription. For users on unsupported releases who need a signing service, Signulous is one of the paid alternatives, though free options like SideStore or Sideloadly are usually preferred. The choice is essentially “free but version-limited” versus “paid but universally available.”</p>
+<p>Signulous is a paid signing service. TrollStore is free and permanent on supported builds, while Signulous requires a subscription. For users on unsupported releases who need a signing service, free options like SideStore or Sideloadly are usually preferred.</p>
 
 <h3>TrollInstallerX</h3>
 
-<p>TrollInstallerX is not an alternative—it is the installer used to get TrollStore. This query is a misunderstanding: TrollInstallerX is a tool you run once to install the app, after which it can be deleted. It is not a separate signing solution. If you are on a supported build, you use TrollInstallerX to get the tool; if you are not, TrollInstallerX cannot help you either. See the <a href="install.html" title="Install Guide">install guide</a> for the installer methods.</p>
+<p>TrollInstallerX is not an alternative—it is the installer used to get TrollStore. You run it once to install the app; it is not a separate signing solution. If your build is unsupported, TrollInstallerX cannot help you. See the <a href="install.html" title="Install Guide">install guide</a> for the installer methods.</p>
 
 <h3>LiveContainer</h3>
 
-<p>LiveContainer runs apps without installing them, often used on unsupported releases. This comparison is about installation versus emulation. LiveContainer can launch IPAs without permanent signing, but it is not a true installation method and does not register apps with the system the way TrollStore does. For users seeking an alternative on unsupported builds, LiveContainer is a niche option, but it does not replace permanent signing on supported builds.</p>
+<p>LiveContainer runs apps without installing them, often used on unsupported releases. It can launch IPAs without permanent signing, but it is not a true installation method and does not register apps with the system the way TrollStore does. It is a niche option and does not replace permanent signing on supported builds.</p>
 
 <h3>Jailbreak, Dopamine, and Cydia</h3>
 
-<p>TrollStore is not a jailbreak. It signs apps but does not provide root filesystem access or kernel-level tweaks. This comparison is therefore about different purposes: it replaces the signing function of a jailbreak, not the tweak injection or root access. For permanent IPA installation without the security trade-offs, the utility is superior on supported builds. Community discussions consistently reach this conclusion.</p>
-
-<p>Dopamine is a tool for 15–16. This comparison is not apples-to-apples: Dopamine provides root access, while TrollStore is a signing tool. On a Dopamine-modified device, users can install TrollStore Lite, which leverages the bypass. The two can coexist—this is the setup discussed in forums—but for permanent IPA signing, the standard version alone is sufficient on supported builds.</p>
-
-<p>Cydia is a package manager for modified devices. This comparison is about app installation methods: Cydia requires system modifications; TrollStore does not. On supported builds, TrollStore is the simpler path for installing IPAs, and Cydia remains relevant only for tweaks and system packages. On 12 and 13, where the app has never worked, Cydia-era tools are the only realistic route to permanent signing—which is why this question keeps appearing on older devices.</p>
+<p>TrollStore is not a jailbreak. It signs apps but does not provide root filesystem access or kernel-level tweaks. The comparison is about purpose: TrollStore replaces the signing function of a jailbreak, not tweak injection or root access. Dopamine provides root access for 15–16; on a Dopamine-modified device, users can install TrollStore Lite. Cydia is a package manager for modified devices, and it requires system modifications that TrollStore does not.</p>
 
 <h3>TrollStore Lite</h3>
 
-<p>TrollStore Lite is an official variant for modified devices, distributed as a <code>.deb</code> file. This comparison is about environment: the standard version works without modifications on supported builds; Lite requires a modified environment but can work on newer releases—including 18 and 26—<em>only if a compatible environment exists</em>.</p>
-
-<p>Users often ask “which one should I use?” If your device is stock, use the standard TrollStore on supported builds. If you have modified your system, TrollStore Lite is available and can even transfer apps from the standard version. It is not an alternative for stock users on unsupported builds—it will not install. Full details are on the <a href="variants.html" title="Variants Guide">Variants page</a>.</p>
+<p>TrollStore Lite is an official variant for modified devices, distributed as a <code>.deb</code> file. The standard version works without modifications on supported builds; Lite requires a modified environment. It is not an alternative for stock users on unsupported builds—it will not install. Full details are on the <a href="variants.html" title="Variants Guide">Variants page</a>.</p>
 
 <h3>TrollStore 2 (Version Comparison)</h3>
 
-<p>The queries referring to build 2 refer to differences, not to competing products. TrollStore 2.0, released in November 2023, introduced support for 15.5–16.6.1 and 17.0 using CVE-2023-41991. Earlier releases covered previous system versions. Both are the same application, just different iterations.</p>
-
-<p>For most users the distinction is irrelevant: install the latest build (currently 2.1.1) from the official GitHub. The query is often the result of confusing search results where users think there are two separate products. There are not—TrollStore 2 is simply the current major iteration.</p>
+<p>TrollStore 2.0, released in November 2023, introduced support for 15.5–16.6.1 and 17.0 using CVE-2023-41991. Earlier releases covered previous system versions. Both are the same application at different iterations. Install the latest build (currently 2.1.1) from the official GitHub.</p>
 
 <h3>Alternative on iOS 12 and Older Releases</h3>
 
-<p>The most specific alternative query is <strong>trollstore alternative ios 12</strong>. The answer is definitive: TrollStore has never worked on 12 and never will, because the CoreTrust vulnerability does not exist on that release. For users on 12, the realistic options are:</p>
+<p>TrollStore has never worked on iOS 12 and never will, because the CoreTrust vulnerability does not exist on that release. For users on 12, the realistic options are:</p>
 
 <ul>
   <li><strong>AltStore, SideStore, or Sideloadly</strong> — 7-day signing with universal compatibility.</li>
-  <li><strong>Checkra1n-based installation</strong> — on 12, checkra1n is available. Once modified, AppSync Unified or an older signing tweak can be used. TrollStore Lite is not applicable on 12 in the same way; it depends on a compatible environment and package manager.</li>
-  <li><strong>Certificate-based signing services</strong> — such as ESign or Scarlet, though revocation risk is high.</li>
+  <li><strong>Checkra1n-based installation</strong> — on 12, checkra1n is available; once modified, AppSync Unified or an older signing tweak can be used.</li>
+  <li><strong>Certificate-based signing services</strong> — such as ESign or Scarlet, with high revocation risk.</li>
 </ul>
 
-<p>No direct equivalent to TrollStore exists on 12. The closest is a modified setup, which carries its own risks and limitations. Searches for this will find plenty of pages claiming to offer one—none of them can deliver CoreTrust-based permanence, because the bug simply is not present on 12.</p>
+<p>No direct equivalent to TrollStore exists on 12. Any page claiming otherwise cannot deliver CoreTrust-based permanence, because the bug is not present on 12.</p>
 
 <h3>Summary: Choosing the Right Alternative</h3>
 
-<p>The decision tree is simple. On 14.0–16.6.1, 16.7 RC, or 17.0, use TrollStore; no alternative matches its permanence. On 17.0.1 and later without modifications, choose SideStore for convenience or AltStore/Sideloadly for reliability, and accept the 7-day refresh. On a modified device of any release, use TrollStore Lite. On 12 or older, no path exists—use a system-based signing method or a 7-day signing tool.</p>
-
-<p>All the comparisons on this page—from AltStore and SideStore to Sileo, Cydia, and LiveContainer—lead back to the same fixed compatibility range. TrollStore is the best option on its supported builds, and the alternatives listed here are for everything else.</p>
+<p>On 14.0–16.6.1, 16.7 RC, or 17.0, use TrollStore; no alternative matches its permanence. On 17.0.1 and later without modifications, choose SideStore for convenience or AltStore/Sideloadly for reliability, and accept the 7-day refresh. On a modified device, use TrollStore Lite where a compatible environment exists. On 12 or older, no permanent path exists—use a 7-day signing tool.</p>
 
 <div class="callout callout-info">
 <strong>Final note:</strong> Always source TrollStore from the official GitHub repository (<code>github.com/opa334/TrollStore/releases</code>). Third-party downloads are not official and may carry risks. The compatibility range is fixed by Apple’s patching—no alternative can bypass it.
@@ -562,47 +509,28 @@
 
 <h2 id="jailbreak">2. No Jailbreak / Jailbreak: Clarifying the Relationship</h2>
 
-<p>This section addresses the critical search terms that users type when trying to understand the relationship between TrollStore and system modifications. The questions are straightforward: does the tool require a jailbreak? Does it work without one? What about on newer releases like 18 or 26? What is the difference between the two concepts? And crucially, what happens on 18 specifically—with or without modifications?</p>
+<p>This section clarifies whether TrollStore requires a jailbreak, how it behaves on newer releases, and how the standard version differs from TrollStore Lite.</p>
 
 <h3>2.1 No Jailbreak: The Core Use Case</h3>
 
-<p>Working without modifications is the primary selling point of the standard version. On all officially supported builds—<strong>14.0 beta 2 through 16.6.1, 16.7 RC (20H18), and 17.0</strong>—TrollStore installs and operates <strong>without requiring any system modifications</strong>. It uses the CoreTrust vulnerability (CVE-2023-41991 or earlier variants) to achieve permanent IPA signing at the system level, bypassing Apple’s code signing requirements entirely.</p>
-
-<p>This means:</p>
-<ul>
-  <li>No root filesystem access is needed.</li>
-  <li>No kernel patches are applied.</li>
-  <li>No package manager app (Cydia, Sileo, Zebra) is required.</li>
-  <li>The device remains in its normal, stock state.</li>
-  <li>Apps installed persist across reboots and do not expire after 7 days.</li>
-</ul>
-
-<p>For users on these supported builds, the search query resolves to a definitive "yes, it works perfectly." The installation methods on our <a href="install.html" title="Install Guide">Install page</a>—TrollHelperOTA, TrollInstallerX, and TrollRestore—are all designed for stock devices.</p>
+<p>On all officially supported builds—<strong>14.0 beta 2 through 16.6.1, 16.7 RC (20H18), and 17.0</strong>—TrollStore installs and operates <strong>without requiring any system modifications</strong>. It uses the CoreTrust vulnerability (CVE-2023-41991 or earlier variants) to achieve permanent IPA signing, with no root filesystem access, no kernel patches, and no package manager. The device stays in its normal, stock state, and installed apps persist without a 7-day expiry.</p>
 
 <h3>2.2 iOS 26: Not Possible for Standard Installation</h3>
 
-<p>The query regarding 26 has a clear and definitive answer: <strong>No, it does not exist.</strong> Release 26 (and every version from 17.0.1 onward) lacks the CoreTrust vulnerability that the standard tool depends on. Apple patched CVE-2023-41991 in 17.0.1, and no new CoreTrust bug has been discovered since.</p>
+<p>There is <strong>no stock method</strong> to install the standard app on 26. Release 26 (and every version from 17.0.1 onward) lacks the CoreTrust vulnerability. Apple patched CVE-2023-41991 in 17.0.1, and no new CoreTrust bug has been publicly confirmed. Any website claiming to offer the standard app on 26 is mistaken or distributing a fake tool. The same applies to 27 and later releases unless a new vulnerability is discovered.</p>
 
 <div class="callout callout-danger">
-<strong>Critical fact:</strong> There is <strong>no stock method</strong> to install the standard app on 26. Any website claiming to offer it is either mistaken, distributing a fake tool, or repackaging something else. The only way to get similar functionality on 26 would be through <strong>TrollStore Lite on a modified device</strong> (see Section 2.5)—but as of this guide, no public method is known to support 26 for that purpose.
+<strong>Critical fact:</strong> Public support for 26 via TrollStore Lite on a modified device is not known as of this guide. Verify before attempting anything.
 </div>
 
-<p>The same applies to 27 and any future release unless a new CoreTrust vulnerability is discovered and exploited. The developer has confirmed that the current support range is final for the foreseeable future.</p>
-
-<h3>2.3 Non-Jailbroken Devices: Same Conclusion</h3>
-
-<p>Searching for terms like "non jailbroken" is simply an alternative phrasing for the same question. It means the same thing as asking if it works without modifications. The answer is identical:</p>
+<h3>2.3 Non-Jailbroken Devices</h3>
 
 <ul>
   <li><strong>Supported builds (14.0–16.6.1, 16.7 RC, 17.0):</strong> Yes, it works on a stock device.</li>
   <li><strong>Unsupported releases (17.0.1+, including 18, 26, 27):</strong> No, the standard version does not work on a stock device.</li>
 </ul>
 
-<p>The term "non jailbroken" is commonly used by users who want to emphasize that their device has never been modified and that they want to keep it that way. For those users, the standard tool on supported builds is exactly the right choice: it provides permanent IPA signing without introducing any security compromises.</p>
-
-<h3>2.4 Without Jailbreak: Confirming the Terminology</h3>
-
-<p>This is the third variation of the same query. It confirms that the user wants to install the tool but does not want to modify their device. The answer mirrors Sections 2.1 and 2.3:</p>
+<h3>2.4 Install Options by Build (Stock Devices)</h3>
 
 <div class="table-wrap">
   <table>
@@ -643,39 +571,28 @@
   </table>
 </div>
 
-<p>If you are on an unsupported release and want to avoid modifications, the alternatives in Section 1 are your only options. None of them offer the permanence of the standard tool, but they do work on stock devices.</p>
+<h3>2.5 With Jailbreak: TrollStore Lite</h3>
 
-<h3>2.5 With Jailbreak: TrollStore Lite and Coexistence</h3>
-
-<p>This query opens up a different set of possibilities. When a device is modified, the user gains access to <strong>TrollStore Lite</strong>, which is the official variant designed specifically for custom environments. As detailed on the <a href="variants.html" title="Variants Guide">Variants page</a>, the Lite edition:</p>
+<p>On a modified device, the user gains access to <strong>TrollStore Lite</strong>, the official variant for custom environments. As detailed on the <a href="variants.html" title="Variants Guide">Variants page</a>, the Lite edition:</p>
 
 <ul>
   <li>Is distributed as a <code>.deb</code> package via the <strong>Havoc repository</strong> (<code>havoc.app/package/trollstorelite</code>).</li>
-  <li>Relies on the custom codesign bypass rather than the CoreTrust bug.</li>
-  <li>Can work on <strong>any system version where a compatible environment provides the needed codesign bypass</strong>—in principle including 18 and 26, though public support for 26 is not known as of this guide.</li>
-  <li>Is used in both Dopamine-based and roothide-based environments (e.g., Relaxin), though roothide results vary.</li>
+  <li>Relies on a codesign bypass rather than the CoreTrust bug.</li>
+  <li>Works only where a compatible environment provides the needed bypass.</li>
   <li>Can transfer apps from the standard version to Lite (v2.1+ feature).</li>
 </ul>
 
-<p>On a modified device, both the standard version (on supported releases) and Lite can coexist. The system modifications themselves do not break the app—in fact, they expand its capabilities. The Persistence Helper continues to function, and app registrations can be refreshed as usual.</p>
+<p>"With jailbreak" does not mean the standard version requires modifications. If your device is already modified, Lite is an additional option; the standard version remains the recommended choice on supported builds.</p>
 
-<div class="callout callout-info">
-<strong>Key point:</strong> "With jailbreak" does not mean the standard version requires modifications. It means that <em>if</em> your device is already modified, you have an additional option (the Lite edition) that can work on newer releases when a compatible environment exists. The standard version remains the recommended choice on supported builds, modified or not.
-</div>
-
-<h3>2.6 iOS 18 Definitive Answer</h3>
-
-<p>The query regarding 18 is one of the most common search terms, and the answer is unambiguous for the standard version: <strong>it does not work on 18 without system modifications.</strong> The CoreTrust vulnerability was patched in 17.0.1, and 18 inherits that patch. There is no exploit chain, no installer, and no workaround for stock 18 devices. The Lite edition is not available on stock devices either.</p>
+<h3>2.6 iOS 18</h3>
 
 <div class="callout callout-danger">
-<strong>18 stock devices:</strong> No standard version. No Lite edition. No exceptions. The only signing options are SideStore, AltStore, or Sideloadly—all of which require 7-day refreshes and have app limits.
+<strong>18 stock devices:</strong> No standard version. No Lite edition. The only signing options are SideStore, AltStore, or Sideloadly—all of which require 7-day refreshes and have app limits.
 </div>
 
-<p>If your device is on 18 and you want similar functionality, your only path is to modify the device and install the Lite edition—and only if a compatible method exists for your specific system release and device model. If no such option exists, then no solution is available to you at all. This is the honest, definitive answer—and any site claiming otherwise is not trustworthy.</p>
+<p>If your device is on 18 and you want similar functionality, your only path is to modify the device and install the Lite edition—and only if a compatible method exists for your specific system release and device model.</p>
 
 <h3>2.7 Comparison: Different Tools, Different Purposes</h3>
-
-<p>This comparison is frequently misunderstood. The two are not competing products—they serve entirely different purposes:</p>
 
 <div class="table-wrap">
   <table>
@@ -695,16 +612,11 @@
       <tr>
         <td><strong>Modifications required?</strong></td>
         <td><span class="tag-yes">No</span> (on supported builds)</td>
-        <td>—</td>
-      </tr>
-      <tr>
-        <td><strong>System modification</strong></td>
-        <td>None (uses CoreTrust bypass only)</td>
-        <td>Yes (kernel patches, root access)</td>
+        <td>Yes</td>
       </tr>
       <tr>
         <td><strong>Security trade-offs</strong></td>
-        <td>Minimal (apps are unsigned but system is intact)</td>
+        <td>Minimal (system remains intact)</td>
         <td>Significant (reduced security, potential instability)</td>
       </tr>
       <tr>
@@ -721,11 +633,9 @@
   </table>
 </div>
 
-<p>In short: TrollStore replaces the <em>signing</em> function of a modified system, but not its <em>customization</em> or <em>root access</em> functions. On supported builds, it is the safer choice for users who simply want to install IPAs permanently. Modifying the system is for users who need deep-level changes and accept the associated risks. The two can coexist: a modified device can use the Lite edition, and a stock device on a supported release can use the standard tool. Neither replaces the other.</p>
+<p>TrollStore replaces the <em>signing</em> function of a modified system, not its customization or root access. On supported builds it is the safer choice for users who simply want to install IPAs permanently.</p>
 
-<p>For users comparing the two on Reddit and other forums, the consensus is consistent: TrollStore first where supported, system modifications only if you need tweaks or deep changes. On unsupported releases (17.0.1+), the standard tool is unavailable without modifications—and if you do modify your device, the Lite edition is the signing solution to try.</p>
-
-<h3>2.8 Summary: Relationship at a Glance</h3>
+<h3>2.8 Summary at a Glance</h3>
 
 <div class="table-wrap">
   <table>
@@ -745,31 +655,21 @@
       <tr>
         <td>14.0–16.6.1, 16.7 RC, or 17.0 — modified</td>
         <td>Standard Version or Lite</td>
-        <td><span class="tag-yes">No</span> (but Lite available)</td>
+        <td><span class="tag-yes">No</span> (Lite also available)</td>
       </tr>
       <tr>
-        <td>17.0.1–17.x — stock</td>
-        <td>No option (use SideStore/AltStore)</td>
+        <td>17.0.1+ (including 18, 26, 27) — stock</td>
+        <td>No option (use SideStore/AltStore/Sideloadly)</td>
         <td><span class="tag-no">N/A</span></td>
       </tr>
       <tr>
-        <td>17.0.1–17.x — modified</td>
-        <td>Lite edition (if environment supports it)</td>
-        <td><span class="tag-yes">Yes</span></td>
-      </tr>
-      <tr>
-        <td>18 or 26 — stock</td>
-        <td>No option (use SideStore/AltStore)</td>
-        <td><span class="tag-no">N/A</span></td>
-      </tr>
-      <tr>
-        <td>18 or 26 — modified</td>
-        <td>Lite edition only if a compatible environment exists (public 26 support not known as of this guide)</td>
+        <td>17.0.1+ — modified</td>
+        <td>Lite edition only if a compatible environment exists</td>
         <td><span class="tag-warn">Depends</span></td>
       </tr>
       <tr>
         <td>12 or older</td>
-        <td>No option (system-based signing or SideStore)</td>
+        <td>No permanent option (7-day signing or system-based methods)</td>
         <td><span class="tag-no">N/A</span></td>
       </tr>
     </tbody>
@@ -777,7 +677,7 @@
 </div>
 
 <div class="callout callout-info">
-<strong>Final rule:</strong> On supported builds, the standard app works <em>without</em> modifications—that is its primary advantage. On unsupported releases (17.0.1+, including 18, 26, and 27), the standard tool is unavailable; the Lite edition is only an option <em>with</em> modifications, and only if that environment is compatible.
+<strong>Final rule:</strong> On supported builds, the standard app works <em>without</em> modifications. On unsupported releases (17.0.1+, including 18, 26, and 27), the standard tool is unavailable; Lite is only an option <em>with</em> modifications, and only where that environment is compatible.
 </div>
 
 <div class="page-footer">
