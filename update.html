@@ -15,10 +15,8 @@
 
 <title>Update TrollStore &amp; User Guide: How to Use, Fix &amp; Update (2026)</title>
 
-<!-- 修复：缩短了 Description，控制在 160 字符左右，避免搜索结果被截断 -->
 <meta name="description" content="How to update TrollStore safely, check the latest version, fix common issues, and use the Persistence Helper. Plus repo sources and daily usage tutorials.">
 
-<!-- 修复：补充缺失的 Keywords 标签 -->
 <meta name="keywords" content="update trollstore, trollstore guide, trollstore repo, trollstore how to use, trollstore latest version">
 
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1,max-video-preview:-1">
@@ -34,48 +32,41 @@
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://927520fyx.github.io/ios/update.html">
 <meta property="og:title" content="Update TrollStore &amp; User Guide: How to Use, Fix &amp; Update (2026)">
-<!-- 修复：同步缩短 OG Description -->
 <meta property="og:description" content="How to update TrollStore safely, check the latest version, fix common issues, and use the Persistence Helper. Plus repo sources and daily usage tutorials.">
 <meta property="og:image" content="https://927520fyx.github.io/ios/og-image.jpg">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="https://927520fyx.github.io/ios/update.html">
 <meta name="twitter:title" content="Update TrollStore &amp; User Guide: How to Use, Fix &amp; Update (2026)">
-<!-- 修复：同步缩短 Twitter Description -->
 <meta name="twitter:description" content="How to update TrollStore safely, check the latest version, fix common issues, and use the Persistence Helper. Plus repo sources and daily usage tutorials.">
 <meta name="twitter:image" content="https://927520fyx.github.io/ios/og-image.jpg">
 
-<!-- 强力拦截 iOS Safari 双击缩放和双指手势缩放 -->
 <script>
-  // 1. 拦截双指捏合缩放 (iOS 10+ Safari)
   document.addEventListener('gesturestart', function (e) {
     e.preventDefault();
   });
 
-  // 2. 拦截双击放大
   var lastTouchEnd = 0;
   document.addEventListener('touchend', function (event) {
     var now = (new Date()).getTime();
     if (now - lastTouchEnd <= 300) {
-      event.preventDefault(); // 阻止两次点击间隔小于 300ms 时的默认放大行为
+      event.preventDefault();
     }
     lastTouchEnd = now;
   }, false);
 
-  // 3. 防止双击输入框导致放大
   document.addEventListener('touchstart', function (event) {
     if (event.touches.length > 1) {
-      event.preventDefault(); // 拦截多指触摸（捏合）
+      event.preventDefault();
     }
   }, { passive: false });
 
-  // 4. 瞬间回到顶部（解决Update按钮跳转问题）
   document.addEventListener('DOMContentLoaded', function() {
     var updateBtn = document.getElementById('nav-update');
     if (updateBtn) {
       updateBtn.addEventListener('click', function(e) {
-        e.preventDefault(); // 阻止默认的跳转行为
-        window.scrollTo(0, 0); // 瞬间跳到顶部
+        e.preventDefault();
+        window.scrollTo(0, 0);
       });
     }
   });
@@ -114,8 +105,8 @@
     padding: 0 20px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    touch-action: manipulation; /* 消除点击延迟 */
-    overflow-x: hidden; /* 阻止由于某些元素溢出导致的横向滚动 */
+    touch-action: manipulation;
+    overflow-x: hidden;
   }
   article {
     max-width: 800px;
@@ -143,12 +134,14 @@
     margin: 64px 0 20px;
     font-weight: 700;
     letter-spacing: -0.025em;
+    scroll-margin-top: 100px;
   }
   h3 {
     font-size: 1.15rem;
     margin: 36px 0 12px;
     font-weight: 600;
     letter-spacing: -0.01em;
+    scroll-margin-top: 100px;
   }
   p { margin-bottom: 16px; }
   a { color: var(--accent); text-decoration: none; }
@@ -165,13 +158,12 @@
     word-break: break-word;
   }
 
-  /* iOS 风格导航条 */
   .site-nav {
     display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
+    gap: 6px;
+    flex-wrap: nowrap;
     align-items: center;
-    padding: 8px;
+    padding: 8px 12px;
     background: rgba(255,255,255,0.85);
     backdrop-filter: saturate(180%) blur(20px);
     -webkit-backdrop-filter: saturate(180%) blur(20px);
@@ -183,24 +175,34 @@
     top: 12px;
     z-index: 10;
     box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    touch-action: pan-x;
+  }
+  .site-nav::-webkit-scrollbar {
+    display: none;
   }
   .site-nav span {
     font-weight: 600;
     color: var(--muted);
-    padding-left: 12px;
+    padding-left: 8px;
     padding-right: 4px;
     font-size: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
+    flex-shrink: 0;
   }
   .site-nav a {
     display: inline-block;
-    padding: 6px 14px;
+    padding: 6px 12px;
     border-radius: 100px;
     font-weight: 500;
     color: var(--text);
     transition: background 0.2s ease, color 0.2s ease;
-    white-space: nowrap; /* 防止文字换行 */
+    white-space: nowrap;
+    flex-shrink: 0;
   }
   .site-nav a:hover {
     background: #f5f5f7;
@@ -215,7 +217,6 @@
     color: #fff;
   }
 
-  /* iOS 风格目录 */
   .toc {
     background: #fbfbfd;
     border: 1px solid var(--border);
@@ -273,7 +274,6 @@
     flex-shrink: 0;
   }
 
-  /* iOS 风格提示卡 */
   .callout {
     padding: 18px 22px;
     border-radius: var(--radius-sm);
@@ -294,7 +294,6 @@
     border-left: 4px solid var(--info-border);
   }
 
-  /* iOS 风格表格 */
   .table-wrap {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
@@ -327,7 +326,6 @@
   .tag-yes { color: var(--success); font-weight: 600; white-space: nowrap; }
   .tag-no { color: var(--danger); font-weight: 600; white-space: nowrap; }
 
-  /* 顶部 hero 卡片 */
   .hero {
     background: linear-gradient(180deg, #f5f5f7 0%, #ffffff 100%);
     border: 1px solid var(--border);
@@ -356,7 +354,6 @@
     letter-spacing: -0.01em;
   }
 
-  /* 页脚 */
   .page-footer {
     margin-top: 80px;
     padding-top: 28px;
@@ -377,38 +374,14 @@
     .lede { font-size: 1.02rem; }
     table { font-size: 0.82rem; }
     th, td { padding: 11px 13px; }
-    
-    /* 移动端导航条：改为可横向滑动的单行模式 */
-    .site-nav {
-      flex-wrap: nowrap;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      border-radius: 16px;
-      padding: 8px 12px;
-      gap: 4px;
-      justify-content: flex-start;
-      scrollbar-width: none; 
-      -ms-overflow-style: none;
-      touch-action: pan-x;
-    }
-    .site-nav::-webkit-scrollbar { 
-      display: none; 
-    }
-    
-    .site-nav span { 
-      display: none;
-    }
-    
-    .site-nav a { 
-      padding: 8px 16px;
-      font-size: 0.85rem;
-    }
+
+    .site-nav span { display: none; }
+    .site-nav a { padding: 6px 14px; font-size: 0.85rem; }
 
     .toc li a { padding: 8px 10px; font-size: 0.9rem; }
   }
 </style>
 
-<!-- 1. 网站基础信息 (WebSite) -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -418,7 +391,6 @@
 }
 </script>
 
-<!-- 2. 面包屑导航 (BreadcrumbList) -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -440,7 +412,6 @@
 }
 </script>
 
-<!-- 3. 文章信息 (Article) -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -464,7 +435,6 @@
 }
 </script>
 
-<!-- 4. FAQ 结构化数据 -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -589,15 +559,15 @@
 
 <nav class="site-nav" aria-label="Site navigation">
   <span>Site</span>
-  <a href="index.html" title="TrollStore Home &amp; Download">Home</a>
+  <a href="index.html" title="TrollStore Guide">Guide</a>
   <a href="install.html" title="TrollStore Install Guide">Install</a>
   <a href="variants.html" title="TrollStore Variants">Variants</a>
   <a href="alternatives.html" title="TrollStore Alternatives &amp; Jailbreak">Alternatives</a>
-  <!-- 修复：用 #top 加上 id 配合 JavaScript 解决跳转问题，防止被 SEO 识别为空链接 -->
   <a href="#top" id="nav-update" title="TrollStore Update &amp; Usage" aria-current="page">Update</a>
   <a href="official.html" title="TrollStore Official Source &amp; Device Compatibility">Official</a>
+  <a href="apps.html" title="TrollStore Apps &amp; IPAs List">Apps</a>
   <a href="faq.html" title="TrollStore FAQ">FAQ</a>
-  <a href="dopamine.html" title="Dopamine Guide">Dopamine</a>
+  <a href="dopamine.html" title="Dopamine Jailbreak Guide">Dopamine</a>
 </nav>
 
 <div class="toc">
@@ -611,45 +581,38 @@
 
 <h2 id="update">1. Update &amp; Maintenance: Keeping TrollStore Current</h2>
 
-<p>This section covers the full <strong>TrollStore update</strong> and maintenance picture. It answers the most common update-related searches — <strong>trollstore update</strong>, <strong>trollstore new update</strong>, <strong>update trollstore</strong>, <strong>how to update trollstore</strong>, <strong>trollstore update ios</strong>, <strong>trollstore update reddit</strong>, <strong>trollstore release date</strong>, <strong>trollstore releases</strong>, <strong>trollstore latest version</strong>, <strong>trollstore changelog</strong>, and <strong>trollstore 2024</strong> — in one place. Whether you just installed TrollStore and want the newest build, or you are checking whether a new release is out, everything below applies. The short version: updating TrollStore is safe and built into the app, but there is one rule that overrides everything else — <strong>never update iOS</strong>.</p>
+<p>This section covers the full <strong>TrollStore update</strong> and maintenance picture. The short version: updating TrollStore is safe and built into the app, but there is one rule that overrides everything else — <strong>never update iOS</strong>.</p>
 
 <div class="callout callout-info">
-<strong>Quick answer:</strong> To <strong>update TrollStore</strong>, open the app → Settings tab → tap the update button if one appears. To see the <strong>trollstore latest version</strong>, open the <strong>trollstore releases</strong> page on GitHub. The current latest version is <strong>2.1.1</strong>. Do <strong>not</strong> update iOS while TrollStore is installed.
+<strong>Quick answer:</strong> To <strong>update TrollStore</strong>, open the app → Settings tab → tap the update button if one appears. To see the latest version, open the releases page on GitHub. The current latest version is <strong>2.1.1</strong>. Do <strong>not</strong> update iOS while TrollStore is installed.
 </div>
 
-<h3>1.1 TrollStore Update: How to Update TrollStore Safely</h3>
-
-<p>The <strong>TrollStore update</strong> process is built directly into the app. You do not need a computer, you do not need to re-sideload anything, and your installed apps remain untouched. This is the same answer whether you search <strong>update trollstore</strong> or <strong>how to update trollstore</strong> — the method is identical on iPhone and iPad. Here is the complete procedure:</p>
+<h3>1.1 How to Update TrollStore Safely</h3>
 
 <ol>
   <li><strong>Open TrollStore</strong> on your device.</li>
   <li><strong>Go to the Settings tab</strong> (the gear icon at the bottom of the screen).</li>
   <li><strong>Check for an update button.</strong> If a newer version is available, a button appears at the top of the Settings tab, showing the new version number.</li>
   <li><strong>Tap the update button.</strong> TrollStore downloads the update package and installs it automatically.</li>
-  <li><strong>The device resprings.</strong> After the respring, TrollStore is running the latest version, and all previously installed apps remain installed and functional.</li>
+  <li><strong>The device resprings.</strong> All previously installed apps remain installed and functional.</li>
 </ol>
 
-<p>That is the entire <strong>trollstore update</strong> process. There is no separate updater app, no IPA to re-sideload, and no need to reinstall the Persistence Helper. The in-app updater was designed to make updates as frictionless as possible. If you are on an older build and want to know what changed before tapping update, read the <strong>trollstore changelog</strong> on the releases page first (see 1.2).</p>
-
 <div class="callout callout-info">
-<strong>Note:</strong> If the update button does not appear, you are already on the latest version. There is no “check for updates” button to press manually — TrollStore checks automatically when you open the Settings tab, provided you have an internet connection.
+<strong>Note:</strong> If the update button does not appear, you are already on the latest version. TrollStore checks automatically when you open the Settings tab, provided you have an internet connection.
 </div>
 
 <h3>1.2 TrollStore Releases: The Official GitHub Releases Page</h3>
 
-<!-- 修复：补充了 title 属性 -->
-<p>The authoritative source for all <strong>trollstore releases</strong> is the GitHub Releases page at <a href="https://github.com/opa334/TrollStore/releases" title="TrollStore GitHub Releases" rel="noopener" target="_blank"><code>github.com/opa334/TrollStore/releases</code></a>. This page lists every version ever released, along with the <strong>trollstore changelog</strong>, release notes, and downloadable assets (TrollInstallerX.ipa, TrollStore.tar, and the TrollStore Lite .deb). It is also where the official <strong>trollstore release date</strong> for each version is recorded.</p>
-
-<p>When you visit the <strong>trollstore releases</strong> page, here is what you will find:</p>
+<p>The authoritative source for all releases is the GitHub Releases page at <a href="https://github.com/opa334/TrollStore/releases" title="TrollStore GitHub Releases" rel="noopener" target="_blank"><code>github.com/opa334/TrollStore/releases</code></a>. It lists every version, the changelog, release dates, and downloadable assets (TrollInstallerX.ipa, TrollStore.tar, and the TrollStore Lite .deb).</p>
 
 <ul>
   <li><strong>The latest release at the top</strong> — currently version 2.1.1, marked as “Latest.”</li>
-  <li><strong>Pre-release builds</strong> — beta versions, marked with a “Pre-release” label, listed above or below the latest stable release depending on whether they are newer.</li>
-  <li><strong>The trollstore changelog for every version</strong> — each release includes a description of what changed, which is useful if you want to know whether an update is worth installing.</li>
-  <li><strong>Downloadable assets</strong> — TrollInstallerX.ipa (the installer for non-jailbroken devices), TrollStore.tar (the core package consumed by the installer), and TrollStore Lite .deb (for jailbroken devices via Havoc).</li>
+  <li><strong>Pre-release builds</strong> — marked with a “Pre-release” label.</li>
+  <li><strong>The changelog for every version</strong> — useful for deciding whether an update is worth installing.</li>
+  <li><strong>Downloadable assets</strong> — TrollInstallerX.ipa, TrollStore.tar, and TrollStore Lite .deb (jailbroken devices via Havoc).</li>
 </ul>
 
-<p>The <strong>trollstore releases</strong> page is also where you verify the version history and each <strong>trollstore release date</strong>. If you are troubleshooting a bug or want to know whether a specific fix has shipped, the <strong>trollstore changelog</strong> on each release will tell you. The releases page is the single source of truth — third-party sites that repackage releases are not official and should not be trusted. This is also why searches like <strong>trollstore update reddit</strong> should be treated as discussion, not as a download source: Reddit threads can point you to the official page, but the release notes themselves live on GitHub.</p>
+<p>Third-party sites that repackage releases are not official. Community threads on Reddit can point you to the right page, but the release notes themselves live on GitHub.</p>
 
 <div class="table-wrap">
   <table>
@@ -685,255 +648,83 @@
   </table>
 </div>
 
-<h3>1.3 TrollStore Latest Version: What Is the Current Version?</h3>
+<h3>1.3 TrollStore Latest Version</h3>
 
-<p>As of the last update of this guide (November 2026), the <strong>trollstore latest version</strong> is <strong>2.1.1</strong>. This is the version you should be running if you want the most stable and feature-complete build. Here is what you need to know about the current version:</p>
+<p>As of the last update of this guide (November 2026), the latest TrollStore version is <strong>2.1.1</strong>. Version 2.1.1 is a patch release that fixed a TrollStore Lite entitlement typo. If you use TrollStore Lite on a Dopamine-jailbroken device, this update is important. Version 2.1 introduced the Lite variant, app transfer, and the Refresh App Registrations feature.</p>
 
-<ul>
-  <li><strong>Version 2.1.1</strong> is a patch release that fixed a TrollStore Lite entitlement typo. If you use TrollStore Lite on a Dopamine-jailbroken device, this update is important.</li>
-  <li><strong>Version 2.1</strong> introduced the Lite variant, app transfer, and the Refresh App Registrations feature. If you are on 2.0 or 1.x, updating to 2.1.1 gets you all of these improvements.</li>
-  <li><strong>There is no version 3.x</strong> and no announced roadmap for one. The developer has stated that the current support range (iOS 14.0–16.6.1, 16.7 RC, 17.0) is final unless a new CoreTrust bug is discovered.</li>
-</ul>
-
-<p>To check the <strong>trollstore latest version</strong> at any time, visit the GitHub Releases page and look at the top entry marked “Latest.” Do not rely on third-party sites or search snippets — they may be outdated or wrong. The releases page is always current. The same applies to the <strong>trollstore release date</strong>: the date shown on the releases page is the official one.</p>
+<p>The developer has stated that the current support range (iOS 14.0–16.6.1, 16.7 RC, 17.0) is final unless a new CoreTrust bug is discovered. To check the latest version at any time, look at the top entry on the GitHub Releases page.</p>
 
 <div class="callout callout-info">
-<strong>Quick check:</strong> Open TrollStore → Settings tab. The version number is displayed at the bottom of the screen. Compare it against the latest release on GitHub. If yours is older, tap the update button at the top of the Settings tab.
+<strong>Quick check:</strong> Open TrollStore → Settings tab. The version number is shown at the bottom of the screen. Compare it against the latest release on GitHub.
 </div>
 
-<h3>1.4 TrollStore 2024 and Beyond: What Changed and What to Expect</h3>
+<h3>1.4 Update iOS vs. Update TrollStore</h3>
 
-<p>Many users searching <strong>trollstore 2024</strong> want a plain summary of where the project stands in that year. The <strong>trollstore 2024</strong> picture is simple: the 2.x series matured, TrollStore Lite arrived in 2.1, and 2.1.1 shipped as a patch. No new CoreTrust exploit was announced in 2024, so the supported iOS range did not expand. If you are reading this in 2026, the <strong>trollstore 2024</strong> releases are still the most recent stable line — 2.1.1 remains the <strong>trollstore latest version</strong>.</p>
-
-<p>For the exact <strong>trollstore release date</strong> of each 2024 build and the full <strong>trollstore changelog</strong>, use the releases page. For community discussion around <strong>trollstore 2024</strong> and later, a <strong>trollstore update reddit</strong> search will surface threads, but always confirm version numbers and download links against GitHub.</p>
-
-<h3>1.5 TrollStore Update iOS: Why “Update TrollStore” Does Not Mean “Update iOS”</h3>
-
-<p>The search <strong>trollstore update ios</strong> mixes two very different actions, and confusing them is the most dangerous mistake a TrollStore user can make. <strong>Updating TrollStore</strong> is safe and keeps your apps working. <strong>Updating iOS</strong> patches the CoreTrust vulnerability TrollStore depends on and permanently breaks TrollStore. These are not the same thing, and only one of them is something you should do.</p>
+<p>Updating TrollStore is safe and keeps your apps working. <strong>Updating iOS</strong> patches the CoreTrust vulnerability TrollStore depends on and permanently breaks TrollStore.</p>
 
 <div class="callout callout-danger">
-<strong>Critical warning:</strong> Do not update iOS while TrollStore is installed. This includes minor point updates, security patches, and betas. Disable automatic updates in Settings → General → Software Update → Automatic Updates to prevent accidental installation. Once iOS is updated past a supported version, TrollStore is gone for good.
+<strong>Critical warning:</strong> Do not update iOS while TrollStore is installed. This includes minor point updates, security patches, and betas. Disable automatic updates in Settings → General → Software Update → Automatic Updates. Once iOS is updated past a supported version, TrollStore is gone for good.
 </div>
 
-<p>This warning applies to both the standard TrollStore and TrollStore Lite. For Lite users, updating iOS may also break the jailbreak, which would remove TrollStore Lite along with it. The safest approach is to stay on your current iOS version until you no longer need TrollStore. If you searched <strong>trollstore update ios</strong> hoping to update iOS and keep TrollStore, the answer is no — there is no supported path for that.</p>
+<p>This applies to both standard TrollStore and TrollStore Lite. For Lite users, updating iOS may also break the jailbreak. The safest approach is to stay on your current iOS version until you no longer need TrollStore.</p>
 
-<h3>1.6 Version History and Changelog Overview</h3>
-
-<p>Understanding the version history helps you decide whether an update is worth installing. The table below summarizes the major releases, their <strong>trollstore release date</strong>, and their key changes. For the complete <strong>trollstore changelog</strong>, visit the <strong>trollstore releases</strong> page on GitHub.</p>
-
-<div class="table-wrap">
-  <table>
-    <thead>
-      <tr>
-        <th>Version</th>
-        <th>Release Date</th>
-        <th>Key iOS Support</th>
-        <th>Notable Changes</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>1.x</td>
-        <td>2022</td>
-        <td>iOS 14.0 – 15.x</td>
-        <td>Initial releases; used earlier CoreTrust exploit variants</td>
-      </tr>
-      <tr>
-        <td><strong>2.0</strong></td>
-        <td>November 2023</td>
-        <td>iOS 15.5 – 16.6.1, 17.0</td>
-        <td>Added CVE-2023-41991 support; major version jump</td>
-      </tr>
-      <tr>
-        <td><strong>2.1</strong></td>
-        <td>2024</td>
-        <td>Same as 2.0</td>
-        <td>Introduced TrollStore Lite; app transfer; Refresh App Registrations</td>
-      </tr>
-      <tr>
-        <td><strong>2.1.1</strong> (latest)</td>
-        <td>2024</td>
-        <td>Same as 2.0</td>
-        <td>Fixed Lite entitlement typo</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-<p>The version history is linear: 1.x → 2.0 → 2.1 → 2.1.1. There are no parallel branches or alternative version lines. If you see a “TrollStore 2” or “TrollStore v2” reference, it means the 2.x series — there is no separate product. The <strong>trollstore latest version</strong> is always the top entry on the <strong>trollstore releases</strong> page.</p>
-
-<h3>1.7 TrollStore Update Reddit: How to Use Community Reports Without Getting Misled</h3>
-
-<p>A <strong>trollstore update reddit</strong> search is useful for one thing: seeing whether other users have hit problems with a specific build. It is not a reliable source for version numbers, release dates, or downloads. Reddit threads about a <strong>trollstore new update</strong> can lag behind the actual <strong>trollstore release date</strong>, and screenshots of version numbers are easy to misread. Treat <strong>trollstore update reddit</strong> as a discussion layer, then confirm everything against the official <strong>trollstore releases</strong> page and the <strong>trollstore changelog</strong>.</p>
-
-<p>The same caution applies to any <strong>trollstore 2024</strong> thread you find on Reddit: the year label in a post does not guarantee the information is current. If a thread mentions a build newer than 2.1.1, verify it on GitHub before acting on it.</p>
-
-<h3>1.8 Maintenance Checklist: Keeping TrollStore Healthy</h3>
-
-<p>Beyond updating TrollStore itself, there are a few maintenance tasks that keep your installation healthy. These are not updates — they are routine checks that prevent common issues.</p>
+<h3>1.5 Maintenance Checklist</h3>
 
 <ul>
-  <li><strong>Never update iOS.</strong> This is the most important rule. Disable automatic updates.</li>
-  <li><strong>Refresh App Registrations when apps stop launching.</strong> If TrollStore or any app it installed stops opening after a reboot or icon cache reload, open your Persistence Helper app and tap “Refresh App Registrations.”</li>
-  <li><strong>Check for TrollStore updates periodically.</strong> Open the Settings tab in TrollStore to see if a <strong>trollstore new update</strong> is available. Updates are safe and do not affect your installed apps.</li>
-  <li><strong>Keep the Persistence Helper installed.</strong> Do not delete the system app (typically Tips) that TrollStore replaced with the helper. Without it, you cannot refresh app registrations.</li>
-  <li><strong>Verify your source.</strong> Only download TrollStore from the official GitHub <strong>trollstore releases</strong> page. If you installed from a third-party site, consider reinstalling from the official source to ensure you are running an untampered build.</li>
+  <li><strong>Never update iOS.</strong> Disable automatic updates.</li>
+  <li><strong>Refresh App Registrations when apps stop launching.</strong> Open your Persistence Helper app and tap “Refresh App Registrations.”</li>
+  <li><strong>Check for TrollStore updates periodically</strong> in the Settings tab.</li>
+  <li><strong>Keep the Persistence Helper installed.</strong> Do not delete the system app (typically Tips) that TrollStore replaced.</li>
+  <li><strong>Verify your source.</strong> Only download TrollStore from the official GitHub releases page.</li>
 </ul>
-
-<h3>1.9 Update FAQ: Short Answers to the Most Common Update Questions</h3>
-
-<div class="table-wrap">
-  <table>
-    <thead>
-      <tr>
-        <th>Question</th>
-        <th>Short Answer</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>How do I update TrollStore?</td>
-        <td>Open TrollStore → Settings tab → tap the update button if it appears. The device resprings when done.</td>
-      </tr>
-      <tr>
-        <td>What is the latest TrollStore version?</td>
-        <td>2.1.1 (a patch release for the Lite entitlement typo). Check the GitHub <strong>trollstore releases</strong> page for the current top entry.</td>
-      </tr>
-      <tr>
-        <td>Where is the TrollStore changelog?</td>
-        <td>Each release on the GitHub <strong>trollstore releases</strong> page includes its own changelog entry.</td>
-      </tr>
-      <tr>
-        <td>When was the last TrollStore release?</td>
-        <td>See the <strong>trollstore release date</strong> next to each version on the releases page; 2.1.1 is the most recent stable release.</td>
-      </tr>
-      <tr>
-        <td>Is there a TrollStore 2024 update?</td>
-        <td>The 2024 line is 2.1 and 2.1.1. There is no separate “2024 edition” — <strong>trollstore 2024</strong> refers to those releases.</td>
-      </tr>
-      <tr>
-        <td>Can I update iOS and keep TrollStore?</td>
-        <td>No. Updating iOS breaks TrollStore permanently. See 1.5.</td>
-      </tr>
-      <tr>
-        <td>Why is the update button missing?</td>
-        <td>You are already on the latest version, or you have no internet connection.</td>
-      </tr>
-      <tr>
-        <td>Is Reddit a good source for TrollStore updates?</td>
-        <td>Only for discussion. Confirm version numbers and downloads on the official GitHub releases page.</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-<div class="callout callout-info">
-<!-- 修复：补充了 title 属性 -->
-<strong>Summary for update queries:</strong> To <strong>update TrollStore</strong>, open the app → Settings tab → tap the update button if available. To check the <strong>trollstore latest version</strong>, visit <a href="https://github.com/opa334/TrollStore/releases" title="TrollStore GitHub Releases" rel="noopener" target="_blank"><code>github.com/opa334/TrollStore/releases</code></a>. The current <strong>trollstore latest version</strong> is 2.1.1, and the <strong>trollstore changelog</strong> for every build lives on that page. Never update iOS while TrollStore is installed. That is the complete <strong>trollstore update</strong> and maintenance picture.
-</div>
 
 <h2 id="usage">2. Guide &amp; Tutorial: How to Use TrollStore After Installation</h2>
 
-<p>This section is the practical <strong>trollstore guide</strong> and <strong>trollstore tutorial</strong> for what to do <strong>after</strong> TrollStore is installed. If you are looking for <strong>trollstore how to install</strong> steps by iOS version, see the <a href="install.html" title="Install Guide">install guide</a>, which covers the full install process (TrollHelperOTA, TrollInstallerX, and TrollRestore). Here we focus on <strong>trollstore how to use</strong> the app day to day: installing IPAs, managing apps, keeping the Persistence Helper working, and troubleshooting common problems. This is the complete <strong>trollstore guide</strong> for post-install usage, and it applies to both iPhone and iPad on supported versions (iOS 14.0 beta 2–16.6.1, 16.7 RC, and 17.0) — making this section the <strong>ios trollstore guide</strong> for post-install usage as well.</p>
-
-<h3>2.1 TrollStore Guide: What This Section Covers</h3>
-
-<p>Think of this as your <strong>trollstore guide</strong> for the “after install” phase. A <strong>trollstore tutorial</strong> that stops at installation leaves most of the questions unanswered — how do I actually install an IPA? Where do the apps go? Why do apps stop launching after a reboot? What is the Persistence Helper and when do I need it? This section answers those questions in order, so you can treat it as a step-by-step <strong>trollstore tutorial</strong> for daily use.</p>
-
-<p>If you have not installed TrollStore yet, this section will not make sense out of context. Start with the <a href="install.html" title="Install Guide">install guide</a> for the <strong>trollstore how to install</strong> steps, then come back here for the <strong>trollstore how to use</strong> steps. The two halves together form the complete <strong>trollstore guide</strong>.</p>
+<p>This section covers what to do <strong>after</strong> TrollStore is installed. If you are looking for installation steps by iOS version, see the <a href="install.html" title="Install Guide">Install Guide</a>.</p>
 
 <div class="callout callout-info">
-<strong>At a glance:</strong> <strong>trollstore how to install</strong> = getting TrollStore onto your device with the right installer. <strong>trollstore how to use</strong> = installing IPAs, managing apps, and refreshing registrations with the Persistence Helper after it is on your home screen.
+<strong>At a glance:</strong> Install IPAs via the + button or Open In, manage them in the Apps tab, and use the Persistence Helper → Refresh App Registrations when apps stop launching.
 </div>
 
-<h3>2.2 TrollStore Tutorial: Core Operations Step by Step</h3>
-
-<p>Once installed, the core function is simple. Follow this <strong>trollstore tutorial</strong> in order:</p>
+<h3>2.1 Core Operations</h3>
 
 <ol>
-  <li><strong>Install an IPA:</strong> Tap the <strong>+</strong> button in TrollStore, or open an IPA file from Files, AirDrop, or Safari and choose “Open in TrollStore.” TrollStore will install it with permanent signing. No Apple ID, no 7-day refresh, no computer.</li>
-  <li><strong>Manage installed apps:</strong> The Apps tab lists everything installed via TrollStore. You can uninstall, view entitlements, or open apps from here. This is also where you confirm that an app is registered as a “System” app rather than a “User” app.</li>
-  <li><strong>Refresh registrations:</strong> If apps stop launching after a reboot or an icon cache reload, open your Persistence Helper app (typically the replaced Tips app) and tap <strong>Refresh App Registrations</strong>. This is the single most common <strong>trollstore how to use</strong> question, and the answer is always the same: use the helper.</li>
+  <li><strong>Install an IPA:</strong> Tap the <strong>+</strong> button in TrollStore, or open an IPA from Files, AirDrop, or Safari and choose “Open in TrollStore.” No Apple ID, no 7-day refresh, no computer.</li>
+  <li><strong>Manage installed apps:</strong> The Apps tab lists everything installed via TrollStore. You can uninstall, view entitlements, or open apps from here.</li>
+  <li><strong>Refresh registrations:</strong> If apps stop launching after a reboot or icon cache reload, open the Persistence Helper (typically the replaced Tips app) and tap <strong>Refresh App Registrations</strong>.</li>
 </ol>
 
-<p>That three-step loop — install, manage, refresh — is the entire day-to-day <strong>trollstore tutorial</strong>. Everything else in this section is detail around those three actions.</p>
-
-<h3>2.3 TrollStore How to Install vs. How to Use: The Key Difference</h3>
-
-<p>Many visitors search for <strong>trollstore how to install</strong> and <strong>trollstore how to use</strong> as if they are the same question. They are not. This subsection clarifies the split so you land on the right instructions:</p>
-
-<div class="table-wrap">
-  <table>
-    <thead>
-      <tr>
-        <th>Question</th>
-        <th>What It Means</th>
-        <th>Where to Read</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>trollstore how to install</code></td>
-        <td>How to get TrollStore onto your device: choosing the right installer (TrollHelperOTA, TrollInstallerX, TrollRestore) for your iOS version.</td>
-        <td><a href="install.html" title="Install Guide">Install Guide</a> + <a href="index.html" title="Home Compatibility">Home Page</a> (version check)</td>
-      </tr>
-      <tr>
-        <td><code>trollstore how to use</code></td>
-        <td>How to operate TrollStore after it is installed: install IPAs, manage apps, refresh registrations, set up the Persistence Helper.</td>
-        <td>This section (Section 2)</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-<p>If you are still searching for <strong>trollstore how to install</strong>, do not skip the compatibility check on our <a href="index.html" title="Home Compatibility">Home Page</a> first — installing the wrong installer for your iOS version is the most common cause of failure. Once TrollStore is on your home screen, come back here and follow the <strong>trollstore how to use</strong> steps below.</p>
-
-<h3>2.4 TrollStore How to Use: Installing IPAs (All Methods)</h3>
-
-<p>The most common <strong>trollstore how to use</strong> question is “how do I install an IPA?” There are several ways, and all of them end with TrollStore doing the signing:</p>
+<h3>2.2 Installing IPAs</h3>
 
 <ul>
-  <li><strong>From the TrollStore app:</strong> Open TrollStore, tap the <strong>+</strong> button, and select an IPA from the Files app.</li>
-  <li><strong>From Files or AirDrop:</strong> Tap an IPA file, choose Share/Open With, and select TrollStore. The IPA installs immediately.</li>
-  <li><strong>From Safari:</strong> Download an IPA, then open it from the Downloads list and choose “Open in TrollStore.”</li>
-  <li><strong>From a file manager:</strong> Any file manager that supports “Open in” can hand an IPA to TrollStore.</li>
+  <li><strong>From the TrollStore app:</strong> Tap <strong>+</strong> and select an IPA from the Files app.</li>
+  <li><strong>From Files or AirDrop:</strong> Tap an IPA, choose Share/Open With, and select TrollStore.</li>
+  <li><strong>From Safari:</strong> Download an IPA, then open it from Downloads and choose “Open in TrollStore.”</li>
 </ul>
-
-<p>In every case, TrollStore signs the IPA permanently and installs it as a system-registered app. There is no Apple ID prompt, no 7-day expiry, and no computer required. This is the core of <strong>trollstore how to use</strong> — the app is the signing engine, and the IPA is the input.</p>
 
 <div class="callout callout-info">
-<strong>Source matters:</strong> TrollStore will install any IPA you give it, including malicious ones. Only install IPAs from trusted developers or community sources. See Section 3 for a community-maintained collection (Neoncat-OG/TrollStore-IPAs), and treat any third-party source with caution.
+<strong>Source matters:</strong> TrollStore will install any IPA you give it, including malicious ones. Only install IPAs from trusted developers or sources.
 </div>
 
-<h3>2.5 TrollStore Tutorial: Managing Installed Apps</h3>
-
-<p>After installation, the Apps tab is your control center. This part of the <strong>trollstore tutorial</strong> covers what you can do there:</p>
+<h3>2.3 Managing Installed Apps</h3>
 
 <ul>
-  <li><strong>Uninstall apps:</strong> Swipe or tap to remove an app installed via TrollStore. This removes the app and its registration.</li>
-  <li><strong>View entitlements:</strong> TrollStore shows the entitlements an IPA requested, which is useful for verifying that an app has the permissions it needs.</li>
-  <li><strong>Check app state:</strong> Apps should show as “System” after a successful install. If they show as “User,” they may stop launching after an icon cache reload — this is when you need the Persistence Helper.</li>
-  <li><strong>Transfer to TrollStore Lite:</strong> If you later jailbreak your device, version 2.1+ includes an option to transfer installed apps from standard TrollStore to Lite.</li>
+  <li><strong>Uninstall apps</strong> from the Apps tab.</li>
+  <li><strong>View entitlements</strong> to verify an app has the permissions it needs.</li>
+  <li><strong>Check app state:</strong> Apps should show as “System.” If they show as “User,” they may stop launching after an icon cache reload — use the Persistence Helper.</li>
+  <li><strong>Transfer to TrollStore Lite:</strong> On version 2.1+, installed apps can be transferred from standard TrollStore to Lite after jailbreaking.</li>
 </ul>
 
-<p>This is the operational core of <strong>trollstore how to use</strong>: the Apps tab is where you verify that installations succeeded and where you clean up apps you no longer need.</p>
-
-<h3>2.6 TrollStore How to Use: The Persistence Helper and Refresh App Registrations</h3>
-
-<p>The single most important <strong>trollstore how to use</strong> habit is knowing when and how to use the Persistence Helper. Here is the full explanation:</p>
+<h3>2.4 The Persistence Helper</h3>
 
 <ol>
-  <li><strong>What it is:</strong> During installation, TrollStore replaces a built-in system app (typically Tips) with a small helper. This is not optional for long-term use — it is how TrollStore keeps its apps registered as “System” apps.</li>
-  <li><strong>Why you need it:</strong> iOS periodically reloads its icon cache. When that happens, TrollStore and its apps can revert to “User” state and stop launching. This is normal behavior, not a bug.</li>
-  <li><strong>How to use it:</strong> Open the helper app (the replaced Tips app) and tap <strong>Refresh App Registrations</strong>. The apps return to “System” state and launch normally again.</li>
+  <li><strong>What it is:</strong> During installation, TrollStore replaces a built-in system app (typically Tips) with a small helper that keeps TrollStore and its apps registered as “System” apps.</li>
+  <li><strong>Why you need it:</strong> iOS periodically reloads its icon cache. When that happens, apps can revert to “User” state and stop launching. This is normal behavior, not a bug.</li>
+  <li><strong>How to use it:</strong> Open the helper app and tap <strong>Refresh App Registrations</strong>.</li>
   <li><strong>If you skipped it during installation:</strong> Open TrollStore → Settings → <strong>Install Persistence Helper</strong>, then select an app to replace (typically Tips).</li>
 </ol>
 
-<p>If you remember only one thing from this <strong>trollstore guide</strong>, remember this: when apps stop opening, open the helper and refresh registrations. That single action resolves the vast majority of “TrollStore stopped working” reports.</p>
-
-<h3>2.7 TrollStore Guide: Troubleshooting Common Post-Install Issues</h3>
-
-<p>This troubleshooting checklist is part of the <strong>trollstore guide</strong> for real-world use. If something is not working after installation, check these in order:</p>
+<h3>2.5 Troubleshooting Common Post-Install Issues</h3>
 
 <div class="table-wrap">
   <table>
@@ -958,10 +749,10 @@
       <tr>
         <td>TrollStore itself will not open</td>
         <td>Persistence Helper missing or unregistered</td>
-        <td>Reinstall Persistence Helper from TrollStore Settings (if possible) or re-install TrollStore with the same installer</td>
+        <td>Reinstall using the same installer, or reinstall the Persistence Helper from Settings</td>
       </tr>
       <tr>
-        <td>“Update” button missing in Settings</td>
+        <td>Update button missing in Settings</td>
         <td>Already on the latest version, or no internet</td>
         <td>Check the version number at the bottom of Settings against GitHub Releases</td>
       </tr>
@@ -969,34 +760,11 @@
   </table>
 </div>
 
-<p>Most post-install problems fall into the first row: the icon cache reload. That is why the Persistence Helper is covered so heavily in this <strong>trollstore tutorial</strong> — it is the fix for the most common issue.</p>
+<h3>2.6 TrollStore 2 Installation &amp; Tutorial</h3>
 
-<h3>2.8 TrollStore Tutorial: Video and Text Resources</h3>
+<p>If you are on the TrollStore 2 line (2.0, 2.1, 2.1.1), the daily-use loop is the same as above. Version 2.1 added TrollStore Lite and the Refresh App Registrations option. On non-jailbroken devices, use TrollInstallerX; on jailbroken devices, use TrollStore Lite via Havoc. The 1.x exploit paths no longer apply on supported 2.x devices.</p>
 
-<p>Some users prefer a video <strong>trollstore tutorial</strong>; others prefer a text <strong>trollstore guide</strong>. Both are valid. For text, this page (Sections 1 and 2 together) is the complete reference. For video, search for the official installer names (TrollInstallerX, TrollRestore, TrollHelperOTA) rather than generic “TrollStore” queries — generic searches are dominated by unofficial repackages. The official README also points to <strong>ios.cfw.guide</strong> for version-specific walkthroughs, which is a reliable text companion to this <strong>trollstore guide</strong>.</p>
-
-<p>Regardless of format, the same rules apply: install with the correct installer for your iOS version (<strong>trollstore how to install</strong>), then use the Apps tab and Persistence Helper for daily operation (<strong>trollstore how to use</strong>).</p>
-
-<h3>2.9 TrollStore 2 Installation Guide &amp; Tutorial</h3>
-
-<p>If you are on the TrollStore 2 line (2.0, 2.1, 2.1.1), this <strong>trollstore 2 installation guide</strong> applies to you. The <strong>trollstore 2 tutorial</strong> below assumes TrollStore 2 is already installed; if not, follow the <strong>trollstore 2 installation guide</strong> in the <a href="install.html" title="Install Guide">install guide</a> first. Version 2.1 added TrollStore Lite and Refresh App Registrations — both are covered in the <strong>trollstore 2 tutorial</strong> steps in 2.2 and 2.6.</p>
-
-<ul>
-  <li><strong>trollstore 2 installation guide:</strong> Use TrollInstallerX (non-jailbroken) or TrollStore Lite via Havoc (jailbroken) for the 2.x line; the 1.x exploit paths no longer apply on supported 2.x devices.</li>
-  <li><strong>trollstore 2 tutorial:</strong> The daily-use loop is identical to 2.2 — install IPA, manage in Apps tab, refresh registrations. The 2.x additions are TrollStore Lite transfer and the Refresh App Registrations option, both covered in 2.5 and 2.6.</li>
-</ul>
-
-<div class="callout callout-info">
-<strong>Version note:</strong> If a guide references “TrollStore 2” without a version number, it means the 2.x series (2.0 → 2.1 → 2.1.1). The <strong>trollstore 2 installation guide</strong> and <strong>trollstore 2 tutorial</strong> on this page apply to that whole line.
-</div>
-
-<h3>2.10 CFW, Installer &amp; Jailbreak Install Paths</h3>
-
-<p>For version-specific install walkthroughs, the <strong>ios cfw guide</strong> is the companion reference. The <strong>cfw trollstore guide</strong> and <strong>trollstore cfw guide</strong> pages cover the CFW-based install path; the <strong>ios cfw guide trollstore</strong> entry explains which installer to use on each iOS version.</p>
-
-<p>If you follow the <strong>https ios cfw guide installing trollstore</strong> path, you will use TrollInstallerX; the <strong>https ios cfw guide installing trollstore trollinstallerx</strong> page is the exact walkthrough for that installer, and the <strong>ios.cfw guide/installing-trollstore-trollinstallerx/</strong> URL is the canonical text page.</p>
-
-<p>Dopamine-jailbroken users should read <strong>ios cfw guide installing dopamine trollstore</strong>, and jailbreak-specific installs are covered by <strong>https api jailbreak guide trollstore</strong>. The <strong>trollstore trollinstallerx ios guide</strong> section explains the installer flow step by step.</p>
+<h3>2.7 Installation Paths by Method</h3>
 
 <div class="table-wrap">
   <table>
@@ -1009,82 +777,49 @@
     </thead>
     <tbody>
       <tr>
-        <td><strong>ios cfw guide installing trollstore</strong></td>
-        <td>Standard non-jailbroken devices on supported iOS</td>
-        <td><a href="install.html" title="Install Guide">Install Guide</a> + <strong>ios cfw guide</strong></td>
+        <td>Standard non-jailbroken install</td>
+        <td>Supported iOS, no jailbreak</td>
+        <td><a href="install.html" title="Install Guide">Install Guide</a></td>
       </tr>
       <tr>
-        <td><strong>https ios cfw guide installing trollstore trollinstallerx</strong></td>
-        <td>TrollInstallerX-based install, step by step</td>
-        <td><strong>ios.cfw guide/installing-trollstore-trollinstallerx/</strong></td>
+        <td>TrollInstallerX</td>
+        <td>Step-by-step installer walkthrough</td>
+        <td><a href="install.html" title="Install Guide">Install Guide</a></td>
       </tr>
       <tr>
-        <td><strong>ios cfw guide installing dopamine trollstore</strong></td>
-        <td>Dopamine-jailbroken devices using TrollStore Lite</td>
-        <td>Havoc repo + <strong>trollstore cfw guide</strong></td>
-      </tr>
-      <tr>
-        <td><strong>https api jailbreak guide trollstore</strong></td>
-        <td>Jailbreak-specific install paths</td>
-        <td><strong>ios cfw guide trollstore</strong> + install guide</td>
+        <td>Dopamine-jailbroken devices</td>
+        <td>TrollStore Lite</td>
+        <td><a href="dopamine.html" title="Dopamine Jailbreak Guide">Dopamine Guide</a></td>
       </tr>
     </tbody>
   </table>
 </div>
 
-<p>In short: the <strong>cfw trollstore guide</strong> family of pages is the CFW-based companion to this <strong>trollstore guide</strong>. Use <strong>ios cfw guide trollstore</strong> to pick the installer, <strong>https ios cfw guide installing trollstore trollinstallerx</strong> for the TrollInstallerX walkthrough, and <strong>ios cfw guide installing dopamine trollstore</strong> if you are on Dopamine. The <strong>trollstore trollinstallerx ios guide</strong> section in this site covers the same flow in a shorter form.</p>
-
-<h3>2.11 Download &amp; Installer Guide</h3>
-
-<p>If you are searching for a <strong>trollstore download guide</strong>, only use the official GitHub releases page. The <strong>trollstore installer ios guide</strong> and <strong>installing trollstore guide</strong> sections above explain which installer (TrollHelperOTA, TrollInstallerX, TrollRestore) matches your iOS version. The <strong>trollstore install guide</strong> linked at the top of this section is the full walkthrough.</p>
+<h3>2.8 Download &amp; Installer Notes</h3>
 
 <ul>
-  <!-- 修复：补充了 title 属性 -->
-  <li><strong>trollstore download guide:</strong> Download only from <a href="https://github.com/opa334/TrollStore/releases" title="TrollStore GitHub Releases" rel="noopener" target="_blank"><code>github.com/opa334/TrollStore/releases</code></a>. Third-party mirrors are not official.</li>
-  <li><strong>trollstore installer ios guide:</strong> Match the installer to your iOS version — TrollHelperOTA for iOS 14.0–15.6.1, TrollInstallerX for the 2.x line on non-jailbroken devices, TrollStore Lite via Havoc for jailbroken devices.</li>
-  <li><strong>installing trollstore guide:</strong> Follow the <a href="install.html" title="Install Guide">install guide</a> in order, and verify your iOS version on the <a href="index.html" title="Home Compatibility">Home Page</a> before starting.</li>
-  <li><strong>trollstore install guide:</strong> The single canonical walkthrough for installation; this page covers what to do after it succeeds.</li>
+  <li><strong>Download only from</strong> <a href="https://github.com/opa334/TrollStore/releases" title="TrollStore GitHub Releases" rel="noopener" target="_blank"><code>github.com/opa334/TrollStore/releases</code></a>. Third-party mirrors are not official.</li>
+  <li><strong>Match the installer to your iOS version</strong> — TrollHelperOTA for iOS 14.0–15.6.1, TrollInstallerX for the 2.x line on non-jailbroken devices, TrollStore Lite via Havoc for jailbroken devices.</li>
+  <li><strong>Verify your iOS version</strong> on the <a href="index.html" title="TrollStore Guide">Home Page</a> before starting.</li>
 </ul>
-
-<div class="callout callout-info">
-<strong>Source check:</strong> A <strong>trollstore download guide</strong> that points anywhere other than the official GitHub releases page should be treated as unsafe. The <strong>trollstore installer ios guide</strong> and <strong>installing trollstore guide</strong> content on this site always defers to the official release assets.
-</div>
-
-<h3>2.12 Guide &amp; Tutorial Summary</h3>
-
-<div class="callout callout-info">
-<strong>Summary for guide and tutorial queries:</strong> This section is the post-install <strong>trollstore guide</strong> and <strong>trollstore tutorial</strong>. For <strong>trollstore how to install</strong>, see the <a href="install.html" title="Install Guide">install guide</a> and confirm your version on the <a href="index.html" title="Home Compatibility">Home Page</a>. For <strong>trollstore how to use</strong>, the three core actions are: install IPAs via the + button or Open In, manage them in the Apps tab, and use the Persistence Helper → Refresh App Registrations when apps stop launching. On the 2.x line, follow the <strong>trollstore 2 installation guide</strong> and <strong>trollstore 2 tutorial</strong> in 2.9. For CFW and installer paths, use the <strong>cfw trollstore guide</strong>, <strong>ios cfw guide trollstore</strong>, <strong>https ios cfw guide installing trollstore trollinstallerx</strong>, and <strong>ios cfw guide installing dopamine trollstore</strong> references in 2.10. For downloads, follow the <strong>trollstore download guide</strong> and <strong>trollstore installer ios guide</strong> notes in 2.11 — official GitHub releases only. That is the complete <strong>trollstore tutorial</strong> for daily use.
-</div>
 
 <h2 id="ecosystem">3. Ecosystem &amp; Repo: Helpers, Sources &amp; Community Resources</h2>
 
-<p>This section covers the TrollStore <strong>ecosystem</strong> — the helpers, sources, and community resources that surround the app. It is also where the many <strong>trollstore repo</strong> searches land: <strong>trollstore repository</strong>, <strong>trollstore repo link</strong>, <strong>trollstore repo source</strong>, <strong>trollstore repo github</strong>, <strong>trollstore repo sileo</strong>, <strong>trollstore repo cydia</strong>, <strong>trollstore repo zebra</strong>, <strong>trollstore repo altstore</strong>, <strong>trollstore repo reddit</strong>, <strong>trollstore repo sidestore</strong>, <strong>trollstore repo esign</strong>, <strong>repo for trollstore</strong>, <strong>repo de trollstore</strong>, <strong>trollstore add repo</strong>, <strong>trollstore helper repo</strong>, <strong>trollstore tweak repo</strong>, <strong>trollstore installer repo</strong>, <strong>trollstore lite repo</strong>, <strong>trollstore 2 repo</strong>, <strong>trollstore ios repo</strong>, <strong>cypwn trollstore repo</strong>, and <strong>trollstore repo for sileo</strong>. The short answer up front: <strong>most non-jailbroken users do not need to add any repo at all</strong>. Read on for what each of these terms actually refers to.</p>
+<p>This section explains the TrollStore ecosystem and what “repo” searches actually refer to. The short answer: <strong>most non-jailbroken users do not need to add any repo at all</strong>.</p>
 
 <div class="callout callout-info">
-<strong>Quick answer:</strong> There is no <strong>trollstore repo</strong> to add on a non-jailbroken device. TrollStore installs IPAs directly and ships with the Persistence Helper built in. A <strong>trollstore repo</strong> only becomes relevant if you are jailbroken and using TrollStore Lite via the Havoc repository.
+<strong>Quick answer:</strong> There is no repo to add on a non-jailbroken device. TrollStore installs IPAs directly and ships with the Persistence Helper built in. A repo only becomes relevant if you are jailbroken and using TrollStore Lite via the Havoc repository.
 </div>
 
-<h3>3.1 TrollStore Repo vs. TrollStore Repository: What the Terms Mean</h3>
-
-<p>The words <strong>trollstore repo</strong> and <strong>trollstore repository</strong> get used for three different things, which is why the searches are so confusing:</p>
+<h3>3.1 What “Repo” Means</h3>
 
 <ul>
-  <li><strong>The GitHub source repository</strong> — <code>github.com/opa334/TrollStore</code>. This is the official code base and the <strong>trollstore repo github</strong> that all releases come from. When people search <strong>trollstore repository</strong> or <strong>trollstore repo link</strong>, this is usually what they mean.</li>
-  <li><strong>A package-manager source</strong> — a <strong>trollstore repo sileo</strong>, <strong>trollstore repo cydia</strong>, or <strong>trollstore repo zebra</strong> entry. These only apply to jailbroken devices, and for TrollStore the only official one is the Havoc repository for TrollStore Lite.</li>
-  <li><strong>Community IPA collections</strong> — repositories like <code>Neoncat-OG/TrollStore-IPAs</code>, which are sometimes called a <strong>trollstore tweak repo</strong> or <strong>trollstore ipa repository</strong>. These are not software sources in the Sileo/Cydia sense; they are GitHub collections of IPA files.</li>
+  <li><strong>The GitHub source repository</strong> — <code>github.com/opa334/TrollStore</code>. This is the official code base and the source of all releases.</li>
+  <li><strong>A package-manager source</strong> — Sileo, Cydia, or Zebra entries. These only apply to jailbroken devices, and the only official one for TrollStore is the Havoc repository for TrollStore Lite.</li>
+  <li><strong>Community IPA collections</strong> — such as <code>Neoncat-OG/TrollStore-IPAs</code>. These are GitHub collections of IPA files, not package-manager sources.</li>
 </ul>
 
-<p>Keeping these three meanings separate answers most <strong>trollstore repo</strong> questions immediately. If you are not jailbroken, only the first and third meanings apply to you — and neither requires “adding” anything.</p>
-
-<h3>3.2 Repos and Helpers in Context</h3>
-
-<p>For <strong>non-jailbroken users</strong>, there is no repo to add. The “helper” you interact with is the Persistence Helper installed by TrollStore itself (see Section 2). It is accessed through the app icon (typically Tips) that has been repurposed. Searches for a <strong>trollstore helper repo</strong> or <strong>trollstore installer repo</strong> usually come from users who expect a package source to exist — on a non-jailbroken device, the helper and installer are delivered inside the official installation, not through a repo.</p>
-
-<p>For <strong>jailbroken users</strong>, TrollStore Lite is available via the Havoc repository (<code>havoc.app/package/trollstorelite</code>). This is the official distribution point for the Lite variant, and it is the only legitimate <strong>trollstore lite repo</strong>. Any <strong>trollstore repo</strong> or helper repo in this context refers to that package repository, not a separate download site. If you see a <strong>trollstore repo link</strong> pointing anywhere other than Havoc for Lite, treat it as unofficial.</p>
-
-<h3>3.3 TrollStore Repo for Sileo, Cydia and Zebra</h3>
-
-<p>Jailbroken users often search for a <strong>trollstore repo for sileo</strong>, a <strong>trollstore repo sileo</strong> URL, a <strong>trollstore repo cydia</strong> source, or a <strong>trollstore repo zebra</strong> source. Here is the accurate picture:</p>
+<h3>3.2 Jailbroken Users: Sileo, Cydia, Zebra</h3>
 
 <div class="table-wrap">
   <table>
@@ -1097,98 +832,34 @@
     </thead>
     <tbody>
       <tr>
-        <td><code>trollstore repo sileo</code> / <code>trollstore repo for sileo</code></td>
-        <td>The Havoc repo entry for TrollStore Lite, added in Sileo on jailbroken devices</td>
-        <td><span class="tag-no">No</span> unless jailbroken + using Lite</td>
+        <td>Sileo / Cydia / Zebra source</td>
+        <td>The Havoc repo entry for TrollStore Lite</td>
+        <td><span class="tag-no">No</span> unless jailbroken and using Lite</td>
       </tr>
       <tr>
-        <td><code>trollstore repo cydia</code></td>
-        <td>The same Havoc package source, added in Cydia on older jailbreaks</td>
-        <td><span class="tag-no">No</span> unless jailbroken + using Lite</td>
-      </tr>
-      <tr>
-        <td><code>trollstore repo zebra</code></td>
-        <td>The same Havoc package source, added in Zebra</td>
-        <td><span class="tag-no">No</span> unless jailbroken + using Lite</td>
-      </tr>
-      <tr>
-        <td><code>trollstore repo altstore</code> / <code>trollstore repo sidestore</code> / <code>trollstore repo esign</code></td>
-        <td>Separate sideloading or signing tools — not repos or sources that serve TrollStore</td>
+        <td>AltStore / SideStore / Esign</td>
+        <td>Separate sideloading or signing tools, not sources that serve TrollStore</td>
         <td><span class="tag-no">No</span> — these are different products</td>
       </tr>
     </tbody>
   </table>
 </div>
 
-<p>In other words, there is no separate <strong>trollstore repo sileo</strong> versus <strong>trollstore repo cydia</strong> versus <strong>trollstore repo zebra</strong> — the underlying package is the same Havoc source for TrollStore Lite. Searches like <strong>trollstore repo altstore</strong>, <strong>trollstore repo sidestore</strong>, and <strong>trollstore repo esign</strong> confuse TrollStore with separate sideloading or signing tools: AltStore, SideStore, and Esign are their own products and do not serve TrollStore from a repo.</p>
-
-<h3>3.4 TrollStore Add Repo: How to Add a Source (When It Applies)</h3>
-
-<p>If you are jailbroken and want TrollStore Lite, the <strong>trollstore add repo</strong> step is a normal package-manager action:</p>
-
-<ol>
-  <li>Open Sileo, Cydia, or Zebra on your jailbroken device.</li>
-  <li>Go to Sources → Add Source.</li>
-  <li>Enter the Havoc repository URL (<code>havoc.app</code>) and add it.</li>
-  <li>Search for TrollStore Lite within the source and install it.</li>
-</ol>
-
-<p>That is the only legitimate <strong>trollstore add repo</strong> flow. If a guide tells you to <strong>trollstore add repo</strong> on a non-jailbroken device, it is wrong — non-jailbroken users install TrollStore with TrollInstallerX, TrollHelperOTA, or TrollRestore, not by adding a source.</p>
+<p>If you are jailbroken and want TrollStore Lite: open Sileo, Cydia, or Zebra → Sources → Add Source, enter <code>havoc.app</code>, then install TrollStore Lite from that source. Do not follow this on a non-jailbroken device.</p>
 
 <div class="callout callout-warn">
-<strong>Warning:</strong> Many third-party sites publish a “<strong>trollstore repo</strong>” list or a <strong>trollstore repo source</strong> that promises tweaks or paid apps. These are not official. The only official <strong>trollstore repository</strong> is the GitHub repo at <code>github.com/opa334/TrollStore</code>, and the only official jailbreak source is Havoc for TrollStore Lite.
+<strong>Warning:</strong> Third-party sites that publish “TrollStore repo” lists promising tweaks or paid apps are not official. The only official TrollStore repository is <code>github.com/opa334/TrollStore</code>, and the only official jailbreak source is Havoc for TrollStore Lite.
 </div>
 
-<h3>3.5 TrollStore Repo GitHub: The Official Source Repository</h3>
+<h3>3.3 Helpers</h3>
 
-<!-- 修复：补充了 title 属性 -->
-<p>The <strong>trollstore repo github</strong> is the single most important link in the ecosystem. The official <strong>trollstore repository</strong> lives at <a href="https://github.com/opa334/TrollStore" title="TrollStore Official GitHub Repository" rel="noopener" target="_blank"><code>github.com/opa334/TrollStore</code></a>, and every release is published from it. When you search <strong>trollstore repo github</strong> or <strong>trollstore repo link</strong>, this is the URL you want — not a repackaging site.</p>
+<p>For non-jailbroken users, the “helper” is the Persistence Helper built into the installation (see Section 2.4). It is not a separate download. On checkra1n-jailbroken devices, the TrollHelper package is a separate component; it is not needed for standard installs. Searches for a “helper repo” or “helper IPA” do not point to a separate official product.</p>
 
-<p>The GitHub repo also hosts the README, which documents the supported iOS range, the installer options, and the Persistence Helper behavior. The <strong>trollstore repo github</strong> releases page is where the TrollStore.tar and TrollInstallerX.ipa assets are published, which is why it doubles as the official <strong>trollstore installer repo</strong> in practice. There is no separate <strong>trollstore installer repo</strong> beyond this — the installer is an asset on the same repo.</p>
+<h3>3.4 Community IPA Resources</h3>
 
-<h3>3.6 TrollStore 2 Repo, TrollStore iOS Repo and Version-Specific Sources</h3>
+<p>The GitHub repository <strong><code>Neoncat-OG/TrollStore-IPAs</code></strong> is a community-maintained collection of tweaked apps. It is not official. The safety of any IPA depends entirely on its source — verify it comes from a trusted developer before installing. Community IPA collections are not package-manager repos: you do not “add” them to Sileo, Cydia, or Zebra; you download the IPAs and open them in TrollStore.</p>
 
-<p>Searches for <strong>trollstore 2 repo</strong> and <strong>trollstore ios repo</strong> come from users who assume each major version has its own source. It does not. The 2.x line (2.0, 2.1, 2.1.1) is distributed from the same <strong>trollstore repo github</strong> as the 1.x line; the only difference is which release asset you download. A <strong>trollstore 2 repo</strong> search should end at the same GitHub releases page, and a <strong>trollstore ios repo</strong> search should end at the same place plus the compatibility table on the Home Page.</p>
-
-<p>The one version-specific source that does exist is the <strong>trollstore lite repo</strong> — the Havoc package for TrollStore Lite, which is the jailbreak-oriented variant introduced in 2.1. If you are on a non-jailbroken device, the <strong>trollstore 2 repo</strong> you are looking for is simply the official GitHub repo.</p>
-
-<h3>3.7 Cypwn TrollStore Repo and Community Sources</h3>
-
-<p>The <strong>cypwn trollstore repo</strong> is a community source that appears in TrollStore discussions. Like other community sources, it is not official, and its contents should be treated with the same caution as any third-party IPA collection. The same applies to <strong>trollstore tweak repo</strong> searches: community tweak collections exist, but none of them are operated by the TrollStore developer.</p>
-
-<p>If you decide to use a community <strong>trollstore tweak repo</strong> or a <strong>cypwn trollstore repo</strong>, verify what you are installing and prefer sources with a public history. The official <strong>trollstore repository</strong> does not endorse or host third-party tweaks.</p>
-
-<h3>3.8 Repo de TrollStore and Repo for TrollStore: Non-English Searches</h3>
-
-<p>Searches like <strong>repo de trollstore</strong> (Spanish/Portuguese) and <strong>repo for trollstore</strong> (English) mean the same thing as <strong>trollstore repo</strong>: users looking for a source. The answer does not change with language — on non-jailbroken devices there is no repo to add, and on jailbroken devices the only official source is Havoc for TrollStore Lite. For the official <strong>repo for trollstore</strong> in the GitHub sense, use <code>github.com/opa334/TrollStore</code>.</p>
-
-<h3>3.9 TrollStore Repo Reddit: Community Discussion vs. Official Sources</h3>
-
-<p>A <strong>trollstore repo reddit</strong> search will surface threads where users share repo links, IPA collections, and troubleshooting tips. Reddit is useful for discussion, but it is not an official source. Repo links posted in a <strong>trollstore repo reddit</strong> thread can be outdated, unofficial, or malicious. Treat any <strong>trollstore repo</strong> link from Reddit as a lead to verify against the official GitHub repo, not as a download instruction.</p>
-
-<p>The same rule from Section 1.7 applies here: community discussion is a layer on top of official sources, never a replacement for them.</p>
-
-<h3>3.10 Persistence Helper and Helper Downloads</h3>
-
-<p>The Persistence Helper is not a separate download. It is embedded in the installation and replaces a system app on your device. Its sole function is to re-register TrollStore and its installed apps as “System” after an icon cache reload. The following searches all refer to components used in specific installation scenarios, <strong>not standalone products most users need</strong>:</p>
-<ul>
-  <li><code>helper</code> — the Persistence Helper or TrollHelper package (checkra1n only)</li>
-  <li><code>helper ipa</code> — no separate official helper IPA for non-jailbroken users; delivered inside the installation</li>
-  <li><code>helper download</code> — not a separate download; use the official GitHub Releases page</li>
-  <li><code>helper package</code> — the TrollHelper package on checkra1n-jailbroken devices only</li>
-  <li><code>helper deb</code> — relevant only to jailbroken/package-manager setups (TrollHelper package)</li>
-  <li><code>persistence helper</code> — built into TrollStore; not a download</li>
-</ul>
-
-<p>For OTA-based helper searches: on iOS 14.0–15.6.1, the TrollHelperOTA method (see the <a href="install.html" title="Install Guide">install guide</a>) is the OTA-based helper that installs without a computer. It is not a separate package, and it is not distributed through a <strong>trollstore helper repo</strong>.</p>
-
-<h3>3.11 Community IPA Resources</h3>
-
-<p>The GitHub repository <strong><code>Neoncat-OG/TrollStore-IPAs</code></strong> is a community-maintained collection of tweaked apps. It is not official but is widely referenced, and it is what most <strong>trollstore tweak repo</strong> and <strong>trollstore ios repo</strong> searches are actually looking for. As noted on the <a href="index.html" title="Home Download">Home Page</a>, the safety of any IPA depends entirely on its source — verify that it comes from a trusted developer or community source before installing.</p>
-
-<p>Community IPA collections are not package-manager repos: you do not <strong>trollstore add repo</strong> for them, and they do not appear in Sileo, Cydia, or Zebra. They are simply GitHub repositories of IPA files that you download and open in TrollStore.</p>
-
-<h3>3.12 Repo FAQ: Short Answers to Common TrollStore Repo Questions</h3>
+<h3>3.5 Repo Summary</h3>
 
 <div class="table-wrap">
   <table>
@@ -1200,43 +871,31 @@
     </thead>
     <tbody>
       <tr>
-        <td>Do I need a trollstore repo?</td>
-        <td>No, not on a non-jailbroken device. TrollStore installs IPAs directly and the Persistence Helper is built in.</td>
+        <td>Do I need a repo?</td>
+        <td>No, not on a non-jailbroken device.</td>
       </tr>
       <tr>
-        <td>Where is the official trollstore repository?</td>
-        <td><code>github.com/opa334/TrollStore</code> — the code repo and the source of all releases.</td>
+        <td>Where is the official repository?</td>
+        <td><code>github.com/opa334/TrollStore</code></td>
       </tr>
       <tr>
-        <td>Is there a trollstore repo sileo or trollstore repo cydia?</td>
-        <td>Only for jailbroken devices using TrollStore Lite via the Havoc repository. There is no separate Sileo/Cydia/Zebra repo for the standard app.</td>
+        <td>Is there a Sileo / Cydia / Zebra source?</td>
+        <td>Only for jailbroken devices using TrollStore Lite via Havoc.</td>
       </tr>
       <tr>
-        <td>What is a trollstore lite repo?</td>
-        <td>The Havoc package source (<code>havoc.app/package/trollstorelite</code>) that distributes TrollStore Lite to jailbroken devices.</td>
+        <td>Are AltStore / SideStore / Esign repos for TrollStore?</td>
+        <td>No. They are separate sideloading tools.</td>
       </tr>
       <tr>
-        <td>Is a trollstore repo altstore / sidestore / esign the same thing?</td>
-        <td>No. AltStore, SideStore, and Esign are separate sideloading or signing tools, not repos or sources that serve TrollStore.</td>
-      </tr>
-      <tr>
-        <td>Can I trollstore add repo on a non-jailbroken device?</td>
-        <td>No. Use TrollInstallerX, TrollHelperOTA, or TrollRestore instead. Adding a repo is a jailbreak-only action.</td>
-      </tr>
-      <tr>
-        <td>Is a trollstore repo reddit thread a safe source?</td>
-        <td>Only for discussion. Verify every repo link and version against the official GitHub repo.</td>
-      </tr>
-      <tr>
-        <td>What is a trollstore tweak repo?</td>
-        <td>Usually a community GitHub collection of IPA files, such as Neoncat-OG/TrollStore-IPAs. Not an official package source.</td>
+        <td>Is a Reddit repo link safe?</td>
+        <td>Only as a lead. Verify every link against the official GitHub repo.</td>
       </tr>
     </tbody>
   </table>
 </div>
 
 <div class="callout callout-info">
-<strong>Summary for repo queries:</strong> There is no <strong>trollstore repo</strong> to add on a non-jailbroken device — the official <strong>trollstore repository</strong> is the GitHub repo at <code>github.com/opa334/TrollStore</code>, and all releases come from its releases page. A <strong>trollstore repo sileo</strong>, <strong>trollstore repo cydia</strong>, or <strong>trollstore repo zebra</strong> entry only applies to jailbroken devices using the <strong>trollstore lite repo</strong> on Havoc. Searches for <strong>trollstore repo altstore</strong>, <strong>trollstore repo sidestore</strong>, and <strong>trollstore repo esign</strong> confuse TrollStore with separate sideloading or signing tools. A <strong>trollstore repo github</strong> link is the official source; a <strong>trollstore repo reddit</strong> thread, a <strong>cypwn trollstore repo</strong>, or any <strong>trollstore tweak repo</strong> is community content to verify, not an official source. That is the complete <strong>trollstore repo</strong> picture.
+<strong>Summary:</strong> To <strong>update TrollStore</strong>, open the app → Settings tab → tap the update button if available. Check the latest version on <a href="https://github.com/opa334/TrollStore/releases" title="TrollStore GitHub Releases" rel="noopener" target="_blank"><code>github.com/opa334/TrollStore/releases</code></a>; the current version is 2.1.1. Never update iOS while TrollStore is installed. For daily use, install IPAs via the + button or Open In, manage them in the Apps tab, and use the Persistence Helper → Refresh App Registrations when apps stop launching.
 </div>
 
 <div class="page-footer">
