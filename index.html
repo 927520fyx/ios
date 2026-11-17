@@ -158,10 +158,10 @@
 
   .site-nav {
     display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
+    gap: 6px;
+    flex-wrap: nowrap;
     align-items: center;
-    padding: 8px;
+    padding: 8px 12px;
     background: rgba(255,255,255,0.85);
     backdrop-filter: saturate(180%) blur(20px);
     -webkit-backdrop-filter: saturate(180%) blur(20px);
@@ -173,24 +173,34 @@
     top: 12px;
     z-index: 10;
     box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    touch-action: pan-x;
+  }
+  .site-nav::-webkit-scrollbar {
+    display: none;
   }
   .site-nav span {
     font-weight: 600;
     color: var(--muted);
-    padding-left: 12px;
+    padding-left: 8px;
     padding-right: 4px;
     font-size: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
+    flex-shrink: 0;
   }
   .site-nav a {
     display: inline-block;
-    padding: 6px 14px;
+    padding: 6px 12px;
     border-radius: 100px;
     font-weight: 500;
     color: var(--text);
     transition: background 0.2s ease, color 0.2s ease;
     white-space: nowrap;
+    flex-shrink: 0;
   }
   .site-nav a:hover {
     background: #f5f5f7;
@@ -388,29 +398,8 @@
     .lede { font-size: 1.02rem; }
     table { font-size: 0.82rem; }
     th, td { padding: 11px 13px; }
-    
-    .site-nav {
-      flex-wrap: nowrap;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      border-radius: 16px;
-      padding: 8px 12px;
-      gap: 4px;
-      justify-content: flex-start;
-      scrollbar-width: none; 
-      -ms-overflow-style: none;
-      touch-action: pan-x;
-    }
-    .site-nav::-webkit-scrollbar { 
-      display: none; 
-    }
-    .site-nav span { 
-      display: none;
-    }
-    .site-nav a { 
-      padding: 8px 16px;
-      font-size: 0.85rem;
-    }
+    .site-nav span { display: none; }
+    .site-nav a { padding: 6px 14px; font-size: 0.85rem; }
     .toc li a { padding: 8px 10px; font-size: 0.9rem; }
   }
 </style>
@@ -456,6 +445,7 @@
   <a href="alternatives.html" title="TrollStore Alternatives &amp; Jailbreak">Alternatives</a>
   <a href="update.html" title="TrollStore Update &amp; Usage">Update</a>
   <a href="official.html" title="TrollStore Official Source &amp; Device Compatibility">Official</a>
+  <a href="apps.html" title="TrollStore Apps &amp; IPAs List">Apps</a>
   <a href="faq.html" title="TrollStore Frequently Asked Questions">FAQ</a>
   <a href="dopamine.html" title="Dopamine Jailbreak Guide">Dopamine</a>
 </nav>
@@ -648,7 +638,7 @@
 </div>
 
 <div class="page-footer">
-<p>Information in this article is based on the official GitHub repository (opa334/TrollStore), its README, release notes, and publicly available technical documentation. Compatibility is determined by Apple’s patching of the CoreTrust vulnerability and does not change based on user demand. Verify your system release against the compatibility table before attempting installation. TrollStore Lite was introduced in build 2.1; the latest stable release is 2.1.1. TrollStore Lite requires a jailbreak.</p>
+<p>Information in this article is based on the official GitHub repository (opa334/TrollStore), its README, release notes, and publicly available technical documentation. Compatibility is determined by Apple’s patching of the CoreTrust vulnerability and does not change based on user demand. Verify your system release against the compatibility table before attempting installation. TrollStore Lite was introduced in build 2.1; the latest stable release is 2.1.1. TrollStoreLite requires a jailbreak.</p>
 <p style="margin-top:12px;"><strong>Last updated:</strong> <time datetime="2026-11-14">November 14, 2026</time></p>
 </div>
 
