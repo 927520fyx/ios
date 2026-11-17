@@ -11,7 +11,6 @@
   gtag('config', 'G-JWF0BPSMBV');
 </script>
 <meta charset="UTF-8">
-<!-- 修复：添加 maximum-scale=1.0, user-scalable=no 防止移动端双击放大和左右滑动 -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 <title>How to Install TrollStore: No PC, With PC &amp; By iOS Version (2026)</title>
@@ -40,29 +39,35 @@
 <meta name="twitter:description" content="Step-by-step TrollStore installation guide. Find the right method for your iOS version: TrollHelperOTA (no PC), TrollInstallerX (with PC), or TrollRestore.">
 <meta name="twitter:image" content="https://927520fyx.github.io/ios/og-image.jpg">
 
-<!-- 强力拦截 iOS Safari 双击缩放和双指手势缩放（iOS 10+ 会忽略 viewport 的 user-scalable=no，必须用 JS） -->
 <script>
-  // 1. 拦截双指捏合缩放 (iOS 10+ Safari)
   document.addEventListener('gesturestart', function (e) {
     e.preventDefault();
   });
 
-  // 2. 拦截双击放大
   var lastTouchEnd = 0;
   document.addEventListener('touchend', function (event) {
     var now = (new Date()).getTime();
     if (now - lastTouchEnd <= 300) {
-      event.preventDefault(); // 阻止两次点击间隔小于 300ms 时的默认放大行为
+      event.preventDefault();
     }
     lastTouchEnd = now;
   }, false);
 
-  // 3. 防止双击输入框导致放大
   document.addEventListener('touchstart', function (event) {
     if (event.touches.length > 1) {
-      event.preventDefault(); // 拦截多指触摸（捏合）
+      event.preventDefault();
     }
   }, { passive: false });
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var installBtn = document.getElementById('nav-install');
+    if (installBtn) {
+      installBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.scrollTo(0, 0);
+      });
+    }
+  });
 </script>
 
 <style>
@@ -98,8 +103,8 @@
     padding: 0 20px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    touch-action: manipulation; /* 消除点击延迟 */
-    overflow-x: hidden; /* 防止横向溢出 */
+    touch-action: manipulation;
+    overflow-x: hidden;
   }
   article {
     max-width: 800px;
@@ -113,26 +118,19 @@
     font-weight: 700;
     letter-spacing: -0.035em;
   }
-  .lede {
-    font-size: 1.15rem;
-    color: var(--muted);
-    margin-bottom: 8px;
-    padding-bottom: 32px;
-    border-bottom: 1px solid var(--border);
-    letter-spacing: -0.01em;
-  }
-  .lede strong { color: var(--text); font-weight: 600; }
   h2 {
     font-size: 1.65rem;
     margin: 64px 0 20px;
     font-weight: 700;
     letter-spacing: -0.025em;
+    scroll-margin-top: 100px;
   }
   h3 {
     font-size: 1.15rem;
     margin: 36px 0 12px;
     font-weight: 600;
     letter-spacing: -0.01em;
+    scroll-margin-top: 100px;
   }
   p { margin-bottom: 16px; }
   a { color: var(--accent); text-decoration: none; }
@@ -149,13 +147,12 @@
     word-break: break-word;
   }
 
-  /* iOS 风格导航条 - 与首页保持一致 */
   .site-nav {
     display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
+    gap: 6px;
+    flex-wrap: nowrap;
     align-items: center;
-    padding: 8px;
+    padding: 8px 12px;
     background: rgba(255,255,255,0.85);
     backdrop-filter: saturate(180%) blur(20px);
     -webkit-backdrop-filter: saturate(180%) blur(20px);
@@ -167,24 +164,34 @@
     top: 12px;
     z-index: 10;
     box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    touch-action: pan-x;
+  }
+  .site-nav::-webkit-scrollbar {
+    display: none;
   }
   .site-nav span {
     font-weight: 600;
     color: var(--muted);
-    padding-left: 12px;
+    padding-left: 8px;
     padding-right: 4px;
     font-size: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
+    flex-shrink: 0;
   }
   .site-nav a {
     display: inline-block;
-    padding: 6px 14px;
+    padding: 6px 12px;
     border-radius: 100px;
     font-weight: 500;
     color: var(--text);
     transition: background 0.2s ease, color 0.2s ease;
-    white-space: nowrap; /* 防止文字换行破坏胶囊形状 */
+    white-space: nowrap;
+    flex-shrink: 0;
   }
   .site-nav a:hover {
     background: #f5f5f7;
@@ -199,7 +206,6 @@
     color: #fff;
   }
 
-  /* iOS 风格提示卡 */
   .callout {
     padding: 18px 22px;
     border-radius: var(--radius-sm);
@@ -220,7 +226,6 @@
     border-left: 4px solid var(--info-border);
   }
 
-  /* iOS 风格表格 - 修复手机端宽度溢出 */
   .table-wrap {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
@@ -254,7 +259,6 @@
   .tag-yes { color: var(--success); font-weight: 600; white-space: nowrap; }
   .tag-no { color: var(--danger); font-weight: 600; white-space: nowrap; }
 
-  /* 方法卡片 */
   .method-card {
     border: 1px solid var(--border);
     border-radius: var(--radius-sm);
@@ -264,7 +268,6 @@
   }
   .method-card h3 { margin-top: 0; }
 
-  /* 顶部 hero 卡片 */
   .hero {
     background: linear-gradient(180deg, #f5f5f7 0%, #ffffff 100%);
     border: 1px solid var(--border);
@@ -293,7 +296,6 @@
     letter-spacing: -0.01em;
   }
 
-  /* 目录卡片 */
   .toc-card {
     border: 1px solid var(--border);
     border-radius: var(--radius);
@@ -347,7 +349,6 @@
     text-decoration: none;
   }
 
-  /* 页脚 */
   .page-footer {
     margin-top: 80px;
     padding-top: 28px;
@@ -357,7 +358,6 @@
     line-height: 1.7;
   }
 
-  /* 手机端适配 */
   @media (max-width: 600px) {
     body { font-size: 16px; padding: 0 16px; }
     article { padding: 32px 0 64px; }
@@ -366,33 +366,11 @@
     h1 { font-size: 1.8rem; }
     h2 { font-size: 1.35rem; margin-top: 48px; }
     h3 { font-size: 1.05rem; }
-    .lede { font-size: 1.02rem; }
     table { font-size: 0.82rem; }
     th, td { padding: 11px 13px; }
 
-    /* 手机端导航条：改为可横向滑动的单行胶囊 */
-    .site-nav {
-      flex-wrap: nowrap;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      border-radius: 16px;
-      padding: 8px 12px;
-      gap: 4px;
-      justify-content: flex-start;
-      scrollbar-width: none;
-      -ms-overflow-style: none;
-      touch-action: pan-x;
-    }
-    .site-nav::-webkit-scrollbar {
-      display: none;
-    }
-    .site-nav span {
-      display: none;
-    }
-    .site-nav a {
-      padding: 8px 16px;
-      font-size: 0.85rem;
-    }
+    .site-nav span { display: none; }
+    .site-nav a { padding: 6px 14px; font-size: 0.85rem; }
 
     .method-card { padding: 16px; }
     .toc-card { padding: 18px 20px; }
@@ -400,7 +378,6 @@
   }
 </style>
 
-<!-- 1. 网站基础信息 (WebSite) -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -410,7 +387,6 @@
 }
 </script>
 
-<!-- 2. 面包屑导航 (BreadcrumbList) -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -432,8 +408,8 @@
 }
 </script>
 </head>
-<body>
-<article id="top">
+<body id="top">
+<article>
 
 <div class="hero">
   <div class="eyebrow">TrollStore Guide · 2026</div>
@@ -443,19 +419,19 @@
 
 <nav class="site-nav" aria-label="Site navigation">
   <span>Site</span>
-  <a href="index.html" title="TrollStore Home &amp; Download">Home</a>
-  <a href="#top" title="TrollStore Install Guide" aria-current="page">Install</a>
+  <a href="index.html" title="TrollStore Guide">Guide</a>
+  <a href="#top" id="nav-install" title="TrollStore Install Guide" aria-current="page">Install</a>
   <a href="variants.html" title="TrollStore Variants">Variants</a>
   <a href="alternatives.html" title="TrollStore Alternatives &amp; Jailbreak">Alternatives</a>
   <a href="update.html" title="TrollStore Update &amp; Usage">Update</a>
   <a href="official.html" title="TrollStore Official Source &amp; Device Compatibility">Official</a>
+  <a href="apps.html" title="TrollStore Apps &amp; IPAs List">Apps</a>
   <a href="faq.html" title="TrollStore FAQ">FAQ</a>
-  <a href="dopamine.html" title="Dopamine Guide">Dopamine</a>
+  <a href="dopamine.html" title="Dopamine Jailbreak Guide">Dopamine</a>
 </nav>
 
-<p>This section explains how to <strong>install TrollStore</strong> using the installer that matches your iOS version; there is no single universal method. It covers the <strong>trollstore install</strong> process, a <strong>trollstore direct install</strong> on-device, a <strong>trollstore no PC install</strong>, and the computer-assisted path, all of which depend on your iOS version and chip. Using the wrong installer is the most common cause of failure. The steps below form the full <strong>trollstore install guide</strong> and <strong>trollstore install tutorial</strong>—a complete <strong>trollstore install ios guide</strong>—covering the no-PC OTA method, TrollInstallerX, TrollRestore, and the version-specific steps for <strong>trollstore install iOS 15</strong>, <strong>trollstore install iOS 16</strong>, and the iOS 15.8.x range. The official README also points to <strong>ios.cfw.guide</strong> for version-specific walkthroughs.</p>
+<p>This section explains how to <strong>install TrollStore</strong> using the installer that matches your iOS version. There is no single universal method, and using the wrong installer is the most common cause of failure. The steps below cover the no-PC OTA method, TrollInstallerX, and TrollRestore, along with version-specific notes for iOS 15 and iOS 16. The official README also points to <strong>ios.cfw.guide</strong> for version-specific walkthroughs.</p>
 
-<!-- 目录卡片 -->
 <div class="toc-card">
   <div class="toc-title">Contents</div>
   <ol>
@@ -487,7 +463,7 @@
 </div>
 
 <div class="callout callout-info">
-<strong>About “direct install” and download links:</strong> A <strong>trollstore direct install</strong> does not mean tapping a single link that installs the app. There is no <strong>trollstore direct install link</strong> and no <strong>trollstore direct install download</strong> package that installs TrollStore in one tap. “Direct install” here means installing on-device with the correct installer for your version—TrollHelperOTA (no PC), TrollInstallerX, or TrollRestore. For the official files, use the GitHub Releases page on our <a href="index.html" title="Jump to Home Download section">Home Page</a>.
+<strong>About "direct install" and download links:</strong> A direct install does not mean tapping a single link that installs the app. There is no one-tap package for TrollStore. "Direct install" here means installing on-device with the correct installer for your version—TrollHelperOTA (no PC), TrollInstallerX, or TrollRestore. For the official files, use the GitHub Releases page at <a href="https://github.com/opa334/TrollStore/releases" title="TrollStore GitHub Releases" rel="noopener" target="_blank"><code>github.com/opa334/TrollStore/releases</code></a>.
 </div>
 
 <h3 id="overview">Install Method Overview by Device</h3>
@@ -508,7 +484,7 @@
         <td><span class="tag-yes">No</span></td>
       </tr>
       <tr>
-        <td>iOS 14.0 – 16.6.1（arm64e 至 16.5.1），以及 17.0</td>
+        <td>iOS 14.0 – 16.6.1 (arm64e up to 16.5.1), and 17.0</td>
         <td>Method B: TrollInstallerX</td>
         <td>Yes (sideload the installer)</td>
       </tr>
@@ -518,8 +494,8 @@
         <td>Yes</td>
       </tr>
       <tr>
-        <td>iOS 16.7.x (non-RC), iOS 18, 26, 27</td>
-        <td><span class="tag-no">Not supported</span> — check <a href="index.html" title="Jump to Home Compatibility">Home Page</a></td>
+        <td>iOS 16.7.x (non-RC), iOS 17.0.1+, 18, 26, 27</td>
+        <td><span class="tag-no">Not supported</span> — see the <a href="index.html" title="TrollStore Guide">Guide</a></td>
         <td>—</td>
       </tr>
     </tbody>
@@ -529,54 +505,53 @@
 <h3 id="method-a">Method A: TrollHelperOTA — Install TrollStore Without a PC (iOS 14.0 beta 2 – 15.6.1)</h3>
 
 <div class="method-card">
-<p>This is the only <strong>trollstore no PC install</strong> path that needs no computer at all, and the simplest way to <strong>install TrollStore without a PC</strong> on the versions it covers. It is the method used for <strong>install TrollStore no PC</strong> setups, a <strong>trollstore no PC</strong> download, and any setup with <strong>no computer</strong> or <strong>without computer</strong> on iOS 14.0 beta 2–15.6.1. It is also the path behind <strong>installing TrollStore TrollHelperOTA</strong>, and it is the only <strong>trollstore OTA install</strong> method that exists—there is no separate OTA package to download.</p>
+<p>This is the only no-PC install path, and the simplest way to install TrollStore without a computer on the versions it covers. It requires no computer at all.</p>
 <ol>
   <li>Open Safari on your device.</li>
   <li>Navigate to the TrollHelperOTA link appropriate for your chip (arm64e devices use OTA Link 2; iOS 15+ devices use OTA Link 1).</li>
-  <li>Tap Install. An app named “GTA Car Tracker” appears on your home screen.</li>
+  <li>Tap Install. An app named "GTA Car Tracker" appears on your home screen.</li>
   <li>Open it and tap <strong>Install TrollStore</strong>.</li>
   <li>The device resprings, and TrollStore is installed.</li>
 </ol>
-<p><strong>Limitations:</strong> arm64 (A8–A11) devices on iOS 14 cannot use OTA. They require checkra1n jailbreak first, then <strong>installing TrollStore TrollHelper</strong>. Additionally, on iOS 16.0 and later, OTA installation is often unstable or patched; TrollInstallerX with a computer is strongly recommended for those versions. If you are on iOS 15.7.2 or later, skip to Method B.</p>
+<p><strong>Limitations:</strong> arm64 (A8–A11) devices on iOS 14 cannot use OTA. They require a checkra1n jailbreak first, then the TrollHelper install. On iOS 16.0 and later, OTA installation is often unstable or patched; TrollInstallerX with a computer is strongly recommended for those versions. If you are on iOS 15.7.2 or later, skip to Method B.</p>
 </div>
 
 <h3 id="method-b">Method B: TrollInstallerX — The Standard Way to Install TrollStore With a PC (iOS 14.0 – 16.6.1, and 17.0)</h3>
 
 <div class="method-card">
-<p>This is the widest-coverage installer and the standard <strong>how to install TrollStore using PC</strong> path on supported versions. It is the tool used for <strong>trollstore install with PC</strong>, <strong>trollstore install PC</strong>, or simply <strong>trollstore installer</strong>. The installer file is <strong>trollstore installer x IPA</strong> (TrollInstallerX.ipa); there is no separate “trollstore installer IPA” beyond this file. TrollInstallerX supports arm64 devices up to iOS 16.6.1 and arm64e devices up to iOS 16.5.1; A15, A16, and M2 devices on iOS 16.5.1 require the indirect installation method.</p>
+<p>This is the widest-coverage installer and the standard path with a computer on supported versions. The installer file is <strong>TrollInstallerX.ipa</strong>, which you download from the official GitHub releases page. TrollInstallerX supports arm64 devices up to iOS 16.6.1 and arm64e devices up to iOS 16.5.1; A15, A16, and M2 devices on iOS 16.5.1 require the indirect installation method.</p>
 <ol>
-  <li>Download <strong>TrollInstallerX.ipa</strong> (the <strong>trollstore installer x IPA</strong>) from the official GitHub releases page.</li>
+  <li>Download <strong>TrollInstallerX.ipa</strong> from the official GitHub releases page.</li>
   <li>Sideload it to your device using Sideloadly or a similar signing tool.</li>
-  <li>Open <strong>installing TrollStore TrollInstallerX</strong> and tap <strong>Install TrollStore</strong>.</li>
+  <li>Open TrollInstallerX and tap <strong>Install TrollStore</strong>.</li>
   <li>The installer automatically selects the appropriate exploit for your device. TrollStore appears on the home screen when complete.</li>
 </ol>
-<p><strong>iOS 26 and iOS 18:</strong> a direct install does not exist on these versions. TrollStore requires the CoreTrust bug, which Apple patched in iOS 17.0.1. The available alternatives are SideStore or Sideloadly, or TrollStore Lite on a jailbroken device (see our <a href="variants.html" title="TrollStore Variants">Variants page</a>).</p>
+<p><strong>iOS 26 and iOS 18:</strong> a direct install does not exist on these versions. TrollStore requires the CoreTrust bug, which Apple patched in iOS 17.0.1. The available alternatives are SideStore or Sideloadly, or TrollStore Lite on a jailbroken device (see the <a href="variants.html" title="TrollStore Variants">Variants page</a>).</p>
 <p><strong>Note:</strong> iOS 16.2–16.6.1 and iOS 15.7.2–15.8.2 require an internet connection during installation so TrollInstallerX can download the kernelcache and patchfind it.</p>
 </div>
 
 <h3 id="method-c">Method C: TrollRestore (iOS 15.2 beta 3 – 16.6.1, 16.7 RC, 17.0; Computer Required)</h3>
 
 <div class="method-card">
-<p>For the narrow set of versions not covered by TrollInstallerX, TrollRestore provides a computer-assisted <strong>direct install TrollStore iOS</strong> path. This requires a Mac, PC, or Linux machine with a data cable, plus Python 3. Detailed instructions are available on the tool’s release page and ios.cfw.guide.</p>
+<p>For the narrow set of versions not covered by TrollInstallerX, TrollRestore provides a computer-assisted path. This requires a Mac, PC, or Linux machine with a data cable, plus Python 3. Detailed instructions are available on the tool's release page and ios.cfw.guide.</p>
 </div>
 
 <h3 id="by-version">Install TrollStore by iOS Version: iOS 15, iOS 16, and iOS 15.8.x</h3>
 
-<p>Most version-specific installs map to one of the methods above. The list below matches each version to its steps:</p>
 <ul>
-  <li><strong>trollstore install iOS 15</strong> — on iOS 15.0–15.6.1, use Method A (TrollHelperOTA, no PC). On iOS 15.7.2–15.8.8, use Method B (TrollInstallerX, internet required during install).</li>
-  <li><strong>trollstore install iOS 16</strong> — use Method B (TrollInstallerX). On iOS 16.7 RC (20H18), Method C (TrollRestore) is the recommended path; non-RC 16.7.x is not supported.</li>
-  <li><strong>install trollstore iOS 15.8.2 – 15.8.8</strong> (including <strong>install trollstore 15.8.8</strong>) — Method B (TrollInstallerX), internet required during install. This single range covers every point release from 15.8.2 through 15.8.8.</li>
-  <li><strong>install trollstore 2 without PC</strong> — TrollStore 2.x follows the same rules: on iOS 14.0–15.6.1 you can install without a PC via Method A; on iOS 16.0+ a computer (Method B) is required. “TrollStore 2 without PC” is not a separate installer.</li>
-  <li><strong>trollstore install 2026</strong> — the latest release as of 2026 is 2.1.1, and the installation methods above are unchanged. Always confirm the current version on the GitHub Releases page.</li>
+  <li><strong>iOS 15:</strong> on iOS 15.0–15.6.1, use Method A (TrollHelperOTA, no PC). On iOS 15.7.2–15.8.8, use Method B (TrollInstallerX, internet required during install).</li>
+  <li><strong>iOS 16:</strong> use Method B (TrollInstallerX). On iOS 16.7 RC (20H18), Method C (TrollRestore) is the recommended path; non-RC 16.7.x is not supported.</li>
+  <li><strong>iOS 15.8.2 – 15.8.8:</strong> Method B (TrollInstallerX), internet required during install. This range covers every point release from 15.8.2 through 15.8.8.</li>
+  <li><strong>TrollStore 2 without a PC:</strong> on iOS 14.0–15.6.1 you can install without a PC via Method A; on iOS 16.0+ a computer (Method B) is required. There is no separate installer for this.</li>
+  <li><strong>Current version (2026):</strong> the latest release is 2.1.1, and the installation methods above are unchanged. Always confirm the current version on the GitHub Releases page.</li>
 </ul>
 
-<h3 id="persistence">The Persistence Helper: Why TrollStore Sometimes “Stops Working”</h3>
+<h3 id="persistence">The Persistence Helper: Why TrollStore Sometimes "Stops Working"</h3>
 
-<p>A critical concept for anyone who has just finished an install: iOS periodically reloads its icon cache, and when this happens, TrollStore and all apps it installed revert to “User” state and stop launching. This is normal. The solution is the <strong>Persistence Helper</strong>—TrollStore replaces a built-in system app (typically Tips) with a small helper. When your apps stop opening, open the helper app and tap <strong>Refresh App Registrations</strong>. This is not a bug; it is part of how system-level registration is maintained. You still need this helper once, even if you installed TrollStore without a computer.</p>
+<p>After installation, iOS periodically reloads its icon cache. When this happens, TrollStore and the apps it installed can revert to "User" state and stop launching. This is normal. The fix is the <strong>Persistence Helper</strong>: TrollStore replaces a built-in system app (typically Tips) with a small helper. When your apps stop opening, open the helper app and tap <strong>Refresh App Registrations</strong>. You still need this helper once, even if you installed TrollStore without a computer.</p>
 
 <div class="page-footer">
-<p>Information in this article is based on the official GitHub repository (opa334/TrollStore), its README, release notes, and publicly available technical documentation. Compatibility is determined by Apple’s patching of the CoreTrust vulnerability and does not change based on user demand. Verify your iOS version against the compatibility table on the home page before attempting installation.</p>
+<p>Information in this article is based on the official GitHub repository (opa334/TrollStore), its README, release notes, and publicly available technical documentation. Compatibility is determined by Apple's patching of the CoreTrust vulnerability and does not change based on user demand. Verify your iOS version against the compatibility table on the home page before attempting installation.</p>
 <p style="margin-top:12px;"><strong>Last updated:</strong> <time datetime="2026-11-14">November 14, 2026</time></p>
 </div>
 
