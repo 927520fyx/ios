@@ -15,7 +15,6 @@
 
 <title>TrollStore Official Source &amp; Device Compatibility (2026)</title>
 
-<!-- 修复：精简 Meta Description，控制在 155 字符以内 -->
 <meta name="description" content="Confirm the official TrollStore GitHub source, avoid fake sites, and check compatibility for iPhone and iPad. Official channels and verification guide.">
 
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -31,48 +30,41 @@
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://927520fyx.github.io/ios/official.html">
 <meta property="og:title" content="TrollStore Official Source &amp; Device Compatibility (2026)">
-<!-- 修复：同步精简 OG Description -->
 <meta property="og:description" content="Confirm the official TrollStore GitHub source, avoid fake sites, and check compatibility for iPhone and iPad. Official channels and verification guide.">
 <meta property="og:image" content="https://927520fyx.github.io/ios/og-image.jpg">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="https://927520fyx.github.io/ios/official.html">
 <meta name="twitter:title" content="TrollStore Official Source &amp; Device Compatibility (2026)">
-<!-- 修复：同步精简 Twitter Description -->
 <meta name="twitter:description" content="Confirm the official TrollStore GitHub source, avoid fake sites, and check compatibility for iPhone and iPad. Official channels and verification guide.">
 <meta name="twitter:image" content="https://927520fyx.github.io/ios/og-image.jpg">
 
-<!-- 强力拦截 iOS Safari 双击缩放和双指手势缩放 -->
 <script>
-  // 1. 拦截双指捏合缩放 (iOS 10+ Safari)
   document.addEventListener('gesturestart', function (e) {
     e.preventDefault();
   });
 
-  // 2. 拦截双击放大
   var lastTouchEnd = 0;
   document.addEventListener('touchend', function (event) {
     var now = (new Date()).getTime();
     if (now - lastTouchEnd <= 300) {
-      event.preventDefault(); // 阻止两次点击间隔小于 300ms 时的默认放大行为
+      event.preventDefault();
     }
     lastTouchEnd = now;
   }, false);
 
-  // 3. 防止双击输入框导致放大
   document.addEventListener('touchstart', function (event) {
     if (event.touches.length > 1) {
-      event.preventDefault(); // 拦截多指触摸（捏合）
+      event.preventDefault();
     }
   }, { passive: false });
 
-  // 4. 瞬间回到顶部（解决Official按钮跳转问题）
   document.addEventListener('DOMContentLoaded', function() {
     var officialBtn = document.getElementById('nav-official');
     if (officialBtn) {
       officialBtn.addEventListener('click', function(e) {
-        e.preventDefault(); // 阻止默认的跳转行为
-        window.scrollTo(0, 0); // 瞬间跳到顶部
+        e.preventDefault();
+        window.scrollTo(0, 0);
       });
     }
   });
@@ -111,8 +103,8 @@
     padding: 0 20px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    touch-action: manipulation; /* 消除点击延迟 */
-    overflow-x: hidden; /* 阻止由于某些元素溢出导致的横向滚动 */
+    touch-action: manipulation;
+    overflow-x: hidden;
   }
   article {
     max-width: 800px;
@@ -140,14 +132,14 @@
     margin: 64px 0 20px;
     font-weight: 700;
     letter-spacing: -0.025em;
-    scroll-margin-top: 100px; /* 修复：锚点跳转时留出导航栏的高度，防止标题被遮挡 */
+    scroll-margin-top: 100px;
   }
   h3 {
     font-size: 1.15rem;
     margin: 36px 0 12px;
     font-weight: 600;
     letter-spacing: -0.01em;
-    scroll-margin-top: 100px; /* 修复：二级锚点跳转时的防遮挡 */
+    scroll-margin-top: 100px;
   }
   h4 {
     font-size: 1.02rem;
@@ -170,13 +162,12 @@
     word-break: break-word;
   }
 
-  /* iOS 风格导航条 */
   .site-nav {
     display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
+    gap: 6px;
+    flex-wrap: nowrap;
     align-items: center;
-    padding: 8px;
+    padding: 8px 12px;
     background: rgba(255,255,255,0.85);
     backdrop-filter: saturate(180%) blur(20px);
     -webkit-backdrop-filter: saturate(180%) blur(20px);
@@ -188,24 +179,34 @@
     top: 12px;
     z-index: 10;
     box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    touch-action: pan-x;
+  }
+  .site-nav::-webkit-scrollbar {
+    display: none;
   }
   .site-nav span {
     font-weight: 600;
     color: var(--muted);
-    padding-left: 12px;
+    padding-left: 8px;
     padding-right: 4px;
     font-size: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
+    flex-shrink: 0;
   }
   .site-nav a {
     display: inline-block;
-    padding: 6px 14px;
+    padding: 6px 12px;
     border-radius: 100px;
     font-weight: 500;
     color: var(--text);
     transition: background 0.2s ease, color 0.2s ease;
-    white-space: nowrap; /* 防止文字换行 */
+    white-space: nowrap;
+    flex-shrink: 0;
   }
   .site-nav a:hover {
     background: #f5f5f7;
@@ -220,7 +221,6 @@
     color: #fff;
   }
 
-  /* iOS 风格提示卡 */
   .callout {
     padding: 18px 22px;
     border-radius: var(--radius-sm);
@@ -241,7 +241,6 @@
     border-left: 4px solid var(--info-border);
   }
 
-  /* iOS 风格表格 */
   .table-wrap {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
@@ -275,7 +274,6 @@
   .tag-no { color: var(--danger); font-weight: 600; white-space: nowrap; }
   .tag-warn { color: #b8860b; font-weight: 600; white-space: nowrap; }
 
-  /* 方法卡片 */
   .method-card {
     border: 1px solid var(--border);
     border-radius: var(--radius-sm);
@@ -285,7 +283,6 @@
   }
   .method-card h3 { margin-top: 0; }
 
-  /* 顶部 hero 卡片 */
   .hero {
     background: linear-gradient(180deg, #f5f5f7 0%, #ffffff 100%);
     border: 1px solid var(--border);
@@ -314,7 +311,6 @@
     letter-spacing: -0.01em;
   }
 
-  /* 目录卡片 */
   .toc-card {
     border: 1px solid var(--border);
     border-radius: var(--radius);
@@ -368,7 +364,6 @@
     text-decoration: none;
   }
 
-  /* 页脚 */
   .page-footer {
     margin-top: 80px;
     padding-top: 28px;
@@ -389,32 +384,9 @@
     .lede { font-size: 1.02rem; }
     table { font-size: 0.82rem; }
     th, td { padding: 11px 13px; }
-    
-    /* 移动端导航条：改为可横向滑动的单行模式 */
-    .site-nav {
-      flex-wrap: nowrap;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      border-radius: 16px;
-      padding: 8px 12px;
-      gap: 4px;
-      justify-content: flex-start;
-      scrollbar-width: none; 
-      -ms-overflow-style: none;
-      touch-action: pan-x;
-    }
-    .site-nav::-webkit-scrollbar { 
-      display: none; 
-    }
-    
-    .site-nav span { 
-      display: none;
-    }
-    
-    .site-nav a { 
-      padding: 8px 16px;
-      font-size: 0.85rem;
-    }
+
+    .site-nav span { display: none; }
+    .site-nav a { padding: 6px 14px; font-size: 0.85rem; }
 
     .method-card { padding: 16px; }
     .toc-card { padding: 18px 20px; }
@@ -422,7 +394,6 @@
   }
 </style>
 
-<!-- 1. 网站基础信息 (WebSite) -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -432,7 +403,6 @@
 }
 </script>
 
-<!-- 2. 面包屑导航 (BreadcrumbList) -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -465,20 +435,19 @@
 
 <nav class="site-nav" aria-label="Site navigation">
   <span>Site</span>
-  <a href="index.html" title="TrollStore Home &amp; Download">Home</a>
+  <a href="index.html" title="TrollStore Guide">Guide</a>
   <a href="install.html" title="TrollStore Install Guide">Install</a>
   <a href="variants.html" title="TrollStore Variants">Variants</a>
   <a href="alternatives.html" title="TrollStore Alternatives &amp; Jailbreak">Alternatives</a>
   <a href="update.html" title="TrollStore Update &amp; Usage">Update</a>
-  <!-- 修复：用 #top 加上 id 配合 JavaScript 解决跳转问题，防止被 SEO 识别为空链接 -->
   <a href="#top" id="nav-official" title="TrollStore Official Source &amp; Device Compatibility" aria-current="page">Official</a>
+  <a href="apps.html" title="TrollStore Apps &amp; IPAs List">Apps</a>
   <a href="faq.html" title="TrollStore FAQ">FAQ</a>
-  <a href="dopamine.html" title="Dopamine Guide">Dopamine</a>
+  <a href="dopamine.html" title="Dopamine Jailbreak Guide">Dopamine</a>
 </nav>
 
 <p>This page combines two critical topics: the <strong>official TrollStore source</strong> (and how to avoid fake mirrors) and <strong>device compatibility</strong> for iPhone, iPad, and other platforms. There is no separate polished “official website” with a download button—the only official source is the developer’s GitHub repository, and that repository is the reference point for every legitimate <strong>official TrollStore GitHub</strong> link you will see referenced elsewhere.</p>
 
-<!-- 目录卡片 -->
 <div class="toc-card">
   <div class="toc-title">Contents</div>
   <ol>
@@ -493,9 +462,6 @@
   </ol>
 </div>
 
-<!-- ============================================================ -->
-<!-- 模块 1：官方来源与验证 -->
-<!-- ============================================================ -->
 <h2 id="official">1. Official &amp; Source: Official TrollStore Website, GitHub Repo, and Avoiding Fake Sites</h2>
 
 <p>If your goal is to find the <strong>official TrollStore</strong> source—not a repackaged mirror—this section is the short answer. There is no separate polished “official website” with a download button. The <strong>only</strong> official source for the standard app is the developer’s GitHub repository, and that repository is the reference point for every legitimate <strong>official TrollStore GitHub</strong> link you will see referenced elsewhere.</p>
@@ -516,7 +482,7 @@
 
 <h3>Recognizing the Official TrollStore GitHub Repo</h3>
 
-<p>The <code>opa334/TrollStore</code> <strong>TrollStore GitHub repo</strong> is the only source of truth. It is maintained by developer <strong>opa334</strong>, and every <strong>TrollStore GitHub repo</strong> page under that account carries the authoritative README, license, issue tracker, and release history. The <strong>official TrollStore GitHub</strong> repository is also where the <strong>TrollStore GitHub page</strong> for releases lives—the same <strong>TrollStore GitHub link</strong> shared on the <a href="index.html" title="TrollStore Home &amp; Download">Home Page</a>.</p>
+<p>The <code>opa334/TrollStore</code> <strong>TrollStore GitHub repo</strong> is the only source of truth. It is maintained by developer <strong>opa334</strong>, and every <strong>TrollStore GitHub repo</strong> page under that account carries the authoritative README, license, issue tracker, and release history. The <strong>official TrollStore GitHub</strong> repository is also where the <strong>TrollStore GitHub page</strong> for releases lives—the same <strong>TrollStore GitHub link</strong> shared on the <a href="index.html" title="TrollStore Guide">Home Page</a>.</p>
 
 <p>When you land on the <strong>TrollStore GitHub page</strong>, confirm three things: the account name is <code>opa334</code>, the repository name is <code>TrollStore</code>, and the releases tab exists. Any <strong>official TrollStore GitHub</strong> reference you encounter elsewhere should resolve to that same <strong>TrollStore GitHub link</strong>. If a page shows a different <strong>TrollStore GitHub com</strong> path—for example, a fork with a similar name—it is not the source of truth, even if it copies the README verbatim.</p>
 
@@ -567,7 +533,7 @@
 
 <p>The risk of third-party downloads is not theoretical. TrollStore bypasses all of Apple’s signature validation, so an installer from an untrusted source can contain anything. That is why the <strong>official TrollStore GitHub</strong> repository—and only that repository—should be the source for the installer. A mirror may look identical, use the same <strong>TrollStore GitHub link</strong> styling, and even copy the <strong>TrollStore GitHub page</strong> layout, but it is not the <strong>official TrollStore GitHub</strong> unless it is hosted under <code>opa334</code>.</p>
 
-<p>Practically, this means: search results that promise an <strong>official TrollStore website</strong> download, an <strong>official TrollStore</strong> installer button, or a “verified” <strong>TrollStore official site</strong> should be treated with suspicion until they point back to the <strong>official TrollStore GitHub</strong> repo. Bookmark the <strong>TrollStore GitHub link</strong> from the <a href="index.html" title="TrollStore Home &amp; Download">Home Page</a> instead of re-searching each time—this single habit removes most of the risk of landing on a fake site.</p>
+<p>Practically, this means: search results that promise an <strong>official TrollStore website</strong> download, an <strong>official TrollStore</strong> installer button, or a “verified” <strong>TrollStore official site</strong> should be treated with suspicion until they point back to the <strong>official TrollStore GitHub</strong> repo. Bookmark the <strong>TrollStore GitHub link</strong> from the <a href="index.html" title="TrollStore Guide">Home Page</a> instead of re-searching each time—this single habit removes most of the risk of landing on a fake site.</p>
 
 <h3>“Oficial” and Other Language Variants</h3>
 
@@ -589,9 +555,6 @@
   <li><strong>Bookmark the link:</strong> save the <strong>TrollStore GitHub link</strong> so future visits skip search results entirely.</li>
 </ol>
 
-<!-- ============================================================ -->
-<!-- 模块 2：设备与平台 -->
-<!-- ============================================================ -->
 <h2 id="device">2. Device &amp; Platform: iPhone, iPad, and Beyond</h2>
 
 <p>TrollStore is an iOS/iPadOS application—not a macOS, Windows, Android, or tvOS tool. That single fact resolves most device-related searches before compatibility even comes into play. If you are looking for <strong>TrollStore on iPhone</strong> or <strong>TrollStore for iPad</strong>, the installed iOS/iPadOS version is the deciding factor, not the device model. This section walks through iPhone and iPad compatibility device by device, then explains why <strong>TrollStore Mac</strong>, <strong>TrollStore Windows</strong>, <strong>TrollStore Android</strong>, <strong>TrollStore Apple TV</strong>, and <strong>TrollStore tvOS</strong> fall outside the scope of the project.</p>
@@ -660,7 +623,7 @@
 
 <p>Searches for <strong>TrollStore Mac</strong>, <strong>TrollStore macOS</strong>, <strong>TrollStore Mac download</strong>, <strong>TrollStore PC</strong>, <strong>TrollStore PC download</strong>, <strong>TrollStore Windows</strong>, <strong>TrollStore Windows download</strong>, and <strong>TrollStore Windows 11</strong> describe a category error: there is no macOS or Windows build of TrollStore. TrollStore is an iOS/iPadOS application. Mac and Windows are relevant only as hosts for running TrollRestore or sideloading tools—the desktop side of the workflow, not the app itself.</p>
 
-<p>If you are on <strong>TrollStore Windows 11</strong> looking for a native installer, the correct path is to use the desktop tool to push the installer to a supported iPhone or iPad, then complete installation on the device. The <a href="index.html" title="TrollStore Home &amp; Download">Home Page Download section</a> covers the device-side downloads; the desktop tooling is a means to that end, not a separate <strong>TrollStore for Windows</strong> product.</p>
+<p>If you are on <strong>TrollStore Windows 11</strong> looking for a native installer, the correct path is to use the desktop tool to push the installer to a supported iPhone or iPad, then complete installation on the device. The <a href="index.html" title="TrollStore Guide">Home Page Download section</a> covers the device-side downloads; the desktop tooling is a means to that end, not a separate <strong>TrollStore for Windows</strong> product.</p>
 
 <h3>Android, Apple TV, tvOS, and “32-bit” Queries</h3>
 
