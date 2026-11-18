@@ -13,7 +13,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>TrollStore Download Guide 2026: Official Source, IPA Files &amp; Version Checks</title>
-<meta name="description" content="A guide to trollstore download from the official opa334/TrollStore GitHub releases: installer files, IPA downloads, iOS version checks, TrollStore 2 builds, and common misconceptions about APK, CFW and jailbreak downloads.">
+<meta name="description" content="A guide to trollstore download from the official opa334/TrollStore GitHub releases: TrollInstallerX files, IPA downloads, iOS version checks, TrollStore 2 builds, and why there is no TrollStore APK.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <meta name="publisher" content="TrollStore Guide">
 <meta http-equiv="X-Content-Type-Options" content="nosniff">
@@ -60,6 +60,8 @@
     --accent-hover: #0066cc;
     --warn-bg: #fff8e1;
     --warn-border: #f5b800;
+    --danger-bg: #fff2f0;
+    --danger-border: #d70015;
     --info-bg: #f2f8ff;
     --info-border: #0071e3;
     --radius: 18px;
@@ -174,6 +176,7 @@
 
   .callout { padding: 18px 22px; border-radius: var(--radius-sm); margin: 24px 0; font-size: 0.95rem; }
   .callout-warn { background: var(--warn-bg); border-left: 4px solid var(--warn-border); }
+  .callout-danger { background: var(--danger-bg); border-left: 4px solid var(--danger-border); }
   .callout-info { background: var(--info-bg); border-left: 4px solid var(--info-border); }
 
   .page-footer {
@@ -242,25 +245,104 @@
 <div class="toc">
   <strong>Contents</strong>
   <ol>
-    <li><a href="#download">trollstore download: the basic steps</a></li>
-    <li><a href="#github">trollstore github download: the official source</a></li>
-    <li><a href="#download-trollstore">download trollstore on a computer or iPhone</a></li>
-    <li><a href="#download-trollstore-ios">download trollstore ios files without a PC</a></li>
-    <li><a href="#trollstore-download-ios">trollstore download ios: checking your version first</a></li>
-    <li><a href="#ipa">trollstore download ipa: verifying the file</a></li>
-    <li><a href="#download-trollstore-ipa">download trollstore ipa: saving the installer safely</a></li>
-    <li><a href="#ipa-download">trollstore ipa download: what to expect</a></li>
+    <li><a href="#apk">trollstore apk: there is no TrollStore APK</a></li>
     <li><a href="#x-download">trollstore x download: the TrollInstallerX installer</a></li>
     <li><a href="#x-ipa-download">trollstore x ipa download: the exact file name</a></li>
-    <li><a href="#app-download">trollstore app download: why there is no separate app</a></li>
-    <li><a href="#ipa-library">trollstore ipa library: community collections</a></li>
-    <li><a href="#trollstore-2-download">trollstore 2 download: build 2.1.1</a></li>
-    <li><a href="#apk">trollstore apk: why no Android version exists</a></li>
+    <li><a href="#ipa-library">trollstore ipa library: why there is no official library</a></li>
+    <li><a href="#trollstore-2-download">trollstore 2 download: identifying build 2.1.1</a></li>
     <li><a href="#apk-download">trollstore apk download: a warning sign</a></li>
+    <li><a href="#download-trollstore-ipa">download trollstore ipa: saving the installer safely</a></li>
+    <li><a href="#download-trollstore-ios">download trollstore ios: steps on an iPhone</a></li>
+    <li><a href="#download">trollstore download: the basic steps</a></li>
+    <li><a href="#ipa-download-section">trollstore ipa download: what to expect</a></li>
+    <li><a href="#download-trollstore">download trollstore on a computer or iPhone</a></li>
+    <li><a href="#trollstore-download-ios">trollstore download ios: checking your version first</a></li>
+    <li><a href="#ipa">trollstore download ipa: verifying the file</a></li>
+    <li><a href="#github">trollstore github download: the official source</a></li>
+    <li><a href="#app-download">trollstore app download: why there is no separate app</a></li>
     <li><a href="#cfw-download">trollstore cfw download: custom firmware is not needed</a></li>
     <li><a href="#jailbreak-download">trollstore jailbreak download: Lite only</a></li>
   </ol>
 </div>
+
+<h2 id="apk">trollstore apk: there is no TrollStore APK</h2>
+<p>People who search for trollstore apk usually want an Android version of TrollStore, or they have seen a page that claims to offer a "TrollStore APK". No such file exists. TrollStore is an iOS tool for iPhone and iPad. An APK is the package format used by Android, and an APK cannot be installed on iOS. The TrollStore project does not publish an Android version.</p>
+<p>If your phone runs Android, TrollStore cannot be installed on it, and no APK file will change that. If your device runs iOS or iPadOS, the only files you need are the iOS installers published on the opa334/TrollStore GitHub Releases page.</p>
+<h3>Why APK pages appear in search results</h3>
+<p>Some sites use the words trollstore apk to attract visitors and then deliver an unrelated app, a fake installer, or a bundle of advertisements and configuration-profile prompts. Because these pages copy the TrollStore name, they can look convincing. Treat any page that offers a TrollStore APK as untrusted, even if it uses the TrollStore logo or the word "official".</p>
+<h3>Signs that a TrollStore APK page is not safe</h3>
+<ul>
+  <li>It offers an APK download button for TrollStore.</li>
+  <li>It asks you to allow installation from unknown sources.</li>
+  <li>It asks you to install a profile, an extra app, or a "helper" before the download.</li>
+  <li>It does not link to github.com/opa334/TrollStore.</li>
+</ul>
+<h3>What to do instead</h3>
+<p>Check whether your device runs iOS. Then get the installer only from github.com/opa334/TrollStore/releases. If you landed on an APK page from a search result, close it and do not open any file it offers.</p>
+
+<h2 id="x-download">trollstore x download: the TrollInstallerX installer</h2>
+<p>Many visitors search for trollstore x download because the main installer is commonly called TrollInstallerX. TrollInstallerX is the installer file that sets up TrollStore on the device. It is not a separate app store, and it is not the finished TrollStore application. Its job is to get TrollStore onto your device so you can then manage IPA files with it.</p>
+<p>The file you need is TrollInstallerX.ipa, which is published in the Assets list of the official release. The release notes state which iOS versions the installer supports. Supported ranges can change from one release to the next, so read the current notes on the official page rather than relying on an older table or a third-party summary.</p>
+<h3>Where TrollInstallerX fits in the process</h3>
+<p>The process has three parts. First, confirm your exact iOS version in Settings, General, About. Second, get the matching installer from the official release and keep its file name unchanged. Third, run the installer and follow the steps in the install guide. A mismatch at the first step causes problems later, so check the version before you download anything.</p>
+<h3>What TrollInstallerX is not</h3>
+<p>TrollInstallerX does not replace the TrollStore app, and it does not give you permission to install any IPA you find online. It is a single installer. Any site that presents TrollInstallerX as a paid tool, a "premium" version, or a bundle with other software is not the official source.</p>
+
+<h2 id="x-ipa-download">trollstore x ipa download: the exact file name</h2>
+<p>For a trollstore x ipa download, look for one specific file: TrollInstallerX.ipa. Find it in the Assets list of the newest official release on github.com/opa334/TrollStore/releases. Confirm the name exactly as it appears, and save it without renaming.</p>
+<p>A renamed or mismatched copy is one of the most common reasons a setup fails. The name is how you match the file to the release notes, so keep it intact. If the file you have does not match the name in the notes, do not use it. Download it again from the official page. If a site gives you a file with a different name, a different domain, or an extra installer, treat the file as unverified.</p>
+<h3>Checks to complete before you install</h3>
+<ul>
+  <li>The page you downloaded from is github.com/opa334/TrollStore.</li>
+  <li>The file name is exactly TrollInstallerX.ipa.</li>
+  <li>The release is the newest one, and its notes list your iOS version.</li>
+  <li>The file has not been renamed, re-zipped, or edited since you saved it.</li>
+</ul>
+<p>If the release page shows a file size or other details, compare them with your copy. A match is a useful sign, but it does not replace reading the release notes.</p>
+
+<h2 id="ipa-library">trollstore ipa library: why there is no official library</h2>
+<p>A trollstore ipa library is a collection of IPA files that someone else has gathered and packaged. The TrollStore developer does not run an IPA library and does not endorse one. TrollStore installs whatever IPA file you give it, so the safety of the result depends entirely on where that file came from.</p>
+<p>Some community repositories collect IPA files, such as the Neoncat-OG/TrollStore-IPAs repository. Before you use any collection, check who maintains it, whether the maintainer is identifiable, whether the project is still updated, whether it publishes checksums, and whether each file is clearly labelled with its source and version.</p>
+<h3>Why commercial app IPAs are a risk</h3>
+<p>Collections that offer paid apps for free, cracked apps, or modified apps carry real risks. The files may contain malware, may be altered in ways you cannot see, and may be illegal to distribute or use. A file that works on TrollStore is not automatically safe, because TrollStore will install whatever it is given.</p>
+<div class="callout callout-warn">
+  This guide does not recommend, link to, or provide IPA files for commercial apps. Use only the official TrollStore installer from github.com/opa334/TrollStore, and treat any IPA from another source with caution.
+</div>
+
+<h2 id="trollstore-2-download">trollstore 2 download: identifying build 2.1.1</h2>
+<p>A trollstore 2 download usually refers to the 2.x line of TrollStore releases. To find the right build, open the official Releases page at github.com/opa334/TrollStore/releases and look for the release labelled 2.1.1. At the time of writing, this is the newest 2.x build listed on the project page. Confirm this on the page yourself before you download.</p>
+<p>Older 2.x builds can appear lower in the list, and some third-party sites show outdated versions. Choose the entry with the highest version number, not the most recent date on a third-party site. Then check that the file names in the Assets list match the names in the release notes.</p>
+<h3>Standard installer or TrollStore Lite</h3>
+<p>The standard installer does not require a jailbreak. TrollStore Lite is distributed as a .deb package and requires an existing jailbreak. Choose the standard installer unless you already have a jailbreak and a specific reason to use Lite. Installing a jailbreak only to run the standard version is unnecessary and adds risk.</p>
+<h3>When an older 2.x build is worth considering</h3>
+<p>Consider an older 2.x build only if the release notes for 2.1.1 say that it does not support your iOS version. Otherwise, the newest build that matches your iOS version is the correct download.</p>
+
+<h2 id="apk-download">trollstore apk download: a warning sign</h2>
+<p>If you see a link that promises a trollstore apk download, do not open it. An Android package cannot run on iOS, so any APK offered as TrollStore is either for the wrong platform or a disguised file from an unknown source. Some of these pages deliver malware, fake profile prompts, or repackaged apps that look like TrollStore.</p>
+<p>If you have already downloaded a file with an APK name, delete it. Do not try to install it on your iPhone or iPad. The only correct download for TrollStore is the iOS installer from the opa334/TrollStore GitHub Releases page.</p>
+<div class="callout callout-danger">
+  Do not enter your Apple ID, password, or device details on any page that asks for them in connection with a TrollStore APK download.
+</div>
+
+<h2 id="download-trollstore-ipa">download trollstore ipa: saving the installer safely</h2>
+<p>To download trollstore ipa safely, follow the steps in order. The goal is to save TrollInstallerX.ipa directly from the official release, with its original name intact. This section covers the download action itself, from a computer or from Safari.</p>
+<ol>
+  <li>Open github.com/opa334/TrollStore/releases on a computer, or in Safari on your device.</li>
+  <li>Open the newest release and read its notes for your iOS version.</li>
+  <li>Find TrollInstallerX.ipa in the Assets list and save it without renaming it.</li>
+  <li>Keep the file unchanged until the installation is complete.</li>
+</ol>
+<p>If a file arrives through a pop-up, a redirect, or a "fast download" button, do not use it. Legitimate releases do not need redirects to deliver their files. If you accidentally saved a file from another site, delete it and start again from the official page.</p>
+
+<h2 id="download-trollstore-ios">download trollstore ios: steps on an iPhone</h2>
+<p>To download trollstore ios files directly on an iPhone or iPad, use Safari. You do not need a computer for the download step, but you should still check your version and read the release notes before you save anything.</p>
+<ol>
+  <li>Check your iOS version in Settings, General, About, and write it down.</li>
+  <li>Open github.com/opa334/TrollStore/releases in Safari.</li>
+  <li>Tap the newest release and read the notes for your iOS version.</li>
+  <li>Save the files from the Assets section without renaming them.</li>
+</ol>
+<p>Type the address yourself rather than tapping a link from a message or an advertisement. Do not use a site reached through a redirect, even if it claims to be the official source. Confirm the domain before you save.</p>
 
 <h2 id="download">trollstore download: the basic steps</h2>
 <p>A trollstore download is a short sequence rather than a single tap. TrollStore is developed by opa334 and distributed through GitHub. The file you save during setup is an installer, not the finished app, so each step matters.</p>
@@ -271,79 +353,29 @@
   <li>Save the files listed in the Assets section without renaming them.</li>
 </ol>
 
-<h2 id="github">trollstore github download: the official source</h2>
-<p>The only official source is the Releases page of the opa334/TrollStore repository on GitHub. Because TrollStore is free and open-source, any site that asks for payment to provide the file is not official. The newest build appears at the top of the Releases page. If an older build appears first, compare version numbers and dates and choose the newest one.</p>
+<h2 id="ipa-download-section">trollstore ipa download: what to expect</h2>
+<p>A trollstore ipa download from the official release gives you TrollInstallerX.ipa. An IPA is the standard package format for iOS apps. In this case, the file is the installer that sets up TrollStore on the device. The official project does not publish a separate IPA for the TrollStore app itself.</p>
 
 <h2 id="download-trollstore">download trollstore on a computer or iPhone</h2>
 <p>You can download trollstore files on a desktop browser or directly in Safari on the device. Either way, the source is the same GitHub page. Keep the original file names and store a backup copy before transferring anything. The <a href="install.html">install guide</a> explains the transfer method for your system.</p>
 
-<h2 id="download-trollstore-ios">download trollstore ios files without a PC</h2>
-<p>Many people want to download trollstore ios files without a computer. You can do this entirely in Safari on an iPhone or iPad. Open github.com/opa334/TrollStore/releases, tap the newest release, and save the files from its Assets section.</p>
-<p>Before you save anything, read the release notes. They state which system versions each file supports and whether an internet connection is required during installation. Following these notes prevents the most common device-side mistake: saving a file that does not match your system.</p>
-<h3>Device-side checklist</h3>
-<ul>
-  <li>Confirm your iOS version in Settings, General, About.</li>
-  <li>Open the official releases page in Safari, not through a redirect or a third-party link.</li>
-  <li>Save each file without renaming it, so you can match it against the release notes later.</li>
-  <li>Keep the downloaded files until the installation has finished successfully.</li>
-</ul>
-
 <h2 id="trollstore-download-ios">trollstore download ios: checking your version first</h2>
-<p>Before any trollstore download ios session, confirm your exact iOS version. Go to Settings, General, About and read the software version line. The OS version matters more than the device model, because two devices of the same model can run different system releases.</p>
-<p>Use that exact number to find the matching entry in the release notes. If the release notes do not list your version, do not install a file for it. An unmatched installer is one of the main reasons a setup stops partway through.</p>
-<h3>Why the version number decides the file</h3>
-<p>TrollStore depends on specific system behaviour, so a file built for one range of iOS versions may not work on another. Checking the version first saves time and prevents you from troubleshooting a file that was never meant for your device.</p>
+<p>Before any trollstore download ios session, go to Settings, General, About and read the software version line. The OS version matters more than the device model, because two devices of the same model can run different system versions. Use that exact number to find the matching entry in the release notes. If the release notes do not list your version, do not install a file for it.</p>
 
 <h2 id="ipa">trollstore download ipa: verifying the file</h2>
-<p>Before you use a trollstore download ipa file, confirm two things. First, the page you saved it from must be github.com/opa334/TrollStore. Second, the file name must be TrollInstallerX.ipa, exactly as it appears in the release Assets list.</p>
-<p>A file from any other domain, or one with a different name, did not come from the official release. Discard it and download the file again from the official page. Verifying the source before installation is the single most effective safety step in this guide.</p>
+<p>Before you use a trollstore download ipa file, confirm two things: the page is github.com/opa334/TrollStore and the file name is TrollInstallerX.ipa. A file from any other domain, or with a different name, did not come from the official release and should be discarded.</p>
 
-<h2 id="download-trollstore-ipa">download trollstore ipa: saving the installer safely</h2>
-<p>To download trollstore ipa safely, open the newest release on the official Releases page, find TrollInstallerX.ipa in the Assets list, and save it without renaming. Confirm the release number against the release notes before you save.</p>
-<p>If a file arrives through a pop-up, a redirect, or a "fast download" button, do not use it. Legitimate releases do not need redirects to deliver files, and any download that bypasses the GitHub page should be treated as untrusted.</p>
-
-<h2 id="ipa-download">trollstore ipa download: what to expect</h2>
-<p>A trollstore ipa download from the official release gives you TrollInstallerX.ipa. An IPA is the standard package format for iOS apps. In this case, the file is the installer that sets up TrollStore on the device.</p>
-<p>The official project does not publish a separate IPA for the TrollStore app itself. If a site offers a "TrollStore.ipa" as a standalone app, treat it as an unverified copy. The installer comes first, and the TrollStore app is what the installer sets up.</p>
-
-<h2 id="x-download">trollstore x download: the TrollInstallerX installer</h2>
-<p>TrollInstallerX is the main installer that most users need. Its file name is TrollInstallerX.ipa. The name refers to the installer itself, not to a separate program you install afterward.</p>
-<p>Check the release notes to confirm the installer supports your iOS version, since supported ranges change between releases. If the notes say nothing about your version, do not assume compatibility. Look for an updated release or confirm with the project before continuing.</p>
-
-<h2 id="x-ipa-download">trollstore x ipa download: the exact file name</h2>
-<p>For a trollstore x ipa download, look for one specific file, TrollInstallerX.ipa, in the Assets list of the newest official release. Confirm the name exactly and save it without renaming.</p>
-<p>A renamed copy is one of the most common reasons a setup fails. The installer checks for its own expected file, so changing "TrollInstallerX.ipa" to something shorter or different can cause an unclear failure. If the file name differs from what the release notes list, download it again from the official page.</p>
+<h2 id="github">trollstore github download: the official source</h2>
+<p>The only official source is the Releases page of the opa334/TrollStore repository on GitHub. TrollStore is free and open-source, so any site that asks for payment to provide the file is not official. The newest build appears at the top of the Releases page. If an older build appears first, compare version numbers and choose the newest one.</p>
 
 <h2 id="app-download">trollstore app download: why there is no separate app</h2>
-<p>TrollStore does not work as an app store, so there is no separate trollstore app download to find. TrollStore installs IPA files you already have, and it manages them on the device.</p>
-<p>Anything sold as a standalone "TrollStore app" by a third-party store should be treated as a repackaged or unverified copy. The only trusted source for the installer is the opa334/TrollStore GitHub Releases page.</p>
-
-<h2 id="ipa-library">trollstore ipa library: community collections</h2>
-<p>A trollstore ipa library is a collection of IPA files that users share, and the developer does not offer one. TrollStore installs whatever IPA you provide, so the safety of the result depends entirely on the source.</p>
-<p>Community collections exist, such as the Neoncat-OG/TrollStore-IPAs repository. Before you use any collection, check whether it publishes checksums, whether it is still maintained, and whether its files are clearly labelled. An abandoned or anonymous collection is a higher-risk source.</p>
-<div class="callout callout-warn">
-  Any site that charges for a TrollStore download, or calls itself a "download portal" for TrollStore, is not the official source. Confirm you are on github.com/opa334/TrollStore before you save any file.
-</div>
-
-<h2 id="trollstore-2-download">trollstore 2 download: build 2.1.1</h2>
-<p>A trollstore 2 download usually refers to the 2.x line of releases. The release notes identify 2.1.1 as the latest stable build at the time of writing, so that is the build most people should look for.</p>
-<p>Find the 2.1.1 release on the official Releases page, read its notes, and check that its file names match the ones listed there. If a release list shows older 2.x builds first, choose the entry with the highest version number, not the most recent date. Older 2.x builds are only worth considering if the 2.1.1 notes say they do not support your iOS version.</p>
-
-<h2 id="apk">trollstore apk: why no Android version exists</h2>
-<p>People searching for a trollstore apk are usually mixing up iOS and Android. APK is the package format for Android. TrollStore is an iOS tool for iPhone and iPad, and an APK cannot run on iOS.</p>
-<p>No official APK exists. If you need an iPhone or iPad tool, look only for files listed on the opa334/TrollStore GitHub Releases page, which are iOS-compatible by design.</p>
-
-<h2 id="apk-download">trollstore apk download: a warning sign</h2>
-<p>If you see a trollstore apk download link, do not open it. Such a file is either for the wrong platform or a disguised package from an unknown source. Android packages cannot be installed on iOS, so an "APK" offered for TrollStore is a red flag.</p>
-<p>The only correct download is the iOS installer from the opa334/TrollStore GitHub Releases page. If you have already downloaded an APK-labelled file, delete it and do not attempt to install it.</p>
+<p>TrollStore does not work as an app store, so there is no separate trollstore app download to find. It installs IPA files you already have and manages them on the device. Anything sold as a standalone "TrollStore app" by a third-party store should be treated as a repackaged or unverified copy.</p>
 
 <h2 id="cfw-download">trollstore cfw download: custom firmware is not needed</h2>
-<p>A trollstore cfw download search suggests you need custom firmware, but you do not. CFW means a modified system image that you flash onto the device. TrollStore is not custom firmware, and the standard installer does not require you to flash a modified system.</p>
-<p>Installing custom firmware for this purpose adds risk without benefit. It can also erase data and complicate future updates. Stick to the official installer from the GitHub Releases page.</p>
+<p>A trollstore cfw download search suggests you need custom firmware, but you do not. CFW means a modified system image that you flash onto the device. TrollStore is not custom firmware, and the standard installer does not require you to flash a modified system. Installing custom firmware for this purpose adds risk without benefit.</p>
 
 <h2 id="jailbreak-download">trollstore jailbreak download: Lite only</h2>
-<p>A trollstore jailbreak download is only relevant to TrollStore Lite, which is distributed as a .deb package and requires an existing jailbreak. The standard installer does not require a jailbreak.</p>
-<p>Install a jailbreak only if you have a specific reason to use Lite. Do not install a jailbreak just to run the regular version, because it changes your device's security model and is not needed for the standard installer.</p>
+<p>A trollstore jailbreak download is only relevant to TrollStore Lite, which is distributed as a .deb package and requires an existing jailbreak. The standard installer does not require a jailbreak. Install a jailbreak only if you have a specific reason to use Lite.</p>
 
 <div class="callout callout-info" style="text-align:center;">
   <strong>Next step:</strong> read the install guide for your system:<br>
